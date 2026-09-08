@@ -6,7 +6,7 @@ const charactersData = [
         role: "MB",
         position: "Middle Blocker (MB)",
         desc: "Youth coach for the International Beach Volleyball Federation. His intimidating height and fierce expression make him seem unapproachable, but he genuinely cares for children with a warm heart. Former teammate of Oasis who starred together at Sun Volleyball Team. Later transferred to Palm Spikes, becoming Oasis's rival. The transition reportedly involved considerable friction between them.",
-        image: "../tsc_web/img/atis.webp",
+        image: "img/Atis.webp",
         baseStats: {
             attack: { base: 115, maxLimit: 185, growth: [0, 0, 0, 3, 5, 7] },
             defense: { base: 90, maxLimit: 135, growth: [0, 0, 0, 0, 0, 0] },
@@ -47,7 +47,7 @@ const charactersData = [
         role: "SE",
         position: "Setter (SE)",
         desc: "Starting setter for Chemistry High. A skilled player who led the previously weak Chemistry High volleyball team to national tournament preliminaries. Her eyesight deteriorated from nightly reading, so she wears thick glasses. Chemistry High's volleyball fan club members reportedly go crazy for her with glasses on, though they admire her quietly from a distance to avoid making her uncomfortable. Ayeon has no idea the fan club exists and thinks people avoid her.",
-        image: "../tsc_web/img/ahyeon.webp",
+        image: "img/Ahyeon.webp",
         baseStats: {
             attack: { base: 100, maxLimit: 150, growth: [0, 2, 5, 7, 8, 8] },
             defense: { base: 100, maxLimit: 160, growth: [0, 5, 10, 14, 18, 20] },
@@ -82,7 +82,7 @@ const charactersData = [
         role: "MB",
         position: "Middle Blocker (MB)",
         desc: "A genius middle blocker who's every bit as arrogant as he is skilled. His striking looks and dominating playstyle make him impossible to ignore, drawing crowds wherever he plays. Though he's known for his terrible fan service, he insists he's being as polite as he can be in his own way. Cursed with bad luck when it comes to rivals, he's always been stuck in second place, first behind Lucas, now behind Raul. Enraged by his failure to win MVP, he's grown to despise the two who took the title. Determined to defeat Raul, he even switched his position to middle blocker. This season, he's ready to claim the MVP crown, no matter what it takes.",
-        image: "../tsc_web/img/claire.webp",
+        image: "img/Claire.webp",
         isDave: true,
         baseStats: {
             attack: { base: 100, maxLimit: 165, growth: [0, 3, 4, 5, 5, 5] },
@@ -137,7 +137,7 @@ const charactersData = [
         position: "Middle Blocker (MB)",
         desc: "Starting middle blocker for Rockwell Youth Volleyball Team. Not as rich as Tania, but still from a quite well-off family. Has an extremely laid-back personality - when he disappears for stretches, he's usually playing with cats."+
                 " As a child, he'd often vanish chasing cats, causing small panics, and it was always Tania who had to track him down and bring him back. Even now, Tania remains his only real friend, and the two still bicker whenever they meet.",
-        image: "../tsc_web/img/clyde.webp",
+        image: "img/Clyde.webp",
         baseStats: {
             attack: { base: 100, maxLimit: 165, growth: [0, 0, 3, 6, 8, 9] },
             defense: { base: 100, maxLimit: 160, growth: [0, 2, 2, 5, 5, 8] },
@@ -170,7 +170,7 @@ const charactersData = [
         position: "Middle Blocker (MB)",
         desc: "Middle blocker who partnered with Isabel as a duo. Though they were recognized as top Colosseum players together, he's actually neurotic and obsessive by nature. Despite his high-strung personality,"+
                 " he carefully looks after Isabel with deep camaraderie.",
-        image: "../tsc_web/img/crow.webp",
+        image: "img/Crow.webp",
         baseStats: {
             attack: { base: 120, maxLimit: 150, growth: [0, 0, 3, 6, 8, 9] },
             defense: { base: 105, maxLimit: 160, growth: [0, 2, 2, 5, 5, 8] },
@@ -207,7 +207,7 @@ const charactersData = [
         position: "Wing Spiker (WS)",
         desc: "Owner of the lodge where Rockwell Camp is held. Former volleyball player, though he was more famous for his magnificent mustache and muscular build than his skills. His solid physique and carefully maintained silky hair are points of pride. A true gentleman and genuinely good person."+
                 " When Rockwell Camp starts, he and his older twin brother Mike voluntarily help care for the children, which he takes great pride in. However, his excessive concern for the kids sometimes leads to over-the-top moments.",
-        image: "../tsc_web/img/dave.webp",
+        image: "img/Dave.webp",
         isDave: true,
         baseStats: {
             attack: { base: 120, maxLimit: 160, growth: [0, 3, 5, 8, 12, 12] },
@@ -255,7 +255,7 @@ const charactersData = [
         position: "Setter (SE)",
         desc: "Once played for a prestigious team but was released for unknown reasons and drifted to Phantom League. Now he teammates with Jenny, gaining popularity through excellent fan service and showmanship."+
                 " He feels sorry watching Jenny gradually break down in Phantom League and secretly looks after her, making him one of the few people she truly opens up to. He calls himself 'materialistic,' but everyone unanimously considers him a 'good person.' Though he acts selfish and calculating on the outside, he's always carefully supporting those around him behind the scenes.",
-        image: "../tsc_web/img/ellio.webp",
+        image: "img/Ellio.webp",
         baseStats: {
             attack: { base: 120, maxLimit: 165, growth: [0, 2, 5, 5, 7, 10] },
             defense: { base: 95, maxLimit: 165, growth: [0, 3, 5, 10, 15, 15] },
@@ -292,7 +292,7 @@ const charactersData = [
         position: "Setter (SE)",
         desc: "Haeun is the vice captain of Jisan High and also Dahee's friend. They both played on the same volleyball team during middle school and even after joining different teams and knowing about Dahee's situation,"+
                 " Haeun still tries to persuade her to join Jisan High.",
-        image: "../tsc_web/img/haeun.webp",
+        image: "img/Haeun.webp",
         baseStats: {
             attack: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
             defense: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
@@ -327,7 +327,7 @@ const charactersData = [
         position: "Middle Blocker (MB)",
         desc: "One of Seonrim High's four most skilled martial artists, and surprisingly, her martial arts abilities surpass even Ryuhyeon's. However, she acknowledges Ryuhyeon as Seonrim's grand disciple and focuses on supporting him."+
         " She essentially serves as the disciplinary committee head, and Hanra handles most campus disturbances. Despite her cold, stoic exterior, she absolutely loves cute things. Thinking this hobby doesn't suit her image, she tries to hide it from others.",
-        image: "../tsc_web/img/hanra.webp",
+        image: "img/Hanra.webp",
         baseStats: {
             attack: { base: 110, maxLimit: 170, growth: [0, 4, 7, 7, 7, 7] },
             defense: { base: 115, maxLimit: 155, growth: [0, 0, 0, 0, 8, 10] },
@@ -366,7 +366,7 @@ const charactersData = [
         position: "Middle Blocker (MB)",
         desc: "Former Queen of the Colosseum and member of Phantom League's 15-person committee. Isabel only claimed the queen's throne after Hari vanished from the Colosseum. She executes any order Carla gives without question - except one. She refuses to throw away the old,"+
                 " worn wrist guard on her left wrist, defying even Carla's commands on this matter. Only Carla and Hari know why. Her specialty is thoroughly analyzing opponents to completely dominate matches. Enemy players become paralyzed, unable to execute even their most confident plays.",
-        image: "../tsc_web/img/hari.webp",
+        image: "img/Hari.webp",
         isDave: true,
         baseStats: {
             attack: { base: 115, maxLimit: 170, growth: [0, 5, 8, 12, 15, 15] },
@@ -414,7 +414,7 @@ const charactersData = [
         position: "Middle Blocker (MB)",
         desc: "Captain of Hanbit High and arguably the best high school middle blocker. Though only a first-year, he earned the nickname 'Invulnerable' by perfectly shutting down last year's 'Best Player' award winner's quick attacks."+
                 " His trademark 90-degree bow when greeting reflects his upright, sincere personality. Despite his usually gentle demeanor, his competitive fire explodes on court, making him quite intimidating to face.",
-        image: "../tsc_web/img/heeseong.webp",
+        image: "img/Heeseong.webp",
         baseStats: {
             attack: { base: 110, maxLimit: 170, growth: [0, 0, 2, 2, 4, 7] },
             defense: { base: 105, maxLimit: 155, growth: [0, 2, 2, 8, 8, 8] },
@@ -455,7 +455,7 @@ const charactersData = [
         position: "Wing Spiker (WS)",
         desc: "One of Seonrim High's top martial artists. Full of curiosity, she often ditches school to explore the world. She and Ryuhyeon share the same mental age, so they constantly bicker and fight. When she's in a good mood, she lets out spirited shouts while serving."+
                 "She thinks everyone gets intimidated when she raises her voice, but in reality, everyone finds her so adorable that their concentration wavers.",
-        image: "../tsc_web/img/hongshi.webp",
+        image: "img/Hongshi.webp",
         baseStats: {
             attack: { base: 100, maxLimit: 165, growth: [0, 4, 8, 10, 12, 12] },
             defense: { base: 100, maxLimit: 170, growth: [0, 0, 5, 5, 10, 15] },
@@ -496,7 +496,7 @@ const charactersData = [
         position: "Setter (SE)",
         desc: "The captain of the Asheville Weasels. She took over the captain's armband and has led the team since the retirement of Kelly, one of the World's Big Five Spikers. Although she feels a deep sense of responsibility and a desire to lead the team well,"+
                 " her naturally timid personality leaves her constantly struggling between the front office and the players.",
-        image: "../tsc_web/img/iris.webp",
+        image: "img/Iris.webp",
         baseStats: {
             attack: { base: 100, maxLimit: 170, growth: [0, 0, 0, 0, 0, 0] },
             defense: { base: 100, maxLimit: 175, growth: [0, 5, 10, 10, 20, 25] },
@@ -538,7 +538,7 @@ const charactersData = [
         isDave: true,
         desc: "Queen of the Colosseum. She wandered searching for strong attackers before settling in the Colosseum League, where she's now considered one of the strongest players. Her ideal type is reportedly an attacker who can deliver serves so powerful she can't even touch them."+
                 " She excels at defensive balance and loves receiving opponents' attacks then immediately counterattacking. She plays volleyball for the thrill of shutting down enemy attacks and paying them back with points.",
-        image: "../tsc_web/img/isabel.webp",
+        image: "img/Isabel.webp",
         baseStats: {
             attack: { base: 110, maxLimit: 130, growth: [0, 0, 5, 5, 7, 10] },
             defense: { base: 120, maxLimit: 200, growth: [0, 0, 10, 20, 25, 25] },
@@ -579,7 +579,7 @@ const charactersData = [
         isDave: true,
         desc: "Outside hitter for Sky High and Siwoo Baek's rival. Along with Yongsup Lee, he's considered one of the best high school attackers. Known for incredible stamina from his well-conditioned body and unbreakable willpower. He never stops moving during matches, exhausting anyone trying to mark him. Completely lacks natural volleyball talent -"+
                 " his coordination is so poor he has to memorize every single movement and drill it repeatedly just to keep up with others. His coach, who cares about him most, even suggested he quit volleyball. But Jaehyun never gave up, training several times harder than everyone else to reach where he is today. He continues working tirelessly toward becoming the best.",
-        image: "../tsc_web/img/jaehyun.webp",
+        image: "img/Jaehyun.webp",
         baseStats: {
             attack: { base: 80, maxLimit: 150, growth: [0, 1, 2, 3, 4, 5] },
             defense: { base: 80, maxLimit: 150, growth: [0, 1, 2, 3, 4, 5] },
@@ -620,7 +620,7 @@ const charactersData = [
         desc: "Phantom League's youngest attacker. After promising Sara Seo in childhood to 'become the best volleyball players,' she's been pushing forward relentlessly ever since. A childhood injury nearly ended her volleyball career forever, but through sheer determination and blood, sweat, and tears, she overcame it and showed the most remarkable growth rate in Phantom League. Her emotional intensity runs high,"+
             " causing dramatic performance swings based on her mental state, but when she's locked in, her focus becomes razor-sharp. Having devoted her entire life to volleyball, she's out of touch with general knowledge and struggles with normal teenage social interactions."+
             " It's not that she's uninterested in other things - she simply hasn't had opportunities to explore them, so she sometimes watches her peers with quiet longing.",
-        image: "../tsc_web/img/jenny.webp",
+        image: "img/Jenny.webp",
         baseStats: {
             attack: { base: 100, maxLimit: 150, growth: [0, 2, 5, 7, 10, 12] },
             defense: { base: 90, maxLimit: 160, growth: [0, 5, 10, 12, 15, 15] },
@@ -682,7 +682,7 @@ const charactersData = [
         isDave: true,
         desc: "Starting setter of Terra High’s volleyball club. With his natural friendliness, he plays the role of the team’s mood maker wherever he goes. In elementary school, he moved to the United States with his father, where he faced players bigger than himself and developed strong stamina and mental toughness. He never loses heart, even against powerful opponents,"+
                 " and stays full of energy even when all his teammates are exhausted, making him a reliable source of vitality for the team. His hobby is running. However, he has a terrible sense of direction, so he often wanders off the walking path and gets lost. When walking his dog, he frequently ends up in another neighborhood.",
-        image: "../tsc_web/img/jihoon.webp",
+        image: "img/Jihoon.webp",
         baseStats: {
             attack: { base: 95, maxLimit: 155, growth: [0, 3, 5, 7, 11, 11] },
             defense: { base: 100, maxLimit: 155, growth: [0, 10, 10, 20, 20, 25] },
@@ -724,7 +724,7 @@ const charactersData = [
         isDave: true,
         desc: "Captain of Green Leon. Despite his apperance, his rough playing style and sharp tongue often draw criticism. Having always pursued strength above all else, he's completely indifferent to those he considers weak,"+
                 " but turns docile as a lamb around Isabel and Robert, whom he respects as strong players. Strangely gets embarrassed when others acknowledge his skills.",
-        image: "../tsc_web/img/leon.webp",
+        image: "img/Leon.webp",
         baseStats: {
             attack: { base: 100, maxLimit: 155, growth: [0, 5, 8, 12, 14, 15] },
             defense: { base: 100, maxLimit: 155, growth: [0, 3, 5, 5, 5, 10] },
@@ -763,7 +763,7 @@ const charactersData = [
         desc: "Player for Sun Receivers, the youth team of Sun Volleyball Team. Like her idol Oasis, she aims to enjoy the sport without being constrained by rules and victory. Though relatively new to beach volleyball, she's already secured a starting position and performs more brilliantly than anyone."
                 +" Playing under the scorching sun all day has given her quite an appetite - she never leaves food unfinished and calmly devours even bizarre dishes, making her the main culprit behind emptying Oasis's wallet."
                 +" She delivers the team's most devastating serves, launching the ball high before hammering it down with both power and precision that prevents opponents from even attempting returns. However, her power control needs work - consecutive attempts often sail out of bounds.",
-        image: "../tsc_web/img/lisia.webp",
+        image: "img/Lisia.webp",
         baseStats: {
             attack: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
             defense: { base: 100, maxLimit: 175, growth: [0, 0, 0, 0, 2, 4] },
@@ -811,7 +811,7 @@ const charactersData = [
         isDave: true,
         desc: "Phantom League's strongest attacker. Natural talent and instinct let him excel at whatever he tries. Self-centered with strong narcissistic tendencies, but he takes his responsibilities as a superstar seriously. Before his final Phantom League match,"+
                 " he accidentally glimpsed Sanghyeon's tablet and discovered notes that had been erased and rewritten countless times. When he saw the word 'Oasis' on the last line, he immediately grasped its meaning and adopted it as his stage name.",
-        image: "../tsc_web/img/lucas.webp",
+        image: "img/Lucas.webp",
         baseStats: {
             attack: { base: 120, maxLimit: 180, growth: [0, 3, 4, 7, 7, 7] },
             defense: { base: 95, maxLimit: 160, growth: [0, 5, 10, 10, 12, 15] },
@@ -884,7 +884,7 @@ const charactersData = [
         isDave: true, 
         desc: "Dave's twin brother who co-runs the lodge. He enjoys exercising with sandbags strapped to his ankles and was famous during his playing days for extreme training methods like running with tires tied to his waist. While he has no hair on top,"+
                 " his sideburns are thicker than anyone's. He carefully grooms them in front of the mirror every morning.",
-        image: "../tsc_web/img/mike.webp",
+        image: "img/Mike.webp",
         baseStats: {
             attack: { base: 130, maxLimit: 165, growth: [0, 3, 5, 5, 7, 7] },
             defense: { base: 100, maxLimit: 160, growth: [0, 0, 0, 0, 3, 5] },
@@ -947,7 +947,7 @@ const charactersData = [
         position: "Wing Spiker (WS)",
         desc: "The unlucky attacker. Misfortune strikes without fail before every important match, so he's never shown his full abilities. But for him, misfortune is just another seasoning to life."+
             " He brushes off the past and quickly starts new challenges. Teams with Minjun Cho never lose their fighting spirit.",
-        image: "../tsc_web/img/minjun.webp",
+        image: "img/Minjun.webp",
         baseStats: {
             attack: { base: 115, maxLimit: 145, growth: [0, 5, 8, 13, 15, 15] },
             defense: { base: 125, maxLimit: 155, growth: [0, 3, 5, 5, 5, 10] },
@@ -986,7 +986,7 @@ const charactersData = [
         desc: "One of Seonrim's disciples with a cautious, composed personality that lands him with various odd jobs. He has an old soul - when Ryuhyeon gets stuck-up or Hongshi causes trouble, he clicks his tongue and launches into lectures."+
                 " His defensive prowess earned him the title 'Guardian of Seonrim.' Strategic thinking is his forte - he never panics, calmly reads situations, then chooses optimal moves. "+
                 "Not flashy, but extremely troublesome to face. He accurately gauges teammates' abilities and seamlessly coordinates them, elevating the entire team's defense.",
-        image: "../tsc_web/img/muyeong.webp",
+        image: "img/Muyeong.webp",
         baseStats: {
             attack: { base: 85, maxLimit: 155, growth: [0, 2, 2, 5, 5, 5] },
             defense: { base: 130, maxLimit: 180, growth: [0, 0, 3, 3, 6, 10] },
@@ -1034,7 +1034,7 @@ const charactersData = [
         role: "WS",
         position: "Wing Spiker (WS)",
         desc: "One of the Big Five attackers. When he spikes, thunder echoes through the gym, earning him the nickname 'Thunder Nishikawa.' Considered to have the best jumping skills among the Big Five, he's the one every young volleyball player dreams of becoming.",
-        image: "../tsc_web/img/nishikawa.webp",
+        image: "img/Nishikawa.webp",
         baseStats: {
             attack: { base: 100, maxLimit: 195, growth: [0, 0, 2, 4, 5, 6] },
             defense: { base: 100, maxLimit: 160, growth: [0, 10, 15, 20, 25, 25] },
@@ -1077,7 +1077,7 @@ const charactersData = [
         position: "Setter (SE)",
         desc: "Chocolate milk is a beverage that combines the flavor of chocolate with the nutrition of milk and provides a balance of carbohydrates,"+
                 " protein, and fat. It is a popular choice for increased calcium intake, especially in children.",
-        image: "../tsc_web/img/nn.webp",
+        image: "img/NN.webp",
         baseStats: {
             attack: { base: 105, maxLimit: 160, growth: [0, 2, 2, 4, 7, 10] },
             defense: { base: 105, maxLimit: 160, growth: [0, 0, 2, 3, 5, 5] },
@@ -1115,7 +1115,7 @@ const charactersData = [
         isDave: true,
         desc: "The world's best professional beach volleyball player. Currently retired and developing youth players at Sun Volleyball Team. 'Oasis' isn't his real name,"+
                 " and nothing is known about his pre-professional career. He just laughs off any questions about his past.",
-        image: "../tsc_web/img/oasis.webp",
+        image: "img/Oasis.webp",
         baseStats: {
             attack: { base: 100, maxLimit: 155, growth: [0, 0, 0, 0, 2, 5] },
             defense: { base: 100, maxLimit: 155, growth: [0, 0, 0, 0, 0, 0] },
@@ -1207,7 +1207,7 @@ const charactersData = [
         isDave: true,
         desc: "One of the Big Five attackers. With overwhelming power, he crushes his opponents on the court. Not only is he incredibly strong, but his ball control is frighteningly precise, allowing him to fire cannon-like serves straight onto the sideline without hesitation. Once known for recording the highest transfer fee across all five major leagues,"+
                 " he shattered multiple personal award records and drew global attention from fans. He even declared he would claim the MVP title in all five leagues and transferred teams to compete with Viktor for the championship. However, after a major incident that caused a huge uproar and led to his suspension, he is now seeking redemption in the Phantom League.",
-        image: "../tsc_web/img/raul.webp",
+        image: "img/Raul.webp",
         baseStats: {
             attack: { base: 105, maxLimit: 200, growth: [0, 2, 3, 5, 5, 5] },
             defense: { base: 95, maxLimit: 155, growth: [0, 1, 3, 5, 8, 10] },

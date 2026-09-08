@@ -1,139 +1,393 @@
-body {
-    background: linear-gradient(rgba(18, 18, 18, 0.88), rgba(18, 18, 18, 0.92)), 
-                url('../tsc_web/img/the-spike-cross-christmas-wallpaper-soundtrack-v0-mlmao9j8uq9g1.webp') no-repeat center center fixed;
-    background-size: cover;
-    color: #f8f9fa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 100vh;
+:root {
+--bg-main: #111111;
+--bg-card: #1c1c1c;
+--bg-inner: #252525;
+
+
+--text-main: #ffffff;
+--text-muted: #cfcfcf;
+
+--warning: #ffc107;
+--success: #00d084;
+--danger: #ff4d4d;
+
+--border: #444444;
+
+
 }
+
+body {
+background:
+linear-gradient(
+rgba(10, 10, 10, 0.92),
+rgba(10, 10, 10, 0.96)
+),
+url("img/the-spike-cross-christmas-wallpaper-soundtrack-v0-mlmao9j8uq9g1.webp")
+center / cover
+fixed;
+
+ 
+background-color: var(--bg-main);
+
+color: var(--text-main);
+
+min-height: 100vh;
+ 
+
+}
+
+/* =========================
+TEXT
+========================= */
 
 .text-light-custom {
-    color: #d1d5db !important;
-}
-
-.card-custom {
-    background-color: rgba(30, 30, 30, 0.95);
-    border: 1px solid #2d2d2d;
-    border-radius: 14px;
-    backdrop-filter: blur(6px);
-    transition: all 0.25s ease-in-out;
-}
-
-.card-custom:hover {
-    border-color: #9bff8b;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-}
-
-.bg-card-inner {
-    background-color: rgba(22, 22, 22, 0.9);
-}
-
-.character-card {
-    cursor: pointer;
-}
-
-.char-img-wrapper {
-    height: 160px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-.char-img-wrapper img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-}
-
-#detailImg {
-    border: none !important;
-    border-radius: 0 !important;
-    width: auto !important;
-    height: 200px !important;
-}
-
-.table-custom {
-    color: #f8f9fa !important;
-    background-color: transparent !important;
-}
-
-.table-custom th {
-    background-color: rgba(37, 37, 37, 0.9) !important;
-    color: #9bff8b !important;
-    border-bottom: 2px solid #333;
-}
-
-.table-custom td {
-    background-color: rgba(30, 30, 30, 0.7) !important;
-    color: #f8f9fa !important;
-    border-color: #2d2d2d;
-    padding: 12px;
-}
-
-.badge-bt {
-    background-color: #9bff8b;
-    color: #000000;
-    font-weight: bold;
+color: var(--text-muted);
 }
 
 .text-success-custom {
-    color: #9bff8b !important;
+color: var(--success);
 }
 
-.text-danger-custom {
-    color: #7b00ff !important;
+/* =========================
+SEARCH
+========================= */
+
+.search-box {
+width: 250px;
 }
 
-.text-danger-custom2 {
-    color: #ff7474 !important;
-}
-
-.stat-highlight {
-    color: #38ef7d;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
+/* =========================
+VIEW
+========================= */
 
 .view-section {
-    display: none;
+animation: fadeIn 0.35s ease;
 }
 
-.view-section.active {
-    display: block;
+.view-section:not(.active) {
+display: none;
 }
 
-/* 1. Mengubah atau menghilangkan shadow biru saat SEARCH BAR diklik (focus) */
-#characterSearchInput:focus {
-    /* Ganti warna di bawah ini sesuai keinginan, atau ganti jadi 'none' jika tidak mau ada shadow sama sekali */
-    border-color: #ffc107 !important; /* Contoh diganti jadi warna kuning */
-    box-shadow: 0 0 0 0.25rem #9bff8b !important; 
+@keyframes fadeIn {
+
+
+from {
+    opacity: 0;
+    transform: translateY(10px);
 }
 
-/* 2. Menghilangkan garis biru bawaan browser (outline) saat mengetik */
-#characterSearchInput:focus-visible {
-    outline: none !important;
+to {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* 3. Jika tombol filter (ALL, WS, MB, SE) ikut memancarkan bayangan biru saat diklik */
-.btn-warning:focus, 
-.btn-warning:active, 
-.btn-outline-warning:focus, 
-.btn-outline-warning:active {
-    box-shadow: 0 0 0 0.25rem #9bff8b !important; /* Ganti dengan warna yang diinginkan */
 }
 
-/* Custom Green Range Slider */
-.form-range.custom-green-range::-webkit-slider-thumb {
-    background-color: #9bff8b; /* Warna hijau Bootstrap (success) atau sesuaikan dengan hijau webmu */
+/* =========================
+CARD
+========================= */
+
+.card-custom {
+background-color: rgba(28, 28, 28, 0.96);
+
+ 
+border:
+    1px solid
+    var(--border);
+
+border-radius: 16px;
+
+color: var(--text-main);
+
+transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+ 
+
 }
-.form-range.custom-green-range::-moz-range-thumb {
-    background-color: #f6ff00;
+
+.card-custom:hover {
+border-color: var(--warning);
+
+ 
+box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.35);
+ 
+
 }
-.form-range.custom-green-range::-ms-thumb {
-    background-color: #9bff8b;
+
+/* =========================
+CHARACTER CARD
+========================= */
+
+.character-card {
+cursor: pointer;
+
+ 
+overflow: hidden;
+ 
+
 }
-.form-range.custom-green-range:focus::-webkit-slider-thumb {
-    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+
+.character-card:hover {
+transform: translateY(-6px);
+}
+
+.character-image {
+width: 100%;
+
+ 
+height: 230px;
+
+object-fit: cover;
+
+border-radius:
+    14px 14px 0 0;
+ 
+
+}
+
+/* =========================
+INNER CARD
+========================= */
+
+.bg-card-inner {
+background-color:
+var(--bg-inner);
+}
+
+/* =========================
+BREAKTHROUGH BADGE
+========================= */
+
+.badge-bt {
+background-color:
+var(--warning);
+
+ 
+color: #111111;
+
+min-width: 60px;
+ 
+
+}
+
+/* =========================
+TABLE
+========================= */
+
+.table-custom {
+color:
+var(--text-main);
+
+ 
+margin-bottom: 0;
+ 
+
+}
+
+.table-custom th {
+color:
+var(--warning);
+
+ 
+border-color:
+    var(--border);
+
+background-color:
+    rgba(0, 0, 0, 0.15);
+ 
+
+}
+
+.table-custom td {
+color:
+var(--text-muted);
+
+ 
+border-color:
+    var(--border);
+
+background-color:
+    transparent;
+ 
+
+}
+
+.table-custom tbody tr {
+transition:
+background-color 0.2s ease;
+}
+
+.table-custom tbody tr:hover {
+background-color:
+rgba(255, 193, 7, 0.05);
+}
+
+/* =========================
+AVATAR
+========================= */
+
+.avatar-container {
+width: 140px;
+
+ 
+height: 140px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+ 
+
+}
+
+/* =========================
+SKILL
+========================= */
+
+.skill-item {
+background-color:
+var(--bg-inner);
+
+ 
+border:
+    1px solid
+    var(--border);
+
+border-radius: 12px;
+
+padding: 16px;
+
+margin-bottom: 12px;
+ 
+
+}
+
+.skill-item:last-child {
+margin-bottom: 0;
+}
+
+.skill-name {
+color:
+var(--warning);
+
+ 
+font-weight: 700;
+
+margin-bottom: 6px;
+ 
+
+}
+
+/* =========================
+SYNERGY
+========================= */
+
+.synergy-item {
+background-color:
+var(--bg-inner);
+
+ 
+border:
+    1px solid
+    var(--border);
+
+border-radius: 12px;
+
+padding: 16px;
+
+margin-bottom: 12px;
+ 
+
+}
+
+.synergy-item:last-child {
+margin-bottom: 0;
+}
+
+/* =========================
+OVERALL
+========================= */
+
+.overall-item {
+background-color:
+var(--bg-inner);
+
+ 
+border-radius: 10px;
+
+padding: 12px;
+
+margin-bottom: 10px;
+ 
+
+}
+
+/* =========================
+RANGE
+========================= */
+
+.custom-green-range {
+cursor: pointer;
+}
+
+.custom-green-range::-webkit-slider-thumb {
+cursor: pointer;
+}
+
+.custom-green-range::-moz-range-thumb {
+cursor: pointer;
+}
+
+/* =========================
+BUTTON
+========================= */
+
+.btn {
+transition:
+transform 0.15s ease;
+}
+
+.btn:active {
+transform:
+scale(0.96);
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+ 
+body {
+    background-attachment: scroll;
+}
+
+
+.container {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+
+.search-box {
+    width: 100%;
+}
+
+
+.character-image {
+    height: 200px;
+}
+
+
+.table-custom {
+    font-size: 0.85rem;
+}
+ 
+
 }
