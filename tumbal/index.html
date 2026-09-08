@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Spike: Cross - Character Database</title>
+    <link rel="icon" type="image/png" href="../tsc_web/img/Site-logo.webp">
+    <!-- Bootstrap 5 CSS -->
+    <link href="../tsc_web/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container py-5">
+        
+        <!-- ==================== TAMPILAN AWAL (LIST KARAKTER) ==================== -->
+        <div id="listView" class="view-section active">
+            <div class="text-center mb-5">
+                <h1 class="fw-bold text-white display-5">🏐 The Spike Cross Index</h1>
+                <p class="text-light-custom fs-5">Choose Character to see Details, breakthrough, and Stats in real-time</p>
+            </div>
+            <div>
+                <p class="fs-6 text-sm-center">Disclaimer : This website is an unofficial fan-made project and is not affiliated with, endorsed, or sponsored by SUNCYAN Inc.. "The Spike Cross", character names, gameplay assets, stats, and related media are trademarks and copyrights of SUNCYAN Inc.. All rights reserved to their respective owners.</p>
+            </div>
+
+            <!-- Tombol Filter Posisi -->
+            <div class="d-flex justify-content-center gap-2 mb-4">
+                <button class="btn btn-warning btn-sm active" onclick="filterCharacters('ALL', this)">ALL</button>
+                <button class="btn btn-outline-warning btn-sm" onclick="filterCharacters('WS', this)">WS</button>
+                <button class="btn btn-outline-warning btn-sm" onclick="filterCharacters('MB', this)">MB</button>
+                <button class="btn btn-outline-warning btn-sm" onclick="filterCharacters('SE', this)">SE</button>
+            <!-- Input Search -->
+                <div class="input-group input-group-sm" style="width: 250px;">
+                    <input type="text" id="characterSearchInput" class="form-control bg-dark text-light border-secondary" placeholder="Cari karakter..." oninput="searchCharacters()">
+                </div>
+            </div>
+
+            <!-- Grid Karakter -->
+            <div class="row g-4" id="characterGrid">
+                <!-- Karakter otomatis dimuat -->
+            </div>
+
+            <!-- ==================== CREDITS & ACKNOWLEDGMENTS ==================== -->
+            <hr class="border-secondary my-5">
+            <div id="creditsSection">
+                <hr class="border-secondary my-5">
+                <div class="card card-custom p-4 shadow-sm text-light-custom">
+                    <h4 class="text-white fw-bold mb-3">Credits & Acknowledgments</h4>
+                
+                    <h6 class="text-warning fw-semibold mt-2">Game Ownership & Intellectual Property</h6>
+                    <ul class="small mb-3">
+                        <li>All game content, characters, skills, stats, graphics, and trademarks belong to <strong>SUNCYAN Inc.</strong>.</li>
+                        <li><a href="https://store.steampowered.com/app/3983810/The_Spike_Cross/" target="_blank" class="text-info text-decoration-none">The Spike Cross</a> is developed and published by <strong>SUNCYAN Inc.</strong>. This website is an unofficial, non-commercial fan-made project.</li>
+                    </ul>
+
+                    <h6 class="text-warning fw-semibold mt-2">Special Thanks & Community Contributions</h6>
+                    <ul class="small mb-3">
+                        <li><strong>The Spike Cross Fandom Wiki:</strong> For being an amazing reference and foundation for verifying game data.</li>
+                        <li><strong>Content Creators:</strong> Huge thanks to all the video creators, streamers, and guide writers whose analysis helped clarify skill details and buffs.</li>
+                        <li><strong>Our Viewers & Community:</strong> Thank you to every player who shared information, reported data corrections, and helped keep this database accurate for busy players.</li>
+                    </ul>
+
+                    <h6 class="text-warning fw-semibold mt-2">Website Creation</h6>
+                    <ul class="small mb-0">
+                        <li><strong>Concept & Development:</strong> Created by Kartoffel🐱.</li>
+                        <li>&copy; 2026 The Spike Cross Index. Unofficial Fan Database.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ==================== TAMPILAN DETAIL KARAKTER ==================== -->
+        <div id="detailView" class="view-section" style="display: none;">
+            <!-- Tombol Kembali -->
+            <button class="btn btn-outline-warning mb-4 fw-bold px-4 py-2" onclick="goBack()">
+                ← Back
+            </button>
+
+            <!-- Grid Konten Detail -->
+            <div class="row g-4 mb-4">
+                <!-- Info Profil & Kontrol Breakthrough -->
+                <div class="col-lg-4">
+                    <div class="card card-custom p-4 text-center h-100 shadow-sm">
+                        <div class="avatar-container mx-auto mb-3">
+                            <img id="detailImg" src="" class="rounded-circle border border-3 border-warning" width="130" height="130" style="object-fit: cover;" alt="Avatar">
+                        </div>
+                        <h3 id="detailName" class="text-white mb-1 fw-bold">Nama Karakter</h3>
+                        <p id="detailPosition" class="text-warning fw-semibold mb-3">Position</p>
+                        
+                        <!-- Kontrol Breakthrough -->
+                        <div class="bg-card-inner p-3 rounded border border-secondary mb-3">
+                            <label class="form-label text-light-custom small mb-2 fw-semibold text-uppercase tracking-wider">Breakthrough Level</label>
+                            <div class="d-flex justify-content-center align-items-center gap-3">
+                                <button class="btn btn-sm btn-warning fw-bold px-3 py-1 shadow" onclick="changeBreakthrough(-1)">-</button>
+                                <span id="btDisplay" class="badge badge-bt fs-5 py-2 px-3">+0</span>
+                                <button class="btn btn-sm btn-warning fw-bold px-3 py-1 shadow" onclick="changeBreakthrough(1)">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Slider 1 -->                      
+                        <div id="daveSliderContainer" style="display: none;" class="mb-3">
+                            <!-- Slider 1: Fall Power -->
+                            <input type="range" id="daveRange" min="0" max="7" step="1" value="0" class="form-range custom-green-range" oninput="handleSliderChange(this.value)">
+                            <p class="text-white mt-1 small"><span id="sliderLabelText">Fall Power</span>: <span id="pushupVal">0</span></p>
+                        </div>
+                        <div id="sliderContainer2" style="display: none;" class="mb-3">
+                                <input type="range" id="daveRange2" min="0" max="12" step="1" value="0" class="form-range custom-green-range" oninput="handleSliderChange2(this.value)">
+                                <p class="text-white mt-1 small"><span id="sliderLabelText2">Flare Debuff</span>: <span id="pushupVal2">0</span></p>
+                        </div>
+                        <p id="detailDesc" class="small text-light-custom mb-0 lh-base"></p>
+                    </div>
+                </div>
+
+                <!-- Statistik: Manual Stat & Recommended Stat -->
+                <div class="col-lg-8">
+                    <div class="card card-custom p-4 h-100 shadow-sm">
+                        
+                        <!-- BAGIAN 1: MANUAL STAT -->
+                        <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+                            <div>
+                                <h4 class="text-white mb-0 fw-bold">⚙️ Manual Stat Allocation</h4>
+                                <p class="text-success-custom small mb-0">Customize the distribution of your character's bonus points here.</p>
+                            </div>
+                            <span class="badge bg-dark border border-warning text-warning px-3 py-2">Remaining: <span id="remainingPoints" class="fw-bold"></span></span>
+                        </div>
+                        
+                        <div class="table-responsive mb-4">
+                            <table class="table table-custom align-middle text-center">
+                                <thead>
+                                    <tr>
+                                        <th class="text-start">Attribute Stat</th>
+                                        <th>Base Stat</th>
+                                        <th>Bonus</th>
+                                        <th>Total Stat</th>
+                                        <th>Action (+/- 5)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="statTableBody">
+                                    <!-- Baris manual stat dimuat lewat JS -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- GARIS PEMISAH -->
+                        <hr class="border-warning opacity-75 my-4">
+
+                        <!-- BAGIAN 2: RECOMMENDED / MAX STAT -->
+                        <div class="mb-3">
+                            <h4 class="text-white mb-0 fw-bold">⭐ Recommended / Max Stat</h4>
+                            <p class="text-success-custom small mb-0">Recommendations for max stats or the best builds to use as a gameplay reference.</p>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-custom align-middle text-center">
+                                <thead>
+                                    <tr>
+                                        <th class="text-start">Attribute Stat</th>
+                                        <th>Base Stat</th>
+                                        <th>Max Growth/Buff</th>
+                                        <th>Optimal Total Stat</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recommendedTableBody">
+                                    <!-- Baris rekomendasi stat dimuat lewat JS -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian Skill, Synergy, & Team Buffs -->
+            <div class="row g-4">
+                <!-- Skill Buff -->
+                <div class="col-md-4">
+                    <div class="card card-custom p-4 h-100 shadow-sm">
+                        <h5 class="text-warning mb-3 fw-bold">⚡ Skill</h5>
+                        <div id="skillBuffList"></div>
+                    </div>
+                </div>
+
+                <!-- Synergy Buff -->
+                <div class="col-md-4">
+                    <div class="card card-custom p-4 h-100 shadow-sm">
+                        <h5 class="text-warning mb-3 fw-bold">🤝 Synergy Buff / Team Comp</h5>
+                        <div id="synergyBuffList"></div>
+                    </div>
+                </div>
+
+                <!-- Conditions & Team Buffs -->
+                <div class="col-md-4">
+                    <div class="card card-custom p-4 h-100 shadow-sm">
+                        <h5 class="text-warning mb-3 fw-bold">Conditions & Buffs</h5>
+                        
+                        <div class="bg-card-inner p-3 rounded border border-secondary mb-3">
+                            <p class="mb-2 text-light-custom small fw-semibold">Condition</p>
+                            <div id="overallBuffContent"></div>
+                        </div>
+
+                        <div class="bg-card-inner p-3 rounded border border-secondary mb-3">
+                            <p class="mb-2 text-light-custom small fw-semibold">Active Team Buffs</p>
+                            <div id="teamBuffContainer" class="d-flex flex-column gap-2">
+                                <label class="text-white small cursor-pointer mb-0">
+                                    <input type="checkbox" class="buff-checkbox me-2" 
+                                            data-position="MB" 
+                                            data-atk="90" data-def="100" data-spd="35" data-jmp="9" 
+                                            data-power-pct="0" data-spin="1.0" 
+                                            onchange="handleBuffChange(this)">
+                                    Sanghyeon (Highlight) <br>
+                                    <span class="text-info small">Attack +90, Defence +100, Speed +35, Jump +9</span>
+                                </label>
+                    
+                                <label class="text-white small cursor-pointer mb-0">
+                                    <input type="checkbox" class="buff-checkbox me-2" 
+                                            data-position="SE" 
+                                            data-atk="0" data-def="0" data-spd="0" data-jmp="0" 
+                                            data-power-pct="35" data-spin="2.5" 
+                                            onchange="handleBuffChange(this)">
+                                    Zero (Spotlight Toss) <br>
+                                    <span class="text-info small">Power +35%, Spin Rate 2.5</span>
+                                </label>
+
+                                <label class="text-white small cursor-pointer mb-0">
+                                    <input type="checkbox" class="buff-checkbox me-2" 
+                                            data-position="SE" 
+                                            data-atk="0" data-def="0" data-spd="0" data-jmp="0" 
+                                            data-power-pct="15" data-spin="0" 
+                                            onchange="handleBuffChange(this)">
+                                    [SE]Sara (Critical Toss) <br>
+                                    <span class="text-info small">Power +15%</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="ballMultiplierInfo" class="bg-card-inner p-3 rounded border border-secondary text-light small" style="display: none;">
+                            <div class="fw-bold text-warning mb-1">Ball Trajectory Effect:</div>
+                            <div>Power Multiplier: <span id="valBallPower" class="text-success fw-bold">+0%</span></div>
+                            <div>Spin Rate: <span id="valBallSpin" class="text-info fw-bold">1.0 (Standard)</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="../tsc_web/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+<footer class="py-4">
+    <p class="text-center text-light-custom small mb-0">Thank you so much again to Fandom Web, The Spike Cross Content Creator, and Viewers for Information while making this Web.</p>
+    <p class="text-center text-light-custom small mb-0">© 2026 The Spike Cross Index. Unofficial Fan Database.</p>
+</footer>
+</html>

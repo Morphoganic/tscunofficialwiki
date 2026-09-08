@@ -1,0 +1,139 @@
+body {
+    background: linear-gradient(rgba(18, 18, 18, 0.88), rgba(18, 18, 18, 0.92)), 
+                url('../tsc_web/img/the-spike-cross-christmas-wallpaper-soundtrack-v0-mlmao9j8uq9g1.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+
+.text-light-custom {
+    color: #d1d5db !important;
+}
+
+.card-custom {
+    background-color: rgba(30, 30, 30, 0.95);
+    border: 1px solid #2d2d2d;
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+    transition: all 0.25s ease-in-out;
+}
+
+.card-custom:hover {
+    border-color: #9bff8b;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.bg-card-inner {
+    background-color: rgba(22, 22, 22, 0.9);
+}
+
+.character-card {
+    cursor: pointer;
+}
+
+.char-img-wrapper {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.char-img-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+#detailImg {
+    border: none !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    height: 200px !important;
+}
+
+.table-custom {
+    color: #f8f9fa !important;
+    background-color: transparent !important;
+}
+
+.table-custom th {
+    background-color: rgba(37, 37, 37, 0.9) !important;
+    color: #9bff8b !important;
+    border-bottom: 2px solid #333;
+}
+
+.table-custom td {
+    background-color: rgba(30, 30, 30, 0.7) !important;
+    color: #f8f9fa !important;
+    border-color: #2d2d2d;
+    padding: 12px;
+}
+
+.badge-bt {
+    background-color: #9bff8b;
+    color: #000000;
+    font-weight: bold;
+}
+
+.text-success-custom {
+    color: #9bff8b !important;
+}
+
+.text-danger-custom {
+    color: #7b00ff !important;
+}
+
+.text-danger-custom2 {
+    color: #ff7474 !important;
+}
+
+.stat-highlight {
+    color: #38ef7d;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.view-section {
+    display: none;
+}
+
+.view-section.active {
+    display: block;
+}
+
+/* 1. Mengubah atau menghilangkan shadow biru saat SEARCH BAR diklik (focus) */
+#characterSearchInput:focus {
+    /* Ganti warna di bawah ini sesuai keinginan, atau ganti jadi 'none' jika tidak mau ada shadow sama sekali */
+    border-color: #ffc107 !important; /* Contoh diganti jadi warna kuning */
+    box-shadow: 0 0 0 0.25rem #9bff8b !important; 
+}
+
+/* 2. Menghilangkan garis biru bawaan browser (outline) saat mengetik */
+#characterSearchInput:focus-visible {
+    outline: none !important;
+}
+
+/* 3. Jika tombol filter (ALL, WS, MB, SE) ikut memancarkan bayangan biru saat diklik */
+.btn-warning:focus, 
+.btn-warning:active, 
+.btn-outline-warning:focus, 
+.btn-outline-warning:active {
+    box-shadow: 0 0 0 0.25rem #9bff8b !important; /* Ganti dengan warna yang diinginkan */
+}
+
+/* Custom Green Range Slider */
+.form-range.custom-green-range::-webkit-slider-thumb {
+    background-color: #9bff8b; /* Warna hijau Bootstrap (success) atau sesuaikan dengan hijau webmu */
+}
+.form-range.custom-green-range::-moz-range-thumb {
+    background-color: #f6ff00;
+}
+.form-range.custom-green-range::-ms-thumb {
+    background-color: #9bff8b;
+}
+.form-range.custom-green-range:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}
