@@ -2267,9 +2267,6 @@ function renderSkillsAndSynergies() {
                     const flarejmpVal = activeCharacter.skillStats.flarejmp[currentBt];
                     const flaredurVal = activeCharacter.skillStats.flaredur[currentBt];
                     const flarecldwnVAL = activeCharacter.skillStats.flarecldwn[currentBt];
-                    // =========================
-                    // FLARE DEBUFF / daveGrowth
-                    // =========================
                     let flareDebuffText = "0";
 
                     if (activeCharacter.id === 'lucas' &&
@@ -2398,7 +2395,7 @@ function renderSkillsAndSynergies() {
 
     const bufflist = document.getElementById('overallBuffList');
     if (bufflist) {
-        if (activeCharacter.bufflist && activeCharacter.bufflist.length > 0) {
+        if (activeCharacter.bufflist && activeCharacter.buffList.length > 0) {
             bufflist.innerHTML = `<ul class='mb-0 text-sm ps-3'>` + 
                 activeCharacter.bufflist.map(buff => `<li class='mb-1 text-light-custom'>${buff}</li>`).join('') + 
                 `</ul>`;
@@ -2406,7 +2403,6 @@ function renderSkillsAndSynergies() {
             bufflist.innerHTML = `<span class='text-muted small'>Tidak ada buff tambahan.</span>`;
         }
     }
-
 }
 
 function filterCharacters(position, btnElement) {
