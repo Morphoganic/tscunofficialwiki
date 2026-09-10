@@ -26,13 +26,13 @@ url("img/the-spike-cross-christmas-wallpaper-soundtrack-v0-mlmao9j8uq9g1.webp")
 center / cover
 fixed;
 
- 
+
 background-color: var(--bg-main);
 
 color: var(--text-main);
 
 min-height: 100vh;
- 
+
 
 }
 
@@ -90,7 +90,7 @@ CARD
 .card-custom {
 background-color: rgba(28, 28, 28, 0.96);
 
- 
+
 border:
     1px solid
     var(--border);
@@ -103,18 +103,18 @@ transition:
     transform 0.2s ease,
     border-color 0.2s ease,
     box-shadow 0.2s ease;
- 
+
 
 }
 
 .card-custom:hover {
 border-color: var(--warning);
 
- 
+
 box-shadow:
     0 10px 30px
     rgba(0, 0, 0, 0.35);
- 
+
 
 }
 
@@ -125,9 +125,9 @@ CHARACTER CARD
 .character-card {
 cursor: pointer;
 
- 
+
 overflow: hidden;
- 
+
 
 }
 
@@ -138,14 +138,14 @@ transform: translateY(-6px);
 .character-image {
 width: 100%;
 
- 
+
 height: 230px;
 
 object-fit: cover;
 
 border-radius:
     14px 14px 0 0;
- 
+
 
 }
 
@@ -166,11 +166,11 @@ BREAKTHROUGH BADGE
 background-color:
 var(--warning);
 
- 
+
 color: #111111;
 
 min-width: 60px;
- 
+
 
 }
 
@@ -182,9 +182,9 @@ TABLE
 color:
 var(--text-main);
 
- 
+
 margin-bottom: 0;
- 
+
 
 }
 
@@ -192,13 +192,13 @@ margin-bottom: 0;
 color:
 var(--warning);
 
- 
+
 border-color:
     var(--border);
 
 background-color:
     rgba(0, 0, 0, 0.15);
- 
+
 
 }
 
@@ -206,13 +206,13 @@ background-color:
 color:
 var(--text-muted);
 
- 
+
 border-color:
     var(--border);
 
 background-color:
     transparent;
- 
+
 
 }
 
@@ -233,7 +233,7 @@ AVATAR
 .avatar-container {
 width: 140px;
 
- 
+
 height: 140px;
 
 display: flex;
@@ -241,7 +241,7 @@ display: flex;
 align-items: center;
 
 justify-content: center;
- 
+
 
 }
 
@@ -253,7 +253,7 @@ SKILL
 background-color:
 var(--bg-inner);
 
- 
+
 border:
     1px solid
     var(--border);
@@ -263,7 +263,7 @@ border-radius: 12px;
 padding: 16px;
 
 margin-bottom: 12px;
- 
+
 
 }
 
@@ -275,11 +275,11 @@ margin-bottom: 0;
 color:
 var(--warning);
 
- 
+
 font-weight: 700;
 
 margin-bottom: 6px;
- 
+
 
 }
 
@@ -291,7 +291,7 @@ SYNERGY
 background-color:
 var(--bg-inner);
 
- 
+
 border:
     1px solid
     var(--border);
@@ -301,7 +301,7 @@ border-radius: 12px;
 padding: 16px;
 
 margin-bottom: 12px;
- 
+
 
 }
 
@@ -317,13 +317,13 @@ OVERALL
 background-color:
 var(--bg-inner);
 
- 
+
 border-radius: 10px;
 
 padding: 12px;
 
 margin-bottom: 10px;
- 
+
 
 }
 
@@ -363,7 +363,7 @@ MOBILE
 
 @media (max-width: 768px) {
 
- 
+
 body {
     background-attachment: scroll;
 }
@@ -388,6 +388,6 @@ body {
 .table-custom {
     font-size: 0.85rem;
 }
- 
+
 
 }
