@@ -390,7 +390,8 @@ const charactersData = [
         },
         skills: [
             { name: "Death Bloom", desc: "When Bumping, leaves a mark on the Opponent Player who last Touched the Ball. Upon Skill Activation, the Status of all marked Opponent Players decreases for a certain period of time."+
-                    " A Opponent Player with two or more marks has their movement sealed briefly immediately after Skill Activation. <br>Attack: <span class='text-warning'>bloomAtk_VAL%</span> | Defense: <span class='text-warning'>bloomDef_VAL%</span> | Speed: <span class='text-warning'>bloomSpd_VAL%</span> | Jump: <span class='text-warning'>bloomJmp_VAL%</span>" },
+                    " A Opponent Player with two or more marks has their movement sealed briefly immediately after Skill Activation. <br>Attack: <span class='text-warning'>-bloomAtk_VAL</span> | Defense: <span class='text-warning'>-bloomDef_VAL</span>"+
+                    " | Speed: <span class='text-warning'>-bloomSpd_VAL</span> | Jump: <span class='text-warning'>-bloomJmp_VAL</span>" },
             { name: "Flower Receive", desc: "<span class='text-warning'>The Defense Range of Bump is increased by 33%</span>. Defense and Speed are also boosted.<br> <span class='text-warning'>Defense +Flwr_VAL%, Speed +FlwrSpd_VAL%</span>" },
             { name: "Solid Blocking", desc: "Improves the Block Jump Accuracy of AI-controlled Players." },
             { name: "Light Movement", desc: "Performs a Quick Attack after a light Approach." },
@@ -404,7 +405,7 @@ const charactersData = [
             "Worked Up: <span class='text-success-custom'>High</span>",
             "Careless: <span class='text-success-custom'>Very Low</span>",
             "Engaged: <span class='text-danger'>Very Low</span>",
-            "Discourage: <span class='text-success-custom fw-bolder'>Impossible</span>",
+            "Discourage: <span class='text-danger-custom fw-bolder'>Impossible</span>",
         ]
     },
     {
@@ -2208,10 +2209,10 @@ function renderSkillsAndSynergies() {
                     const finalJump = Math.round((maxJump / 3) * currentPushup);
 
                     desc = desc
-                        .replace('bloomAtk_VAL%', `${finalAtk}%`)
-                        .replace('bloomDef_VAL%', `${finalDef}%`)
-                        .replace('bloomSpd_VAL%', `${finalSpd}%`)
-                        .replace('bloomJmp_VAL%', `${finalJump}%`);
+                        .replace('bloomAtk_VAL', `${finalAtk}`)
+                        .replace('bloomDef_VAL', `${finalDef}`)
+                        .replace('bloomSpd_VAL', `${finalSpd}`)
+                        .replace('bloomJmp_VAL', `${finalJump}`);
     
                     desc += `<br><span class='text-danger small'>[Death Bloom Stack: ${currentPushup} | BT: +${currentBt}]</span>`;
                 }

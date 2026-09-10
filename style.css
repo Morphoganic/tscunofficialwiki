@@ -1,235 +1,220 @@
 :root {
---bg-main: #111111;
---bg-card: #1c1c1c;
---bg-inner: #252525;
+    --bg-main: #111111;
+    --bg-card: rgba(30, 30, 30, 0.95);
+    --bg-inner: rgba(22, 22, 22, 0.9);
 
+    --text-main: #f8f9fa;
+    --text-muted: #d1d5db;
 
---text-main: #ffffff;
---text-muted: #cfcfcf;
+    --warning: #ffc107;
+    --success: #9bff8b;
+    --danger: #ff4d4d;
+    --danger-alt: #7b00ff;
 
---warning: #ffc107;
---success: #00d084;
---danger: #ff4d4d;
-
---border: #444444;
-
-
-}
-
-body {
-background:
-linear-gradient(
-rgba(10, 10, 10, 0.92),
-rgba(10, 10, 10, 0.96)
-),
-url("img/the-spike-cross-christmas-wallpaper-soundtrack-v0-mlmao9j8uq9g1.webp")
-center / cover
-fixed;
-
-
-background-color: var(--bg-main);
-
-color: var(--text-main);
-
-min-height: 100vh;
-
-
+    --border: #2d2d2d;
 }
 
 /* =========================
-TEXT
+   BODY & BACKGROUND
 ========================= */
+body {
+    background: 
+        linear-gradient(
+            rgba(18, 18, 18, 0.88), 
+            rgba(18, 18, 18, 0.92)
+        ), 
+        url("img/the-spike-cross-christmas-wallpaper-soundtrack-v0-mlmao9j8uq9g1.webp") 
+        center / cover 
+        fixed;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
 
+/* =========================
+   TEXT UTILITIES
+========================= */
 .text-light-custom {
-color: var(--text-muted);
+    color: var(--text-muted) !important;
 }
 
 .text-success-custom {
-color: var(--success);
+    color: var(--success) !important;
+}
+
+.text-danger-custom {
+    color: var(--danger-alt) !important;
+}
+
+.text-danger-custom2 {
+    color: #ff7474 !important;
+}
+
+.stat-highlight {
+    color: var(--success);
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 /* =========================
-SEARCH
+   SEARCH & VIEWS
 ========================= */
-
 .search-box {
-width: 250px;
+    width: 250px;
 }
-
-/* =========================
-VIEW
-========================= */
 
 .view-section {
-animation: fadeIn 0.35s ease;
+    display: none;
+    animation: fadeIn 0.35s ease;
 }
 
-.view-section:not(.active) {
-display: none;
+.view-section.active {
+    display: block;
 }
 
 @keyframes fadeIn {
-
-
-from {
-    opacity: 0;
-    transform: translateY(10px);
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-to {
-    opacity: 1;
-    transform: translateY(0);
+/* Focus kustom untuk search bar agar tidak biru standar */
+#characterSearchInput:focus {
+    border-color: var(--warning) !important;
+    box-shadow: 0 0 0 0.25rem rgba(155, 255, 139, 0.25) !important; 
 }
 
+#characterSearchInput:focus-visible {
+    outline: none !important;
 }
 
 /* =========================
-CARD
+   CARDS
 ========================= */
-
 .card-custom {
-background-color: rgba(28, 28, 28, 0.96);
-
-
-border:
-    1px solid
-    var(--border);
-
-border-radius: 16px;
-
-color: var(--text-main);
-
-transition:
-    transform 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-
-
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    color: var(--text-main);
+    backdrop-filter: blur(6px);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card-custom:hover {
-border-color: var(--warning);
+    border-color: var(--success);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
 
-
-box-shadow:
-    0 10px 30px
-    rgba(0, 0, 0, 0.35);
-
-
+.bg-card-inner {
+    background-color: var(--bg-inner);
 }
 
 /* =========================
-CHARACTER CARD
+   CHARACTER CARD & IMAGES
 ========================= */
-
 .character-card {
-cursor: pointer;
-
-
-overflow: hidden;
-
-
+    cursor: pointer;
+    overflow: hidden;
 }
 
 .character-card:hover {
-transform: translateY(-6px);
+    transform: translateY(-6px);
+}
+
+.char-img-wrapper {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.char-img-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 .character-image {
-width: 100%;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 14px 14px 0 0;
+}
 
-
-height: 230px;
-
-object-fit: cover;
-
-border-radius:
-    14px 14px 0 0;
-
-
+#detailImg {
+    border: none !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    height: 200px !important;
 }
 
 /* =========================
-INNER CARD
+   BADGES & BUTTONS
 ========================= */
-
-.bg-card-inner {
-background-color:
-var(--bg-inner);
-}
-
-/* =========================
-BREAKTHROUGH BADGE
-========================= */
-
 .badge-bt {
-background-color:
-var(--warning);
+    background-color: var(--success);
+    color: #000000;
+    font-weight: bold;
+    min-width: 60px;
+}
 
+.btn {
+    transition: transform 0.15s ease;
+}
 
-color: #111111;
+.btn:active {
+    transform: scale(0.96);
+}
 
-min-width: 60px;
-
-
+.btn-warning:focus, 
+.btn-warning:active, 
+.btn-outline-warning:focus, 
+.btn-outline-warning:active {
+    box-shadow: 0 0 0 0.25rem rgba(155, 255, 139, 0.25) !important;
 }
 
 /* =========================
-TABLE
+   TABLES
 ========================= */
-
 .table-custom {
-color:
-var(--text-main);
-
-
-margin-bottom: 0;
-
-
+    color: var(--text-main) !important;
+    background-color: transparent !important;
+    margin-bottom: 0;
 }
 
 .table-custom th {
-color:
-var(--warning);
-
-
-border-color:
-    var(--border);
-
-background-color:
-    rgba(0, 0, 0, 0.15);
-
-
+    background-color: rgba(37, 37, 37, 0.9) !important;
+    color: var(--success) !important;
+    border-color: var(--border);
+    border-bottom: 2px solid #333;
 }
 
 .table-custom td {
-color:
-var(--text-muted);
-
-
-border-color:
-    var(--border);
-
-background-color:
-    transparent;
-
-
+    background-color: rgba(30, 30, 30, 0.7) !important;
+    color: var(--text-muted) !important;
+    border-color: var(--border);
+    padding: 12px;
 }
 
 .table-custom tbody tr {
-transition:
-background-color 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
 .table-custom tbody tr:hover {
-background-color:
-rgba(255, 193, 7, 0.05);
+    background-color: rgba(255, 193, 7, 0.05);
 }
 
 /* =========================
-AVATAR
+   AVATAR
 ========================= */
-
 .avatar-container {
     width: 100%;
     max-width: 180px;
@@ -252,148 +237,81 @@ AVATAR
 }
 
 /* =========================
-SKILL
+   SKILL, SYNERGY & OVERALL ITEMS
 ========================= */
-
-.skill-item {
-background-color:
-var(--bg-inner);
-
-
-border:
-    1px solid
-    var(--border);
-
-border-radius: 12px;
-
-padding: 16px;
-
-margin-bottom: 12px;
-
-
+.skill-item, .synergy-item {
+    background-color: var(--bg-inner);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
 }
 
-.skill-item:last-child {
-margin-bottom: 0;
+.skill-item:last-child, .synergy-item:last-child {
+    margin-bottom: 0;
 }
 
 .skill-name {
-color:
-var(--warning);
-
-
-font-weight: 700;
-
-margin-bottom: 6px;
-
-
+    color: var(--warning);
+    font-weight: 700;
+    margin-bottom: 6px;
 }
-
-/* =========================
-SYNERGY
-========================= */
-
-.synergy-item {
-background-color:
-var(--bg-inner);
-
-
-border:
-    1px solid
-    var(--border);
-
-border-radius: 12px;
-
-padding: 16px;
-
-margin-bottom: 12px;
-
-
-}
-
-.synergy-item:last-child {
-margin-bottom: 0;
-}
-
-/* =========================
-OVERALL
-========================= */
 
 .overall-item {
-background-color:
-var(--bg-inner);
-
-
-border-radius: 10px;
-
-padding: 12px;
-
-margin-bottom: 10px;
-
-
+    background-color: var(--bg-inner);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
 }
 
 /* =========================
-RANGE
+   RANGE SLIDER
 ========================= */
-
 .custom-green-range {
-cursor: pointer;
+    cursor: pointer;
 }
 
 .custom-green-range::-webkit-slider-thumb {
-cursor: pointer;
+    cursor: pointer;
+    background-color: var(--success);
 }
 
 .custom-green-range::-moz-range-thumb {
-cursor: pointer;
+    cursor: pointer;
+    background-color: var(--warning);
+}
+
+.custom-green-range::-ms-thumb {
+    cursor: pointer;
+    background-color: var(--success);
+}
+
+.custom-green-range:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
 
 /* =========================
-BUTTON
+   MOBILE RESPONSIVE
 ========================= */
-
-.btn {
-transition:
-transform 0.15s ease;
-}
-
-.btn:active {
-transform:
-scale(0.96);
-}
-
-/* =========================
-MOBILE
-========================= */
-
 @media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
 
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 
-body {
-    background-attachment: scroll;
-}
+    .search-box {
+        width: 100%;
+    }
 
+    .character-image {
+        height: 200px;
+    }
 
-.container {
-    padding-left: 16px;
-    padding-right: 16px;
-}
-
-
-.search-box {
-    width: 100%;
-}
-
-
-.character-image {
-    height: 200px;
-}
-
-
-.table-custom {
-    font-size: 0.85rem;
-}
-
-
+    .table-custom {
+        font-size: 0.85rem;
+    }
 }
