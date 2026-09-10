@@ -607,7 +607,7 @@ const charactersData = [
         overall: [
             "Worked Up: <span class='text-warning'>Very Low</span>",
             "Careless: <span class='text-success-custom'>Very Low</span>",
-            "Engaged: <span class='text-danger'>Low</span>",
+            "Engaged: <span class='text-danger'>Very Low</span>",
             "Discourage: <span class='text-warning'>Low</span>",
         ]
     },
@@ -672,7 +672,7 @@ const charactersData = [
             "Worked Up: <span class='text-success-custom'>High</span>",
             "Careless: <span class='text-success-custom'>Very Low</span>",
             "Engaged: <span class='text-danger'>Very Low</span>",
-            "Discourage: <span class='text-success-custom fw-bolder'>Impossible</span>",
+            "Discourage: <span class='text-danger-custom fw-bolder'>Impossible</span>",
         ]
     },
     {
@@ -1406,10 +1406,8 @@ function selectCharacter(id) {
         manualPoints[activeCharacter.id] = { attack: 0, defense: 0, speed: 0, jump: 0 };
     }
 
-    //slider 1
     const slider = document.getElementById('daveRange');
     const sliderLabelText = document.getElementById('sliderLabelText');
-    //slider 2
     const slider2Container = document.getElementById('sliderContainer2');
     const slider2 = document.getElementById('daveRange2');
     const sliderLabelText2 = document.getElementById('sliderLabelText2');
@@ -1520,10 +1518,6 @@ function selectCharacter(id) {
         }
     }
     
-    // =====================================
-    // Slider 2 — Flare Debuff
-    // Lucas ONLY
-    // =====================================
     if (slider2Container) {
         if (activeCharacter.id === 'lucas') {
             slider2Container.style.display = 'block';
@@ -1539,10 +1533,8 @@ function selectCharacter(id) {
             }
 
             if (pushupValEl2) {
-                    pushupValEl2.innerText =
-                        "Stack " + currentFlareStack;
+                    pushupValEl2.innerText = "Stack " + currentFlareStack;
             }
-
         } else {
             slider2Container.style.display = 'none';
         }
@@ -1597,30 +1589,21 @@ function selectCharacter(id) {
     updateDetailView();
 }
 
-let currentFallPower = 0;   // Variabel untuk slider 1
-let currentFlareStack = 0;  // Variabel untuk slider 2 (Overdrive/Flare Debuff)
+let currentFallPower = 0;   
+let currentFlareStack = 0;  
 
 function handleSliderChange(value) {
     let val = parseInt(value) || 0;
 
     if (activeCharacter?.id === 'oasis') {
-
-        const sunriseData =
-            activeCharacter.skillStats.sunrise[currentBt];
-
-        const sunriseLvls =
-            Object.keys(sunriseData).map(Number);
-
-        currentPushup =
-            sunriseLvls[val] ?? sunriseLvls[0];
-
+        const sunriseData = activeCharacter.skillStats.sunrise[currentBt];
+        const sunriseLvls = Object.keys(sunriseData).map(Number);
+        currentPushup = sunriseLvls[val] ?? sunriseLvls[0];
     } else {
         currentPushup = val;
     }
 
     const pushupValEl = document.getElementById('pushupVal');
-
-    // lanjut kode lama
 
     if (pushupValEl) {
         if (activeCharacter && activeCharacter.id === 'ellio') {
@@ -1634,22 +1617,15 @@ function handleSliderChange(value) {
                 "Good (Power: 8%, Spin: 6%)",
                 "Perfect (Power: 20%, Spin: 30%)"
             ];
-
-            pushupValEl.innerText =
-                irisStatus[val] || "Fair (Power: 0%, Spin: 0%)";
-
+            pushupValEl.innerText = irisStatus[val] || "Fair (Power: 0%, Spin: 0%)";
         } else if (activeCharacter && activeCharacter.id === 'isabel') {
             pushupValEl.innerText = (val * 10) + "%";
-
         } else if (activeCharacter && activeCharacter.id === 'jaehyun') {
             pushupValEl.innerText = val === 0 ? "Inactive" : "Active";
-
         } else if (activeCharacter && activeCharacter.id === 'jenny') {
             pushupValEl.innerText = "Stage " + val;
-
         } else if (activeCharacter && activeCharacter.id === 'jihoon') {
             pushupValEl.innerText = "Gap " + val;
-
         } else if (activeCharacter && activeCharacter.id === 'leon') {
             const leonpwr = [
                 "less than 2.6m (Power: -20%, Slide Pierce : +0)",
@@ -1658,45 +1634,83 @@ function handleSliderChange(value) {
                 "around 7.5m (Power: 12%, Slide Pierce : +0)",
                 "more than or exact 10m (Power: 20%, Slide Pierce : +90)"
             ];
-
-            pushupValEl.innerText =
-                leonpwr[val] || "Pride (Power: 0%)";
-
+            pushupValEl.innerText = leonpwr[val] || "Pride (Power: 0%)";
         } else if (activeCharacter && activeCharacter.id === 'lisia') {
             pushupValEl.innerText = "Success " + val;
-
         } else if (activeCharacter && activeCharacter.id === 'lucas') {
             if (val > 5) {
-                pushupValEl.innerText =
-                    "Stage " + val + " (Slide Pierce: +90)";
+                pushupValEl.innerText = "Stage " + val + " (Slide Pierce: +90)";
             } else {
                 pushupValEl.innerText = "" + val;
             }
         } else if (activeCharacter && activeCharacter.id === 'mike') {
             pushupValEl.innerText = val === 0 ? "Inactive" : "Active";
-        }  else if (activeCharacter && activeCharacter.id === 'raul') {
+        } else if (activeCharacter && activeCharacter.id === 'raul') {
             pushupValEl.innerText = val + " Points";
         } else {
             pushupValEl.innerText = val;
         }
     }
-
-    
     updateDetailView();
 }
 
-// Fungsi slider kedua (Overdrive / Flare Debuff - 0 sampai 12)
 function handleSliderChange2(value) {
     let val = parseInt(value) || 0;
-
     currentFlareStack = val;
-
     const pushupValEl2 = document.getElementById('pushupVal2');
-
     if (pushupValEl2) {
         pushupValEl2.innerText = "Stack " + val;
     }
+    updateDetailView();
+}
 
+let activeBuffParam = 0; 
+let activeBuffType = null;
+
+function handleUniversalBuffChange(checkbox) {
+    const container = document.getElementById('universalBuffOptionsContainer');
+    
+    if (checkbox.checked) {
+        if (checkbox.getAttribute('data-has-slider') === 'true') {
+            const min = checkbox.getAttribute('data-slider-min') || checkbox.getAttribute('data-min') || 0;
+            const max = checkbox.getAttribute('data-slider-max') || checkbox.getAttribute('data-max') || 100;
+            const def = checkbox.getAttribute('data-slider-default') || checkbox.getAttribute('data-default') || min;
+            const label = checkbox.getAttribute('data-slider-label') || checkbox.getAttribute('data-label') || 'Parameter';
+            const unit = checkbox.getAttribute('data-slider-unit') || checkbox.getAttribute('data-unit') || '';
+            
+            activeBuffType = checkbox.getAttribute('data-dynamic-type') || checkbox.getAttribute('data-buff-type');
+
+            const rangeInput = document.getElementById('universalDynamicRange');
+            if (rangeInput) {
+                rangeInput.min = min;
+                rangeInput.max = max;
+                rangeInput.value = def;
+            }
+            
+            if (document.getElementById('dynamicSliderTitle')) document.getElementById('dynamicSliderTitle').innerText = label;
+            if (document.getElementById('dynamicSliderUnit')) document.getElementById('dynamicSliderUnit').innerText = unit;
+            if (document.getElementById('dynamicSliderVal')) document.getElementById('dynamicSliderVal').innerText = def;
+
+            if (container) container.style.display = 'block';
+            activeBuffParam = parseInt(def);
+        }
+    } else {
+        if (container) container.style.display = 'none';
+        activeBuffParam = 0;
+        activeBuffType = null;
+    }
+
+    if (typeof handleBuffChange === 'function') handleBuffChange(checkbox);
+}
+
+function updateUniversalSlider(val) {
+    const numericVal = parseInt(val) || 0;
+    const valElement = document.getElementById('dynamicSliderVal');
+    if (valElement) {
+        valElement.innerText = numericVal;
+    }
+    
+    activeBuffParam = numericVal;
     updateDetailView();
 }
 
@@ -1722,7 +1736,6 @@ function changeBreakthrough(amount) {
                 }
             }
         }
-        
         updateDetailView();
     }
 }
@@ -1834,22 +1847,58 @@ function updateDetailView() {
     let totalPowerPct = 0;   
     let finalSpinRate = 1.0; 
     let activeBuffNames = [];
+    let teamBuffBonusPct = 0;
 
     document.querySelectorAll('.buff-checkbox:checked').forEach(cb => {
-        buffBonusAtk += parseInt(cb.getAttribute('data-atk')) || 0;
-        buffBonusDef += parseInt(cb.getAttribute('data-def')) || 0;
-        buffBonusSpd += parseInt(cb.getAttribute('data-spd')) || 0;
-        buffBonusJmp += parseInt(cb.getAttribute('data-jump')) || 0;
-        totalPowerPct += parseFloat(cb.getAttribute('data-power-pct')) || 0;
-        
-        let spinVal = parseFloat(cb.getAttribute('data-spin'));
-        if (!isNaN(spinVal) && spinVal > finalSpinRate) {
-            finalSpinRate = spinVal;
-        }
+        let dynType = cb.getAttribute('data-dynamic-type') || cb.getAttribute('data-buff-type');
+        if (cb.getAttribute('data-character') === 'ellio' || dynType === 'ellio_abys') {
+            
+            // --- KODE BARU UNTUK BT ELLIO SUPPORT ---
+            let ellioMaster = charactersData.find(c => c.id === 'ellio');
+            const ellioBtSelect = document.getElementById('ellioBuffBtSelect');
+            let ellioSupportBt = ellioBtSelect ? parseInt(ellioBtSelect.value) : 0;
 
-        let labelText = cb.closest('label').innerText.trim().split('\n')[0];
-        activeBuffNames.push(labelText);
+            let maxAbysVal = 24;
+            if (ellioMaster?.skillStats?.abysSet) {
+                maxAbysVal = ellioMaster.skillStats.abysSet[ellioSupportBt] || 24;
+            }
+            // ----------------------------------------
+
+            let ellioTeamBonus = 0;
+            let currentAngle = (activeBuffType === 'ellio_abys' && activeBuffParam > 0) ? activeBuffParam : 35;
+            
+            if (currentAngle >= 35 && currentAngle < 90) {
+                let angleProgress = (currentAngle - 35) / (89 - 35);
+                ellioTeamBonus = parseFloat((angleProgress * maxAbysVal).toFixed(1));
+            } else if (currentAngle >= 90) {
+                ellioTeamBonus = maxAbysVal;
+            }
+
+            teamBuffBonusPct += ellioTeamBonus;
+
+            const ellioTextEl = document.getElementById('ellioBuffText');
+            if (ellioTextEl) {
+                ellioTextEl.innerHTML = `Ball Power +${ellioTeamBonus}% <span class="text-success">(${currentAngle}°)</span>`;
+            }
+            activeBuffNames.push(`Ellio (Abyss Set +${ellioTeamBonus}%)`);
+        } else {
+            buffBonusAtk += parseInt(cb.getAttribute('data-atk')) || 0;
+            buffBonusDef += parseInt(cb.getAttribute('data-def')) || 0;
+            buffBonusSpd += parseInt(cb.getAttribute('data-spd')) || 0;
+            buffBonusJmp += parseInt(cb.getAttribute('data-jump')) || 0;
+            totalPowerPct += parseFloat(cb.getAttribute('data-power-pct')) || 0;
+            
+            let spinVal = parseFloat(cb.getAttribute('data-spin'));
+            if (!isNaN(spinVal) && spinVal > finalSpinRate) {
+                finalSpinRate = spinVal;
+            }
+
+            let labelText = cb.closest('label').innerText.trim().split('\n')[0];
+            activeBuffNames.push(labelText);
+        }
     });
+
+    totalPowerPct += teamBuffBonusPct;
 
     let ellioBonusPct = 0;
     if (activeCharacter.id === 'ellio') {
@@ -1857,6 +1906,8 @@ function updateDetailView() {
             let maxAbysVal = activeCharacter.skillStats.abysSet ? activeCharacter.skillStats.abysSet[currentBt] : 24;
             let angleProgress = (currentPushup - 35) / (89 - 35);
             ellioBonusPct = parseFloat((angleProgress * maxAbysVal).toFixed(1));
+        } else if (currentPushup >= 90) {
+            ellioBonusPct = activeCharacter.skillStats.abysSet ? activeCharacter.skillStats.abysSet[currentBt] : 24;
         }
     }
 
@@ -1892,8 +1943,7 @@ function updateDetailView() {
             { power: 20} 
         ];
         let currentSetting = leonSettings[currentPushup] || leonSettings[1];
-        leonPowerPct = currentSetting.power;
-        totalPowerPct += leonPowerPct;
+        totalPowerPct += currentSetting.power;
     }
 
     if (activeCharacter.id === 'minjun') {
@@ -1913,26 +1963,6 @@ function updateDetailView() {
         for (let i = 1; i <= currentPushup; i++) {
             isabelJumpBonus += (i % 2 !== 0) ? 5 : 4;
         }
-    }
-
-    if (activeCharacter.id === 'lucas') {
-
-    // Ambil data berdasarkan index dari slider kedua (currentFlareStack)
-        let growthData = activeCharacter.skillStats.daveGrowth[currentFlareStack];
-    
-        let bonusAtk = 0, bonusDef = 0, bonusSpd = 0, bonusJmp = 0;
-
-        if (activeCharacter && activeCharacter.id === 'lucas') {
-            let growthData = activeCharacter.skillStats.daveGrowth[currentFlareStack];
-            if (growthData) {
-                bonusAtk = growthData.atk || 0;
-                bonusDef = growthData.def || 0;
-                bonusSpd = growthData.spd || 0;
-                bonusJmp = growthData.jmp || 0;
-            }
-                
-        }
-
     }
 
     statsMap.forEach(s => {
@@ -1956,33 +1986,19 @@ function updateDetailView() {
 
         if (activeCharacter.id === 'mike' && activeCharacter.skillStats.tire) {
             const tireState = currentPushup === 1 ? 'active' : 'inactive';
-
-            const tireStat =
-                activeCharacter.skillStats.tire[currentBt][tireState];
-
-            if (tireStat) {
-                growthBonus += tireStat[s.key] || 0;
-            }
+            const tireStat = activeCharacter.skillStats.tire[currentBt][tireState];
+            if (tireStat) growthBonus += tireStat[s.key] || 0;
         }
 
         if (activeCharacter.id === 'oasis' && activeCharacter.skillStats.sunrise) {
-            const sunriseStat =
-                activeCharacter.skillStats.sunrise[currentBt]?.[currentPushup];
-
-            if (sunriseStat) {
-                growthBonus += sunriseStat[s.key] || 0;
-            }
+            const sunriseStat = activeCharacter.skillStats.sunrise[currentBt]?.[currentPushup];
+            if (sunriseStat) growthBonus += sunriseStat[s.key] || 0;
         }
 
         if (activeCharacter.id === 'raul' && activeCharacter.skillStats.darknight) {
-            const darknightStat =
-                activeCharacter.skillStats.darknight[currentBt]?.[currentPushup];
-
-            if (darknightStat) {
-                growthBonus += darknightStat[s.key] || 0;
-            }
+            const darknightStat = activeCharacter.skillStats.darknight[currentBt]?.[currentPushup];
+            if (darknightStat) growthBonus += darknightStat[s.key] || 0;
         }
-
 
         let manualVal = currentManual[s.key] || 0;
         let activeBuffFlat = 0;
@@ -2018,37 +2034,12 @@ function updateDetailView() {
         finalBonusDisplay += jaehyunPercentBonus;
 
         let descParts = [`Man: +${manualVal}`];
-        if (activeBuffNames.length > 0) {
-            descParts.push(activeBuffNames.join(', '));
-        }
+        if (activeBuffNames.length > 0) descParts.push(activeBuffNames.join(', '));
         if (activeCharacter.id === 'ellio' && s.key === 'attack' && ellioBonusPct > 0) {
             descParts.push(`Abyss Toss (${currentPushup}°): +${ellioBonusPct}%`);
         }
-        if (activeCharacter.id === 'iris' && s.key === 'attack') {
-            const statusNames = ["Bad", "Fair", "Good", "Perfect"];
-            descParts.push(`Compass (${statusNames[currentPushup]}): ${irisPowerPct}%`);
-        }
-        if (activeCharacter.id === 'isabel') {
-            if (s.key === 'attack' && isabelAtkBonus > 0) descParts.push(`Parry (${currentPushup * 10}%): +${isabelAtkBonus}`);
-            if (s.key === 'jump' && isabelJumpBonus > 0) descParts.push(`Parry (${currentPushup * 10}%): +${isabelJumpBonus}`);
-        }
-        if (activeCharacter.id === 'jaehyun' && jaehyunPercentBonus > 0) {
-            let pctVal = (s.key === 'attack') ? activeCharacter.skillStats.determineAtk[currentBt] : activeCharacter.skillStats.determineJmp[currentBt];
-            descParts.push(`Determination (${pctVal}%): +${jaehyunPercentBonus}`);
-        }
-        if (activeCharacter.id === 'jenny') {
-            if (s.key === 'attack') {
-                let aAdd = activeCharacter.skillStats.icarusAtk[currentBt][currentPushup];
-                if (aAdd) descParts.push(`Icarus Stage ${currentPushup}: +${aAdd}`);
-            }
-            if (s.key === 'jump') {
-                let jAdd = activeCharacter.skillStats.icarusJmp[currentBt][currentPushup];
-                if (jAdd) descParts.push(`Icarus Stage ${currentPushup}: +${jAdd}`);
-            }
-        }
 
         let bonusText = `+${finalBonusDisplay} <span class='text-light' style='font-size:0.7rem;'>(${descParts.join(' | ')})</span>`;
-        
         let maxLimitStr = statObj.maxLimit !== undefined ? ` <span class='text-light' style='font-size:0.75rem;'>(max ${statObj.maxLimit})</span>` : '';
         let baseStatText = dynamicBase + maxLimitStr;
 
@@ -2068,7 +2059,6 @@ function updateDetailView() {
         `;
 
         const recData = activeCharacter.recommended ? activeCharacter.recommended[s.key] : { base: statObj.base, growthText: "+0", total: statObj.base };
-        
         recTbody.innerHTML += `
             <tr>
                 <td class="text-start fw-semibold text-light">${s.label}</td>
@@ -2188,7 +2178,7 @@ function renderSkillsAndSynergies() {
                         let angleProgress = (currentPushup - 35) / (89 - 35);
                         ellioBonusPct = parseFloat((angleProgress * maxAbysVal).toFixed(1));
                     }
-                    desc = desc.replace('abysSet_VAL%', `${currentPushup}° <span class='text-success-custom fw-bold'><br>(+${ellioBonusPct}% Attack)</span>`);
+                    desc = desc.replace('abysSet_VAL%', `${currentPushup}° <span class='text-warning'><br>(+${ellioBonusPct}% Ball Power)</span>`);
                 }
                 
                 if (activeCharacter.skillStats.flowerDef) {
@@ -2389,14 +2379,18 @@ function renderSkillsAndSynergies() {
 
     const overallContainer = document.getElementById('overallBuffContent');
     if (overallContainer) {
-        overallContainer.innerHTML = `<ul class='mb-0 text-sm ps-3'>` + 
-            activeCharacter.overall.map(ov => `<li class='mb-1 text-light-custom'>${ov}</li>`).join('') + 
-            `</ul>`;
+        if (Array.isArray(activeCharacter.overall)) {
+            overallContainer.innerHTML = `<ul class='mb-0 text-sm ps-3'>` + 
+                activeCharacter.overall.map(ov => `<li class='mb-1 text-light-custom'>${ov}</li>`).join('') + 
+                `</ul>`;
+        } else {
+            overallContainer.innerHTML = `<div class='text-light-custom small'>${activeCharacter.overall}</div>`;
+        }
     }
 
     const bufflist = document.getElementById('overallBuffList');
     if (bufflist) {
-        if (activeCharacter.bufflist && activeCharacter.buffList.length > 0) {
+        if (activeCharacter.bufflist && activeCharacter.bufflist.length > 0) {
             bufflist.innerHTML = `<ul class='mb-0 text-sm ps-3'>` + 
                 activeCharacter.bufflist.map(buff => `<li class='mb-1 text-light-custom'>${buff}</li>`).join('') + 
                 `</ul>`;
@@ -2417,23 +2411,18 @@ function filterCharacters(position, btnElement) {
     renderCharacterList(position);
 }
 
-// Fungsi Pencarian Otomatis (Auto-Search) yang aman bagi kode lama
 function searchCharacters() {
     const query = document.getElementById('characterSearchInput').value.toLowerCase().trim();
-    
-    // Ambil semua kartu karakter yang ada di HTML Anda
-    const cards = document.querySelectorAll('.col, .character-card, [class*="col-"]'); // Sesuaikan dengan class pembungkus kartu Anda jika beda
+    const cards = document.querySelectorAll('.col, .character-card, [class*="col-"]');
     
     cards.forEach(card => {
-        // Ambil teks di dalam kartu (nama, posisi, deskripsi, dll)
         const cardText = card.innerText.toLowerCase();
-        
-        // Jika teks kartu mengandung kata yang diketik, tampilkan. Jika tidak, sembunyikan.
         if (cardText.includes(query)) {
-            card.style.display = ""; // Munculkan kembali
+            card.style.display = ""; 
         } else {
-            card.style.display = "none"; // Sembunyikan
+            card.style.display = "none"; 
         }
     });
 }
+
 renderCharacterList('ALL');

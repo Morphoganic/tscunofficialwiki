@@ -543,6 +543,59 @@
                     <div class="bg-card-inner p-3 rounded border border-secondary mb-3">
                         <p class="mb-2 text-light-custom small fw-semibold">Active Team Buffs</p>
                         <div id="teamBuffContainer" class="d-flex flex-column gap-2">
+
+                            <label class="text-white small cursor-pointer mb-0">
+                                <input type="checkbox" class="buff-checkbox me-2" 
+                                        data-position="SE" 
+                                        data-atk="0" data-def="0" data-spd="0" data-jmp="0" 
+                                        data-power-pct="20" data-spin="1.25" 
+                                        onchange="handleBuffChange(this)">
+                                Ahyeon (Chemical Reaction) <br>
+                                <span class="text-info small">Power +20% and Spin +25% </span>
+                            </label>
+
+                            <!-- Checkbox Ellio dengan Slider Universal & Pilihan BT -->
+                            <label class="text-white small cursor-pointer mb-0 d-block">
+                                <input type="checkbox" class="buff-checkbox me-2" 
+                                    data-position="SE" 
+                                    data-character="ellio"
+                                    data-has-slider="true"
+                                    data-slider-min="35"
+                                    data-slider-max="90"
+                                    data-slider-default="35"
+                                    data-dynamic-type="ellio_abys"
+                                    data-slider-label="Abys Toss Angle"
+                                    data-slider-unit="°"
+                                    onchange="handleUniversalBuffChange(this)">
+                                Ellio (Abys Toss) <br>
+                                <span id="ellioBuffText" class="text-info small">Ball Power 0%</span>
+
+                                <!-- CONTAINER UNIVERSAL (Berisi Dropdown BT Ellio + Slider Sudut) -->
+                                <div id="universalBuffOptionsContainer" class="bg-card-inner p-3 rounded border border-secondary mb-3" style="display: none;">
+        
+                                    <!-- Pilihan Breakthrough (BT) khusus Ellio Support -->
+                                    <div class="mb-2">
+                                        <label class="small text-muted mb-1 d-block">Ellio Breakthrough Level:</label>
+                                        <select id="ellioBuffBtSelect" class="form-select form-select-sm bg-dark text-white border-secondary" onchange="updateDetailView()">
+                                            <option value="0">BT 0 (Max 24%)</option>
+                                            <option value="1">BT 1 (Max 25.2%)</option>
+                                            <option value="2">BT 2 (Max 26.4%)</option>
+                                            <option value="3">BT 3 (Max 27.6%)</option>
+                                            <option value="4">BT 4 (Max 30%)</option>
+                                            <option value="5">BT 5 (Max 30%)</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Slider Universal untuk Sudut -->
+                                    <p class="text-white mt-2 small mb-1">
+                                        <span id="dynamicSliderTitle">Parameter</span>: 
+                                        <span id="dynamicSliderVal" class="fw-bold text-warning">0</span><span id="dynamicSliderUnit"></span>
+                                    </p>
+                                    <input type="range" id="universalDynamicRange" min="0" max="100" value="0" 
+                                        class="form-range custom-green-range" oninput="updateUniversalSlider(this.value)">
+                                </div>
+                            </label>
+
                             <label class="text-white small cursor-pointer mb-0">
                                 <input type="checkbox" class="buff-checkbox me-2" 
                                         data-position="MB" 
@@ -551,6 +604,16 @@
                                         onchange="handleBuffChange(this)">
                                 Sanghyeon (Highlight) <br>
                                 <span class="text-info small">Attack +90, Defence +100, Speed +35, Jump +9</span>
+                            </label>
+
+                            <label class="text-white small cursor-pointer mb-0">
+                                <input type="checkbox" class="buff-checkbox me-2" 
+                                        data-position="SE" 
+                                        data-atk="0" data-def="0" data-spd="0" data-jmp="0" 
+                                        data-power-pct="15" data-spin="0" 
+                                        onchange="handleBuffChange(this)">
+                                [SE]Sara (Critical Toss) <br>
+                                <span class="text-info small">Power +15%</span>
                             </label>
                     
                             <label class="text-white small cursor-pointer mb-0">
@@ -563,21 +626,13 @@
                                 <span class="text-info small">Power +35%, Spin Rate 2.5</span>
                             </label>
 
-                            <label class="text-white small cursor-pointer mb-0">
-                                <input type="checkbox" class="buff-checkbox me-2" 
-                                        data-position="SE" 
-                                        data-atk="0" data-def="0" data-spd="0" data-jmp="0" 
-                                        data-power-pct="15" data-spin="0" 
-                                        onchange="handleBuffChange(this)">
-                                [SE]Sara (Critical Toss) <br>
-                                <span class="text-info small">Power +15%</span>
-                            </label>
+                            <!-- Checkbox buff lain (Ahyeon, Sanghyeon, dll) tetap di bawahnya -->
                         </div>
                     </div>
 
                     <div id="ballMultiplierInfo" class="bg-card-inner p-3 rounded border border-secondary text-light small" style="display: none;">
                         <div class="fw-bold text-warning mb-1">Ball Trajectory Effect:</div>
-                        <div>Power Multiplier: <span id="valBallPower" class="text-success fw-bold">+0%</span></div>
+                        <div>Power Multiplier: <span id="valBallPower" class="text-success-custom">+0%</span></div>
                         <div>Spin Rate: <span id="valBallSpin" class="text-info fw-bold">1.0 (Standard)</span></div>
                     </div>
                 </div>
