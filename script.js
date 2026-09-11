@@ -21,7 +21,7 @@ const charactersData = [
         },
         skills: [
             { name: "Rip Current", desc: "Slow to recover after Sliding, but boasts exceptional physical stats." },
-            { name: "Power Back Attack", desc: "Power Back Attack Increases Power by 5.5 when performing a Spike from behind the Attack Line." },
+            { name: "Power Back Attack", desc: "<span class='text-warning'>Increases Power by 5.5 when performing a Spike from behind the Attack Line.<span>" },
             { name: "Solid Blocking", desc: "Improves the Block Jump Accuracy of AI-controlled Players." },
             { name: "Light Movement", desc: "Performs a Quick Attack after a light Approach." },
             { name: "Height", desc: "Added Height: <strong class='text-warning'>+ATIS_HGT cm</strong>" }
@@ -235,7 +235,7 @@ const charactersData = [
         },
         skills: [
             { name: "Warm-Up", desc: "Performs push-ups while idle. Each repetition increases Attack and Height (<strong class='text-warning'>+DAVE_HGT cm</strong>), stacking up to 300 times." },
-            { name: "Power Back Attack", desc: "Power Back Attack Increases Power by 5.5 when performing a Spike from behind the Attack Line." },
+            { name: "Power Back Attack", desc: "<span class='text-warning'>Increases Power by 5.5 when performing a Spike from behind the Attack Line.</span>" },
         ],
         synergies: [
             { name: "Brotherly Respect", desc: "<span class='text-info'>Dave + Mike</span> : Dave's push-up speed increases by 20%" },
@@ -434,7 +434,7 @@ const charactersData = [
         },
         skills: [
             { name: "Absolute Block", desc: "During Skill Activation, always triggers a Kill Block against any Attack that hits the Block. <br><span class='text-warning'>Duration absltblckdur_VALs , Cooldown absltblckcldwn_VALs</span>" },
-            { name: "Power Back Attack", desc: "Increases Power by 5.5 when performing a Spike from behind the Attack Line." },
+            { name: "Power Back Attack", desc: "<span class='text-warning'>Increases Power by 5.5 when performing a Spike from behind the Attack Line.</span>" },
             { name: "Quick Preparation", desc: "Block preparation is performed 70% faster." },
             { name: "Quick Recovery", desc: "Increases Stamina recovery from Scoring and Conceding by 25%." },
             { name: "Solid Blocking", desc: "Improves the Block Jump Accuracy of AI-controlled Players." },
@@ -599,7 +599,7 @@ const charactersData = [
         },
         skills: [
             { name: "Determination", desc: "When Team Stamina falls to 30% or below, Attack and Jump increase. <br><span class='text-warning'> Attack: rageatk_VAL% , Jump: ragejmp_VAL%</span>" },
-            { name: "Power Back Attack", desc: "Increases Power by 5.5 when performing a Spike from behind the Attack Line." }
+            { name: "Power Back Attack", desc: "<span class='text-warning'>Increases Power by 5.5 when performing a Spike from behind the Attack Line.</span>" }
         ],
         synergies: [
             { name: "None", desc: "None" }
@@ -1324,6 +1324,130 @@ const charactersData = [
             "Discourage: <span class='text-success-custom'>Very Low</span>",
         ]
     },
+    {
+        id: "roberto",
+        name: "Roberto",
+        role: "MB",
+        position: "Middle Blocker (MB)",
+        isDave: true,
+        desc: "Roberto the Iron Wall. Built like a suit of armor with muscle covering every inch of his frame, and his stamina is so legendary he never shows fatigue even in five-set marathons. But he's not just a physical specimen - his court awareness and tactical thinking are exceptional,"+
+                " making him a nightmare matchup. He instantly bonds with anyone who shares his appreciation for serious muscle development.",
+        image: "img/Roberto.webp",
+        baseStats: {
+            attack: { base: 110, maxLimit: 180, growth: [0, 0, 0, 0, 0, 0] },
+            defense: { base: 90, maxLimit: 165, growth: [0, 0, 5, 8, 10, 11] },
+            speed: { base: 100, maxLimit: 150, growth: [0, 0, 5, 8, 10, 11] },
+            jump: { base: 110, maxLimit: 165, growth: [0, 0, 0, 0, 0, 0] }
+        },
+        recommended: {
+            attack: { base: 180, growthText: "+0 (Max BT)", total: 180 },
+            defense: { base: 100, growthText: "+0 (Max BT)", total: 111 },
+            speed: { base: 140, growthText: "+0 (Max BT)", total: 151 },
+            jump: { base: 165, growthText: "+0 (Max BT)", total: 165 }
+        },
+        skillStats: {
+            gaugeblock: [7, 7.7, 8, 8.4, 8.8, 9.1],
+            armorgauge: [
+                {
+                    0:  { attack : +0, speed : +0, jump : +0 },
+                    10: { attack : +7, speed : +1, jump : +1 },
+                    20: { attack : +14, speed : +2, jump : +3 },
+                    30: { attack : +21, speed : +3, jump : +4 },
+                    40: { attack : +28, speed : +4, jump : +6 },
+                    50: { attack : +35, speed : +5, jump : +7 },
+                    60: { attack : +42, speed : +6, jump : +9 },
+                    70: { attack : +49, speed : +7, jump : +10 },
+                    80: { attack : +56, speed : +8, jump : +12 },
+                    90: { attack : +62, speed : +9, jump : +13 },
+                    100: { attack : +69, speed : +10, jump : +15 },
+                },
+                {
+                    0:  { attack : +0, speed : +0, jump : +0 },
+                    10: { attack : +7, speed : +1, jump : +1 },
+                    20: { attack : +14, speed : +2, jump : +3 },
+                    30: { attack : +21, speed : +3, jump : +4 },
+                    40: { attack : +28, speed : +4, jump : +6 },
+                    50: { attack : +35, speed : +5, jump : +7 },
+                    60: { attack : +42, speed : +6, jump : +9 },
+                    70: { attack : +49, speed : +7, jump : +10 },
+                    80: { attack : +56, speed : +8, jump : +12 },
+                    90: { attack : +62, speed : +9, jump : +13 },
+                    100: { attack : +69, speed : +10, jump : +15 },
+                },
+                {
+                    0:  { attack : +0, speed : +0, jump : +0 },
+                    10: { attack : +7, speed : +1, jump : +1 },
+                    20: { attack : +14, speed : +2, jump : +3 },
+                    30: { attack : +21, speed : +3, jump : +4 },
+                    40: { attack : +28, speed : +4, jump : +6 },
+                    50: { attack : +35, speed : +5, jump : +7 },
+                    60: { attack : +42, speed : +6, jump : +9 },
+                    70: { attack : +49, speed : +7, jump : +10 },
+                    80: { attack : +56, speed : +8, jump : +12 },
+                    90: { attack : +62, speed : +9, jump : +13 },
+                    100: { attack : +69, speed : +10, jump : +15 },
+                },
+                {
+                    0:  { attack : +0, speed : +0, jump : +0 },
+                    10: { attack : +7, speed : +1, jump : +1 },
+                    20: { attack : +14, speed : +2, jump : +3 },
+                    30: { attack : +21, speed : +3, jump : +4 },
+                    40: { attack : +28, speed : +4, jump : +6 },
+                    50: { attack : +35, speed : +5, jump : +7 },
+                    60: { attack : +42, speed : +6, jump : +9 },
+                    70: { attack : +49, speed : +7, jump : +10 },
+                    80: { attack : +56, speed : +8, jump : +12 },
+                    90: { attack : +62, speed : +9, jump : +13 },
+                    100: { attack : +69, speed : +10, jump : +15 },
+                },
+                {
+                    0:  { attack : +0, speed : +0, jump : +0 },
+                    10: { attack : +7, speed : +1, jump : +1 },
+                    20: { attack : +14, speed : +2, jump : +3 },
+                    30: { attack : +21, speed : +3, jump : +4 },
+                    40: { attack : +28, speed : +4, jump : +6 },
+                    50: { attack : +35, speed : +5, jump : +7 },
+                    60: { attack : +42, speed : +6, jump : +9 },
+                    70: { attack : +49, speed : +7, jump : +10 },
+                    80: { attack : +56, speed : +8, jump : +12 },
+                    90: { attack : +62, speed : +9, jump : +13 },
+                    100: { attack : +69, speed : +10, jump : +15 },
+                },
+                {
+                    0:  { attack : +0, speed : +0, jump : +0 },
+                    10: { attack : +7, speed : +1, jump : +1 },
+                    20: { attack : +14, speed : +2, jump : +3 },
+                    30: { attack : +21, speed : +3, jump : +4 },
+                    40: { attack : +28, speed : +4, jump : +6 },
+                    50: { attack : +35, speed : +5, jump : +7 },
+                    60: { attack : +42, speed : +6, jump : +9 },
+                    70: { attack : +49, speed : +7, jump : +10 },
+                    80: { attack : +56, speed : +8, jump : +12 },
+                    90: { attack : +62, speed : +9, jump : +13 },
+                    100: { attack : +69, speed : +10, jump : +15 },
+                },
+            ]
+        },
+        skills: [
+            { name: "Armor", desc: "Charges the Gauge based on Block Accuracy."+
+                    " <span class='text-warning'>The Charged Gauge increases Attack, Speed, and Jump. Guarantees Soft Block even with low Block Accuracy.</span>"+
+                    "<br><hr><span class='small text-warning'>Charge Gauge per Block: gaugeblock_VAL%</span>"+"<br><span class='small text-warning'>armorgauge_VAL</span>" },
+            { name: "Quick Preparation", desc: "<span class='text-warning'>Block preparation is performed 70% faster.</span>" },
+            { name: "Power Back Attack", desc: "<span class='text-warning'>Increases Power by 5.5 when performing a Spike from behind the Attack Line.</span>" },
+            { name: "Solid Blocking", desc: "Improves the Block Jump Accuracy of AI-controlled Players." },
+            { name: "Team Armor", desc: "Upon Serve Bump, <span class='text-warning'>the Teammate's Defense is increased by 20 and Defense Range is boosted by 40%.</span>" },
+            { name: "Light Movement", desc: "Performs a Quick Attack after a light Approach." },
+        ],
+        synergies: [
+            { name: "Spartan Soul", desc: "<span class='text-info'>NN + Roberto + Isabel</span> : Attack +6, Defense +10, Speed +2, Jump +4" },
+        ],
+        overall: [
+            "Worked Up: <span class='text-danger'>Very Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-danger'>Very Low</span>",
+            "Discourage: <span class='text-success-custom'>Very Low</span>",
+        ]
+    },
 ];
 
 let activeCharacter = null;
@@ -1337,7 +1461,7 @@ function getMaxManualPoint(charId) {
         return 195;
     } else if (charId === 'hongshi' || charId === 'ahyeon' || charId === 'claire' || charId === 'nishikawa' || charId === 'jenny' || charId === 'lisia') {
         return 185;
-    } else if (charId === 'atis' || charId === 'clyde' || charId === 'leon' || charId === 'oasis') {
+    } else if (charId === 'atis' || charId === 'clyde' || charId === 'leon' || charId === 'oasis' || charId === 'roberto') {
         return 175;
     }  else if (charId === 'lucas' ) {
         return 170;
@@ -1501,7 +1625,7 @@ function selectCharacter(id) {
             currentPushup = sunriseLvls[0];
 
             if (sliderLabelText) {
-                sliderLabelText.innerText = "Sunrise Point";
+                sliderLabelText.innerText = "Sunrise Phase";
             }
         } else if (activeCharacter.id === 'raul') {
             slider.min = 0;
@@ -1509,6 +1633,12 @@ function selectCharacter(id) {
             slider.step = 1;
             slider.value = 0;
             if (sliderLabelText) sliderLabelText.innerText = "Score Difference ";
+        } else if (activeCharacter.id === 'roberto') {
+            slider.min = 0;
+            slider.max = 100;
+            slider.step = 10;
+            slider.value = 0;
+            if (sliderLabelText) sliderLabelText.innerText = "Armor Gauge ";
         } else {
             slider.min = 0;
             slider.max = 300;
@@ -1548,12 +1678,12 @@ function selectCharacter(id) {
             pushupValEl.innerText = "Stack 0";
         } else if (activeCharacter.id === 'iris') {
             pushupValEl.innerText = "Fair (Power: 0%, Spin: 0%)";
-        } else if (activeCharacter.id === 'isabel' || activeCharacter.id === 'leon') {
+        } else if (activeCharacter.id === 'isabel' || activeCharacter.id === 'leon' || activeCharacter.id === 'roberto') {
             pushupValEl.innerText = "0%";  
         } else if (activeCharacter.id === 'mike') {
             pushupValEl.innerText = "Inactive";
         } else if (activeCharacter.id === 'oasis') {
-            pushupValEl.innerText = "Sunrise Point 0";
+            pushupValEl.innerText = "0";
         } else if (activeCharacter.id === 'raul') {
             pushupValEl.innerText = "0 Points";
         } else {
@@ -1647,6 +1777,8 @@ function handleSliderChange(value) {
             pushupValEl.innerText = val === 0 ? "Inactive" : "Active";
         } else if (activeCharacter && activeCharacter.id === 'raul') {
             pushupValEl.innerText = val + " Points";
+        } else if (activeCharacter && activeCharacter.id === 'roberto') {
+            pushupValEl.innerText = val + "%";
         } else {
             pushupValEl.innerText = val;
         }
@@ -2000,6 +2132,11 @@ function updateDetailView() {
             if (darknightStat) growthBonus += darknightStat[s.key] || 0;
         }
 
+        if (activeCharacter.id === 'roberto' && activeCharacter.skillStats.armorgauge) {
+            const armorgaugeStat = activeCharacter.skillStats.armorgauge[currentBt]?.[currentPushup];
+            if (armorgaugeStat) growthBonus += armorgaugeStat[s.key] || 0;
+        }
+
         let manualVal = currentManual[s.key] || 0;
         let activeBuffFlat = 0;
         
@@ -2345,6 +2482,23 @@ function renderSkillsAndSynergies() {
 
                         desc = desc.replace('darknight_VAL', darknightVal);
                     }
+                }
+
+                if (activeCharacter.skillStats.armorgauge && activeCharacter.skillStats.gaugeblock) {
+                    const armorgaugeStat =
+                        activeCharacter.skillStats.armorgauge[currentBt]?.[currentPushup];
+                    if (armorgaugeStat) {
+                        const extra = currentPushup === 10;
+
+                        const armorgaugeVal =
+                            `Attack: +${(armorgaugeStat.attack ?? 0) + extra}, ` +
+                            `Speed: +${(armorgaugeStat.speed ?? 0) + extra}, ` +
+                            `Jump: +${(armorgaugeStat.jump ?? 0) + extra}`;
+
+                        desc = desc.replace('armorgauge_VAL', armorgaugeVal);
+                    }
+                    const gaugeblockVal = activeCharacter.skillStats.gaugeblock[currentBt];
+                    desc = desc.replace('gaugeblock_VAL', gaugeblockVal);
                 }
 
                 return `<li class='mb-3'><strong class='text-white'>${s.name}:</strong><br><span class='text-light-custom small'>${desc}</span></li>`;
