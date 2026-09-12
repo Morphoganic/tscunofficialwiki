@@ -43,7 +43,7 @@ const charactersData = [
     },
     {
         id: "ahyeon",
-        name: "Ahyeon",
+        name: "Ayeon",
         role: "SE",
         position: "Setter (SE)",
         desc: "Starting setter for Chemistry High. A skilled player who led the previously weak Chemistry High volleyball team to national tournament preliminaries. Her eyesight deteriorated from nightly reading, so she wears thick glasses. Chemistry High's volleyball fan club members reportedly go crazy for her with glasses on, though they admire her quietly from a distance to avoid making her uncomfortable. Ayeon has no idea the fan club exists and thinks people avoid her.",
@@ -410,7 +410,7 @@ const charactersData = [
     },
     {
         id: "heeseong",
-        name: "Heeseong",
+        name: "Heeseong Kim",
         role: "MB",
         position: "Middle Blocker (MB)",
         desc: "Captain of Hanbit High and arguably the best high school middle blocker. Though only a first-year, he earned the nickname 'Invulnerable' by perfectly shutting down last year's 'Best Player' award winner's quick attacks."+
@@ -574,7 +574,7 @@ const charactersData = [
     },
     {
         id: "jaehyun",
-        name: "Jaehyun",
+        name: "Jaehyun Nam",
         role: "WS",
         position: "Wing Spiker (WS)",
         isDave: true,
@@ -943,7 +943,7 @@ const charactersData = [
     },
     {
         id: "minjun",
-        name: "Minjun",
+        name: "Cho  Minjun",
         role: "WS",
         position: "Wing Spiker (WS)",
         desc: "The unlucky attacker. Misfortune strikes without fail before every important match, so he's never shown his full abilities. But for him, misfortune is just another seasoning to life."+
@@ -1049,17 +1049,24 @@ const charactersData = [
             jump: { base: 180, growthText: "+2 (Max BT)", total: 181 }
         },
         skillStats: {
-            thunderSpike: [37.2, 38.3, 39.1, 40.2, 40.2, 40.2], 
+            thunderSpike: [
+                { power : 37.2, spin : 86},
+                { power : 38.3, spin : 86},
+                { power : 39.1, spin : 86},
+                { power : 40.2, spin : 86},
+                { power : 40.2, spin : 86},
+                { power : 40.2, spin : 86}
+            ], 
             highToss: [0, 0, 3, 5, 8, 12]      
         },
         skills: [
+            { name: "Thunder Spike", desc: "If Contact Point exceeds 4m, performs a thunderous Spike with increased Power and Spin. The Spike gains the Sliding Pierce Effect <span class='text-warning'>+TS_VAL% Ball's Power</span>." },
             { name: "Energize", desc: "Press Spike Button to approach and charge the Gauge. Press Spike Button again to jump, and Jump changes depending on the Gauge." },
-            { name: "Thunder Spike", desc: "If Contact Point exceeds 4m, performs a thunderous Spike with increased Power and Spin. The Spike gains the Sliding Pierce Effect (<strong class='text-warning'>+TS_VAL% Ball's Power</strong>)." },
-            { name: "Double Spike", desc: "Can Swing twice while in Mid-air. When performing a Spike on the second Swing, if the Contact Point is below 4m, the Ball's Power increases by 15%" },
+            { name: "Double Spike", desc: "Can Swing twice while in Mid-air. When performing a Spike on the second Swing, <span class='text-warning'>if the Contact Point is below 4m, the Ball's Power increases by 15%</span>" },
             { name: "High 3rd Ball Play", desc: "On the third Touch, if the Ball is sent over without an Attack, it is sent high into the air." },
             { name: "Zap Zap Trail", desc: "Changes the color of the Ball's Trail during the Serve Toss." },
-            { name: "Topspin Feint", desc: "The Feint has added spin, causing the Ball to drop faster. Ball's spin : +260%" },
-            { name: "Spark", desc: "When performing a Spike, Power increases if the Contact Point is below 4m (<strong class='text-warning'>+HT_VAL%% Attack Power</strong>)." }
+            { name: "Topspin Feint", desc: "The Feint has added spin, causing the Ball to drop faster. <span class='text-warning'>Ball's spin : +260%</span>" },
+            { name: "Spark", desc: "When performing a Spike, Power increases if the Contact Point is below 4m <span class='text-warning'>+HT_VAL%% Attack Power</span>." }
         ],
         synergies: [
             { name: "None", desc: "None" },
@@ -1202,7 +1209,7 @@ const charactersData = [
     },
     {
         id: "raul",
-        name: "Raul",
+        name: "Raul Luca",
         role: "WS",
         position: "Wing Spiker (WS)",
         isDave: true,
@@ -1341,8 +1348,8 @@ const charactersData = [
         },
         recommended: {
             attack: { base: 180, growthText: "+0 (Max BT)", total: 180 },
-            defense: { base: 100, growthText: "+0 (Max BT)", total: 111 },
-            speed: { base: 140, growthText: "+0 (Max BT)", total: 151 },
+            defense: { base: 100, growthText: "+11 (Max BT)", total: 111 },
+            speed: { base: 140, growthText: "+11 (Max BT)", total: 151 },
             jump: { base: 165, growthText: "+0 (Max BT)", total: 165 }
         },
         skillStats: {
@@ -1431,7 +1438,7 @@ const charactersData = [
         skills: [
             { name: "Armor", desc: "Charges the Gauge based on Block Accuracy."+
                     " <span class='text-warning'>The Charged Gauge increases Attack, Speed, and Jump. Guarantees Soft Block even with low Block Accuracy.</span>"+
-                    "<br><hr><span class='small text-warning'>Charge Gauge per Block: gaugeblock_VAL%</span>"+"<br><span class='small text-warning'>armorgauge_VAL</span>" },
+                    "<hr><span class='small text-warning'>Charge Gauge per Block: gaugeblock_VAL%</span>"+"<br><span class='small text-warning'>armorgauge_VAL</span>" },
             { name: "Quick Preparation", desc: "<span class='text-warning'>Block preparation is performed 70% faster.</span>" },
             { name: "Power Back Attack", desc: "<span class='text-warning'>Increases Power by 5.5 when performing a Spike from behind the Attack Line.</span>" },
             { name: "Solid Blocking", desc: "Improves the Block Jump Accuracy of AI-controlled Players." },
@@ -1446,6 +1453,159 @@ const charactersData = [
             "Careless: <span class='text-success-custom'>Very Low</span>",
             "Engaged: <span class='text-danger'>Very Low</span>",
             "Discourage: <span class='text-success-custom'>Very Low</span>",
+        ]
+    },
+    {
+        id: "ryuhyeon",
+        name: "Ryuhyeon",
+        role: "WS",
+        position: "Wing Spiker (WS)",
+        isDave: true,
+        desc: "Student council president of Seonrim High and grand disciple of the traditional martial art 'Seonrim.' Raised from childhood by Seonrim's master as his top student. He wants to carry on the master's legacy and continue Seonrim's martial arts tradition,"+
+                " but his growing love for volleyball creates inner conflict. His body, forged through years of martial arts training, allows him to deliver powerful spikes from any position. Even after a long break from volleyball, his spikes remain as heavy as stone.",
+        image: "img/Ryuhyeon.webp",
+        baseStats: {
+            attack: { base: 125, maxLimit: 195, growth: [0, 4, 7, 7, 7, 7] },
+            defense: { base: 110, maxLimit: 160, growth: [0, 0, 0, 5, 8, 10] },
+            speed: { base: 110, maxLimit: 160, growth: [0, 0, 0, 0, 3, 5] },
+            jump: { base: 120, maxLimit: 170, growth: [0, 4, 6, 7, 7, 7] }
+        },
+        recommended: {
+            attack: { base: 195, growthText: "+7 (Max BT)", total: 202 },
+            defense: { base: 100, growthText: "+10 (Max BT)", total: 110 },
+            speed: { base: 120, growthText: "+5 (Max BT)", total: 125 },
+            jump: { base: 170, growthText: "+7 (Max BT)", total: 177 }
+        },
+        skillStats: {
+            azureDragon: [
+                {
+                    0: { power : +2, spin : +0},
+                    40: { power : +2, spin : +0},
+                    80: { power : +17, spin : +0.2},
+                    100: { power : +46, spin : +1.05},
+                },
+                {
+                    0: { power : +2, spin : +0},
+                    40: { power : +2, spin : +0},
+                    80: { power : +17, spin : +0.2},
+                    100: { power : +47, spin : +1.05},
+                },
+                {
+                    0: { power : +2, spin : +0},
+                    40: { power : +2, spin : +0},
+                    80: { power : +17, spin : +0.2},
+                    100: { power : +48, spin : +1.1},
+                },
+                {
+                    0: { power : +2, spin : +0},
+                    40: { power : +2, spin : +0},
+                    80: { power : +17, spin : +0.2},
+                    100: { power : +49, spin : +1.2},
+                },
+                {
+                    0: { power : +2, spin : +0},
+                    40: { power : +2, spin : +0},
+                    80: { power : +17, spin : +0.2},
+                    100: { power : +50, spin : +1.2},
+                },
+                {
+                    0: { power : +2, spin : +0},
+                    40: { power : +2, spin : +0},
+                    80: { power : +17, spin : +0.2},
+                    100: { power : +51, spin : +1.25},
+                },
+            ],
+            basecharge: [30, 36, 42, 54, 60, 90],
+            rechargedragon: [0, 20, 40, 80, 100, 200],
+            soaringair: [100, 110, 110, 125, 140, 160]
+        },
+        skills: [
+            { name: "Azure Dragon", desc: "While On Ground, Charges the Gauge. While in Mid-air, holding Spike Button consumes Gauge to gather Energy. The more Energy gathered, the greater the Ball's Power and Spin."+
+                    " <span class='text-warning'>At maximum Energy, the Spike gains the Sliding Pierce Effect. If Energy exceeds the limit, the Ball will be hit out of bounds.<span>"+
+                    "<hr><span class='small text-warning'>Gauge Charge Speed: +rechargedragon_VAL%<br>Base Charge Amount: basecharge_VAL%</span><br><span class='text-warning'>azuredragon_VAL</span>" },
+            { name: "Soaring", desc: "Air movement speed increases during a spike jump. <br><span class='text-warning'>Air Movement Speed: soaringair_VAL%</span>" },
+            { name: "Topspin Feint", desc: "The Feint has added spin, causing the Ball to drop faster. <span class='text-warning'>Ball's spin : +260%</span>" },
+        ],
+        synergies: [
+            { name: "Seonrim Partner", desc: "<span class='text-info'>Ryuhyeon + Muyeong</span> : Ryuhyeon's charging speed increases by 20%" },
+            { name: "None", desc: "<span class='text-info'>Ryuhyeon + Sohee</span> : Attack +4, Jump +2" },
+            { name: "None", desc: "<span class='text-info'>Ryuhyeon + Iris</span> : Attack +7, Defense +5" },
+        ],
+        overall: [
+            "Worked Up: <span class='text-success-custom'>Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-success-custom'>Very High</span>",
+            "Discourage: <span class='text-success-custom'>Low</span>",
+        ]
+    },
+    {
+        id: "sara",
+        name: "Sara Seo",
+        role: "WS",
+        position: "Wing Spiker (WS)",
+        desc: "One of the World's Big Five Spikers. Having hidden her true talent just to play alongside Siwoo, she has finally revealed her full potential. Though she is usually gentle and kind, she is a girl of 'iron will in a velvet glove' who shows unparalleled skill once the match begins. "+
+                "Despite being a minor, she debuted in the American-based global pro league LOV (League One Volleyball) and led her team to victory in her first season. After winning back-to-back MVP titles, she rose to become the final member of the World's Big Five Spikers. The world is now buzzing over the birth of this new superstar.",
+        image: "img/Sara.webp",
+        baseStats: {
+            attack: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
+            defense: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
+            speed: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
+            jump: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] }
+        },
+        recommended: {
+            attack: { base: 100, growthText: "+0 (Max BT)", total: 100 },
+            defense: { base: 100, growthText: "+0 (Max BT)", total: 100 },
+            speed: { base: 100, growthText: "+0 (Max BT)", total: 100 },
+            jump: { base: 100, growthText: "+0 (Max BT)", total: 100 }
+        },
+        skillStats: {
+        },
+        skills: [
+            { name: "Null", desc: "Null" },
+        ],
+        synergies: [
+            { name: "None", desc: "None" }
+        ],
+        overall: [
+            "Worked Up: <span class='text-success-custom'>Null</span>",
+            "Careless: <span class='text-success-custom'>Null</span>",
+            "Engaged: <span class='text-success-custom'>Null</span>",
+            "Discourage: <span class='text-success-custom'>Null</span>",
+        ]
+    },
+    {
+        id: "sara_se",
+        name: "Sara Seo",
+        role: "SE",
+        position: "Setter (SE)",
+        desc: "Sara Seo, the World's Big Five Spiker. A player renowned for her incredibly fast movement on the court. As an all-rounder, "+
+                "she can perform at a pro starter level in any position. Currently filling in as a Setter for Siwoo, she is expected to return to her Spiker role in the future.",
+        image: "img/Sara_se.webp",
+        baseStats: {
+            attack: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
+            defense: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
+            speed: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
+            jump: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] }
+        },
+        recommended: {
+            attack: { base: 100, growthText: "+0 (Max BT)", total: 100 },
+            defense: { base: 100, growthText: "+0 (Max BT)", total: 100 },
+            speed: { base: 100, growthText: "+0 (Max BT)", total: 100 },
+            jump: { base: 100, growthText: "+0 (Max BT)", total: 100 }
+        },
+        skillStats: {
+        },
+        skills: [
+            { name: "Null", desc: "Null" },
+        ],
+        synergies: [
+            { name: "None", desc: "None" }
+        ],
+        overall: [
+            "Worked Up: <span class='text-success-custom'>Null</span>",
+            "Careless: <span class='text-success-custom'>Null</span>",
+            "Engaged: <span class='text-success-custom'>Null</span>",
+            "Discourage: <span class='text-success-custom'>Null</span>",
         ]
     },
 ];
@@ -1475,6 +1635,8 @@ function getMaxManualPoint(charId) {
         return 145;
     } else if (charId === 'hanra') {
         return 135;
+    } else if (charId === 'ryuhyeon') {
+        return 130;
     } else if (charId === 'crow' || charId === 'hari') {
         return 125;
     } else if (charId === 'minjun') {
@@ -1639,6 +1801,12 @@ function selectCharacter(id) {
             slider.step = 10;
             slider.value = 0;
             if (sliderLabelText) sliderLabelText.innerText = "Armor Gauge ";
+        } else if (activeCharacter.id === 'ryuhyeon') {
+            slider.min = 0;
+            slider.max = 3;
+            slider.step = 1;
+            slider.value = 0;
+            if (sliderLabelText) sliderLabelText.innerText = "Charge Spike ";
         } else {
             slider.min = 0;
             slider.max = 300;
@@ -1678,7 +1846,7 @@ function selectCharacter(id) {
             pushupValEl.innerText = "Stack 0";
         } else if (activeCharacter.id === 'iris') {
             pushupValEl.innerText = "Fair (Power: 0%, Spin: 0%)";
-        } else if (activeCharacter.id === 'isabel' || activeCharacter.id === 'leon' || activeCharacter.id === 'roberto') {
+        } else if (activeCharacter.id === 'isabel' || activeCharacter.id === 'leon' || activeCharacter.id === 'roberto' || activeCharacter.id === 'ryuhyeon') {
             pushupValEl.innerText = "0%";  
         } else if (activeCharacter.id === 'mike') {
             pushupValEl.innerText = "Inactive";
@@ -1734,7 +1902,6 @@ function handleSliderChange(value) {
     }
 
     const pushupValEl = document.getElementById('pushupVal');
-
     if (pushupValEl) {
         if (activeCharacter && activeCharacter.id === 'ellio') {
             pushupValEl.innerText = val + "°";
@@ -1779,6 +1946,15 @@ function handleSliderChange(value) {
             pushupValEl.innerText = val + " Points";
         } else if (activeCharacter && activeCharacter.id === 'roberto') {
             pushupValEl.innerText = val + "%";
+        } else if (activeCharacter && activeCharacter.id === 'ryuhyeon') {
+            const energyLevels = [0, 40, 80, 100];
+            let actualEnergy = energyLevels[val] ?? 0;
+            // Cek apakah slider berada di posisi maksimal (indeks 3 / 100%)
+            if (val === 3) {
+                pushupValEl.innerText = actualEnergy + "% (Slide Pierce: +60)"; // Sesuaikan angka pierce-nya jika berbeda
+            } else {
+                pushupValEl.innerText = actualEnergy + "%";
+            }
         } else {
             pushupValEl.innerText = val;
         }
@@ -1976,7 +2152,7 @@ function updateDetailView() {
     let buffBonusDef = 0;
     let buffBonusSpd = 0;
     let buffBonusJmp = 0;
-    let totalPowerPct = 0;   
+    let totalPowerPct = 0;
     let finalSpinRate = 1.0; 
     let activeBuffNames = [];
     let teamBuffBonusPct = 0;
@@ -2078,12 +2254,34 @@ function updateDetailView() {
         totalPowerPct += currentSetting.power;
     }
 
+    if (activeCharacter.id === 'nishikawa' && activeCharacter.skillStats.thunderSpike) {
+        const thunderStat = activeCharacter.skillStats.thunderSpike[currentBt];
+        if (thunderStat) {
+            totalPowerPct += thunderStat.power || 0;
+            // Karena spin Nishikawa nilainya besar (86), sesuaikan apakah mau ditambah langsung 
+            // atau dikali/diset sebagai persentase tambahan spin.
+            finalSpinRate += (thunderStat.spin / 100) || 0; 
+        }
+    }
+
     if (activeCharacter.id === 'minjun') {
         totalPowerPct += activeCharacter.skillStats.blitzpwr[currentBt];
     }
 
     if (activeCharacter.id === 'raul') {
         totalPowerPct += 40;
+    }
+
+    if (activeCharacter.id === 'ryuhyeon' && activeCharacter.skillStats.azureDragon) {
+        const energyLevels = [0, 40, 80, 100];
+        const currentEnergy = energyLevels[currentPushup] ?? 0;
+        
+        const azureStat = activeCharacter.skillStats.azureDragon[currentBt]?.[currentEnergy];
+        
+        if (azureStat) {
+            totalPowerPct += azureStat.power || 0;
+            finalSpinRate += azureStat.spin || 0; 
+        }
     }
 
     let currentManual = manualPoints[activeCharacter.id] || { attack: 0, defense: 0, speed: 0, jump: 0 };
@@ -2220,7 +2418,7 @@ function updateDetailView() {
             multiplierInfoBox.style.display = 'block';
             let activePowerDisplay = totalPowerPct + (activeCharacter.id === 'ellio' ? ellioBonusPct : 0);
             document.getElementById('valBallPower').innerText = `${activePowerDisplay >= 0 ? '+' : ''}${activePowerDisplay}%`;
-            document.getElementById('valBallSpin').innerText = `${finalSpinRate} ${finalSpinRate > 1.0 ? '(Enhanced Spin)' : '(Standard)'}`;
+            document.getElementById('valBallSpin').innerText = `${finalSpinRate.toFixed(2)} ${finalSpinRate > 1.0 ? '(Enhanced Spin)' : '(Standard)'}`;
         } else {
             multiplierInfoBox.style.display = 'none';
         }
@@ -2245,7 +2443,7 @@ function updateDaveStats(val) {
             pushupValEl.innerText = (currentPushup * 10) + "%";
         } else if (activeCharacter && activeCharacter.id === 'jenny') {
             pushupValEl.innerText = "Stage " + currentPushup;
-        }   else if (activeCharacter && activeCharacter.id === 'leon') {
+        } else if (activeCharacter && activeCharacter.id === 'leon') {
             const leonpwr = [
                 "less than 2.6m (Power: -20%, Slide Pierce : +0)", 
                 "around 4.4m (Power: 0%, Slide Pierce : +0)",
@@ -2446,10 +2644,17 @@ function renderSkillsAndSynergies() {
                             .replace('smiteatk_VAL', smiteatkVal).replace('smitedur_VAL', smitedurVal);
                 }
 
-                if (activeCharacter.skillStats.thunderSpike) {
-                    const tsVal = activeCharacter.skillStats.thunderSpike[currentBt];
-                    const htVal = activeCharacter.skillStats.highToss[currentBt];
-                    desc = desc.replace('TS_VAL%', tsVal + '%').replace('HT_VAL%', htVal);
+                if (activeCharacter.id === 'nishikawa') {
+                    if (activeCharacter.skillStats.thunderSpike) {
+                        const tsStat = activeCharacter.skillStats.thunderSpike[currentBt];
+                        if (tsStat) {
+                            desc = desc.replace('TS_VAL', tsStat.power);
+                        }
+                    }
+                    if (activeCharacter.skillStats.highToss) {
+                        const htVal = activeCharacter.skillStats.highToss[currentBt] || 0;
+                        desc = desc.replace('HT_VAL', htVal);
+                    }
                 }
 
                 if (activeCharacter.skillStats.sunrise) {
@@ -2499,6 +2704,22 @@ function renderSkillsAndSynergies() {
                     }
                     const gaugeblockVal = activeCharacter.skillStats.gaugeblock[currentBt];
                     desc = desc.replace('gaugeblock_VAL', gaugeblockVal);
+                }
+
+                if (activeCharacter.id === 'ryuhyeon' && activeCharacter.skillStats.azureDragon) {
+                    const energyLevels = [0, 40, 80, 100];
+                    const currentEnergy = energyLevels[currentPushup] ?? 0;
+        
+                    const azureStat = activeCharacter.skillStats.azureDragon[currentBt]?.[currentEnergy];
+        
+                    if (azureStat) {
+                        const azureVal = `Power: +${azureStat.power ?? 0}%, Spin: +${azureStat.spin ?? 0}`;
+                        desc = desc.replace('azuredragon_VAL', azureVal);
+                    }
+                    const basechargeVal = activeCharacter.skillStats.basecharge[currentBt];
+                    const rechargedragonVal = activeCharacter.skillStats.rechargedragon[currentBt];
+                    const soaringairVal = activeCharacter.skillStats.soaringair[currentBt];
+                    desc = desc.replace('basecharge_VAL', basechargeVal).replace('rechargedragon_VAL', rechargedragonVal).replace('soaringair_VAL', soaringairVal)
                 }
 
                 return `<li class='mb-3'><strong class='text-white'>${s.name}:</strong><br><span class='text-light-custom small'>${desc}</span></li>`;
