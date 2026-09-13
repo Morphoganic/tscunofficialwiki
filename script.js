@@ -1539,38 +1539,201 @@ const charactersData = [
         ]
     },
     {
-        id: "sara",
-        name: "Sara Seo",
-        role: "WS",
-        position: "Wing Spiker (WS)",
-        desc: "One of the World's Big Five Spikers. Having hidden her true talent just to play alongside Siwoo, she has finally revealed her full potential. Though she is usually gentle and kind, she is a girl of 'iron will in a velvet glove' who shows unparalleled skill once the match begins. "+
-                "Despite being a minor, she debuted in the American-based global pro league LOV (League One Volleyball) and led her team to victory in her first season. After winning back-to-back MVP titles, she rose to become the final member of the World's Big Five Spikers. The world is now buzzing over the birth of this new superstar.",
-        image: "img/Sara.webp",
+        id: "sanghyeon",
+        name: "Sanghyeon",
+        role: "MB",
+        position: "Middle Blocker (MB)",
+        desc: "The court's golden boy. His height and movie-star looks have earned him legions of fans. Fully aware of his marketability, he leverages it to orchestrate 'Superstar Challenge,' functioning more as a marketing mastermind than a traditional player. While this project opened new professional pathways for talented high schoolers, its reality-TV-style drama caused many players to burn out and quit."+
+                " He embodies both volleyball's commercial potential and its pitfalls. Ironically, he is very passionate about the sport itself. Though he gained fame as a player-influencer in Artistry High, he was already an industry insider by middle school, having created his own youth league."+
+                " His obsession with volleyball's commercial viability stems from watching that self-created league fail due to lack of interest. Someone who recognized his unique talents later recruited him for training in Italy.",
+        image: "img/Sanghyeon.webp",
         baseStats: {
-            attack: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
-            defense: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
-            speed: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
-            jump: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] }
+            attack: { base: 100, maxLimit: 165, growth: [0, 0, 0, 2, 3, 3] },
+            defense: { base: 105, maxLimit: 155, growth: [0, 0, 0, 2, 3, 4] },
+            speed: { base: 120, maxLimit: 160, growth: [0, 0, 0, 2, 3, 4] },
+            jump: { base: 110, maxLimit: 165, growth: [0, 0, 0, 0, 0, 0] }
         },
         recommended: {
-            attack: { base: 100, growthText: "+0 (Max BT)", total: 100 },
-            defense: { base: 100, growthText: "+0 (Max BT)", total: 100 },
-            speed: { base: 100, growthText: "+0 (Max BT)", total: 100 },
-            jump: { base: 100, growthText: "+0 (Max BT)", total: 100 }
+            attack: { base: 105, growthText: "+3 (Max BT)", total: 108 },
+            defense: { base: 155, growthText: "+4 (Max BT)", total: 159 },
+            speed: { base: 160, growthText: "+4 (Max BT)", total: 164 },
+            jump: { base: 165, growthText: "+0 (Max BT)", total: 165 }
         },
         skillStats: {
+            highlightdur: [5, 5, 6, 6, 6, 6],
+            highlightcldwn: [30, 30, 30, 30, 30, 30],
         },
-        skills: [
-            { name: "Null", desc: "Null" },
+        skills: [ 
+            { name: "Highlight", desc: "While Skill is active, <span class='text-warning'>all stats for Team Player's are increased. Attack +90, Speed +35, Defense +100, Jump +9</span>"+
+                    "<br><span class='small text-warning'>Duration : highlightdur_VALs, Wait Time : highlightcldwn_VALs</span>" },
+            { name: "Rainbow Trail", desc: "Changes the color of the Ball's Trail during the Serve Toss." },
         ],
         synergies: [
             { name: "None", desc: "None" }
         ],
         overall: [
-            "Worked Up: <span class='text-success-custom'>Null</span>",
-            "Careless: <span class='text-success-custom'>Null</span>",
-            "Engaged: <span class='text-success-custom'>Null</span>",
-            "Discourage: <span class='text-success-custom'>Null</span>",
+            "Worked Up: <span class='text-success-custom'>Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-success-custom'>Very High</span>",
+            "Discourage: <span class='text-success-custom'>Very Low</span>",
+        ]
+    },
+    {
+        id: "sara",
+        name: "Sara Seo",
+        role: "WS",
+        position: "Wing Spiker (WS)",
+        isDave: true,
+        desc: "One of the World's Big Five Spikers. Having hidden her true talent just to play alongside Siwoo, she has finally revealed her full potential. Though she is usually gentle and kind, she is a girl of 'iron will in a velvet glove' who shows unparalleled skill once the match begins. "+
+                "Despite being a minor, she debuted in the American-based global pro league LOV (League One Volleyball) and led her team to victory in her first season. After winning back-to-back MVP titles,"+
+                " she rose to become the final member of the World's Big Five Spikers. The world is now buzzing over the birth of this new superstar.",
+        image: "img/Sara.webp",
+        baseStats: {
+            attack: { base: 95, maxLimit: 180, growth: [0, 5, 6, 7, 8, 10] },
+            defense: { base: 100, maxLimit: 155, growth: [0, 5, 10, 15, 20, 25] },
+            speed: { base: 100, maxLimit: 190, growth: [0, 5, 5, 5, 10, 10] },
+            jump: { base: 120, maxLimit: 175, growth: [0, 2, 3, 5, 6, 7] }
+        },
+        recommended: {
+            attack: { base: 180, growthText: "+10 (Max BT)", total: 190 },
+            defense: { base: 100, growthText: "+25 (Max BT)", total: 125 },
+            speed: { base: 140, growthText: "+10 (Max BT)", total: 150 },
+            jump: { base: 175, growthText: "+7 (Max BT)", total: 182 }
+        },
+        skillStats: {
+            typhoondur: [12, 13, 13, 13, 14, 15],
+            typhooncldwn: [12, 11, 10, 9, 8, 7],
+            typhoon: [
+                {
+                    100: { attack: +14, jump: +9 },
+                    120: { attack: +17, jump: +9 },
+                    140: { attack: +19, jump: +9 },
+                    160: { attack: +22, jump: +9 },
+                    180: { attack: +25, jump: +9 },
+                    200: { attack: +28, jump: +9 },
+                },
+                {
+                    100: { attack: +14, jump: +9 },
+                    120: { attack: +17, jump: +9 },
+                    140: { attack: +19, jump: +9 },
+                    160: { attack: +22, jump: +9 },
+                    180: { attack: +25, jump: +9 },
+                    200: { attack: +28, jump: +9 },
+                },
+                {
+                    100: { attack: +14, jump: +9 },
+                    120: { attack: +17, jump: +9 },
+                    140: { attack: +19, jump: +9 },
+                    160: { attack: +22, jump: +9 },
+                    180: { attack: +25, jump: +9 },
+                    200: { attack: +28, jump: +9 },
+                },
+                {
+                    100: { attack: +14, jump: +9 },
+                    120: { attack: +17, jump: +9 },
+                    140: { attack: +19, jump: +9 },
+                    160: { attack: +22, jump: +9 },
+                    180: { attack: +25, jump: +9 },
+                    200: { attack: +28, jump: +9 },
+                },
+                {
+                    100: { attack: +14, jump: +9 },
+                    120: { attack: +17, jump: +9 },
+                    140: { attack: +19, jump: +9 },
+                    160: { attack: +22, jump: +9 },
+                    180: { attack: +25, jump: +9 },
+                    200: { attack: +28, jump: +9 },
+                },
+                {
+                    100: { attack: +14, jump: +9 },
+                    120: { attack: +17, jump: +9 },
+                    140: { attack: +19, jump: +9 },
+                    160: { attack: +22, jump: +9 },
+                    180: { attack: +25, jump: +9 },
+                    200: { attack: +28, jump: +9 },
+                }
+            ],
+            gustprep: [0.25, 0.2, 0.15, 0.1, 0.09, 0.05], gustmovement: [95, 98.75, 102.5, 106.25, 107, 110],
+            calmstorm: [-40, -48, -52, -64, -64, -72], calmstormdur: [0.58, 0.65, 0.68, 0.78, 0.78, 0.85],
+            razorwind: [
+                {
+                    0: { power: +0 },
+                    1: { power: +12.65 },
+                    2: { power: +25.3 },
+                    3: { power: +37.95 },
+                    4: { power: +50.6 },
+                    5: { power: +63.25 },
+                },
+                {
+                    0: { power: +0 },
+                    1: { power: +13.2 },
+                    2: { power: +26.4 },
+                    3: { power: +39.6 },
+                    4: { power: +52.8 },
+                    5: { power: +66 },
+                },
+                {
+                    0: { power: +0 },
+                    1: { power: +13.75 },
+                    2: { power: +27.5 },
+                    3: { power: +41.25 },
+                    4: { power: +55 },
+                    5: { power: +68.75 },
+                },
+                {
+                    0: { power: +0 },
+                    1: { power: +14.3 },
+                    2: { power: +28.6 },
+                    3: { power: +42.9 },
+                    4: { power: +57.2 },
+                    5: { power: +71.5 },
+                },
+                {
+                    0: { power: +0 },
+                    1: { power: +14.3 },
+                    2: { power: +28.6 },
+                    3: { power: +42.9 },
+                    4: { power: +57.2 },
+                    5: { power: +71.5 },
+                },
+                {
+                    0: { power: +0 },
+                    1: { power: +14.85 },
+                    2: { power: +29.7 },
+                    3: { power: +44.55 },
+                    4: { power: +59.4 },
+                    5: { power: +74.25 },
+                },
+                {
+                    0: { power: +0 },
+                    1: { power: +15.4 },
+                    2: { power: +30.8 },
+                    3: { power: +46.2 },
+                    4: { power: +61.6 },
+                    5: { power: +77 },
+                },
+            ]
+        },
+        skills: [
+            { name: "Typhoon", desc: "During the Skill Activation, <span class='text-warning'>Attack and Jump increase. The higher the Speed, the more Attack increases.</span>"+
+                    "<br><span class='small text-warning'>typhoon_VAL</span>" },
+            { name: "Calm Before the Storm", desc: "Immediately after a Gust jump, <span class='text-warning'>the opponent moves slower temporarily.</span>"+
+                    "<br><span class='small text-warning'>Opponent team speed: calmstorm_VAL% , Skill Duration: calmstormdur_VALs" },
+            { name: "Gust", desc: "Press Spike Button to move quickly to the Ball's impact point. <span class='text-warning'>The moment you release Spike Button, you quickly jump to the highest point.</span>"+
+                    "<br><span class='small text-warning'>Run prep time: gustprep_VALs, Run movement speed: gustmovement_VALs" },
+            { name: "Razor Wind", desc: "Press Spike Button while Mid-air to hover briefly. The moment you release Spike Button, you perform a Swing. <span class='text-warning'>Performing a Spike while in Typhoon state displays a target point on the opponent's court."+
+                    " You Spike toward the last point that appeared at the moment you released Spike Button.</span>"+
+                    "<br><span class='small text-warning'>razorwind_VAL</span>" },
+            { name: "Tempest Lash", desc: "<span class='text-warning'>Allows for Spike in a wider range than usual.</span>" },
+        ],
+        synergies: [
+            { name: "None", desc: "None" }
+        ],
+        overall: [
+            "Worked Up: <span class='text-success-custom'>Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-success-custom'>Very High</span>",
+            "Discourage: <span class='text-success-custom'>Low</span>",
         ]
     },
     {
@@ -1582,30 +1745,34 @@ const charactersData = [
                 "she can perform at a pro starter level in any position. Currently filling in as a Setter for Siwoo, she is expected to return to her Spiker role in the future.",
         image: "img/Sara_se.webp",
         baseStats: {
-            attack: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
-            defense: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
-            speed: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] },
-            jump: { base: 100, maxLimit: 100, growth: [0, 0, 0, 0, 0, 0] }
+            attack: { base: 100, maxLimit: 180, growth: [0, 5, 6, 7, 8, 10] },
+            defense: { base: 100, maxLimit: 150, growth: [0, 5, 10, 15, 20, 25] },
+            speed: { base: 100, maxLimit: 190, growth: [0, 5, 5, 5, 10, 10] },
+            jump: { base: 100, maxLimit: 170, growth: [0, 2, 3, 5, 6, 7] }
         },
         recommended: {
-            attack: { base: 100, growthText: "+0 (Max BT)", total: 100 },
-            defense: { base: 100, growthText: "+0 (Max BT)", total: 100 },
-            speed: { base: 100, growthText: "+0 (Max BT)", total: 100 },
-            jump: { base: 100, growthText: "+0 (Max BT)", total: 100 }
+            attack: { base: 180, growthText: "+10 (Max BT)", total: 190 },
+            defense: { base: 100, growthText: "+25 (Max BT)", total: 125 },
+            speed: { base: 135, growthText: "+10 (Max BT)", total: 145 },
+            jump: { base: 170, growthText: "+7 (Max BT)", total: 177 }
         },
         skillStats: {
+            criticaltoss: [+15, +15, +16.5, +17.25, +18, +18],
         },
         skills: [
-            { name: "Null", desc: "Null" },
+            { name: "Critical Set", desc: "When performing a Set, a circle appears around the Ball to indicate timing. <span class='text-warning'>If a Spike is used at the moment the Ball touches the circle, the Ball's Power increases.</span>"+
+                    " <span class='text-warning'>Power : criticaltoss_VAL%</span>" },
+            { name: "Snowflake Two-Attack", desc: "Performs a Spike with a snowflake effect, <span class='text-warning'>increasing the Ball's Spin by 35% and Power by 100%.</span>" },
+            { name: "Speed Setter", desc: "<span class='text-warning'>Reduces the Speed penalty caused by Rally duration by 30%.</span>" },
         ],
         synergies: [
-            { name: "None", desc: "None" }
+            { name: "Beauty & the Beast", desc: "<span class='text-info'>[SE]Sara + Dave</span> : Dave's push-up speed increases by 20%" }
         ],
         overall: [
-            "Worked Up: <span class='text-success-custom'>Null</span>",
-            "Careless: <span class='text-success-custom'>Null</span>",
-            "Engaged: <span class='text-success-custom'>Null</span>",
-            "Discourage: <span class='text-success-custom'>Null</span>",
+            "Worked Up: <span class='text-success-custom'>Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-success-custom'>Very High</span>",
+            "Discourage: <span class='text-success-custom'>Low</span>",
         ]
     },
 ];
@@ -1619,8 +1786,10 @@ let manualPoints = JSON.parse(localStorage.getItem('tsc_manual_points')) || {};
 function getMaxManualPoint(charId) {
     if (charId === 'iris' || charId === 'raul') {
         return 195;
-    } else if (charId === 'hongshi' || charId === 'ahyeon' || charId === 'claire' || charId === 'nishikawa' || charId === 'jenny' || charId === 'lisia') {
+    } else if (charId === 'hongshi' || charId === 'ahyeon' || charId === 'claire' || charId === 'nishikawa' || charId === 'jenny' || charId === 'lisia' || charId === 'sara_se') {
         return 185;
+    } else if (charId === 'sara' ) {
+        return 180;
     } else if (charId === 'atis' || charId === 'clyde' || charId === 'leon' || charId === 'oasis' || charId === 'roberto') {
         return 175;
     }  else if (charId === 'lucas' ) {
@@ -1629,7 +1798,7 @@ function getMaxManualPoint(charId) {
         return 165;
     } else if (charId === 'muyeong') {
         return 155;
-    } else if (charId === 'heeseong' || charId === 'mike') {
+    } else if (charId === 'heeseong' || charId === 'mike' || charId === 'sanghyeon' ) {
         return 150;
     }  else if (charId === 'ellio' || charId === 'jihoon') {
         return 145;
@@ -1807,6 +1976,12 @@ function selectCharacter(id) {
             slider.step = 1;
             slider.value = 0;
             if (sliderLabelText) sliderLabelText.innerText = "Charge Spike ";
+        } else if (activeCharacter.id === 'sara') {
+            slider.min = 100;
+            slider.max = 200;
+            slider.step = 20;
+            slider.value = 0;
+            if (sliderLabelText) sliderLabelText.innerText = "Speed ";
         } else {
             slider.min = 0;
             slider.max = 300;
@@ -1823,7 +1998,7 @@ function selectCharacter(id) {
                 slider2.min = 0;
                 slider2.max = 12;
                 slider2.step = 1;
-                slider2.value = currentFlareStack;
+                slider2.value = currentSlider2Value;
             }
 
             if (sliderLabelText2) {
@@ -1831,11 +2006,24 @@ function selectCharacter(id) {
             }
 
             if (pushupValEl2) {
-                    pushupValEl2.innerText = "Stack " + currentFlareStack;
+                    pushupValEl2.innerText = "Stack " + currentSlider2Value;
+            }
+        } else if (activeCharacter.id === 'sara') {
+            slider2Container.style.display = 'block';
+            if (slider2) {
+                slider2.min = 0;
+                slider2.max = 5;
+                slider2.step = 1;
+                slider2.value = 0;
+            }
+
+            if (sliderLabelText2) {
+                    sliderLabelText2.innerText = "Number Of Target Points ";
             }
         } else {
             slider2Container.style.display = 'none';
         }
+        
     }
 
     const pushupValEl = document.getElementById('pushupVal');
@@ -1854,6 +2042,8 @@ function selectCharacter(id) {
             pushupValEl.innerText = "0";
         } else if (activeCharacter.id === 'raul') {
             pushupValEl.innerText = "0 Points";
+        } else if (activeCharacter.id === 'sara') {
+            pushupValEl.innerText = "100";
         } else {
             pushupValEl.innerText = 0;
         }
@@ -1888,7 +2078,7 @@ function selectCharacter(id) {
 }
 
 let currentFallPower = 0;   
-let currentFlareStack = 0;  
+let currentSlider2Value = 0;
 
 function handleSliderChange(value) {
     let val = parseInt(value) || 0;
@@ -1964,10 +2154,11 @@ function handleSliderChange(value) {
 
 function handleSliderChange2(value) {
     let val = parseInt(value) || 0;
-    currentFlareStack = val;
+    currentSlider2Value = val; // Pastikan pakai currentSliderVal2 agar sinkron
+    
     const pushupValEl2 = document.getElementById('pushupVal2');
     if (pushupValEl2) {
-        pushupValEl2.innerText = "Stack " + val;
+        pushupValEl2.innerText = val; // Hapus "Value: ", cukup tampilkan angkanya saja
     }
     updateDetailView();
 }
@@ -2599,7 +2790,7 @@ function renderSkillsAndSynergies() {
                         activeCharacter.skillStats.daveGrowth) {
 
                         const growthData =
-                            activeCharacter.skillStats.daveGrowth[currentFlareStack] ||
+                            activeCharacter.skillStats.daveGrowth[currentSlider2Value] ||
                             activeCharacter.skillStats.daveGrowth[0];
 
                         flareDebuffText =
@@ -2720,6 +2911,48 @@ function renderSkillsAndSynergies() {
                     const rechargedragonVal = activeCharacter.skillStats.rechargedragon[currentBt];
                     const soaringairVal = activeCharacter.skillStats.soaringair[currentBt];
                     desc = desc.replace('basecharge_VAL', basechargeVal).replace('rechargedragon_VAL', rechargedragonVal).replace('soaringair_VAL', soaringairVal)
+                }
+
+                if (activeCharacter.id === 'sara' && activeCharacter.skillStats.typhoondur && activeCharacter.skillStats.typhooncldwn && activeCharacter.skillStats.typhoon && activeCharacter.skillStats.gustprep &&
+                    activeCharacter.skillStats.gustmovement && activeCharacter.skillStats.calmstorm && activeCharacter.skillStats.calmstormdur &&  activeCharacter.skillStats.razorwind) {
+                    const typhoondurVal = activeCharacter.skillStats.typhoondur[currentBt];
+                    const typhooncldwnVal = activeCharacter.skillStats.typhooncldwn[currentBt];
+                    desc = desc.replace('typhoondur_VAL', typhoondurVal).replace('typhooncldwn_VAL', typhooncldwnVal);
+
+                    // Gunakan currentSliderVal2 dan berikan nilai default 100 jika variabel masih 0/null
+                    const currentSpeed = currentPushup || 100; 
+                    const typhoonStat = activeCharacter.skillStats.typhoon[currentBt]?.[currentSpeed];
+                    if (typhoonStat) {
+                        const typhoonVal = `Attack: +${typhoonStat.attack ?? 0}%, Jump: +${typhoonStat.jump ?? 0}`;
+                        desc = desc.replace('typhoon_VAL', typhoonVal);
+                    }
+
+                    const gustprepVal = activeCharacter.skillStats.gustprep[currentBt];
+                    const gustmovementVal = activeCharacter.skillStats.gustmovement[currentBt];
+                    const calmstormVal = activeCharacter.skillStats.calmstorm[currentBt];
+                    const calmstormdurVal = activeCharacter.skillStats.calmstormdur[currentBt];
+                    desc = desc.replace('gustprep_VAL', gustprepVal).replace('gustmovement_VAL', gustmovementVal).replace('calmstorm_VAL', calmstormVal).replace('calmstormdur_VAL', calmstormdurVal);
+
+                    // Ambil nilai dari slider kedua (0 sampai 5)
+                    const targetPoints = currentSlider2Value ?? 0;
+                    // Ambil stat berdasarkan Breakthrough dan Target Points
+                    const razorWindStat = activeCharacter.skillStats.razorwind?.[currentBt]?.[targetPoints];
+                    if (razorWindStat) {
+                        // Dipanggil spesifik .power-nya
+                        const razorVal = `Ball Power : +${razorWindStat.power}%`;
+                        desc = desc.replace('razorwind_VAL', razorVal);
+                    }
+                }
+
+                if (activeCharacter.skillStats.criticaltoss) {
+                    const criticaltossVal = activeCharacter.skillStats.criticaltoss[currentBt];
+                    desc = desc.replace('criticaltoss_VAL', criticaltossVal);
+                }
+
+                if (activeCharacter.skillStats.highlightdur && activeCharacter.skillStats.highlightcldwn ) {
+                    const highlightdurVal = activeCharacter.skillStats.highlightdur[currentBt];
+                    const highlightcldwnVal = activeCharacter.skillStats.highlightcldwn[currentBt]
+                    desc = desc.replace('highlightdur_VAL', highlightdurVal).replace('highlightcldwn_VAL', highlightcldwnVal);
                 }
 
                 return `<li class='mb-3'><strong class='text-white'>${s.name}:</strong><br><span class='text-light-custom small'>${desc}</span></li>`;
