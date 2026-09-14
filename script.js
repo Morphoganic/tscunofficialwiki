@@ -1775,6 +1775,45 @@ const charactersData = [
             "Discourage: <span class='text-success-custom'>Low</span>",
         ]
     },
+    {
+        id: "saya",
+        name: "Saya",
+        role: "MB",
+        position: "Middle Blocker (MB)",
+        desc: "Starting middle blocker of Terra High’s volleyball club. At first glance, she seems cold and blunt, but she is a loyal girl who cares about her team and friends more than anyone else. "+
+                "Sometimes, she acts on quirky ideas without hesitation, leaving those around her flustered. Her favorite food is Fish Bun, and her favorite friend is Boss the cat.",
+        image: "img/Saya.webp",
+        baseStats: {
+            attack: { base: 110, maxLimit: 155, growth: [0, 3, 4, 6, 6, 10] },
+            defense: { base: 105, maxLimit: 155, growth: [0, 3, 7, 10, 12, 12] },
+            speed: { base: 95, maxLimit: 155, growth: [0, 3, 3, 5, 8, 12] },
+            jump: { base: 100, maxLimit: 155, growth: [0, 0, 2, 2, 3, 3] }
+        },
+        recommended: {
+            attack: { base: 110, growthText: "+10 (Max BT)", total: 120 },
+            defense: { base: 145, growthText: "+12 (Max BT)", total: 162 },
+            speed: { base: 155, growthText: "+12 (Max BT)", total: 167 },
+            jump: { base: 155, growthText: "+3 (Max BT)", total: 158 }
+        },
+        skillStats: {
+            fishbundur: [6, 6, 6, 7, 7, 7], //fih🥀🐟
+            fishbuncldwn: [16, 16, 15, 14, 14, 14],
+        },
+        skills: [ 
+            { name: "Fish Bun", desc: "Upon Skill Activation, <span class='text-warning'>eats a Fish Bun. After eating the Fish Bun, Team Stamina is recovered by 30, and Status increases for the skill duration.</span>"+
+                    "<br><span class='small text-warning'>Duration : fishbundur_VALs <br>Wait Time : fishbuncldwn_VALs <br> Attack : +28, Defence : +40, Speed : +25, Jump : +5  </span>" },
+            { name: "Out of Shape", desc: "<span class='small text-warning'>The amount of Speed reduction caused by Rally duration increases by 10%.</span>" },
+        ],
+        synergies: [
+            { name: "None", desc: "None" }
+        ],
+        overall: [
+            "Worked Up: <span class='text-success-custom'>Very Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-success-custom'>Very Low</span>",
+            "Discourage: <span class='text-success-custom'>Very Low</span>",
+        ]
+    },
 ];
 
 let activeCharacter = null;
@@ -1796,7 +1835,7 @@ function getMaxManualPoint(charId) {
         return 170;
     } else if (charId === 'noname') {
         return 165;
-    } else if (charId === 'muyeong') {
+    } else if (charId === 'muyeong' || charId === 'saya') {
         return 155;
     } else if (charId === 'heeseong' || charId === 'mike' || charId === 'sanghyeon' ) {
         return 150;
@@ -2953,6 +2992,12 @@ function renderSkillsAndSynergies() {
                     const highlightdurVal = activeCharacter.skillStats.highlightdur[currentBt];
                     const highlightcldwnVal = activeCharacter.skillStats.highlightcldwn[currentBt]
                     desc = desc.replace('highlightdur_VAL', highlightdurVal).replace('highlightcldwn_VAL', highlightcldwnVal);
+                }
+
+                if (activeCharacter.skillStats.fishbundur && activeCharacter.skillStats.fishbuncldwn ) {
+                    const fishbundurVal = activeCharacter.skillStats.fishbundur[currentBt];
+                    const fishbuncldwnVal = activeCharacter.skillStats.fishbuncldwn[currentBt]
+                    desc = desc.replace('fishbundur_VAL', fishbundurVal).replace('fishbuncldwn_VAL', fishbuncldwnVal);
                 }
 
                 return `<li class='mb-3'><strong class='text-white'>${s.name}:</strong><br><span class='text-light-custom small'>${desc}</span></li>`;
