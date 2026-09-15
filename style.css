@@ -237,6 +237,96 @@ body {
 }
 
 /* =========================
+   SYNERGY STYLING (Themed)
+========================= */
+/* Card Utama Synergy */
+.synergy-card {
+    background-color: var(--bg-inner);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.25s ease;
+}
+
+.synergy-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Header Nama Synergy (Menggunakan warna --warning/kuning emas khas judul skill) */
+.synergy-header {
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--warning);
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Body Synergy (Membagi Foto di Kiri & Deskripsi di Kanan) */
+.synergy-body {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    gap: 15px;
+}
+
+.synergy-partners {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* Container Foto Partner */
+.synergy-avatar-card {
+    position: relative;
+    width: 68px;
+    height: 68px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #000;
+    border: 1px solid var(--border);
+}
+
+.synergy-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+/* Teks Nama Karakter di Dalam Foto */
+.synergy-avatar-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    color: var(--text-main);
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    padding: 2px 0;
+    line-height: 1.2;
+    text-shadow: 0px 1px 2px #000;
+}
+
+/* Deskripsi Teks Synergy */
+.synergy-desc {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+/* Logo Skill */
+.skill-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* =========================
    SKILL, SYNERGY & OVERALL ITEMS
 ========================= */
 .skill-item, .synergy-item {

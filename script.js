@@ -867,8 +867,18 @@ const charactersData = [
             { name: "Sunspot Burst", desc: "Spike has a chance to trigger Sunspot Burst. When active, <span class='text-warning'>Power is increased by 13% and Spin by 1. Activation Chance: sunburst_VAL%</span>" },
         ],
         synergies: [
-            { name: "Glory of the Past", desc: "<span class='text-info'>Lucas + Atis</span> : Increases speed after Atis Slides and stands up" },
-            { name: "Eclipse", desc: "<span class='text-info'>Lucas + Zero</span> : Attack +3, Jump +2" },
+            { name: "Glory of the Past", 
+                partners: [
+                    { name: "Lucas", icon: "img/Lucas.webp" },
+                    { name: "Atis", icon: "img/Atis.webp" }
+                ],
+                desc: "Increases speed after Atis Slides and stands up" },
+            { name: "Eclipse",
+                // <--- Array partner synergy
+                partners: [
+                    { name: "Lucas", icon: "img/Lucas.webp" },
+                    { name: "Zero", icon: "img/Zero.webp" }
+                ],  desc: "Attack +3, Jump +2"}
         ],
         overall: [
             "Worked Up: <span class='text-success-custom'>Very Low</span>",
@@ -1060,8 +1070,8 @@ const charactersData = [
             highToss: [0, 0, 3, 5, 8, 12]      
         },
         skills: [
+            { name: "Energize", icon: "img/skill/Energize_Characteristic_Icon.webp", desc: "Press Spike Button to approach and charge the Gauge. Press Spike Button again to jump, and Jump changes depending on the Gauge." },
             { name: "Thunder Spike", desc: "If Contact Point exceeds 4m, performs a thunderous Spike with increased Power and Spin. The Spike gains the Sliding Pierce Effect <span class='text-warning'>+TS_VAL% Ball's Power</span>." },
-            { name: "Energize", desc: "Press Spike Button to approach and charge the Gauge. Press Spike Button again to jump, and Jump changes depending on the Gauge." },
             { name: "Double Spike", desc: "Can Swing twice while in Mid-air. When performing a Spike on the second Swing, <span class='text-warning'>if the Contact Point is below 4m, the Ball's Power increases by 15%</span>" },
             { name: "High 3rd Ball Play", desc: "On the third Touch, if the Ball is sent over without an Attack, it is sent high into the air." },
             { name: "Zap Zap Trail", desc: "Changes the color of the Ball's Trail during the Serve Toss." },
@@ -1069,7 +1079,6 @@ const charactersData = [
             { name: "Spark", desc: "When performing a Spike, Power increases if the Contact Point is below 4m <span class='text-warning'>+HT_VAL%% Attack Power</span>." }
         ],
         synergies: [
-            { name: "None", desc: "None" },
         ],
         overall: [
             "Worked Up: <span class='text-danger'>Very Low</span>",
@@ -2374,40 +2383,73 @@ function handleSliderChange2(value) {
 let activeBuffParam = 0; 
 let activeBuffType = null;
 
-function handleUniversalBuffChange(checkbox) {
-    const container = document.getElementById('universalBuffOptionsContainer');
-    
-    if (checkbox.checked) {
-        if (checkbox.getAttribute('data-has-slider') === 'true') {
-            const min = checkbox.getAttribute('data-slider-min') || checkbox.getAttribute('data-min') || 0;
-            const max = checkbox.getAttribute('data-slider-max') || checkbox.getAttribute('data-max') || 100;
-            const def = checkbox.getAttribute('data-slider-default') || checkbox.getAttribute('data-default') || min;
-            const label = checkbox.getAttribute('data-slider-label') || checkbox.getAttribute('data-label') || 'Parameter';
-            const unit = checkbox.getAttribute('data-slider-unit') || checkbox.getAttribute('data-unit') || '';
-            
-            activeBuffType = checkbox.getAttribute('data-dynamic-type') || checkbox.getAttribute('data-buff-type');
+const BUFF_CALCULATORS = {
+    claire: (bt, sliderVal) => {
+        const atk = [188, 197, 206, 216, 225, 225][bt] * (sliderVal / 100);
+        const jmp = [13, 14, 15, 15, 16, 16][bt] * (sliderVal / 100);
+        const dur = [13, 13.65, 14.3, 14.95, 15.6, 15.6][bt] * (sliderVal / 100);
+        return `Atk +${Math.round(atk)} | Jmp +${Math.round(jmp)} | Dur ${dur.toFixed(2)}s`;
+    },
+    ellio: (bt, sliderVal) => {
+        const maxPower = [24, 25.2, 26.4, 27.6, 30, 30][bt];
+        const power = (sliderVal / 90) * maxPower; // Contoh kalkulasi sudut Ellio
+        return `Ball Power +${power.toFixed(1)}% (${sliderVal}°)`;
+    }
+};
 
-            const rangeInput = document.getElementById('universalDynamicRange');
-            if (rangeInput) {
-                rangeInput.min = min;
-                rangeInput.max = max;
-                rangeInput.value = def;
-            }
-            
-            if (document.getElementById('dynamicSliderTitle')) document.getElementById('dynamicSliderTitle').innerText = label;
-            if (document.getElementById('dynamicSliderUnit')) document.getElementById('dynamicSliderUnit').innerText = unit;
-            if (document.getElementById('dynamicSliderVal')) document.getElementById('dynamicSliderVal').innerText = def;
+function handleUniversalBuffChange(element) {
+    // Cari wrapper label terdekat agar tidak bentrok antar karakter
+    const wrapper = element.closest('label');
+    if (!wrapper) return;
 
-            if (container) container.style.display = 'block';
-            activeBuffParam = parseInt(def);
-        }
-    } else {
+    const checkbox = wrapper.querySelector('.buff-checkbox');
+    const container = wrapper.querySelector('.buff-options-container');
+    const charId = checkbox.dataset.character;
+
+    // Jika checkbox di-uncheck, sembunyikan container
+    if (!checkbox.checked) {
         if (container) container.style.display = 'none';
-        activeBuffParam = 0;
-        activeBuffType = null;
+        updateDetailView();
+        return;
     }
 
-    if (typeof handleBuffChange === 'function') handleBuffChange(checkbox);
+    if (container) container.style.display = 'block';
+
+    // Ambil elemen UI internal di dalam wrapper saat ini
+    const btSelect = wrapper.querySelector('.buff-bt-select');
+    const rangeInput = wrapper.querySelector('.buff-range-input');
+    const labelText = wrapper.querySelector('.slider-label-text');
+    const valText = wrapper.querySelector('.slider-val-text');
+    const unitText = wrapper.querySelector('.slider-unit-text');
+    const resultText = wrapper.querySelector('.buff-result-text');
+
+    // Inisialisasi atribut slider berdasarkan dataset checkbox saat diklik
+    if (element === checkbox && rangeInput) {
+        rangeInput.min = checkbox.dataset.sliderMin || 0;
+        rangeInput.max = checkbox.dataset.sliderMax || 100;
+        
+        if (!rangeInput.dataset.initialized) {
+            rangeInput.value = checkbox.dataset.sliderDefault || rangeInput.max;
+            rangeInput.dataset.initialized = "true";
+        }
+
+        if (labelText) labelText.textContent = checkbox.dataset.sliderLabel || 'Parameter';
+        if (unitText) unitText.textContent = checkbox.dataset.sliderUnit || '';
+    }
+
+    // Ambil nilai terkini
+    const currentBt = parseInt(btSelect ? btSelect.value : 0);
+    const currentSlider = parseFloat(rangeInput ? rangeInput.value : 0);
+
+    if (valText) valText.textContent = currentSlider;
+
+    // Hitung teks hasil buff secara otomatis sesuai kalkulator karakter
+    if (BUFF_CALCULATORS[charId] && resultText) {
+        resultText.textContent = BUFF_CALCULATORS[charId](currentBt, currentSlider);
+    }
+
+    // Panggil pembaruan total statistik tim utama
+    updateDetailView();
 }
 
 function updateUniversalSlider(val) {
@@ -2893,383 +2935,349 @@ function updateDaveStats(val) {
     updateDetailView(); 
 }
 
+// 1. FUNGSI UTAMA (Hanya bertugas memanggil pemicu)
 function renderSkillsAndSynergies() {
+    renderSkills();
+    renderSynergies();
+    renderOverall();
+    renderBuffList();
+}
+
+// 2. KHUSUS RENDER SKILL
+function renderSkills() {
     const skillContainer = document.getElementById('skillBuffList');
     if (!skillContainer) return;
-    
-    if (activeCharacter.skillStats && activeCharacter.id === 'jenny') {
-        const hgtVal = activeCharacter.skillStats.icarusHeights[currentBt][currentPushup] || 3.0;
-        const atkVal = activeCharacter.skillStats.icarusAtk[currentBt][currentPushup] || 0;
-        const jmpVal = activeCharacter.skillStats.icarusJmp[currentBt][currentPushup] || 0;
 
-        skillContainer.innerHTML = `<ul class='list-unstyled mb-0'>` + 
-            activeCharacter.skills.map(s => {
-                let desc = s.desc
-                    .replace('ICARUS_HGT', hgtVal)
-                    .replace('ICARUS_ATK', `+${atkVal}`)
-                    .replace('ICARUS_JMP', `+${jmpVal}`);
-                return `<li class='mb-3'><strong class='text-white'>${s.name}:</strong><br><span class='text-light-custom small'>${desc}</span></li>`;
-            }).join('') + `</ul>`;
-    } else if (activeCharacter.skillStats) {
-        skillContainer.innerHTML = `<ul class='list-unstyled mb-0'>` + 
-            activeCharacter.skills.map(s => {
-                let desc = s.desc;
-                
-                if (activeCharacter.skillStats.height) {
-                    const hgtVal = activeCharacter.skillStats.height[currentBt] || 0;
-                    desc = desc.replace('ATIS_HGT', hgtVal);
-                }
-                if (activeCharacter.skillStats.chemicalreact) {
-                    const crVal = activeCharacter.skillStats.chemicalreact[currentBt];
-                    desc = desc.replace('CR_VAL%', crVal + '%');
-                }
-                if (activeCharacter.id === 'claire' && activeCharacter.skillStats.overdrive) {
-                    const maxDur = activeCharacter.skillStats.overdriveDur[currentBt] || 13;
-                    const durVal = (maxDur * (currentPushup / 100)).toFixed(2);
-                    
-                    desc = desc.replace('CLAIRE_DUR', durVal);
-                    
-                    if (s.name === "Overdrive") {
-                        const atkStat = activeCharacter.skillStats.overdrive[currentBt];
-                        const jmpStat = activeCharacter.skillStats.overdriveJmp[currentBt];
-                        desc += `<br><span class='text-warning small'>[BT +${currentBt} | Gauge ${currentPushup}%] Atk: +${atkStat} | Jmp: +${jmpStat} | Dur: +${durVal} sec</span>`;
-                    }
-                }
-                if (activeCharacter.skillStats.drkcrow) {
-                    const drkcrowVal = activeCharacter.skillStats.drkcrow[currentBt];
-                    desc = desc.replace('darkcrow_VAL%', drkcrowVal + '%');
-                }
-                
-                if (activeCharacter.id === 'ellio' && activeCharacter.skillStats.abysSet) {
-                    let maxAbysVal = activeCharacter.skillStats.abysSet[currentBt] || 24;
-                    let ellioBonusPct = 0;
-                    if (currentPushup >= 35 && currentPushup < 90) {
-                        let angleProgress = (currentPushup - 35) / (89 - 35);
-                        ellioBonusPct = parseFloat((angleProgress * maxAbysVal).toFixed(1));
-                    }
-                    desc = desc.replace('abysSet_VAL%', `${currentPushup}° <span class='text-warning'><br>(+${ellioBonusPct}% Ball Power)</span>`);
-                }
-                
-                if (activeCharacter.skillStats.flowerDef) {
-                    const FlwrVal = activeCharacter.skillStats.flowerDef[currentBt];
-                    const FlwrSpdVal = activeCharacter.skillStats.flowerSpd[currentBt];
-                    desc = desc.replace('Flwr_VAL%', FlwrVal + '%').replace('FlwrSpd_VAL%', FlwrSpdVal + '%');
-                }
-                
-                if (activeCharacter.id === 'hari' && s.name.includes("Death Bloom")) {
-                    const maxAtk = activeCharacter.skillStats.bloomatk[currentBt] || 0;
-                    const maxDef = activeCharacter.skillStats.bloomdef[currentBt] || 0;
-                    const maxSpd = activeCharacter.skillStats.bloomspd[currentBt] || 0;
-                    const maxJump = activeCharacter.skillStats.bloomjmp[currentBt] || 0;
-    
-                    const finalAtk = Math.round((maxAtk / 3) * currentPushup);
-                    const finalDef = Math.round((maxDef / 3) * currentPushup);
-                    const finalSpd = Math.round((maxSpd / 3) * currentPushup);
-                    const finalJump = Math.round((maxJump / 3) * currentPushup);
+    if (!activeCharacter.skills || activeCharacter.skills.length === 0) {
+        skillContainer.innerHTML = `<span class='text-muted small'>Tidak ada skill.</span>`;
+        return;
+    }
 
-                    desc = desc
-                        .replace('bloomAtk_VAL', `${finalAtk}`)
-                        .replace('bloomDef_VAL', `${finalDef}`)
-                        .replace('bloomSpd_VAL', `${finalSpd}`)
-                        .replace('bloomJmp_VAL', `${finalJump}`);
-    
-                    desc += `<br><span class='text-danger small'>[Death Bloom Stack: ${currentPushup} | BT: +${currentBt}]</span>`;
-                }
-                
-                if (activeCharacter.skillStats.absltblckdur && activeCharacter.skillStats.absltblckcldwn) {
-                    const absltblckdurVal = activeCharacter.skillStats.absltblckdur[currentBt];
-                    const absltblckcldwnVal = activeCharacter.skillStats.absltblckcldwn[currentBt];
-                    desc = desc.replace('absltblckdur_VAL', absltblckdurVal).replace('absltblckcldwn_VAL', absltblckcldwnVal);
-                }
-                
-                if (activeCharacter.skillStats.firtigeratk && activeCharacter.skillStats.firtigerjmp) {
-                    const tigeratkVal = activeCharacter.skillStats.firtigeratk[currentBt];
-                    const tigerjmpVal = activeCharacter.skillStats.firtigerjmp[currentBt];
-                    desc = desc.replace('tigeratk_VAL', tigeratkVal).replace('tigerjmp_VAL', tigerjmpVal);
-                }
-                
-                if (activeCharacter.skillStats.imprlordrdur && activeCharacter.skillStats.imprlordrcldwn) {
-                    const imperialdurVal = activeCharacter.skillStats.imprlordrdur[currentBt];
-                    const imperialcldwnVal = activeCharacter.skillStats.imprlordrcldwn[currentBt];
-                    desc = desc.replace('imperialdur_VAL', imperialdurVal).replace('imperialcldwn_VAL', imperialcldwnVal);
-                }
-                
-                if (activeCharacter.skillStats.determineAtk && activeCharacter.skillStats.determineJmp) {
-                    const rageatkVal = activeCharacter.skillStats.determineAtk[currentBt];
-                    const ragejmpVal = activeCharacter.skillStats.determineJmp[currentBt];
-                    desc = desc.replace('rageatk_VAL', rageatkVal).replace('ragejmp_VAL', ragejmpVal);
-                }
-
-                if (activeCharacter.skillStats.miraclepwr && activeCharacter.skillStats.miraclespin && activeCharacter.skillStats.miracletoss) {
-                    const miracleatkVal = activeCharacter.skillStats.miraclepwr[currentPushup];
-                    const miracleballVal = activeCharacter.skillStats.miraclespin[currentPushup];
-                    const miraclesetVal = activeCharacter.skillStats.miracletoss[currentBt];
-                    desc = desc.replace('miracleatk_VAL', miracleatkVal).replace('miracleball_VAL', miracleballVal).replace('miracleset_VAL', miraclesetVal);
-                }
-
-                if (activeCharacter.skillStats.pridepwr) {
-                    const prideatkVal = activeCharacter.skillStats.pridepwr[currentPushup];
-                    desc = desc.replace('prideatk_VAL', prideatkVal);
-                }
-
-                if (activeCharacter.skillStats.skyball) {
-                    const skyserveVal = activeCharacter.skillStats.skyball[currentBt][currentPushup];
-                    desc = desc.replace('skyserve_VAL', skyserveVal);
-                }
-                
-                if (activeCharacter.skillStats.sunburstchance && activeCharacter.skillStats.heliospwr && activeCharacter.skillStats.flareatk && activeCharacter.skillStats.flaredef && activeCharacter.skillStats.flarespd
-                    && activeCharacter.skillStats.flarejmp && activeCharacter.skillStats.flaredur && activeCharacter.skillStats.flarecldwn) {
-                    const sunburstVal = activeCharacter.skillStats.sunburstchance[currentBt];
-                    const heliospwrVal = activeCharacter.skillStats.heliospwr[currentBt][currentPushup];
-                    const flareatkVal = activeCharacter.skillStats.flareatk[currentBt];
-                    const flaredefVal = activeCharacter.skillStats.flaredef[currentBt];
-                    const flarespdVal = activeCharacter.skillStats.flarespd[currentBt];
-                    const flarejmpVal = activeCharacter.skillStats.flarejmp[currentBt];
-                    const flaredurVal = activeCharacter.skillStats.flaredur[currentBt];
-                    const flarecldwnVAL = activeCharacter.skillStats.flarecldwn[currentBt];
-                    let flareDebuffText = "0";
-
-                    if (activeCharacter.id === 'lucas' &&
-                        activeCharacter.skillStats.daveGrowth) {
-
-                        const growthData =
-                            activeCharacter.skillStats.daveGrowth[currentSlider2Value] ||
-                            activeCharacter.skillStats.daveGrowth[0];
-
-                        flareDebuffText =
-                            `Atk: -${growthData.atk} | ` +
-                            `Def: -${growthData.def} | ` +
-                            `Spd: -${growthData.spd} | ` +
-                            `Jmp: -${growthData.jmp}`;
-                    }
-                    desc = desc.replace('flaredur_VAL', flaredurVal).replace('flarecldwn_VAL', flarecldwnVAL).replace('sunburst_VAL', sunburstVal).replace('heliospwr_VAL', heliospwrVal)
-                    .replace('flareatk_VAL', flareatkVal).replace('flaredef_VAL', flaredefVal).replace('flarespd_VAL', flarespdVal).replace('flarejmp_VAL', flarejmpVal).replace('flaredebuff_VAL', flareDebuffText);
-                }
-
-                if (activeCharacter.skillStats.tire) {
-                    const tireState = currentPushup === 1 ? 'active' : 'inactive';
-                    const tireStat = activeCharacter.skillStats.tire[currentBt]?.[tireState];
-
-                    if (tireStat) {
-                        const tireVal =
-                            `Attack: ${tireStat.attack ?? 0}, ` +
-                            `Speed: ${tireStat.speed ?? 0}, ` +
-                            `Jump: ${tireStat.jump ?? 0}`;
-
-                        desc = desc.replace('tire_VAL', tireVal);
-                    }
-                }
-
-                if (activeCharacter.skillStats.blitzpwr && activeCharacter.skillStats.blitzspin) {
-                    const blitzpwrVal = activeCharacter.skillStats.blitzpwr[currentBt];
-                    const blitzspinVal = activeCharacter.skillStats.blitzspin[currentBt];
-                    desc = desc.replace('blitzpwr_VAL', blitzpwrVal).replace('blitzspin_VAL', blitzspinVal);
-                }
-
-                if (activeCharacter.skillStats.aegisdur && activeCharacter.skillStats.aegiscldwn && activeCharacter.skillStats.aegisdef && activeCharacter.skillStats.aegisrange 
-                    && activeCharacter.skillStats.smiteatk && activeCharacter.skillStats.smitedur) {
-                    const aegisdurVal = activeCharacter.skillStats.aegisdur[currentBt];
-                    const aegiscldwnVal = activeCharacter.skillStats.aegiscldwn[currentBt];
-                    const aegisdefVal = activeCharacter.skillStats.aegisdef[currentBt];
-                    const aegisrangeVal = activeCharacter.skillStats.aegisrange[currentBt];
-                    const smiteatkVal = activeCharacter.skillStats.smiteatk[currentBt];
-                    const smitedurVal = activeCharacter.skillStats.smitedur[currentBt];
-                    desc = desc.replace('aegisdur_VAL', aegisdurVal).replace('aegiscldwn_VAL', aegiscldwnVal).replace('aegisdef_VAL', aegisdefVal).replace('aegisrange_VAL', aegisrangeVal)
-                            .replace('smiteatk_VAL', smiteatkVal).replace('smitedur_VAL', smitedurVal);
-                }
-
-                if (activeCharacter.id === 'nishikawa') {
-                    if (activeCharacter.skillStats.thunderSpike) {
-                        const tsStat = activeCharacter.skillStats.thunderSpike[currentBt];
-                        if (tsStat) {
-                            desc = desc.replace('TS_VAL', tsStat.power);
-                        }
-                    }
-                    if (activeCharacter.skillStats.highToss) {
-                        const htVal = activeCharacter.skillStats.highToss[currentBt] || 0;
-                        desc = desc.replace('HT_VAL', htVal);
-                    }
-                }
-
-                if (activeCharacter.skillStats.sunrise) {
-                    const sunriseStat =
-                        activeCharacter.skillStats.sunrise[currentBt]?.[currentPushup];
-
-                    if (sunriseStat) {
-                        const extra = currentPushup === 14 ? 2 : 0;
-
-                        const sunriseVal =
-                            `Attack: ${(sunriseStat.attack ?? 0) + extra}, ` +
-                            `Speed: ${(sunriseStat.speed ?? 0) + extra}, ` +
-                            `Jump: ${(sunriseStat.jump ?? 0) + extra}`;
-
-                        desc = desc.replace('sunrise_VAL', sunriseVal);
-                    }
-                }
-
-                if (activeCharacter.skillStats.darknight) {
-                    const darknightStat =
-                        activeCharacter.skillStats.darknight[currentBt]?.[currentPushup];
-
-                    if (darknightStat) {
-                        const extra = currentPushup === 10;
-
-                        const darknightVal =
-                            `Attack: ${(darknightStat.attack ?? 0) + extra}, ` +
-                            `Speed: ${(darknightStat.speed ?? 0) + extra}, ` +
-                            `Jump: ${(darknightStat.jump ?? 0) + extra}`;
-
-                        desc = desc.replace('darknight_VAL', darknightVal);
-                    }
-                }
-
-                if (activeCharacter.skillStats.armorgauge && activeCharacter.skillStats.gaugeblock) {
-                    const armorgaugeStat =
-                        activeCharacter.skillStats.armorgauge[currentBt]?.[currentPushup];
-                    if (armorgaugeStat) {
-                        const extra = currentPushup === 10;
-
-                        const armorgaugeVal =
-                            `Attack: +${(armorgaugeStat.attack ?? 0) + extra}, ` +
-                            `Speed: +${(armorgaugeStat.speed ?? 0) + extra}, ` +
-                            `Jump: +${(armorgaugeStat.jump ?? 0) + extra}`;
-
-                        desc = desc.replace('armorgauge_VAL', armorgaugeVal);
-                    }
-                    const gaugeblockVal = activeCharacter.skillStats.gaugeblock[currentBt];
-                    desc = desc.replace('gaugeblock_VAL', gaugeblockVal);
-                }
-
-                if (activeCharacter.id === 'ryuhyeon' && activeCharacter.skillStats.azureDragon) {
-                    const energyLevels = [0, 40, 80, 100];
-                    const currentEnergy = energyLevels[currentPushup] ?? 0;
+    const skillsHTML = activeCharacter.skills.map(s => {
+        const formattedDesc = parseSkillDescription(s, activeCharacter);
         
-                    const azureStat = activeCharacter.skillStats.azureDragon[currentBt]?.[currentEnergy];
-        
-                    if (azureStat) {
-                        const azureVal = `Power: +${azureStat.power ?? 0}%, Spin: +${azureStat.spin ?? 0}`;
-                        desc = desc.replace('azuredragon_VAL', azureVal);
-                    }
-                    const basechargeVal = activeCharacter.skillStats.basecharge[currentBt];
-                    const rechargedragonVal = activeCharacter.skillStats.rechargedragon[currentBt];
-                    const soaringairVal = activeCharacter.skillStats.soaringair[currentBt];
-                    desc = desc.replace('basecharge_VAL', basechargeVal).replace('rechargedragon_VAL', rechargedragonVal).replace('soaringair_VAL', soaringairVal)
-                }
+        // Tampilkan logo skill jika ada
+        const iconHTML = s.icon 
+            ? `<img src="${s.icon}" alt="${s.name}" class="skill-icon me-2">` 
+            : '';
 
-                if (activeCharacter.id === 'sara' && activeCharacter.skillStats.typhoondur && activeCharacter.skillStats.typhooncldwn && activeCharacter.skillStats.typhoon && activeCharacter.skillStats.gustprep &&
-                    activeCharacter.skillStats.gustmovement && activeCharacter.skillStats.calmstorm && activeCharacter.skillStats.calmstormdur &&  activeCharacter.skillStats.razorwind) {
-                    const typhoondurVal = activeCharacter.skillStats.typhoondur[currentBt];
-                    const typhooncldwnVal = activeCharacter.skillStats.typhooncldwn[currentBt];
-                    desc = desc.replace('typhoondur_VAL', typhoondurVal).replace('typhooncldwn_VAL', typhooncldwnVal);
+        return `
+            <li class='mb-3 d-flex align-items-start'>
+                ${iconHTML}
+                <div>
+                    <strong class='text-white'>${s.name}</strong><br>
+                    <span class='text-light-custom small'>${formattedDesc}</span>
+                </div>
+            </li>`;
+    }).join('');
 
-                    // Gunakan currentSliderVal2 dan berikan nilai default 100 jika variabel masih 0/null
-                    const currentSpeed = currentPushup || 100; 
-                    const typhoonStat = activeCharacter.skillStats.typhoon[currentBt]?.[currentSpeed];
-                    if (typhoonStat) {
-                        const typhoonVal = `Attack: +${typhoonStat.attack ?? 0}, Jump: +${typhoonStat.jump ?? 0}`;
-                        desc = desc.replace('typhoon_VAL', typhoonVal);
-                    }
+    skillContainer.innerHTML = `<ul class='list-unstyled mb-0'>${skillsHTML}</ul>`;
+}
 
-                    const gustprepVal = activeCharacter.skillStats.gustprep[currentBt];
-                    const gustmovementVal = activeCharacter.skillStats.gustmovement[currentBt];
-                    const calmstormVal = activeCharacter.skillStats.calmstorm[currentBt];
-                    const calmstormdurVal = activeCharacter.skillStats.calmstormdur[currentBt];
-                    desc = desc.replace('gustprep_VAL', gustprepVal).replace('gustmovement_VAL', gustmovementVal).replace('calmstorm_VAL', calmstormVal).replace('calmstormdur_VAL', calmstormdurVal);
+// 3. HELPER KHUSUS PEMROSES TEXT/REPLACEMENT DESKRIPSI
+function parseSkillDescription(s, char) {
+    let desc = s.desc;
 
-                    // Ambil nilai dari slider kedua (0 sampai 5)
-                    const targetPoints = currentSlider2Value ?? 0;
-                    // Ambil stat berdasarkan Breakthrough dan Target Points
-                    const razorWindStat = activeCharacter.skillStats.razorwind?.[currentBt]?.[targetPoints];
-                    if (razorWindStat) {
-                        // Dipanggil spesifik .power-nya
-                        const razorVal = `Ball Power : +${razorWindStat.power}%`;
-                        desc = desc.replace('razorwind_VAL', razorVal);
-                    }
-                }
+    // --- Jenny ---
+    if (char.skillStats && char.id === 'jenny') {
+        const hgtVal = char.skillStats.icarusHeights[currentBt][currentPushup] || 3.0;
+        const atkVal = char.skillStats.icarusAtk[currentBt][currentPushup] || 0;
+        const jmpVal = char.skillStats.icarusJmp[currentBt][currentPushup] || 0;
 
-                if (activeCharacter.skillStats.criticaltoss) {
-                    const criticaltossVal = activeCharacter.skillStats.criticaltoss[currentBt];
-                    desc = desc.replace('criticaltoss_VAL', criticaltossVal);
-                }
+        return desc.replace('ICARUS_HGT', hgtVal)
+                .replace('ICARUS_ATK', `+${atkVal}`)
+                .replace('ICARUS_JMP', `+${jmpVal}`);
+    }
 
-                if (activeCharacter.skillStats.highlightdur && activeCharacter.skillStats.highlightcldwn ) {
-                    const highlightdurVal = activeCharacter.skillStats.highlightdur[currentBt];
-                    const highlightcldwnVal = activeCharacter.skillStats.highlightcldwn[currentBt]
-                    desc = desc.replace('highlightdur_VAL', highlightdurVal).replace('highlightcldwn_VAL', highlightcldwnVal);
-                }
-
-                if (activeCharacter.skillStats.fishbundur && activeCharacter.skillStats.fishbuncldwn ) {
-                    const fishbundurVal = activeCharacter.skillStats.fishbundur[currentBt];
-                    const fishbuncldwnVal = activeCharacter.skillStats.fishbuncldwn[currentBt]
-                    desc = desc.replace('fishbundur_VAL', fishbundurVal).replace('fishbuncldwn_VAL', fishbuncldwnVal);
-                }
-
-                if (activeCharacter.skillStats.suprisecldwn) {
-                    const suprisecldwnVal = activeCharacter.skillStats.suprisecldwn[currentBt];
-                    desc = desc.replace('suprisecldwn_VAL', suprisecldwnVal);
-                }
-
-                if (activeCharacter.id === 'sif' && activeCharacter.skillStats.gladius) {
-                    const currentAtk = currentPushup || 100;
-
-                    const gladiusStat = activeCharacter.skillStats.gladius?.[currentBt]?.[currentAtk];
-                    const gladiusVal = gladiusStat ? `+${gladiusStat.defense}` : "+0";
-
-                    const gladiusdurVal = activeCharacter.skillStats.gladiusdur?.[currentBt] ?? 0;
-                    const gladiuscldwnVal = activeCharacter.skillStats.gladiuscldwn?.[currentBt] ?? 0;
-                    desc = desc.replace('gladius_VAL', gladiusVal).replace('gladiusdur_VAL', gladiusdurVal).replace('gladiuscldwn_VAL', gladiuscldwnVal);
-                }
-
-                return `<li class='mb-3'><strong class='text-white'>${s.name}:</strong><br><span class='text-light-custom small'>${desc}</span></li>`;
-            }).join('') + `</ul>`;
-    } 
-    else if (activeCharacter.isDave && activeCharacter.daveSkillStats) {
+    // --- Dave ---
+    if (char.isDave && char.daveSkillStats) {
         const pushupIndex = currentPushup / 50; 
-        const hgtVal = activeCharacter.daveSkillStats.height[pushupIndex] || 0;
+        const hgtVal = char.daveSkillStats.height[pushupIndex] || 0;
+        desc = desc.replace('DAVE_HGT', hgtVal);
 
-        skillContainer.innerHTML = `<ul class='list-unstyled mb-0'>` + 
-            activeCharacter.skills.map(s => {
-                let desc = s.desc.replace('DAVE_HGT', hgtVal);
-                if (s.name === "Warm-Up") {
-                    const pushupData = activeCharacter.daveGrowth[currentPushup] || { atk: 0, def: 0, spd: 0, jmp: 0 };
-                    desc += `<br><span class='text-warning small'>[Push-up ${currentPushup}] Atk: +${pushupData.atk} | Def: +${pushupData.def} | Spd: +${pushupData.spd} | Jmp: +${pushupData.jmp}</span>`;
-                }
-                return `<li class='mb-3'><strong class='text-white'>${s.name}:</strong><br><span class='text-light-custom small'>${desc}</span></li>`;
-            }).join('') + `</ul>`;
-    } 
-    else {
-        skillContainer.innerHTML = `<ul class='list-unstyled mb-0'>` + 
-            activeCharacter.skills.map(s => `<li class='mb-3'><strong class='text-white'>${s.name}:</strong><br><span class='text-light-custom small'>${s.desc}</span></li>`).join('') + 
-            `</ul>`;
+        if (s.name === "Warm-Up") {
+            const pushupData = char.daveGrowth[currentPushup] || { atk: 0, def: 0, spd: 0, jmp: 0 };
+            desc += `<br><span class='text-warning small'>[Push-up ${currentPushup}] Atk: +${pushupData.atk} | Def: +${pushupData.def} | Spd: +${pushupData.spd} | Jmp: +${pushupData.jmp}</span>`;
+        }
+        return desc;
     }
 
+    // --- Karakter Lainnya (Logika General) ---
+    if (char.skillStats) {
+        if (char.skillStats.height) {
+            desc = desc.replace('ATIS_HGT', char.skillStats.height[currentBt] || 0);
+        }
+        if (char.skillStats.chemicalreact) {
+            desc = desc.replace('CR_VAL%', char.skillStats.chemicalreact[currentBt] + '%');
+        }
+        if (char.id === 'claire' && char.skillStats.overdrive) {
+            const maxDur = char.skillStats.overdriveDur[currentBt] || 13;
+            const durVal = (maxDur * (currentPushup / 100)).toFixed(2);
+            desc = desc.replace('CLAIRE_DUR', durVal);
+            if (s.name === "Overdrive") {
+                const atkStat = char.skillStats.overdrive[currentBt];
+                const jmpStat = char.skillStats.overdriveJmp[currentBt];
+                desc += `<br><span class='text-warning small'>[BT +${currentBt} | Gauge ${currentPushup}%] Atk: +${atkStat} | Jmp: +${jmpStat} | Dur: +${durVal} sec</span>`;
+            }
+        }
+        if (char.skillStats.drkcrow) {
+            desc = desc.replace('darkcrow_VAL%', char.skillStats.drkcrow[currentBt] + '%');
+        }
+        if (char.id === 'ellio' && char.skillStats.abysSet) {
+            let maxAbysVal = char.skillStats.abysSet[currentBt] || 24;
+            let ellioBonusPct = 0;
+            if (currentPushup >= 35 && currentPushup < 90) {
+                let angleProgress = (currentPushup - 35) / (89 - 35);
+                ellioBonusPct = parseFloat((angleProgress * maxAbysVal).toFixed(1));
+            }
+            desc = desc.replace('abysSet_VAL%', `${currentPushup}° <span class='text-warning'><br>(+${ellioBonusPct}% Ball Power)</span>`);
+        }
+        if (char.skillStats.flowerDef) {
+            desc = desc.replace('Flwr_VAL%', char.skillStats.flowerDef[currentBt] + '%')
+                       .replace('FlwrSpd_VAL%', char.skillStats.flowerSpd[currentBt] + '%');
+        }
+        if (char.id === 'hari' && s.name.includes("Death Bloom")) {
+            const maxAtk = char.skillStats.bloomatk[currentBt] || 0;
+            const maxDef = char.skillStats.bloomdef[currentBt] || 0;
+            const maxSpd = char.skillStats.bloomspd[currentBt] || 0;
+            const maxJump = char.skillStats.bloomjmp[currentBt] || 0;
+
+            const finalAtk = Math.round((maxAtk / 3) * currentPushup);
+            const finalDef = Math.round((maxDef / 3) * currentPushup);
+            const finalSpd = Math.round((maxSpd / 3) * currentPushup);
+            const finalJump = Math.round((maxJump / 3) * currentPushup);
+
+            desc = desc.replace('bloomAtk_VAL', `${finalAtk}`)
+                       .replace('bloomDef_VAL', `${finalDef}`)
+                       .replace('bloomSpd_VAL', `${finalSpd}`)
+                       .replace('bloomJmp_VAL', `${finalJump}`);
+            desc += `<br><span class='text-danger small'>[Death Bloom Stack: ${currentPushup} | BT: +${currentBt}]</span>`;
+        }
+        if (char.skillStats.absltblckdur && char.skillStats.absltblckcldwn) {
+            desc = desc.replace('absltblckdur_VAL', char.skillStats.absltblckdur[currentBt])
+                       .replace('absltblckcldwn_VAL', char.skillStats.absltblckcldwn[currentBt]);
+        }
+        if (char.skillStats.firtigeratk && char.skillStats.firtigerjmp) {
+            desc = desc.replace('tigeratk_VAL', char.skillStats.firtigeratk[currentBt])
+                       .replace('tigerjmp_VAL', char.skillStats.firtigerjmp[currentBt]);
+        }
+        if (char.skillStats.imprlordrdur && char.skillStats.imprlordrcldwn) {
+            desc = desc.replace('imperialdur_VAL', char.skillStats.imprlordrdur[currentBt])
+                       .replace('imperialcldwn_VAL', char.skillStats.imprlordrcldwn[currentBt]);
+        }
+        if (char.skillStats.determineAtk && char.skillStats.determineJmp) {
+            desc = desc.replace('rageatk_VAL', char.skillStats.determineAtk[currentBt])
+                       .replace('ragejmp_VAL', char.skillStats.determineJmp[currentBt]);
+        }
+        if (char.skillStats.miraclepwr && char.skillStats.miraclespin && char.skillStats.miracletoss) {
+            desc = desc.replace('miracleatk_VAL', char.skillStats.miraclepwr[currentPushup])
+                       .replace('miracleball_VAL', char.skillStats.miraclespin[currentPushup])
+                       .replace('miracleset_VAL', char.skillStats.miracletoss[currentBt]);
+        }
+        if (char.skillStats.pridepwr) {
+            desc = desc.replace('prideatk_VAL', char.skillStats.pridepwr[currentPushup]);
+        }
+        if (char.skillStats.skyball) {
+            desc = desc.replace('skyserve_VAL', char.skillStats.skyball[currentBt][currentPushup]);
+        }
+        if (char.skillStats.sunburstchance && char.skillStats.heliospwr) {
+            const sunburstVal = char.skillStats.sunburstchance[currentBt];
+            const heliospwrVal = char.skillStats.heliospwr[currentBt][currentPushup];
+            const flareatkVal = char.skillStats.flareatk[currentBt];
+            const flaredefVal = char.skillStats.flaredef[currentBt];
+            const flarespdVal = char.skillStats.flarespd[currentBt];
+            const flarejmpVal = char.skillStats.flarejmp[currentBt];
+            const flaredurVal = char.skillStats.flaredur[currentBt];
+            const flarecldwnVAL = char.skillStats.flarecldwn[currentBt];
+            let flareDebuffText = "0";
+
+            if (char.id === 'lucas' && char.skillStats.daveGrowth) {
+                const growthData = char.skillStats.daveGrowth[currentSlider2Value] || char.skillStats.daveGrowth[0];
+                flareDebuffText = `Atk: -${growthData.atk} | Def: -${growthData.def} | Spd: -${growthData.spd} | Jmp: -${growthData.jmp}`;
+            }
+
+            desc = desc.replace('flaredur_VAL', flaredurVal).replace('flarecldwn_VAL', flarecldwnVAL)
+                       .replace('sunburst_VAL', sunburstVal).replace('heliospwr_VAL', heliospwrVal)
+                       .replace('flareatk_VAL', flareatkVal).replace('flaredef_VAL', flaredefVal)
+                       .replace('flarespd_VAL', flarespdVal).replace('flarejmp_VAL', flarejmpVal)
+                       .replace('flaredebuff_VAL', flareDebuffText);
+        }
+        if (char.skillStats.tire) {
+            const tireState = currentPushup === 1 ? 'active' : 'inactive';
+            const tireStat = char.skillStats.tire[currentBt]?.[tireState];
+            if (tireStat) {
+                desc = desc.replace('tire_VAL', `Attack: ${tireStat.attack ?? 0}, Speed: ${tireStat.speed ?? 0}, Jump: ${tireStat.jump ?? 0}`);
+            }
+        }
+        if (char.skillStats.blitzpwr && char.skillStats.blitzspin) {
+            desc = desc.replace('blitzpwr_VAL', char.skillStats.blitzpwr[currentBt])
+                       .replace('blitzspin_VAL', char.skillStats.blitzspin[currentBt]);
+        }
+        if (char.skillStats.aegisdur && char.skillStats.smiteatk) {
+            desc = desc.replace('aegisdur_VAL', char.skillStats.aegisdur[currentBt])
+                       .replace('aegiscldwn_VAL', char.skillStats.aegiscldwn[currentBt])
+                       .replace('aegisdef_VAL', char.skillStats.aegisdef[currentBt])
+                       .replace('aegisrange_VAL', char.skillStats.aegisrange[currentBt])
+                       .replace('smiteatk_VAL', char.skillStats.smiteatk[currentBt])
+                       .replace('smitedur_VAL', char.skillStats.smitedur[currentBt]);
+        }
+        if (char.id === 'nishikawa') {
+            if (char.skillStats.thunderSpike) {
+                const tsStat = char.skillStats.thunderSpike[currentBt];
+                if (tsStat) desc = desc.replace('TS_VAL', tsStat.power);
+            }
+            if (char.skillStats.highToss) {
+                desc = desc.replace('HT_VAL', char.skillStats.highToss[currentBt] || 0);
+            }
+        }
+        if (char.skillStats.sunrise) {
+            const sunriseStat = char.skillStats.sunrise[currentBt]?.[currentPushup];
+            if (sunriseStat) {
+                const extra = currentPushup === 14 ? 2 : 0;
+                desc = desc.replace('sunrise_VAL', `Attack: ${(sunriseStat.attack ?? 0) + extra}, Speed: ${(sunriseStat.speed ?? 0) + extra}, Jump: ${(sunriseStat.jump ?? 0) + extra}`);
+            }
+        }
+        if (char.skillStats.darknight) {
+            const darknightStat = char.skillStats.darknight[currentBt]?.[currentPushup];
+            if (darknightStat) {
+                const extra = currentPushup === 10;
+                desc = desc.replace('darknight_VAL', `Attack: ${(darknightStat.attack ?? 0) + extra}, Speed: ${(darknightStat.speed ?? 0) + extra}, Jump: ${(darknightStat.jump ?? 0) + extra}`);
+            }
+        }
+        if (char.skillStats.armorgauge && char.skillStats.gaugeblock) {
+            const armorgaugeStat = char.skillStats.armorgauge[currentBt]?.[currentPushup];
+            if (armorgaugeStat) {
+                const extra = currentPushup === 10;
+                desc = desc.replace('armorgauge_VAL', `Attack: +${(armorgaugeStat.attack ?? 0) + extra}, Speed: +${(armorgaugeStat.speed ?? 0) + extra}, Jump: +${(armorgaugeStat.jump ?? 0) + extra}`);
+            }
+            desc = desc.replace('gaugeblock_VAL', char.skillStats.gaugeblock[currentBt]);
+        }
+        if (char.id === 'ryuhyeon' && char.skillStats.azureDragon) {
+            const energyLevels = [0, 40, 80, 100];
+            const currentEnergy = energyLevels[currentPushup] ?? 0;
+            const azureStat = char.skillStats.azureDragon[currentBt]?.[currentEnergy];
+
+            if (azureStat) {
+                desc = desc.replace('azuredragon_VAL', `Power: +${azureStat.power ?? 0}%, Spin: +${azureStat.spin ?? 0}`);
+            }
+            desc = desc.replace('basecharge_VAL', char.skillStats.basecharge[currentBt])
+                       .replace('rechargedragon_VAL', char.skillStats.rechargedragon[currentBt])
+                       .replace('soaringair_VAL', char.skillStats.soaringair[currentBt]);
+        }
+        if (char.id === 'sara' && char.skillStats.typhoondur) {
+            desc = desc.replace('typhoondur_VAL', char.skillStats.typhoondur[currentBt])
+                       .replace('typhooncldwn_VAL', char.skillStats.typhooncldwn[currentBt]);
+
+            const currentSpeed = currentPushup || 100; 
+            const typhoonStat = char.skillStats.typhoon[currentBt]?.[currentSpeed];
+            if (typhoonStat) {
+                desc = desc.replace('typhoon_VAL', `Attack: +${typhoonStat.attack ?? 0}, Jump: +${typhoonStat.jump ?? 0}`);
+            }
+
+            desc = desc.replace('gustprep_VAL', char.skillStats.gustprep[currentBt])
+                       .replace('gustmovement_VAL', char.skillStats.gustmovement[currentBt])
+                       .replace('calmstorm_VAL', char.skillStats.calmstorm[currentBt])
+                       .replace('calmstormdur_VAL', char.skillStats.calmstormdur[currentBt]);
+
+            const targetPoints = currentSlider2Value ?? 0;
+            const razorWindStat = char.skillStats.razorwind?.[currentBt]?.[targetPoints];
+            if (razorWindStat) {
+                desc = desc.replace('razorwind_VAL', `Ball Power : +${razorWindStat.power}%`);
+            }
+        }
+        if (char.skillStats.criticaltoss) {
+            desc = desc.replace('criticaltoss_VAL', char.skillStats.criticaltoss[currentBt]);
+        }
+        if (char.skillStats.highlightdur && char.skillStats.highlightcldwn) {
+            desc = desc.replace('highlightdur_VAL', char.skillStats.highlightdur[currentBt])
+                       .replace('highlightcldwn_VAL', char.skillStats.highlightcldwn[currentBt]);
+        }
+        if (char.skillStats.fishbundur && char.skillStats.fishbuncldwn) {
+            desc = desc.replace('fishbundur_VAL', char.skillStats.fishbundur[currentBt])
+                       .replace('fishbuncldwn_VAL', char.skillStats.fishbuncldwn[currentBt]);
+        }
+        if (char.skillStats.suprisecldwn) {
+            desc = desc.replace('suprisecldwn_VAL', char.skillStats.suprisecldwn[currentBt]);
+        }
+        if (char.id === 'sif' && char.skillStats.gladius) {
+            const currentAtk = currentPushup || 100;
+            const gladiusStat = char.skillStats.gladius?.[currentBt]?.[currentAtk];
+            const gladiusVal = gladiusStat ? `+${gladiusStat.defense}` : "+0";
+
+            desc = desc.replace('gladius_VAL', gladiusVal)
+                       .replace('gladiusdur_VAL', char.skillStats.gladiusdur?.[currentBt] ?? 0)
+                       .replace('gladiuscldwn_VAL', char.skillStats.gladiuscldwn?.[currentBt] ?? 0);
+        }
+    }
+
+    return desc;
+}
+
+// 4. KHUSUS RENDER SYNERGY
+function renderSynergies() {
     const synergyContainer = document.getElementById('synergyBuffList');
-    if (synergyContainer) {
-        synergyContainer.innerHTML = `<ul class='list-unstyled mb-0'>` + 
-            activeCharacter.synergies.map(syn => `<li class='mb-3'><strong class='text-white'>${syn.name}:</strong><br><span class='text-light-custom small'>${syn.desc}</span></li>`).join('') + 
-            `</ul>`;
+    if (!synergyContainer) return;
+
+    if (!activeCharacter.synergies || activeCharacter.synergies.length === 0) {
+        synergyContainer.innerHTML = `<span class='text-muted small'>Tidak ada synergy.</span>`;
+        return;
     }
 
+    const synergyHTML = activeCharacter.synergies.map(syn => {
+        // Loop foto partner + teks nama overlay
+        const partnersHTML = syn.partners ? syn.partners.map(p => `
+            <div class="synergy-avatar-card">
+                <img src="${p.icon}" alt="${p.name}" class="synergy-avatar-img">
+                <div class="synergy-avatar-name">${p.name}</div>
+            </div>
+        `).join('') : '';
+
+        return `
+            <div class="synergy-card mb-3">
+                <div class="synergy-header">
+                    <strong>${syn.name}</strong>
+                </div>
+                <div class="synergy-body">
+                    <div class="synergy-partners">
+                        ${partnersHTML}
+                    </div>
+                    <div class="synergy-desc">
+                        ${syn.desc}
+                    </div>
+                </div>
+            </div>`;
+    }).join('');
+
+    synergyContainer.innerHTML = synergyHTML;
+}
+
+// 5. KHUSUS RENDER OVERALL NOTES
+function renderOverall() {
     const overallContainer = document.getElementById('overallBuffContent');
-    if (overallContainer) {
-        if (Array.isArray(activeCharacter.overall)) {
-            overallContainer.innerHTML = `<ul class='mb-0 text-sm ps-3'>` + 
-                activeCharacter.overall.map(ov => `<li class='mb-1 text-light-custom'>${ov}</li>`).join('') + 
-                `</ul>`;
-        } else {
-            overallContainer.innerHTML = `<div class='text-light-custom small'>${activeCharacter.overall}</div>`;
-        }
-    }
+    if (!overallContainer) return;
 
+    if (Array.isArray(activeCharacter.overall)) {
+        overallContainer.innerHTML = `<ul class='mb-0 text-sm ps-3'>` + 
+            activeCharacter.overall.map(ov => `<li class='mb-1 text-light-custom'>${ov}</li>`).join('') + 
+            `</ul>`;
+    } else if (activeCharacter.overall) {
+        overallContainer.innerHTML = `<div class='text-light-custom small'>${activeCharacter.overall}</div>`;
+    } else {
+        overallContainer.innerHTML = '';
+    }
+}
+
+// 6. KHUSUS RENDER BUFF LIST
+function renderBuffList() {
     const bufflist = document.getElementById('overallBuffList');
-    if (bufflist) {
-        if (activeCharacter.bufflist && activeCharacter.bufflist.length > 0) {
-            bufflist.innerHTML = `<ul class='mb-0 text-sm ps-3'>` + 
-                activeCharacter.bufflist.map(buff => `<li class='mb-1 text-light-custom'>${buff}</li>`).join('') + 
-                `</ul>`;
-        } else {
-            bufflist.innerHTML = `<span class='text-muted small'>Tidak ada buff tambahan.</span>`;
-        }
+    if (!bufflist) return;
+
+    if (activeCharacter.bufflist && activeCharacter.bufflist.length > 0) {
+        bufflist.innerHTML = `<ul class='mb-0 text-sm ps-3'>` + 
+            activeCharacter.bufflist.map(buff => `<li class='mb-1 text-light-custom'>${buff}</li>`).join('') + 
+            `</ul>`;
+    } else {
+        bufflist.innerHTML = `<span class='text-muted small'>Tidak ada buff tambahan.</span>`;
     }
 }
 

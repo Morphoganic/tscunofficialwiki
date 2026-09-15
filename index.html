@@ -554,6 +554,42 @@
                                 <span class="text-info small">Power +20% and Spin +25% </span>
                             </label>
 
+                            <!-- Claire -->
+                            <label class="text-white small cursor-pointer mb-0 d-block">
+                                <input type="checkbox" class="buff-checkbox me-2" 
+                                    data-character="claire"
+                                    data-has-slider="true"
+                                    data-slider-min="0"
+                                    data-slider-max="100"
+                                    data-slider-default="100"
+                                    data-slider-label="Overdrive Gauge"
+                                    data-slider-unit="%"
+                                    onchange="handleUniversalBuffChange(this)">
+                                Claire (Overdrive) <br>
+                                <span class="buff-result-text text-info small">Atk +0 | Jmp +0 | Dur 0s</span>
+
+                                <!-- CONTAINER GENERIK (Gunakan CLASS, bukan ID) -->
+                                <div class="buff-options-container bg-card-inner p-3 rounded border border-secondary mb-3 mt-2" style="display: none;">
+                                    <div class="mb-2">
+                                        <label class="small text-muted mb-1 d-block">Breakthrough Level:</label>
+                                        <select class="buff-bt-select form-select form-select-sm bg-dark text-white border-secondary" onchange="handleUniversalBuffChange(this)">
+                                            <option value="0">BT 0</option>
+                                            <option value="1">BT 1</option>
+                                            <option value="2">BT 2</option>
+                                            <option value="3">BT 3</option>
+                                            <option value="4">BT 4</option>
+                                            <option value="5">BT 5</option>
+                                        </select>
+                                    </div>
+
+                                    <p class="text-white mt-2 small mb-1">
+                                        <span class="slider-label-text">Parameter</span>: 
+                                        <span class="slider-val-text fw-bold text-warning">0</span><span class="slider-unit-text"></span>
+                                    </p>
+                                    <input type="range" class="buff-range-input form-range custom-green-range" oninput="handleUniversalBuffChange(this)">
+                                </div>
+                            </label>
+
                             <!-- Checkbox Ellio dengan Slider Universal & Pilihan BT -->
                             <label class="text-white small cursor-pointer mb-0 d-block">
                                 <input type="checkbox" class="buff-checkbox me-2" 
