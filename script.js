@@ -1791,7 +1791,7 @@ const charactersData = [
         },
         recommended: {
             attack: { base: 110, growthText: "+10 (Max BT)", total: 120 },
-            defense: { base: 145, growthText: "+12 (Max BT)", total: 162 },
+            defense: { base: 145, growthText: "+12 (Max BT)", total: 157 },
             speed: { base: 155, growthText: "+12 (Max BT)", total: 167 },
             jump: { base: 155, growthText: "+3 (Max BT)", total: 158 }
         },
@@ -1814,6 +1814,167 @@ const charactersData = [
             "Discourage: <span class='text-success-custom'>Very Low</span>",
         ]
     },
+    {
+        id: "seolhwa",
+        name: "Seolhwa",
+        role: "SE",
+        position: "Setter (SE)",
+        desc: "The nation's top high school setter. He's been recognized for tremendous potential since middle school. Originally played as an attacker but switched to setter in high school. "+
+                "Thanks to his middle school achievements, many still remember him as a 'monster attacker.' People still suggest he'd be better as an attacker, but he firmly refuses, apparently due to middle school trauma. His excellence in both offense and defense makes his talent obvious even to casual observers.",
+        image: "img/Seolhwa.webp",
+        baseStats: {
+            attack: { base: 105, maxLimit: 175, growth: [0, 2, 4, 6, 8, 10] },
+            defense: { base: 100, maxLimit: 155, growth: [0, 0, 0, 0, 0, 0] },
+            speed: { base: 100, maxLimit: 165, growth: [0, 0, 0, 0, 0, 2] },
+            jump: { base: 100, maxLimit: 165, growth: [0, 0, 0, 0, 1, 3] }
+        },
+        recommended: {
+            attack: { base: 175, growthText: "+10 (Max BT)", total: 185 },
+            defense: { base: 100, growthText: "+0 (Max BT)", total: 100 },
+            speed: { base: 145, growthText: "+2 (Max BT)", total: 147 },
+            jump: { base: 165, growthText: "+3 (Max BT)", total: 168 }
+        },
+        skillStats: {
+            suprisecldwn: [35, 32, 30, 28, 25, 25]
+        },
+        skills: [ 
+            { name: "Surprise Attack", desc: "During the Skill's Activation, attempt Two-Attack instead of Set. <span class='text-warning'>During this time, Spike gains 30% Power and cannot be blocked by Block.</span>"+
+                    "<br><span class='small text-warning'>Duration : 10s , Wait Time : suprisecldwn_VALs</span>" },
+            { name: "Serve Routine A", desc: "Performs a unique pre-Serve animation." },
+        ],
+        synergies: [
+            { name: "All-Star", desc: "<span class='text-info'>Seolhwa + Heeseong + Yongsup</span> : Attack +4, Jump +4" }
+        ],
+        overall: [
+            "Worked Up: <span class='text-success-custom'>Very Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-success-custom'>Low</span>",
+            "Discourage: <span class='text-success-custom'>Low</span>",
+        ]
+    },
+    {
+        id: "sif",
+        name: "Sif",
+        role: "SE",
+        position: "Setter (SE)",
+        isDave: true,
+        desc: "The best setter in the Phantom League. Three words define her: calm, composed, perfectionist. She's the reliable backbone of her team, never panicking and always finding solutions when things get tough. "+
+                "But that's just the surface. At her core lies love, pure and fiery. Everything else is just a mask. Her heart beats only for Raul, and she constantly struggles to suppress her overflowing admiration for him."+
+                "Sometimes, her feelings slip out unintentionally, but she still firmly believes that no one has noticed her secret.",
+        image: "img/Sif.webp",
+        baseStats: {
+            attack: { base: 110, maxLimit: 170, growth: [0, 3, 5, 7, 8, 10] },
+            defense: { base: 95, maxLimit: 155, growth: [0, 0, 0, 0, 0, 0] },
+            speed: { base: 95, maxLimit: 155, growth: [0, 0, 0, 0, 0, 0] },
+            jump: { base: 95, maxLimit: 160, growth: [0, 0, 0, 0, 0, 0] }
+        },
+        recommended: {
+            attack: { base: 110, growthText: "+10 (Max BT)", total: 120 },
+            defense: { base: 145, growthText: "+12 (Max BT)", total: 157 },
+            speed: { base: 155, growthText: "+12 (Max BT)", total: 167 },
+            jump: { base: 155, growthText: "+3 (Max BT)", total: 158 }
+        },
+        skillStats: {
+            gladius: [
+                {
+                    100: { defense: +38 },
+                    120: { defense: +52.4 },
+                    140: { defense: +66.8 },
+                    160: { defense: +81.2 },
+                    180: { defense: +95.6 },
+                    200: { defense: +110 },
+                    220: { defense: +124.4 },
+                    240: { defense: +138.8 },
+                    260: { defense: +153.2 },
+                    280: { defense: +167.6 },
+                    300: { defense: +182 },
+                },
+                {
+                    100: { defense: +38 },
+                    120: { defense: +52.4 },
+                    140: { defense: +66.8 },
+                    160: { defense: +81.2 },
+                    180: { defense: +95.6 },
+                    200: { defense: +110 },
+                    220: { defense: +124.4 },
+                    240: { defense: +138.8 },
+                    260: { defense: +153.2 },
+                    280: { defense: +167.6 },
+                    300: { defense: +182 },
+                },
+                {
+                    100: { defense: +38 },
+                    120: { defense: +52.4 },
+                    140: { defense: +66.8 },
+                    160: { defense: +81.2 },
+                    180: { defense: +95.6 },
+                    200: { defense: +110 },
+                    220: { defense: +124.4 },
+                    240: { defense: +138.8 },
+                    260: { defense: +153.2 },
+                    280: { defense: +167.6 },
+                    300: { defense: +182 },
+                },
+                {
+                    100: { defense: +38 },
+                    120: { defense: +52.4 },
+                    140: { defense: +66.8 },
+                    160: { defense: +81.2 },
+                    180: { defense: +95.6 },
+                    200: { defense: +110 },
+                    220: { defense: +124.4 },
+                    240: { defense: +138.8 },
+                    260: { defense: +153.2 },
+                    280: { defense: +167.6 },
+                    300: { defense: +182 },
+                },
+                {
+                    100: { defense: +38 },
+                    120: { defense: +52.4 },
+                    140: { defense: +66.8 },
+                    160: { defense: +81.2 },
+                    180: { defense: +95.6 },
+                    200: { defense: +110 },
+                    220: { defense: +124.4 },
+                    240: { defense: +138.8 },
+                    260: { defense: +153.2 },
+                    280: { defense: +167.6 },
+                    300: { defense: +182 },
+                },
+                {
+                    100: { defense: +38 },
+                    120: { defense: +52.4 },
+                    140: { defense: +66.8 },
+                    160: { defense: +81.2 },
+                    180: { defense: +95.6 },
+                    200: { defense: +110 },
+                    220: { defense: +124.4 },
+                    240: { defense: +138.8 },
+                    260: { defense: +153.2 },
+                    280: { defense: +167.6 },
+                    300: { defense: +182 },
+                },
+            ],
+            gladiusdur: [13, 13 , 12, 12, 11, 11],
+            gladiuscldwn: [3, 4, 4, 5, 5, 5],
+        },
+        skills: [ 
+            { name: "Gladius Wall", desc: "Upon Skill Activation, <span class='text-warning'>restores 30 Stamina of the Team. While active, Team Player Defense increases, scaling with their individual Attack.</span>"+
+                    "<br><span class='small text-warning'>Duration : gladiusdur_VALs , Wait Time : gladiuscldwn_VALs</span>"+
+                    "<br><span class='small text-warning'>Defence : gladius_VAL</span>" },
+            { name: "Crown Pass", desc: "Prioritize the Player with the highest Attack in the Team for the Set. <span class='text-warning'>If no other Player has the highest Attack, the chance of Two-Attack is increased by 95%.</span>" },
+        ],
+        synergies: [
+            { name: "Unified Offense & Defense", desc: "<span class='text-info'>Sif + Raul</span> : Raul's charging speed increases by 10%" },
+            { name: "Center Ace", desc: "<span class='text-info'>Sif + Yuri</span> : Attack +10" }
+        ],
+        overall: [
+            "Worked Up: <span class='text-success-custom'>Very Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-success-custom'>Very Low</span>",
+            "Discourage: <span class='text-success-custom'>Very Low</span>",
+        ]
+    },
 ];
 
 let activeCharacter = null;
@@ -1825,13 +1986,15 @@ let manualPoints = JSON.parse(localStorage.getItem('tsc_manual_points')) || {};
 function getMaxManualPoint(charId) {
     if (charId === 'iris' || charId === 'raul') {
         return 195;
+    } else if (charId === 'sif' ) {
+        return 190;
     } else if (charId === 'hongshi' || charId === 'ahyeon' || charId === 'claire' || charId === 'nishikawa' || charId === 'jenny' || charId === 'lisia' || charId === 'sara_se') {
         return 185;
-    } else if (charId === 'sara' ) {
+    } else if (charId === 'sara' || charId === 'seolhwa') {
         return 180;
     } else if (charId === 'atis' || charId === 'clyde' || charId === 'leon' || charId === 'oasis' || charId === 'roberto') {
         return 175;
-    }  else if (charId === 'lucas' ) {
+    } else if (charId === 'lucas' ) {
         return 170;
     } else if (charId === 'noname') {
         return 165;
@@ -2021,6 +2184,12 @@ function selectCharacter(id) {
             slider.step = 20;
             slider.value = 0;
             if (sliderLabelText) sliderLabelText.innerText = "Speed ";
+        } else if (activeCharacter.id === 'sif') {
+            slider.min = 100;
+            slider.max = 300;
+            slider.step = 20;
+            slider.value = 0;
+            if (sliderLabelText) sliderLabelText.innerText = "Attack ";
         } else {
             slider.min = 0;
             slider.max = 300;
@@ -2081,7 +2250,7 @@ function selectCharacter(id) {
             pushupValEl.innerText = "0";
         } else if (activeCharacter.id === 'raul') {
             pushupValEl.innerText = "0 Points";
-        } else if (activeCharacter.id === 'sara') {
+        } else if (activeCharacter.id === 'sara' || activeCharacter.id === 'sif') {
             pushupValEl.innerText = "100";
         } else {
             pushupValEl.innerText = 0;
@@ -2484,6 +2653,12 @@ function updateDetailView() {
         totalPowerPct += currentSetting.power;
     }
 
+    if (activeCharacter.id === 'lucas' && activeCharacter.skillStats.heliospwr) {
+        // Ambil angka langsung berdasarkan Breakthrough dan nilai Slider 1 (currentPushup)
+        const heliosVal = activeCharacter.skillStats.heliospwr[currentBt]?.[currentPushup] || 0;
+        totalPowerPct += heliosVal;
+    }
+
     if (activeCharacter.id === 'nishikawa' && activeCharacter.skillStats.thunderSpike) {
         const thunderStat = activeCharacter.skillStats.thunderSpike[currentBt];
         if (thunderStat) {
@@ -2511,6 +2686,35 @@ function updateDetailView() {
         if (azureStat) {
             totalPowerPct += azureStat.power || 0;
             finalSpinRate += azureStat.spin || 0; 
+        }
+    }
+
+    if (activeCharacter.id === 'sara') {
+        // 1. Slider 1 (Speed) -> Stat dari Typhoon (Attack & Jump)
+        const currentSpeed = currentPushup || 100;
+        const typhoonStat = activeCharacter.skillStats.typhoon?.[currentBt]?.[currentSpeed];
+    
+        if (typhoonStat) {
+            buffBonusAtk += typhoonStat.attack || 0;
+            buffBonusJmp += typhoonStat.jump || 0; // Sesuaikan nama variabel Jump kamu
+        }
+
+        // 2. Slider 2 (Target Points) -> Stat dari Razor Wind (Power)
+        const targetPoints = currentSlider2Value ?? 0;
+        const razorWindStat = activeCharacter.skillStats.razorwind?.[currentBt]?.[targetPoints];
+    
+        if (razorWindStat) {
+            totalPowerPct += razorWindStat.power || 0; // Sesuaikan nama variabel Power kamu
+        }
+    }
+
+    if (activeCharacter.id === 'sif' && activeCharacter.skillStats.gladius) {
+        const currentAtk = currentPushup || 100;
+
+        const gladiusStat = activeCharacter.skillStats.gladius[currentBt]?.[currentAtk];
+    
+        if (gladiusStat) {
+            buffBonusDef += gladiusStat.defense || 0; 
         }
     }
 
@@ -2962,7 +3166,7 @@ function renderSkillsAndSynergies() {
                     const currentSpeed = currentPushup || 100; 
                     const typhoonStat = activeCharacter.skillStats.typhoon[currentBt]?.[currentSpeed];
                     if (typhoonStat) {
-                        const typhoonVal = `Attack: +${typhoonStat.attack ?? 0}%, Jump: +${typhoonStat.jump ?? 0}`;
+                        const typhoonVal = `Attack: +${typhoonStat.attack ?? 0}, Jump: +${typhoonStat.jump ?? 0}`;
                         desc = desc.replace('typhoon_VAL', typhoonVal);
                     }
 
@@ -2998,6 +3202,22 @@ function renderSkillsAndSynergies() {
                     const fishbundurVal = activeCharacter.skillStats.fishbundur[currentBt];
                     const fishbuncldwnVal = activeCharacter.skillStats.fishbuncldwn[currentBt]
                     desc = desc.replace('fishbundur_VAL', fishbundurVal).replace('fishbuncldwn_VAL', fishbuncldwnVal);
+                }
+
+                if (activeCharacter.skillStats.suprisecldwn) {
+                    const suprisecldwnVal = activeCharacter.skillStats.suprisecldwn[currentBt];
+                    desc = desc.replace('suprisecldwn_VAL', suprisecldwnVal);
+                }
+
+                if (activeCharacter.id === 'sif' && activeCharacter.skillStats.gladius) {
+                    const currentAtk = currentPushup || 100;
+
+                    const gladiusStat = activeCharacter.skillStats.gladius?.[currentBt]?.[currentAtk];
+                    const gladiusVal = gladiusStat ? `+${gladiusStat.defense}` : "+0";
+
+                    const gladiusdurVal = activeCharacter.skillStats.gladiusdur?.[currentBt] ?? 0;
+                    const gladiuscldwnVal = activeCharacter.skillStats.gladiuscldwn?.[currentBt] ?? 0;
+                    desc = desc.replace('gladius_VAL', gladiusVal).replace('gladiusdur_VAL', gladiusdurVal).replace('gladiuscldwn_VAL', gladiuscldwnVal);
                 }
 
                 return `<li class='mb-3'><strong class='text-white'>${s.name}:</strong><br><span class='text-light-custom small'>${desc}</span></li>`;
