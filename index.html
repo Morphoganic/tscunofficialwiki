@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>The Spike: Cross - Character Database</title>
+    <title>The Spike: Cross - Character Database</title>
 
-<link rel="icon" type="image/webp" href="img/Site-logo.webp">
+    <link rel="icon" type="image/webp" href="img/Site-logo.webp">
 
-<!-- Bootstrap 5 -->
-<link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Custom CSS -->
-<link rel="stylesheet" href="style.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 
 
 </head>
@@ -23,483 +23,435 @@
 <body>
 
 
-<div class="container py-5">
+    <div class="container py-5">
 
-    <!-- ==================== LIST KARAKTER ==================== -->
-    <div id="listView" class="view-section active">
+        <!-- ==================== LIST KARAKTER ==================== -->
+        <div id="listView" class="view-section active">
 
-        <div class="text-center mb-5">
-            <h1 class="fw-bold text-white display-5">
-                🏐 The Spike Cross Index
-            </h1>
+            <div class="text-center mb-5">
+                <h1 class="fw-bold text-white display-5">
+                    🏐 The Spike Cross Index
+                </h1>
 
-            <p class="text-light-custom fs-5">
-                Choose Character to see Details, Breakthrough, and Stats in real-time
-            </p>
-        </div>
-
-        <!-- DISCLAIMER -->
-        <div class="mb-4">
-            <p class="fs-6 text-sm-center">
-                Disclaimer: This website is an unofficial fan-made project and is not affiliated with,
-                endorsed, or sponsored by SUNCYAN Inc. "The Spike Cross", character names, gameplay assets,
-                stats, and related media are trademarks and copyrights of SUNCYAN Inc.
-                All rights reserved to their respective owners.
-            </p>
-        </div>
-
-        <!-- FILTER & SEARCH -->
-        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
-
-            <button class="btn btn-warning btn-sm active"
-                onclick="filterCharacters('ALL', this)">
-                ALL
-            </button>
-
-            <button class="btn btn-outline-warning btn-sm"
-                onclick="filterCharacters('WS', this)">
-                WS
-            </button>
-
-            <button class="btn btn-outline-warning btn-sm"
-                onclick="filterCharacters('MB', this)">
-                MB
-            </button>
-
-            <button class="btn btn-outline-warning btn-sm"
-                onclick="filterCharacters('SE', this)">
-                SE
-            </button>
-
-            <!-- SEARCH -->
-            <div class="input-group input-group-sm search-box">
-                <input
-                    type="text"
-                    id="characterSearchInput"
-                    class="form-control bg-dark text-light border-secondary"
-                    placeholder="Cari karakter..."
-                    oninput="searchCharacters()"
-                >
+                <p class="text-light-custom fs-5">
+                    Choose Character to see Details, Breakthrough, and Stats in real-time
+                </p>
             </div>
 
-        </div>
+            <!-- DISCLAIMER -->
+            <div class="mb-4">
+                <p class="fs-6 text-sm-center">
+                    Disclaimer: This website is an unofficial fan-made project and is not affiliated with,
+                    endorsed, or sponsored by SUNCYAN Inc. "The Spike Cross", character names, gameplay assets,
+                    stats, and related media are trademarks and copyrights of SUNCYAN Inc.
+                    All rights reserved to their respective owners.
+                </p>
+            </div>
 
-        <!-- CHARACTER GRID -->
-        <div class="row g-4" id="characterGrid">
-            <!-- Character otomatis dimuat dari script.js -->
-        </div>
+            <!-- FILTER & SEARCH -->
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
 
-        <!-- ==================== CREDITS ==================== -->
-        <hr class="border-secondary my-5">
+                <button class="btn btn-warning btn-sm active" onclick="filterCharacters('ALL', this)">
+                    ALL
+                </button>
 
-        <div id="creditsSection">
+                <button class="btn btn-outline-warning btn-sm" onclick="filterCharacters('WS', this)">
+                    WS
+                </button>
 
-            <div class="card card-custom p-4 shadow-sm text-light-custom">
+                <button class="btn btn-outline-warning btn-sm" onclick="filterCharacters('MB', this)">
+                    MB
+                </button>
 
-                <h4 class="text-white fw-bold mb-3">
-                    Credits & Acknowledgments
-                </h4>
+                <button class="btn btn-outline-warning btn-sm" onclick="filterCharacters('SE', this)">
+                    SE
+                </button>
 
-                <h6 class="text-warning fw-semibold mt-2">
-                    Game Ownership & Intellectual Property
-                </h6>
-
-                <ul class="small mb-3">
-                    <li>
-                        All game content, characters, skills, stats, graphics,
-                        and trademarks belong to <strong>SUNCYAN Inc.</strong>.
-                    </li>
-
-                    <li>
-                        <a
-                            href="https://store.steampowered.com/app/3983810/The_Spike_Cross/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-info text-decoration-none"
-                        >
-                            The Spike Cross
-                        </a>
-                        is developed and published by <strong>SUNCYAN Inc.</strong>.
-                        This website is an unofficial, non-commercial fan-made project.
-                    </li>
-                </ul>
-
-                <h6 class="text-warning fw-semibold mt-2">
-                    Special Thanks & Community Contributions
-                </h6>
-
-                <ul class="small mb-3">
-                    <li>
-                        <strong>The Spike Cross Fandom Wiki:</strong>
-                        For being an amazing reference and foundation for verifying game data.
-                    </li>
-
-                    <li>
-                        <strong>Content Creators:</strong>
-                        Huge thanks to all video creators, streamers, and guide writers
-                        whose analysis helped clarify skill details and buffs.
-                    </li>
-
-                    <li>
-                        <strong>Our Viewers & Community:</strong>
-                        Thank you to every player who shared information,
-                        reported data corrections, and helped keep this database accurate.
-                    </li>
-                </ul>
-
-                <h6 class="text-warning fw-semibold mt-2">
-                    Website Creation
-                </h6>
-
-                <ul class="small mb-0">
-                    <li>
-                        <strong>Concept & Development:</strong>
-                        Created by Kartoffel🐱.
-                    </li>
-
-                    <li>
-                        &copy; 2026 The Spike Cross Index.
-                        Unofficial Fan Database.
-                    </li>
-                </ul>
+                <!-- SEARCH -->
+                <div class="input-group input-group-sm search-box">
+                    <input type="text" id="characterSearchInput"
+                        class="form-control bg-dark text-light border-secondary" placeholder="Cari karakter..."
+                        oninput="searchCharacters()">
+                </div>
 
             </div>
 
-        </div>
+            <!-- CHARACTER GRID -->
+            <div class="row g-4" id="characterGrid">
+                <!-- Character otomatis dimuat dari script.js -->
+            </div>
 
-    </div>
+            <!-- ==================== CREDITS ==================== -->
+            <hr class="border-secondary my-5">
 
+            <div id="creditsSection">
 
-    <!-- ==================== DETAIL KARAKTER ==================== -->
-    <div id="detailView" class="view-section" style="display: none;">
+                <div class="card card-custom p-4 shadow-sm text-light-custom">
 
-        <!-- BACK BUTTON -->
-        <button
-            class="btn btn-outline-warning mb-4 fw-bold px-4 py-2"
-            onclick="goBack()"
-        >
-            ← Back
-        </button>
+                    <h4 class="text-white fw-bold mb-3">
+                        Credits & Acknowledgments
+                    </h4>
 
+                    <h6 class="text-warning fw-semibold mt-2">
+                        Game Ownership & Intellectual Property
+                    </h6>
 
-        <div class="row g-4 mb-4">
+                    <ul class="small mb-3">
+                        <li>
+                            All game content, characters, skills, stats, graphics,
+                            and trademarks belong to <strong>SUNCYAN Inc.</strong>.
+                        </li>
 
-            <!-- ==================== PROFILE ==================== -->
-            <div class="col-lg-4">
+                        <li>
+                            <a href="https://store.steampowered.com/app/3983810/The_Spike_Cross/" target="_blank"
+                                rel="noopener noreferrer" class="text-info text-decoration-none">
+                                The Spike Cross
+                            </a>
+                            is developed and published by <strong>SUNCYAN Inc.</strong>.
+                            This website is an unofficial, non-commercial fan-made project.
+                        </li>
+                    </ul>
 
-                <div class="card card-custom p-4 text-center h-100 shadow-sm">
+                    <h6 class="text-warning fw-semibold mt-2">
+                        Special Thanks & Community Contributions
+                    </h6>
 
-                    <div class="avatar-container mx-auto mb-3">
+                    <ul class="small mb-3">
+                        <li>
+                            <strong>The Spike Cross Fandom Wiki:</strong>
+                            For being an amazing reference and foundation for verifying game data.
+                        </li>
 
-                        <img
-                            id="detailImg"
-                            src=""
-                            class="rounded-circle border border-3 border-warning"
-                            width="130"
-                            height="130"
-                            style="object-fit: cover;"
-                            alt="Character Avatar"
-                        >
+                        <li>
+                            <strong>Content Creators:</strong>
+                            Huge thanks to all video creators, streamers, and guide writers
+                            whose analysis helped clarify skill details and buffs.
+                        </li>
 
-                    </div>
+                        <li>
+                            <strong>Our Viewers & Community:</strong>
+                            Thank you to every player who shared information,
+                            reported data corrections, and helped keep this database accurate.
+                        </li>
+                    </ul>
 
+                    <h6 class="text-warning fw-semibold mt-2">
+                        Website Creation
+                    </h6>
 
-                    <h3
-                        id="detailName"
-                        class="text-white mb-1 fw-bold"
-                    >
-                        Nama Karakter
-                    </h3>
+                    <ul class="small mb-0">
+                        <li>
+                            <strong>Concept & Development:</strong>
+                            Created by Kartoffel🐱.
+                        </li>
 
-
-                    <p
-                        id="detailPosition"
-                        class="text-warning fw-semibold mb-3"
-                    >
-                        Position
-                    </p>
-
-
-                    <!-- BREAKTHROUGH -->
-                    <div
-                        class="bg-card-inner p-3 rounded border border-secondary mb-3"
-                    >
-
-                        <label
-                            class="form-label text-light-custom small mb-2 fw-semibold text-uppercase tracking-wider"
-                        >
-                            Breakthrough Level
-                        </label>
-
-
-                        <div
-                            class="d-flex justify-content-center align-items-center gap-3"
-                        >
-
-                            <button
-                                class="btn btn-sm btn-warning fw-bold px-3 py-1 shadow"
-                                onclick="changeBreakthrough(-1)"
-                            >
-                                -
-                            </button>
-
-
-                            <span
-                                id="btDisplay"
-                                class="badge badge-bt fs-5 py-2 px-3"
-                            >
-                                +0
-                            </span>
-
-
-                            <button
-                                class="btn btn-sm btn-warning fw-bold px-3 py-1 shadow"
-                                onclick="changeBreakthrough(1)"
-                            >
-                                +
-                            </button>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- SPECIAL SLIDER 1 -->
-                    <div
-                        id="daveSliderContainer"
-                        style="display: none;"
-                        class="mb-3"
-                    >
-
-                        <input
-                            type="range"
-                            id="daveRange"
-                            min="0"
-                            max="7"
-                            step="1"
-                            value="0"
-                            class="form-range custom-green-range"
-                            oninput="handleSliderChange(this.value)"
-                        >
-
-                        <p class="text-white mt-1 small">
-                            <span id="sliderLabelText">
-                                Fall Power
-                            </span>:
-                            <span id="pushupVal">
-                                0
-                            </span>
-                        </p>
-
-                    </div>
-
-
-                    <!-- SPECIAL SLIDER 2 -->
-                    <div
-                        id="sliderContainer2"
-                        style="display: none;"
-                        class="mb-3"
-                    >
-
-                        <input
-                            type="range"
-                            id="daveRange2"
-                            min="0"
-                            max="12"
-                            step="1"
-                            value="0"
-                            class="form-range custom-green-range"
-                            oninput="handleSliderChange2(this.value)"
-                        >
-
-                        <p class="text-white mt-1 small">
-
-                            <span id="sliderLabelText2">
-                                Flare Debuff
-                            </span>:
-
-                            <span id="pushupVal2">
-                                0
-                            </span>
-
-                        </p>
-
-                    </div>
-
-
-                    <!-- DESCRIPTION -->
-                    <p
-                        id="detailDesc"
-                        class="small text-light-custom mb-0 lh-base"
-                    >
-                    </p>
+                        <li>
+                            &copy; 2026 The Spike Cross Index.
+                            Unofficial Fan Database.
+                        </li>
+                    </ul>
 
                 </div>
 
             </div>
 
-
-            <!-- ==================== STAT ==================== -->
-            <div class="col-lg-8">
-
-                <div class="card card-custom p-4 h-100 shadow-sm">
+        </div>
 
 
-                    <!-- MANUAL STAT -->
-                    <div
-                        class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2"
-                    >
+        <!-- ==================== DETAIL KARAKTER ==================== -->
+        <div id="detailView" class="view-section" style="display: none;">
 
-                        <div>
+            <!-- BACK BUTTON -->
+            <!-- HEADER NAVIGATION (BACK & PREV/NEXT) -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <button class="btn btn-outline-warning fw-bold px-4 py-2" onclick="goBack()">
+                    ← Back
+                </button>
 
-                            <h4 class="text-white mb-0 fw-bold">
-                                ⚙️ Manual Stat Allocation
-                            </h4>
+                <div class="d-flex gap-2">
+                    <button id="btnPrevChar" class="btn btn-outline-warning fw-bold px-3 py-2"
+                        onclick="navigateCharacter(-1)">
+                        ❮ Prev
+                    </button>
+                    <button id="btnNextChar" class="btn btn-warning fw-bold px-3 py-2" onclick="navigateCharacter(1)">
+                        Next ❯
+                    </button>
+                </div>
+            </div>
 
-                            <p class="text-success-custom small mb-0">
-                                Customize the distribution of your character's bonus points here.
+            <div class="row g-4 mb-4">
+
+                <!-- ==================== PROFILE ==================== -->
+                <div class="col-lg-4">
+
+                    <div class="card card-custom p-4 text-center h-100 shadow-sm">
+
+                        <div class="avatar-container mx-auto mb-3">
+
+                            <img id="detailImg" src="" class="rounded-circle border border-3 border-warning" width="130"
+                                height="130" style="object-fit: cover;" alt="Character Avatar">
+
+                        </div>
+
+
+                        <h3 id="detailName" class="text-white mb-1 fw-bold">
+                            Nama Karakter
+                        </h3>
+
+
+                        <p id="detailPosition" class="text-warning fw-semibold mb-3">
+                            Position
+                        </p>
+
+
+                        <!-- BREAKTHROUGH -->
+                        <div class="bg-card-inner p-3 rounded border border-secondary mb-3">
+
+                            <label
+                                class="form-label text-light-custom small mb-2 fw-semibold text-uppercase tracking-wider">
+                                Breakthrough Level
+                            </label>
+
+
+                            <div class="d-flex justify-content-center align-items-center gap-3">
+
+                                <button class="btn btn-sm btn-warning fw-bold px-3 py-1 shadow"
+                                    onclick="changeBreakthrough(-1)">
+                                    -
+                                </button>
+
+
+                                <span id="btDisplay" class="badge badge-bt fs-5 py-2 px-3">
+                                    +0
+                                </span>
+
+
+                                <button class="btn btn-sm btn-warning fw-bold px-3 py-1 shadow"
+                                    onclick="changeBreakthrough(1)">
+                                    +
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SPECIAL SLIDER 1 -->
+                        <div id="daveSliderContainer" style="display: none;" class="mb-3">
+
+                            <input type="range" id="daveRange" min="0" max="7" step="1" value="0"
+                                class="form-range custom-green-range" oninput="handleSliderChange(this.value)">
+
+                            <p class="text-white mt-1 small">
+                                <span id="sliderLabelText">
+                                    Fall Power
+                                </span>:
+                                <span id="pushupVal">
+                                    0
+                                </span>
                             </p>
 
                         </div>
 
 
-                        <span
-                            class="badge bg-dark border border-warning text-warning px-3 py-2"
-                        >
-                            Remaining:
-                            <span
-                                id="remainingPoints"
-                                class="fw-bold"
-                            >
-                            </span>
-                        </span>
+                        <!-- SPECIAL SLIDER 2 -->
+                        <div id="sliderContainer2" style="display: none;" class="mb-3">
 
-                    </div>
+                            <input type="range" id="daveRange2" min="0" max="12" step="1" value="0"
+                                class="form-range custom-green-range" oninput="handleSliderChange2(this.value)">
 
+                            <p class="text-white mt-1 small">
 
-                    <!-- STAT TABLE -->
-                    <div class="table-responsive mb-4">
+                                <span id="sliderLabelText2">
+                                    Flare Debuff
+                                </span>:
 
-                        <table
-                            class="table table-custom align-middle text-center"
-                        >
+                                <span id="pushupVal2">
+                                    0
+                                </span>
 
-                            <thead>
+                            </p>
 
-                                <tr>
-                                    <th class="text-start">
-                                        Attribute Stat
-                                    </th>
-
-                                    <th>
-                                        Base Stat
-                                    </th>
-
-                                    <th>
-                                        Bonus
-                                    </th>
-
-                                    <th>
-                                        Total Stat
-                                    </th>
-
-                                    <th>
-                                        Action (+/- 5)
-                                    </th>
-                                </tr>
-
-                            </thead>
+                        </div>
 
 
-                            <tbody id="statTableBody">
-                                <!-- Generated by JavaScript -->
-                            </tbody>
-
-                        </table>
-
-                    </div>
-
-
-                    <!-- SEPARATOR -->
-                    <hr
-                        class="border-warning opacity-75 my-4"
-                    >
-
-
-                    <!-- RECOMMENDED STAT -->
-                    <div class="mb-3">
-
-                        <h4 class="text-white mb-0 fw-bold">
-                            ⭐ Recommended / Max Stat
-                        </h4>
-
-                        <p class="text-light-custom small mb-0">
-                            Recommended stat allocation based on character potential.
+                        <!-- DESCRIPTION -->
+                        <p id="detailDesc" class="small text-light-custom mb-0 lh-base">
                         </p>
 
                     </div>
 
-
-                    <div class="table-responsive">
-
-                        <table
-                            class="table table-custom align-middle text-center"
-                        >
-
-                            <thead>
-
-                                <tr>
-
-                                    <th class="text-start">
-                                        Attribute Stat
-                                    </th>
-
-                                    <th>
-                                        Base
-                                    </th>
-
-                                    <th>
-                                        Breakthrough
-                                    </th>
-
-                                    <th>
-                                        Total
-                                    </th>
-
-                                </tr>
-
-                            </thead>
+                </div>
 
 
-                            <tbody id="recommendedTableBody">
-                                <!-- Generated by JavaScript -->
-                            </tbody>
+                <!-- ==================== STAT ==================== -->
+                <div class="col-lg-8">
 
-                        </table>
+                    <div class="card card-custom p-4 h-100 shadow-sm">
+
+
+                        <!-- MANUAL STAT -->
+                        <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+
+                            <div>
+
+                                <h4 class="text-white mb-0 fw-bold">
+                                    ⚙️ Manual Stat Allocation
+                                </h4>
+
+                                <p class="text-success-custom small mb-0">
+                                    Customize the distribution of your character's bonus points here.
+                                </p>
+
+                            </div>
+
+
+                            <span class="badge bg-dark border border-warning text-warning px-3 py-2">
+                                Remaining:
+                                <span id="remainingPoints" class="fw-bold">
+                                </span>
+                            </span>
+
+                        </div>
+
+
+                        <!-- STAT TABLE -->
+                        <div class="table-responsive mb-4">
+
+                            <table class="table table-custom align-middle text-center">
+
+                                <thead>
+
+                                    <tr>
+                                        <th class="text-start">
+                                            Attribute Stat
+                                        </th>
+
+                                        <th>
+                                            Base Stat
+                                        </th>
+
+                                        <th>
+                                            Bonus
+                                        </th>
+
+                                        <th>
+                                            Total Stat
+                                        </th>
+
+                                        <th>
+                                            Action (+/- 5)
+                                        </th>
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="statTableBody">
+                                    <!-- Generated by JavaScript -->
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+
+                        <!-- SEPARATOR -->
+                        <hr class="border-warning opacity-75 my-4">
+
+
+                        <!-- RECOMMENDED STAT -->
+                        <div class="mb-3">
+
+                            <h4 class="text-white mb-0 fw-bold">
+                                ⭐ Recommended / Max Stat
+                            </h4>
+
+                            <p class="text-light-custom small mb-0">
+                                Recommended stat allocation based on character potential.
+                            </p>
+
+                        </div>
+
+
+                        <div class="table-responsive">
+
+                            <table class="table table-custom align-middle text-center">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th class="text-start">
+                                            Attribute Stat
+                                        </th>
+
+                                        <th>
+                                            Base
+                                        </th>
+
+                                        <th>
+                                            Breakthrough
+                                        </th>
+
+                                        <th>
+                                            Total
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="recommendedTableBody">
+                                    <!-- Generated by JavaScript -->
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
 
                     </div>
-
 
                 </div>
 
             </div>
 
-        </div>
+
+            <!-- ==================== SKILLS ==================== -->
+            <div class="row g-4">
+
+                <div class="col-lg-6">
+
+                    <div class="card card-custom p-4 h-100 shadow-sm">
+
+                        <h4 class="text-white fw-bold mb-3">
+                            ⚡ Skills
+                        </h4>
+
+                        <div id="skillBuffList">
+                            <!-- Generated by JavaScript -->
+                        </div>
+
+                    </div>
+
+                </div>
 
 
-        <!-- ==================== SKILLS ==================== -->
-        <div class="row g-4">
+                <!-- SYNERGY -->
+                <div class="col-lg-6">
 
-            <div class="col-lg-6">
+                    <div class="card card-custom p-4 h-100 shadow-sm">
 
-                <div class="card card-custom p-4 h-100 shadow-sm">
+                        <h4 class="text-white fw-bold mb-3">
+                            🤝 Synergy
+                        </h4>
 
-                    <h4 class="text-white fw-bold mb-3">
-                        ⚡ Skills
-                    </h4>
+                        <div id="synergyBuffList">
+                            <!-- Generated by JavaScript -->
+                        </div>
 
-                    <div id="skillBuffList">
-                        <!-- Generated by JavaScript -->
                     </div>
 
                 </div>
@@ -507,187 +459,188 @@
             </div>
 
 
-            <!-- SYNERGY -->
-            <div class="col-lg-6">
+            <!-- OVERALL SECTION -->
+            <div class="row mt-4">
 
-                <div class="card card-custom p-4 h-100 shadow-sm">
+                <!-- Card 1: Conditions & Buffs -->
+                <div class="col-12 mb-4">
+                    <div class="card card-custom p-4 shadow-sm"> <!-- Class h-100 dihapus -->
+                        <h5 class="text-white mb-3 fw-bold">Conditions & Buffs</h5>
 
-                    <h4 class="text-white fw-bold mb-3">
-                        🤝 Synergy
-                    </h4>
+                        <div class="bg-card-inner p-3 rounded border border-secondary mb-3">
+                            <p class="mb-2 text-light-custom small fw-semibold">Condition</p>
+                            <div id="overallBuffContent"></div>
+                        </div>
 
-                    <div id="synergyBuffList">
-                        <!-- Generated by JavaScript -->
-                    </div>
+                        <div class="bg-card-inner p-3 rounded border border-secondary mb-3">
+                            <p class="mb-2 text-light-custom small fw-semibold">Active Team Buffs</p>
+                            <div id="teamBuffContainer" class="d-flex flex-column gap-2">
 
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- OVERALL -->
-        <div class="row mt-4">
-
-            <div class="col-12">
-
-                <div class="card card-custom p-4 h-100 shadow-sm">
-                    <h5 class="text-white mb-3 fw-bold">Conditions & Buffs</h5>
-                        
-                    <div class="bg-card-inner p-3 rounded border border-secondary mb-3">
-                        <p class="mb-2 text-light-custom small fw-semibold">Condition</p>
-                        <div id="overallBuffContent"></div>
-                    </div>
-
-                    <div class="bg-card-inner p-3 rounded border border-secondary mb-3">
-                        <p class="mb-2 text-light-custom small fw-semibold">Active Team Buffs</p>
-                        <div id="teamBuffContainer" class="d-flex flex-column gap-2">
-
-                            <label class="text-white small cursor-pointer mb-0">
-                                <input type="checkbox" class="buff-checkbox me-2" 
-                                        data-position="SE" 
-                                        data-atk="0" data-def="0" data-spd="0" data-jmp="0" 
-                                        data-power-pct="20" data-spin="1.25" 
+                                <label class="text-white small cursor-pointer mb-0">
+                                    <input type="checkbox" class="buff-checkbox me-2" data-position="SE" data-atk="0"
+                                        data-def="0" data-spd="0" data-jmp="0" data-power-pct="20" data-spin="1.25"
                                         onchange="handleBuffChange(this)">
-                                Ahyeon (Chemical Reaction) <br>
-                                <span class="text-info small">Power +20% and Spin +25% </span>
-                            </label>
+                                    Ahyeon (Chemical Reaction) <br>
+                                    <span class="text-info small">Power +20% and Spin +25% </span>
+                                </label>
 
-                            <!-- Claire -->
-                            <label class="text-white small cursor-pointer mb-0 d-block">
-                                <input type="checkbox" class="buff-checkbox me-2" 
-                                    data-character="claire"
-                                    data-has-slider="true"
-                                    data-slider-min="0"
-                                    data-slider-max="100"
-                                    data-slider-default="100"
-                                    data-slider-label="Overdrive Gauge"
-                                    data-slider-unit="%"
-                                    onchange="handleUniversalBuffChange(this)">
-                                Claire (Overdrive) <br>
-                                <span class="buff-result-text text-info small">Atk +0 | Jmp +0 | Dur 0s</span>
+                                <!-- Claire -->
+                                <label class="text-white small cursor-pointer mb-0 d-block">
+                                    <input type="checkbox" class="buff-checkbox me-2" data-character="claire"
+                                        data-has-slider="true" data-slider-min="0" data-slider-max="100"
+                                        data-slider-default="100" data-slider-label="Overdrive Gauge"
+                                        data-slider-unit="%" onchange="handleUniversalBuffChange(this)">
+                                    Claire (Overdrive) <br>
+                                    <span class="buff-result-text text-info small">Atk +0 | Jmp +0 | Dur 0s</span>
 
-                                <!-- CONTAINER GENERIK (Gunakan CLASS, bukan ID) -->
-                                <div class="buff-options-container bg-card-inner p-3 rounded border border-secondary mb-3 mt-2" style="display: none;">
-                                    <div class="mb-2">
-                                        <label class="small text-muted mb-1 d-block">Breakthrough Level:</label>
-                                        <select class="buff-bt-select form-select form-select-sm bg-dark text-white border-secondary" onchange="handleUniversalBuffChange(this)">
-                                            <option value="0">BT 0</option>
-                                            <option value="1">BT 1</option>
-                                            <option value="2">BT 2</option>
-                                            <option value="3">BT 3</option>
-                                            <option value="4">BT 4</option>
-                                            <option value="5">BT 5</option>
-                                        </select>
+                                    <div class="buff-options-container bg-card-inner p-3 rounded border border-secondary mb-3 mt-2"
+                                        style="display: none;">
+                                        <div class="mb-2">
+                                            <label class="small text-muted mb-1 d-block">Breakthrough Level:</label>
+                                            <select
+                                                class="buff-bt-select form-select form-select-sm bg-dark text-white border-secondary"
+                                                onchange="handleUniversalBuffChange(this)">
+                                                <option value="0">BT 0</option>
+                                                <option value="1">BT 1</option>
+                                                <option value="2">BT 2</option>
+                                                <option value="3">BT 3</option>
+                                                <option value="4">BT 4</option>
+                                                <option value="5">BT 5</option>
+                                            </select>
+                                        </div>
+
+                                        <p class="text-white mt-2 small mb-1">
+                                            <span class="slider-label-text">Parameter</span>:
+                                            <span class="slider-val-text fw-bold text-warning">0</span><span
+                                                class="slider-unit-text"></span>
+                                        </p>
+                                        <input type="range" class="buff-range-input form-range custom-green-range"
+                                            oninput="handleUniversalBuffChange(this)">
                                     </div>
+                                </label>
 
-                                    <p class="text-white mt-2 small mb-1">
-                                        <span class="slider-label-text">Parameter</span>: 
-                                        <span class="slider-val-text fw-bold text-warning">0</span><span class="slider-unit-text"></span>
-                                    </p>
-                                    <input type="range" class="buff-range-input form-range custom-green-range" oninput="handleUniversalBuffChange(this)">
-                                </div>
-                            </label>
+                                <!-- Ellio -->
+                                <label class="text-white small cursor-pointer mb-0 d-block">
+                                    <input type="checkbox" class="buff-checkbox me-2" data-position="SE"
+                                        data-character="ellio" data-has-slider="true" data-slider-min="35"
+                                        data-slider-max="90" data-slider-default="35" data-dynamic-type="ellio_abys"
+                                        data-slider-label="Abys Toss Angle" data-slider-unit="°"
+                                        onchange="handleUniversalBuffChange(this)">
+                                    Ellio (Abys Toss) <br>
+                                    <span id="ellioBuffText" class="text-info small">Ball Power 0%</span>
 
-                            <!-- Checkbox Ellio dengan Slider Universal & Pilihan BT -->
-                            <label class="text-white small cursor-pointer mb-0 d-block">
-                                <input type="checkbox" class="buff-checkbox me-2" 
-                                    data-position="SE" 
-                                    data-character="ellio"
-                                    data-has-slider="true"
-                                    data-slider-min="35"
-                                    data-slider-max="90"
-                                    data-slider-default="35"
-                                    data-dynamic-type="ellio_abys"
-                                    data-slider-label="Abys Toss Angle"
-                                    data-slider-unit="°"
-                                    onchange="handleUniversalBuffChange(this)">
-                                Ellio (Abys Toss) <br>
-                                <span id="ellioBuffText" class="text-info small">Ball Power 0%</span>
+                                    <div id="universalBuffOptionsContainer"
+                                        class="bg-card-inner p-3 rounded border border-secondary mb-3"
+                                        style="display: none;">
+                                        <div class="mb-2">
+                                            <label class="small text-muted mb-1 d-block">Ellio Breakthrough
+                                                Level:</label>
+                                            <select id="ellioBuffBtSelect"
+                                                class="form-select form-select-sm bg-dark text-white border-secondary"
+                                                onchange="updateDetailView()">
+                                                <option value="0">BT 0 (Max 24%)</option>
+                                                <option value="1">BT 1 (Max 25.2%)</option>
+                                                <option value="2">BT 2 (Max 26.4%)</option>
+                                                <option value="3">BT 3 (Max 27.6%)</option>
+                                                <option value="4">BT 4 (Max 30%)</option>
+                                                <option value="5">BT 5 (Max 30%)</option>
+                                            </select>
+                                        </div>
 
-                                <!-- CONTAINER UNIVERSAL (Berisi Dropdown BT Ellio + Slider Sudut) -->
-                                <div id="universalBuffOptionsContainer" class="bg-card-inner p-3 rounded border border-secondary mb-3" style="display: none;">
-        
-                                    <!-- Pilihan Breakthrough (BT) khusus Ellio Support -->
-                                    <div class="mb-2">
-                                        <label class="small text-muted mb-1 d-block">Ellio Breakthrough Level:</label>
-                                        <select id="ellioBuffBtSelect" class="form-select form-select-sm bg-dark text-white border-secondary" onchange="updateDetailView()">
-                                            <option value="0">BT 0 (Max 24%)</option>
-                                            <option value="1">BT 1 (Max 25.2%)</option>
-                                            <option value="2">BT 2 (Max 26.4%)</option>
-                                            <option value="3">BT 3 (Max 27.6%)</option>
-                                            <option value="4">BT 4 (Max 30%)</option>
-                                            <option value="5">BT 5 (Max 30%)</option>
-                                        </select>
+                                        <p class="text-white mt-2 small mb-1">
+                                            <span id="dynamicSliderTitle">Parameter</span>:
+                                            <span id="dynamicSliderVal" class="fw-bold text-warning">0</span><span
+                                                id="dynamicSliderUnit"></span>
+                                        </p>
+                                        <input type="range" id="universalDynamicRange" min="0" max="100" value="0"
+                                            class="form-range custom-green-range"
+                                            oninput="updateUniversalSlider(this.value)">
                                     </div>
+                                </label>
 
-                                    <!-- Slider Universal untuk Sudut -->
-                                    <p class="text-white mt-2 small mb-1">
-                                        <span id="dynamicSliderTitle">Parameter</span>: 
-                                        <span id="dynamicSliderVal" class="fw-bold text-warning">0</span><span id="dynamicSliderUnit"></span>
-                                    </p>
-                                    <input type="range" id="universalDynamicRange" min="0" max="100" value="0" 
-                                        class="form-range custom-green-range" oninput="updateUniversalSlider(this.value)">
-                                </div>
-                            </label>
-
-                            <label class="text-white small cursor-pointer mb-0">
-                                <input type="checkbox" class="buff-checkbox me-2" 
-                                        data-position="MB" 
-                                        data-atk="90" data-def="100" data-spd="35" data-jmp="9" 
-                                        data-power-pct="0" data-spin="1.0" 
+                                <label class="text-white small cursor-pointer mb-0">
+                                    <input type="checkbox" class="buff-checkbox me-2" data-position="MB" data-atk="90"
+                                        data-def="100" data-spd="35" data-jmp="9" data-power-pct="0" data-spin="1.0"
                                         onchange="handleBuffChange(this)">
-                                Sanghyeon (Highlight) <br>
-                                <span class="text-info small">Attack +90, Defence +100, Speed +35, Jump +9</span>
-                            </label>
+                                    Sanghyeon (Highlight) <br>
+                                    <span class="text-info small">Attack +90, Defence +100, Speed +35, Jump +9</span>
+                                </label>
 
-                            <label class="text-white small cursor-pointer mb-0">
-                                <input type="checkbox" class="buff-checkbox me-2" 
-                                        data-position="SE" 
-                                        data-atk="0" data-def="0" data-spd="0" data-jmp="0" 
-                                        data-power-pct="15" data-spin="0" 
+                                <label class="text-white small cursor-pointer mb-0">
+                                    <input type="checkbox" class="buff-checkbox me-2" data-position="SE" data-atk="0"
+                                        data-def="0" data-spd="0" data-jmp="0" data-power-pct="15" data-spin="0"
                                         onchange="handleBuffChange(this)">
-                                [SE]Sara (Critical Toss) <br>
-                                <span class="text-info small">Power +15%</span>
-                            </label>
-                    
-                            <label class="text-white small cursor-pointer mb-0">
-                                <input type="checkbox" class="buff-checkbox me-2" 
-                                        data-position="SE" 
-                                        data-atk="0" data-def="0" data-spd="0" data-jmp="0" 
-                                        data-power-pct="35" data-spin="2.5" 
-                                        onchange="handleBuffChange(this)">
-                                Zero (Spotlight Toss) <br>
-                                <span class="text-info small">Power +35%, Spin Rate 2.5</span>
-                            </label>
+                                    [SE]Sara (Critical Toss) <br>
+                                    <span class="text-info small">Power +15%</span>
+                                </label>
 
-                            <!-- Checkbox buff lain (Ahyeon, Sanghyeon, dll) tetap di bawahnya -->
+                                <label class="text-white small cursor-pointer mb-0">
+                                    <input type="checkbox" class="buff-checkbox me-2" data-position="SE" data-atk="0"
+                                        data-def="0" data-spd="0" data-jmp="0" data-power-pct="35" data-spin="2.5"
+                                        onchange="handleBuffChange(this)">
+                                    Zero (Spotlight Toss) <br>
+                                    <span class="text-info small">Power +35%, Spin Rate 2.5</span>
+                                </label>
+
+                            </div>
+                        </div>
+
+                        <div id="ballMultiplierInfo"
+                            class="bg-card-inner p-3 rounded border border-secondary text-light small"
+                            style="display: none;">
+                            <div class="fw-bold text-warning mb-1">Ball Trajectory Effect:</div>
+                            <div>Power Multiplier: <span id="valBallPower" class="text-success-custom">+0%</span></div>
+                            <div>Spin Rate: <span id="valBallSpin" class="text-info fw-bold">1.0 (Standard)</span></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 2: Guides -->
+                <div class="col-12">
+                    <div class="guild-card card-custom p-4 shadow-sm"> <!-- Class h-100 dihapus -->
+                        <h5 class="text-white mb-3 fw-bold">Guides 📚</h5>
+
+                        <div class="bg-card-inner p-3 rounded border border-secondary">
+                            <p class="mb-2 text-light-custom small fw-semibold"></p>
+                            <div id="guideVideoContainer"></div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- Card 3: Skins & Official Gallery -->
+                <div class="col-12 mt-4">
+                    <div class="guild-card card-custom p-4 shadow-sm">
+                        <h5 class="text-white mb-3 fw-bold">Skins & Gallery 🎨</h5>
+
+                        <!-- Sub-section 1: Skins -->
+                        <div class="bg-card-inner p-3 rounded border border-secondary mb-3">
+                            <p class="mb-2 text-light-custom small fw-semibold">Character Skins</p>
+                            <div id="skinsContainer" class="row g-3"></div>
+                        </div>
+
+                        <!-- Sub-section 2: Gallery / Official Art -->
+                        <div class="bg-card-inner p-3 rounded border border-secondary">
+                            <p class="mb-2 text-light-custom small fw-semibold">Official Illustration</p>
+                            <div id="galleryContainer" class="row g-3"></div>
                         </div>
                     </div>
-
-                    <div id="ballMultiplierInfo" class="bg-card-inner p-3 rounded border border-secondary text-light small" style="display: none;">
-                        <div class="fw-bold text-warning mb-1">Ball Trajectory Effect:</div>
-                        <div>Power Multiplier: <span id="valBallPower" class="text-success-custom">+0%</span></div>
-                        <div>Spin Rate: <span id="valBallSpin" class="text-info fw-bold">1.0 (Standard)</span></div>
-                    </div>
                 </div>
 
             </div>
 
         </div>
-
 
     </div>
 
-</div>
 
+    <!-- Bootstrap JS -->
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Bootstrap JS -->
-<script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Custom JS -->
-<script src="script.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 
 
 </body>

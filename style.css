@@ -354,6 +354,47 @@ body {
     margin-bottom: 10px;
 }
 
+.guide-card {
+    background-color: var(--bg-inner);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+/* Card Kotak Skin ala Wiki */
+.skin-item-card {
+    background-color: #121417;
+    border: 1px solid #2a2e33;
+    border-radius: 8px;
+    padding: 12px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.skin-item-card:hover {
+    border-color: #0d6efd;
+    transform: translateY(-3px);
+}
+
+/* Frame Gambar */
+.skin-img-wrapper {
+    height: 180px; /* Sesuaikan tinggi kotak gambar */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skin-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* Agar rasio gambar asli tidak merenggang */
+}
+
+/* Ukuran Teks Keterangan */
+.text-extra-small {
+    font-size: 0.75rem;
+}
+
 /* =========================
    RANGE SLIDER
 ========================= */

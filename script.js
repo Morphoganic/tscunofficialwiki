@@ -311,13 +311,40 @@ const charactersData = [
             { name: "Null", desc: "Null" },
         ],
         synergies: [
-            { name: "None", desc: "None" }
+            { name: "uhh", 
+                partners: [
+                    { name: "Haeun", icon: "img/Haeun.webp" },
+                    { name: "Yongsup", icon: "img/Yongsup.webp" }
+                ],
+                desc: "idk" },
         ],
         overall: [
             "Worked Up: <span class='text-success-custom'>Null</span>",
             "Careless: <span class='text-success-custom'>Null</span>",
             "Engaged: <span class='text-success-custom'>Null</span>",
             "Discourage: <span class='text-success-custom'>Null</span>",
+        ],
+        videos: [
+            {
+                embedCode: `null`,
+                creatorName: "null",
+                creatorUrl: "null"
+            }
+        ],
+        skins: [
+            { 
+                name: "Default", 
+                image: "img/Haeun.webp",
+                obtain: "Base Character / Story Appearance" 
+            }
+        ],
+        gallery: 
+        [
+            { 
+                title: "Default illustration", 
+                image: "img/Haeun.webp", 
+                caption: "Default" 
+            },
         ]
     },
     {
@@ -1984,6 +2011,199 @@ const charactersData = [
             "Discourage: <span class='text-success-custom'>Very Low</span>",
         ]
     },
+    {
+        id: "sodam",
+        name: "Sodam",
+        role: "SE",
+        position: "Setter (SE)",
+        desc: "Attends martial arts school but dreams of being a volleyball player instead of a martial artist. She happened to visit Seonrim High and fell for volleyball after watching students play passionately, leading her to enroll there. "+
+                "She was crushed when Ryuhyeon banned volleyball shortly after her arrival. She adores Hanra and follows her around like a chick. "+
+                "She often gets stomachaches from dutifully eating the enormous portions Hanra feeds her.",
+        image: "img/Sodam.webp",
+        baseStats: {
+            attack: { base: 100, maxLimit: 155, growth: [0, 0, 0, 0, 0, 0] },
+            defense: { base: 100, maxLimit: 155, growth: [0, 10, 10, 20, 25, 30] },
+            speed: { base: 100, maxLimit: 155, growth: [0, 3, 6, 9, 12, 15] },
+            jump: { base: 100, maxLimit: 155, growth: [0, 0, 0, 0, 0, 0] }
+        },
+        recommended: {
+            attack: { base: 110, growthText: "+0(Max BT)", total: 110 },
+            defense: { base: 155, growthText: "+30 (Max BT)", total: 185 },
+            speed: { base: 155, growthText: "+15 (Max BT)", total: 170 },
+            jump: { base: 155, growthText: "+0 (Max BT)", total: 158 }
+        },
+        skillStats: {
+            hope: [5, 6.5, 9, 10, 12.5, 15]
+        },
+        skills: [ 
+            { name: "Sunflower", icon: "img/skill/Sunflower_Characteristic_Icon.webp", desc: "During the Skill's Activation, <span class='text-warning'>performs a Set targeting the Wing Spiker.</span> This skill can be toggled ON/OFF." },
+            { name: "Light of Hope", desc: "Each time the Team loses a point, there is a chance for Team Players to enter the Engaged state."+
+                    "<br><span class='small text-warning'>Engaged Chance: hope_VAL%</span>" },
+        ],
+        synergies: [
+            { name: "None", desc: "None" }
+        ],
+        overall: [
+            "Worked Up: <span class='text-success-custom'>Very Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-success-custom'>Very Low</span>",
+            "Discourage: <span class='text-danger'>Very High</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/em2CJcEg5ec?si=rNOjjo952g9R99-D" title="YouTube video player" frameborder="0" allow="accelerometer;
+                            autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            { 
+                name: "Default", 
+                image: "img/Sodam.webp", 
+                obtain: "Base Character / Story Appearance" 
+            }
+        ]
+    },
+    {
+        id: "sohee",
+        name: "Sohee",
+        role: "SE",
+        position: "Setter (SE)",
+        desc: "Starting setter for Yellow Panthers. Her cheerful and considerate nature means she can't ignore teammates being left out. Her meddling sometimes causes trouble, but she says it helped her make many good friends. Despite her outgoing appearance, she gets quite lonely. "+
+                "Starting her career in Japan at a young age and shouldering team responsibilities made it increasingly difficult to open up to others. Her only weakness is constantly putting her emotions aside to meet everyone's expectations.",
+        image: "img/Sohee.webp",
+        baseStats: {
+            attack: { base: 100, maxLimit: 155, growth: [0, 0, 3, 5, 5, 5] },
+            defense: { base: 100, maxLimit: 165, growth: [0, 0, 0, 0, 3, 5] },
+            speed: { base: 100, maxLimit: 165, growth: [0, 5, 10, 15, 18, 20] },
+            jump: { base: 100, maxLimit: 155, growth: [0, 0, 0, 0, 0, 0] }
+        },
+        recommended: {
+            attack: { base: 100, growthText: "+5 (Max BT)", total: 105 },
+            defense: { base: 165, growthText: "+5 (Max BT)", total: 170 },
+            speed: { base: 165, growthText: "+20 (Max BT)", total: 185 },
+            jump: { base: 155, growthText: "+0 (Max BT)", total: 155 }
+        },
+        skillStats: {
+            stableset: [5, 4, 4, 4, 4, 3],
+        },
+        skills: [
+            { name: "Stable Set", icon: "img/skill/Stable_Set_Characteristic_Icon.webp", desc: "During Skill Activation, performs a stable Set with reduced Power and Spin of the Ball. <span class='text-warning'>When performing Set during Skill Activation, immediately restores 15 Stamina to the Team, [Elite Rule] "+
+                    "Restores the Stamina of the Teammate with the lowest Individual Stamina.</span>" },
+            { name: "Pass Feint to Exploit Gaps", desc: "If the Opponent Players are gathered within 4m of the Net, <span class='text-warning'>performs a deep Setter's Dump to the back court.</span>" }
+        ],
+        synergies: [
+            { name: "Dragon Flower", 
+                partners: [
+                    { name: "Sohee", icon: "img/Sohee.webp" },
+                    { name: "Ryuhyeon", icon: "img/Ryuhyeon.webp" }
+                ],
+                desc: "Attack +4, Jump +2" 
+            },
+            { name: "Stable Strength", 
+                partners: [
+                    { name: "Sohee", icon: "img/Sohee.webp" },
+                    { name: "Yongsup", icon: "img/Yongsup.webp" }
+                ],
+                desc: "Attack +4, Jump +2" 
+            },
+            { name: "Speed King", 
+                partners: [
+                    { name: "Sohee", icon: "img/Sohee.webp" },
+                    { name: "Yuri", icon: "img/Yuri.webp" }
+                ],
+                desc: "Attack +7, Jump +4" 
+            },
+        ],
+        overall: [
+            "Worked Up: <span class='text-warning'>Very Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-warning'>Low</span>",
+            "Discourage: <span class='text-success-custom'>Low</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/xfha99UqYIY?si=pt8fySULfT-UjPyo" title="YouTube video player" frameborder="0" allow="accelerometer;
+                autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            { 
+                name: "Default", 
+                image: "img/Sohee.webp",
+                obtain: "Base Character / Story Appearance" 
+            },
+            { 
+                name: "Vampire", 
+                image: "img/skins/Vampire.webp",
+                obtain: "Event Skin / Halloween" 
+            },
+        ]
+    },
+    {
+        id: "tania",
+        name: "Tania",
+        role: "SE",
+        position: "Setter (SE)",
+        desc: "Youngest daughter of world-famous Wilton Group's chairman. She naturally fell for volleyball while playing with balls from 'RISE,' Wilton Group's volleyball brand. "+
+                "She has both passion and talent but grew up spoiled, making her somewhat self-centered. She carelessly delivers quick sets without considering teammates, "+
+                "often leaving them scrambled. She's known Clyde, another rich kid, since childhood. She's secretly bothered that Clyde doesn't try to impress her like others do and aims to make him recognize her greatness someday.",
+        image: "img/Tania.webp",
+        baseStats: {
+            attack: { base: 100, maxLimit: 155, growth: [0, 0, 0, 0, 0, 0] },
+            defense: { base: 100, maxLimit: 155, growth: [0, 10, 10, 20, 25, 30] },
+            speed: { base: 100, maxLimit: 155, growth: [0, 3, 6, 9, 12, 15] },
+            jump: { base: 100, maxLimit: 155, growth: [0, 0, 0, 0, 0, 0] }
+        },
+        recommended: {
+            attack: { base: 110, growthText: "+0 (Max BT)", total: 110 },
+            defense: { base: 155, growthText: "+30 (Max BT)", total: 185 },
+            speed: { base: 155, growthText: "+15 (Max BT)", total: 170 },
+            jump: { base: 155, growthText: "+0 (Max BT)", total: 155 }
+        },
+        skillStats: {
+        },
+        skills: [
+            { name: "Speed Set", icon: "img/skill/Speed_Set_Icon.webp", desc: "Performs a rapid, steep Set. <span class='text-warning'>The Ball's Power increases based on its vertical velocity after the Set. Difficulty: High (Expert-level timing required.)</span>" },
+            { name: "Speed Setter", desc: "<span class='text-warning'>Reduces the Speed penalty caused by Rally duration by 30%.</span>" },
+        ],
+        synergies: [
+            { name: "None", 
+                partners: 
+                [
+                ],
+                desc: "None" },
+        ],
+        overall: [
+            "Worked Up: <span class='text-danger'>Very Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-danger'>Very Low</span>",
+            "Discourage: <span class='text-danger'>Very High</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/NvJ91Nfdlmo?si=joUTB6V6SncjWPzS" title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            { 
+                name: "Default", 
+                image: "img/Tania.webp",
+                obtain: "Base Character / Story Appearance" 
+            }
+        ],
+        gallery: 
+        [
+        ]
+    },
 ];
 
 let activeCharacter = null;
@@ -1997,11 +2217,11 @@ function getMaxManualPoint(charId) {
         return 195;
     } else if (charId === 'sif' ) {
         return 190;
-    } else if (charId === 'hongshi' || charId === 'ahyeon' || charId === 'claire' || charId === 'nishikawa' || charId === 'jenny' || charId === 'lisia' || charId === 'sara_se') {
+    } else if (charId === 'hongshi' || charId === 'ahyeon' || charId === 'claire' || charId === 'nishikawa' || charId === 'jenny' || charId === 'lisia' || charId === 'sara_se' || charId === 'sohee') {
         return 185;
     } else if (charId === 'sara' || charId === 'seolhwa') {
         return 180;
-    } else if (charId === 'atis' || charId === 'clyde' || charId === 'leon' || charId === 'oasis' || charId === 'roberto') {
+    } else if (charId === 'atis' || charId === 'clyde' || charId === 'leon' || charId === 'oasis' || charId === 'roberto' || charId === 'sodam' || charId === 'tania') {
         return 175;
     } else if (charId === 'lucas' ) {
         return 170;
@@ -2032,31 +2252,94 @@ function getMaxManualPoint(charId) {
     }
 }
 
-function renderCharacterList(filter = 'ALL') {
+function renderCharacterList(filter = 'ALL', searchQuery = '') {
     const grid = document.getElementById('characterGrid');
     if (!grid) return;
-    grid.innerHTML = "";
 
+    grid.innerHTML = '';
+
+    const query = searchQuery.toLowerCase().trim();
+
+    // ==========================================
+    // FILTER CHARACTER
+    // ==========================================
     const filteredData = charactersData.filter(char => {
-        if (filter === 'ALL') return true;
-        return char.role.toUpperCase() === filter.toUpperCase();
+
+        // 1. Filter berdasarkan role
+        const matchesRole =
+            filter === 'ALL' ||
+            char.role.toUpperCase() === filter.toUpperCase();
+
+        if (!matchesRole) return false;
+
+        // 2. Kalau search kosong, langsung lolos
+        if (!query) return true;
+
+        // 3. Data yang bisa dicari
+        const searchableText = [
+            char.name,
+            char.id,
+            char.role,
+            char.position,
+            char.desc
+        ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+
+        return searchableText.includes(query);
     });
 
+    // ==========================================
+    // TIDAK ADA HASIL
+    // ==========================================
     if (filteredData.length === 0) {
-        grid.innerHTML = `<div class="text-center text-light py-4">Belum ada karakter untuk posisi ini.</div>`;
+        grid.innerHTML = `
+            <div class="col-12 text-center text-light py-5">
+                <div class="mb-2" style="font-size: 2rem;">🔍</div>
+                <h5 class="text-warning">Character not found</h5>
+                <p class="text-muted small mb-0">
+                    No characters match the search
+                    "${searchQuery}"
+                </p>
+            </div>
+        `;
         return;
     }
 
+    // ==========================================
+    // RENDER CHARACTER CARD
+    // ==========================================
     filteredData.forEach(char => {
         grid.innerHTML += `
             <div class="col-md-4 col-sm-6">
-                <div class="card card-custom p-4 text-center character-card h-100 shadow-sm" onclick="selectCharacter('${char.id}')" style="cursor: pointer;">
+                <div
+                    class="card card-custom p-4 text-center character-card h-100 shadow-sm"
+                    onclick="selectCharacter('${char.id}')"
+                    style="cursor: pointer;"
+                >
+
                     <div class="char-img-wrapper mb-3">
-                        <img src="${char.image}" alt="${char.name}" class="img-fluid" style="max-height: 150px; object-fit: contain;">
+                        <img
+                            src="${char.image}"
+                            alt="${char.name}"
+                            class="img-fluid"
+                            style="max-height: 150px; object-fit: contain;"
+                        >
                     </div>
-                    <h4 class="text-white mb-1 fw-bold">${char.name}</h4>
-                    <p class="text-warning fw-semibold mb-3">${char.position}</p>
-                    <p class="small text-light-custom mb-0">Click to view stat and breakthrough details.</p>
+
+                    <h4 class="text-white mb-1 fw-bold">
+                        ${char.name}
+                    </h4>
+
+                    <p class="text-warning fw-semibold mb-3">
+                        ${char.position}
+                    </p>
+
+                    <p class="small text-light-custom mb-0">
+                        Click to view stat and breakthrough details.
+                    </p>
+
                 </div>
             </div>
         `;
@@ -2901,6 +3184,10 @@ function updateDetailView() {
     }
 
     renderSkillsAndSynergies();
+    renderVideoGuides(activeCharacter);
+    renderSkins(activeCharacter);
+    renderGallery(activeCharacter);
+    updateNavButtons();
 }
 
 function updateDaveStats(val) {
@@ -3208,6 +3495,9 @@ function parseSkillDescription(s, char) {
                        .replace('gladiusdur_VAL', char.skillStats.gladiusdur?.[currentBt] ?? 0)
                        .replace('gladiuscldwn_VAL', char.skillStats.gladiuscldwn?.[currentBt] ?? 0);
         }
+        if (char.skillStats.hope) {
+            desc = desc.replace('hope_VAL', char.skillStats.hope[currentBt]);
+        }
     }
 
     return desc;
@@ -3219,7 +3509,7 @@ function renderSynergies() {
     if (!synergyContainer) return;
 
     if (!activeCharacter.synergies || activeCharacter.synergies.length === 0) {
-        synergyContainer.innerHTML = `<span class='text-muted small'>Tidak ada synergy.</span>`;
+        synergyContainer.innerHTML = `<span class='text-muted small'>Has no synergies</span>`;
         return;
     }
 
@@ -3277,32 +3567,237 @@ function renderBuffList() {
             activeCharacter.bufflist.map(buff => `<li class='mb-1 text-light-custom'>${buff}</li>`).join('') + 
             `</ul>`;
     } else {
-        bufflist.innerHTML = `<span class='text-muted small'>Tidak ada buff tambahan.</span>`;
+        bufflist.innerHTML = `<span class='text-muted small'>There are no additional buffs.</span>`;
     }
 }
 
+// 7. Render Video Guide
+function renderVideoGuides(character) {
+    const container = document.getElementById("guideVideoContainer");
+    if (!container) return;
+
+  // 1. Cek apakah properti 'videos' ada dan tidak kosong
+    if (!character.videos || character.videos.length === 0) {
+    container.innerHTML = `<p class="text-muted small mb-0">There is no video guide for this character yet.</p>`;
+    return;
+    }
+
+  // 2. Loop array character.videos dan ambil v.embedCode
+    const videoHTML = character.videos.map(v => `
+    <div class="video-item mb-3">
+        <!-- Wrapper rasio responsif -->
+        <div class="ratio ratio-16x9 mb-2 rounded overflow-hidden border border-secondary">
+        ${v.embedCode}
+        </div>
+        <p class="text-light-custom small mb-0 big">
+        Original video by: 
+        <a href="${v.creatorUrl}" target="_blank" rel="noopener noreferrer" class="text-warning text-decoration-none fw-semibold">
+            ${v.creatorName}
+        </a>
+        </p>
+    </div>
+    `).join('');
+
+    container.innerHTML = videoHTML;
+}
+
+function renderSkins(character) {
+    const container = document.getElementById("skinsContainer");
+    if (!container) return;
+
+    // Fallback jika tidak ada data skins
+    const skinList = (character.skins && character.skins.length > 0) 
+        ? character.skins 
+        : [{ name: "Default", image: character.image, obtain: "Base Character" }];
+
+    const html = skinList.map(skin => `
+        <div class="col-6 col-sm-4 col-md-3">
+            <div class="skin-item-card text-center h-100 d-flex flex-column justify-content-between">
+                <!-- Area Gambar -->
+                <div class="skin-img-wrapper mb-2">
+                    <img src="${skin.image}" alt="${skin.name}" class="skin-img rounded">
+                </div>
+                
+                <!-- Area Teks (Di Tengah & Di Bawah Gambar) -->
+                <div class="skin-info w-100">
+                    <p class="fw-bold text-light mb-0 small">${skin.name}</p>
+                    <p class="text-secondary text-extra-small mb-0">(${skin.obtain || 'Default'})</p>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    container.innerHTML = html;
+}
+
+function renderGallery(character) {
+    const container = document.getElementById("galleryContainer");
+    if (!container) return;
+
+    // Jika karakter tidak punya array gallery atau datanya kosong
+    if (!character.gallery || character.gallery.length === 0) {
+        container.innerHTML = `<p class="text-muted small mb-0">Belum ada ilustrasi resmi tambahan untuk karakter ini.</p>`;
+        return;
+    }
+
+    const html = character.gallery.map(item => `
+        <div class="col-6 col-sm-4 col-md-3">
+            <div class="skin-item-card text-center h-100 d-flex flex-column justify-content-between">
+                <div class="skin-img-wrapper mb-2">
+                    <img src="${item.image}" alt="${item.title}" class="skin-img rounded">
+                </div>
+                <div class="skin-info w-100">
+                    <p class="fw-bold text-light mb-0 small">${item.title}</p>
+                    ${item.caption ? `<p class="text-secondary text-extra-small mb-0">(${item.caption})</p>` : ''}
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    container.innerHTML = html;
+}
+
 function filterCharacters(position, btnElement) {
-    document.querySelectorAll('.d-flex.justify-content-center.gap-2.mb-4 button').forEach(btn => {
-        btn.classList.remove('btn-warning', 'active');
-        btn.classList.add('btn-outline-warning');
-    });
+    // Simpan filter yang sedang aktif
+    currentCharacterFilter = position;
+
+    // Update tampilan tombol
+    document
+        .querySelectorAll('.d-flex.justify-content-center.gap-2.mb-4 button')
+        .forEach(btn => {
+            btn.classList.remove('btn-warning', 'active');
+            btn.classList.add('btn-outline-warning');
+        });
+
     btnElement.classList.remove('btn-outline-warning');
     btnElement.classList.add('btn-warning', 'active');
 
-    renderCharacterList(position);
+    // Ambil search yang sedang aktif
+    const searchInput = document.getElementById('characterSearchInput');
+    const query = searchInput
+        ? searchInput.value.toLowerCase().trim()
+        : '';
+
+    // Render berdasarkan filter + search
+    renderCharacterList(position, query);
+}
+
+// Fungsi untuk cek posisi karakter & atur status tombol Prev/Next
+function updateNavButtons() {
+    const btnPrev = document.getElementById('btnPrevChar');
+    const btnNext = document.getElementById('btnNextChar');
+    if (!btnPrev || !btnNext || !activeCharacter) return;
+
+    // Pakai data array karaktermu (charactersData atau characters)
+    const charList = typeof charactersData !== 'undefined' ? charactersData : characters;
+    const sortedChars = [...charList].sort((a, b) => a.name.localeCompare(b.name));
+    
+    const currentIndex = sortedChars.findIndex(c => c.id === activeCharacter.id);
+
+    // Jika di Atis (Paling Awal / Index 0) -> Mati/Fade tombol Prev
+    if (currentIndex <= 0) {
+        btnPrev.disabled = true;
+        btnPrev.classList.add('opacity-50'); // Efek fade dari Bootstrap
+    } else {
+        btnPrev.disabled = false;
+        btnPrev.classList.remove('opacity-50');
+    }
+
+    // Jika di Karakter Paling Akhir -> Mati/Fade tombol Next
+    if (currentIndex >= sortedChars.length - 1) {
+        btnNext.disabled = true;
+        btnNext.classList.add('opacity-50');
+    } else {
+        btnNext.disabled = false;
+        btnNext.classList.remove('opacity-50');
+    }
+}
+
+let currentCharacterFilter = 'ALL';
+// Fungsi Klik Tombol Prev / Next
+function navigateCharacter(direction) {
+    const charList = charactersData;
+
+    if (!charList || charList.length === 0 || !activeCharacter) return;
+
+    // Urutkan karakter A-Z
+    const sortedChars = [...charList].sort((a, b) =>
+        a.name.localeCompare(b.name)
+    );
+
+    // Cari karakter yang sedang aktif
+    const currentIndex = sortedChars.findIndex(
+        c => c.id === activeCharacter.id
+    );
+
+    if (currentIndex === -1) return;
+
+    // Tentukan karakter berikutnya/sebelumnya
+    const newIndex = currentIndex + direction;
+
+    // Jangan keluar dari array
+    if (newIndex < 0 || newIndex >= sortedChars.length) return;
+
+    // PENTING:
+    // Gunakan selectCharacter agar SEMUA data karakter ikut di-refresh
+    selectCharacter(sortedChars[newIndex].id);
 }
 
 function searchCharacters() {
-    const query = document.getElementById('characterSearchInput').value.toLowerCase().trim();
-    const cards = document.querySelectorAll('.col, .character-card, [class*="col-"]');
-    
-    cards.forEach(card => {
-        const cardText = card.innerText.toLowerCase();
-        if (cardText.includes(query)) {
-            card.style.display = ""; 
-        } else {
-            card.style.display = "none"; 
-        }
+    const searchInput = document.getElementById('characterSearchInput');
+
+    if (!searchInput) return;
+
+    const query = searchInput.value.toLowerCase().trim();
+
+    // Gunakan filter yang sedang aktif
+    renderCharacterList(currentCharacterFilter, query);
+}
+
+function renderCharacterSearchResults(data) {
+    const grid = document.getElementById('characterGrid');
+    if (!grid) return;
+
+    grid.innerHTML = '';
+
+    if (data.length === 0) {
+        grid.innerHTML = `
+            <div class="col-12 text-center text-light py-4">
+                Tidak ada karakter yang ditemukan.
+            </div>
+        `;
+        return;
+    }
+
+    data.forEach(char => {
+        grid.innerHTML += `
+            <div class="col-md-4 col-sm-6">
+                <div class="card card-custom p-4 text-center character-card h-100 shadow-sm"
+                     onclick="selectCharacter('${char.id}')"
+                     style="cursor: pointer;">
+
+                    <div class="char-img-wrapper mb-3">
+                        <img src="${char.image}"
+                             alt="${char.name}"
+                             class="img-fluid"
+                             style="max-height: 150px; object-fit: contain;">
+                    </div>
+
+                    <h4 class="text-white mb-1 fw-bold">
+                        ${char.name}
+                    </h4>
+
+                    <p class="text-warning fw-semibold mb-3">
+                        ${char.position}
+                    </p>
+
+                    <p class="small text-light-custom mb-0">
+                        Click to view stat and breakthrough details.
+                    </p>
+
+                </div>
+            </div>
+        `;
     });
 }
 
