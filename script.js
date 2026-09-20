@@ -2200,10 +2200,161 @@ const charactersData = [
                 obtain: "Base Character / Story Appearance" 
             }
         ],
-        gallery: 
-        [
+        gallery: [
         ]
     },
+    {
+        id: "viola",
+        name: "Viola",
+        role: "SE",
+        position: "Setter (SE)",
+        desc: "The Colosseum's mischievous girl, considered a candidate to succeed Isabel as the next queen. She loves romance stories indiscriminately and is especially interested in Isabel's love life. For someone so interested in others romance, she's surprisingly dense about her own situation, leaving quite a few people secretly pining for her. "+
+                "She suffers from amnesia and remembers nothing from childhood. She has strong hands and enjoys unconventional plays, especially setting back attacks during quick situations by sending the ball behind the attack line. Her unique setter style gives new teammates quite a hard time adjusting.",
+        image: "img/Viola.webp",
+        baseStats: {
+            attack: { base: 100, maxLimit: 155, growth: [0, 5, 5, 10, 10, 10] },
+            defense: { base: 100, maxLimit: 155, growth: [0, 10, 20, 30, 40, 50] },
+            speed: { base: 100, maxLimit: 155, growth: [0, 5, 10, 15, 18, 20] },
+            jump: { base: 100, maxLimit: 155, growth: [0, 0, 0, 0, 0, 0] }
+        },
+        recommended: {
+            attack: { base: 155, growthText: "+10 (Max BT)", total: 165 },
+            defense: { base: 110, growthText: "+50 (Max BT)", total: 160 },
+            speed: { base: 155, growthText: "+20 (Max BT)", total: 175 },
+            jump: { base: 155, growthText: "+0 (Max BT)", total: 155 }
+        },
+        skillStats: {
+            curestamina: [40, 44, 48, 52, 56, 60]
+        },
+        skills: [
+            { name: "Frantic", icon: "img/skill/Frantic_Icon.webp", desc: "If the Wing Spiker is positioned approximately 2.5m or farther from the Net, <span class='text-warning'>the setter performs a Set to the Wing Spiker far from the Net. Skill can be toggled ON/OFF.</span>"+
+                    "<br><span class='small text-warning'>Stamina Recovery : +curestamina_VAL</span>" },
+            { name: "Cure Set", desc: "When performing Set, <span class='text-warning'>has a 50% chance to restore the Team's Stamina. [Elite Rule] Restores the Stamina of the Teammate with the lowest Individual Stamina.</span>" },
+            { name: "Excellent Concentration", desc: "For every Ace scored by the Opponent Player, <span class='text-warning'>Team Max Stamina is permanently increased by 10.</span>" },
+        ],
+        synergies: [
+            { name: "Wild Colosseum", 
+                partners: [
+                    { name: "Viola", icon: "img/Viola.webp" },
+                    { name: "Leon", icon: "img/Leon.webp" }
+                ],
+                desc: "Speed +5, Jump +2" },
+        ],
+        overall: [
+            "Worked Up: <span class='text-danger'>Very Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-danger'>Very Low</span>",
+            "Discourage: <span class='text-success-custom'>Very Low</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/WnYPO2v5Bic?si=g4PWm1b_UC60JhW0" title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            { 
+                name: "Default", 
+                image: "img/Viola.webp",
+                obtain: "Base Character / Story Appearance" 
+            },
+            { 
+                name: "Summer Training", 
+                image: "img/skins/Viola_Summer_Training.webp",
+                obtain: "Event-exclusive / Summer Event" 
+            }
+        ],
+        gallery: 
+        [
+            { 
+                title: "Default illustration", 
+                image: "img/Viola.webp", 
+                caption: "Default" 
+            },
+            { 
+                title: "Old illustration", 
+                image: "img/oldillust/Viola_Illust_1.webp", 
+                caption: "Viola / The Spike Mobile 2024" 
+            },
+            { 
+                title: "Skin", 
+                image: "img/skins/Viola_Summer_Training.webp",
+                caption: "Summer Training" 
+            },
+        ]
+    },
+    {
+        id: "yamadera",
+        name: "Yamadera",
+        role: "MB",
+        position: "Middle Blocker (MB)",
+        desc: "Starting middle blocker for Valentia Spikes. Extremely uncomfortable with social interaction and a chronic case of can't-be-bothered syndrome. His gloomy appearance and characteristically blunt speech lead to frequent misunderstandings. Nishikawa's high school junior who had a depressing school life due to his introverted nature, OCD tendencies, and poor social skills. "+
+                "His life changed when Nishikawa approached him first after entering high school and invited him to join the volleyball club. Now they work together as an oddball duo. Excels at observing opponents during matches to find solutions, quickly identifying small habits or strategies to neutralize their strengths.",
+        image: "img/Yamadera.webp",
+        baseStats: {
+            attack: { base: 110, maxLimit: 175, growth: [0, 0, 0, 3, 3, 5] },
+            defense: { base: 100, maxLimit: 160, growth: [0, 0, 2, 2, 4, 4] },
+            speed: { base: 80, maxLimit: 160, growth: [0, 0, 2, 2, 4, 4] },
+            jump: { base: 115, maxLimit: 160, growth: [0, 0, 1, 2, 2, 2] }
+        },
+        recommended: {
+            attack: { base: 165, growthText: "+5 (Max BT)", total: 170 },
+            defense: { base: 100, growthText: "+4 (Max BT)", total: 104 },
+            speed: { base: 160, growthText: "+4 (Max BT)", total: 164 },
+            jump: { base: 160, growthText: "+2 (Max BT)", total: 162 }
+        },
+        skillStats: {
+            lockjump: [42, 70.1, 84, 84, 84, 84],
+            lockspeed: [42, 70.1, 84, 84, 84, 84,]
+        },
+        skills: [
+            { name: "Lock", icon: "img/skill/Lock_Icon.webp", desc: "<span class='fw-bold text-danger-custom'>Debuff Level: 1</span><br><span class='text-warning'>When Bumping an Attack that was not stopped by Block, the Opponent Player who performed the Attack is inflicted with Lock for a short time. While Locked, they cannot Sliding, and their Speed and Jump decrease.</span>"+
+                    "<br><span class='small text-warning'>Jump Debuff : -lockjump_VAL%, Speed Debuff : -lockspeed_VAL%</span>" },
+            { name: "Enhancement", desc: "<span class='text-warning'>Team Player Defense is increased by 15 for every consecutive Service Ace scored by the Opponent Player.</span>" },
+            { name: "Light Movement", desc: "Performs a Quick Attack after a light Approach." },
+        ],
+        synergies: [
+            { name: "None", 
+                partners: 
+                [
+                ],
+                desc: "None" },
+        ],
+        overall: [
+            "Worked Up: <span class='text-danger'>Very Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-danger'>Very Low</span>",
+            "Discourage: <span class='text-success-custom'>Very Low</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/0iHYrwJ-ppA?si=kWz2XXtHbMhcUTNM" title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            { 
+                name: "Default", 
+                image: "img/Yamadera.webp",
+                obtain: "Base Character / Story Appearance" 
+            },
+        ],
+        gallery: 
+        [
+            { 
+                title: "Default illustration", 
+                image: "img/Yamadera.webp", 
+                caption: "Default" 
+            },
+        ]
+    },
+    
 ];
 
 let activeCharacter = null;
@@ -2219,9 +2370,9 @@ function getMaxManualPoint(charId) {
         return 190;
     } else if (charId === 'hongshi' || charId === 'ahyeon' || charId === 'claire' || charId === 'nishikawa' || charId === 'jenny' || charId === 'lisia' || charId === 'sara_se' || charId === 'sohee') {
         return 185;
-    } else if (charId === 'sara' || charId === 'seolhwa') {
+    } else if (charId === 'sara' || charId === 'seolhwa' || charId === 'yamadera') {
         return 180;
-    } else if (charId === 'atis' || charId === 'clyde' || charId === 'leon' || charId === 'oasis' || charId === 'roberto' || charId === 'sodam' || charId === 'tania') {
+    } else if (charId === 'atis' || charId === 'clyde' || charId === 'leon' || charId === 'oasis' || charId === 'roberto' || charId === 'sodam' || charId === 'tania' || charId === 'viola') {
         return 175;
     } else if (charId === 'lucas' ) {
         return 170;
@@ -3497,6 +3648,13 @@ function parseSkillDescription(s, char) {
         }
         if (char.skillStats.hope) {
             desc = desc.replace('hope_VAL', char.skillStats.hope[currentBt]);
+        }
+        if (char.skillStats.curestamina) {
+            desc = desc.replace('curestamina_VAL', char.skillStats.curestamina[currentBt]);
+        }
+        if (char.skillStats.lockjump && char.skillStats.lockspeed) {
+            desc = desc.replace('lockjump_VAL', char.skillStats.lockjump[currentBt])
+                        .replace('lockspeed_VAL', char.skillStats.lockspeed[currentBt]);
         }
     }
 
