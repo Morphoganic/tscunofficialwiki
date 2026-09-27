@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
     <title>The Spike: Cross - Character Database</title>
 
@@ -16,12 +14,9 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-
-
 </head>
 
 <body>
-
 
     <div class="container py-5">
 
@@ -161,7 +156,6 @@
         <!-- ==================== DETAIL KARAKTER ==================== -->
         <div id="detailView" class="view-section" style="display: none;">
 
-            <!-- BACK BUTTON -->
             <!-- HEADER NAVIGATION (BACK & PREV/NEXT) -->
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <button class="btn btn-outline-warning fw-bold px-4 py-2" onclick="goBack()">
@@ -187,58 +181,44 @@
                     <div class="card card-custom p-4 text-center h-100 shadow-sm">
 
                         <div class="avatar-container mx-auto mb-3">
-
                             <img id="detailImg" src="" class="rounded-circle border border-3 border-warning" width="130"
                                 height="130" style="object-fit: cover;" alt="Character Avatar">
-
                         </div>
-
 
                         <h3 id="detailName" class="text-white mb-1 fw-bold">
                             Nama Karakter
                         </h3>
 
-
                         <p id="detailPosition" class="text-warning fw-semibold mb-3">
                             Position
                         </p>
 
-
                         <!-- BREAKTHROUGH -->
                         <div class="bg-card-inner p-3 rounded border border-secondary mb-3">
-
                             <label
                                 class="form-label text-light-custom small mb-2 fw-semibold text-uppercase tracking-wider">
                                 Breakthrough Level
                             </label>
 
-
                             <div class="d-flex justify-content-center align-items-center gap-3">
-
                                 <button class="btn btn-sm btn-warning fw-bold px-3 py-1 shadow"
                                     onclick="changeBreakthrough(-1)">
                                     -
                                 </button>
 
-
                                 <span id="btDisplay" class="badge badge-bt fs-5 py-2 px-3">
                                     +0
                                 </span>
-
 
                                 <button class="btn btn-sm btn-warning fw-bold px-3 py-1 shadow"
                                     onclick="changeBreakthrough(1)">
                                     +
                                 </button>
-
                             </div>
-
                         </div>
-
 
                         <!-- SPECIAL SLIDER 1 -->
                         <div id="daveSliderContainer" style="display: none;" class="mb-3">
-
                             <input type="range" id="daveRange" min="0" max="7" step="1" value="0"
                                 class="form-range custom-green-range" oninput="handleSliderChange(this.value)">
 
@@ -250,30 +230,37 @@
                                     0
                                 </span>
                             </p>
-
                         </div>
-
 
                         <!-- SPECIAL SLIDER 2 -->
                         <div id="sliderContainer2" style="display: none;" class="mb-3">
-
                             <input type="range" id="daveRange2" min="0" max="12" step="1" value="0"
                                 class="form-range custom-green-range" oninput="handleSliderChange2(this.value)">
 
                             <p class="text-white mt-1 small">
-
                                 <span id="sliderLabelText2">
                                     Flare Debuff
                                 </span>:
-
                                 <span id="pushupVal2">
                                     0
                                 </span>
-
                             </p>
-
                         </div>
 
+                        <!-- SPECIAL SLIDER 3 -->
+                        <div id="sliderContainer3" style="display: none;" class="mb-3">
+                            <input type="range" id="daveRange3" min="0" max="100" step="1" value="0"
+                                class="form-range custom-green-range" oninput="handleSliderChange3(this.value)">
+
+                            <p class="text-white mt-1 small">
+                                <span id="sliderLabelText3">
+                                    Parameter 3
+                                </span>:
+                                <span id="pushupVal3">
+                                    0
+                                </span>
+                            </p>
+                        </div>
 
                         <!-- DESCRIPTION -->
                         <p id="detailDesc" class="small text-light-custom mb-0 lh-base">
@@ -289,128 +276,90 @@
 
                     <div class="card card-custom p-4 h-100 shadow-sm">
 
-
                         <!-- MANUAL STAT -->
                         <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
-
                             <div>
-
                                 <h4 class="text-white mb-0 fw-bold">
                                     ⚙️ Manual Stat Allocation
                                 </h4>
-
                                 <p class="text-success-custom small mb-0">
                                     Customize the distribution of your character's bonus points here.
                                 </p>
-
                             </div>
-
 
                             <span class="badge bg-dark border border-warning text-warning px-3 py-2">
                                 Remaining:
                                 <span id="remainingPoints" class="fw-bold">
                                 </span>
                             </span>
-
                         </div>
-
 
                         <!-- STAT TABLE -->
                         <div class="table-responsive mb-4">
-
                             <table class="table table-custom align-middle text-center">
-
                                 <thead>
-
                                     <tr>
                                         <th class="text-start">
                                             Attribute Stat
                                         </th>
-
                                         <th>
                                             Base Stat
                                         </th>
-
                                         <th>
                                             Bonus
                                         </th>
-
                                         <th>
                                             Total Stat
                                         </th>
-
                                         <th>
                                             Action (+/- 5)
                                         </th>
                                     </tr>
-
                                 </thead>
-
 
                                 <tbody id="statTableBody">
                                     <!-- Generated by JavaScript -->
                                 </tbody>
-
                             </table>
-
                         </div>
-
 
                         <!-- SEPARATOR -->
                         <hr class="border-warning opacity-75 my-4">
 
-
                         <!-- RECOMMENDED STAT -->
                         <div class="mb-3">
-
                             <h4 class="text-white mb-0 fw-bold">
                                 ⭐ Recommended / Max Stat
                             </h4>
-
                             <p class="text-light-custom small mb-0">
                                 Recommended stat allocation based on character potential.
                             </p>
-
                         </div>
 
-
                         <div class="table-responsive">
-
                             <table class="table table-custom align-middle text-center">
-
                                 <thead>
-
                                     <tr>
-
                                         <th class="text-start">
                                             Attribute Stat
                                         </th>
-
                                         <th>
                                             Base
                                         </th>
-
                                         <th>
                                             Breakthrough
                                         </th>
-
                                         <th>
                                             Total
                                         </th>
-
                                     </tr>
-
                                 </thead>
-
 
                                 <tbody id="recommendedTableBody">
                                     <!-- Generated by JavaScript -->
                                 </tbody>
-
                             </table>
-
                         </div>
-
 
                     </div>
 
@@ -419,13 +368,11 @@
             </div>
 
 
-            <!-- ==================== SKILLS ==================== -->
+            <!-- ==================== SKILLS & SYNERGY ==================== -->
             <div class="row g-4">
 
                 <div class="col-lg-6">
-
                     <div class="card card-custom p-4 h-100 shadow-sm">
-
                         <h4 class="text-white fw-bold mb-3">
                             ⚡ Skills
                         </h4>
@@ -433,17 +380,12 @@
                         <div id="skillBuffList">
                             <!-- Generated by JavaScript -->
                         </div>
-
                     </div>
-
                 </div>
-
 
                 <!-- SYNERGY -->
                 <div class="col-lg-6">
-
                     <div class="card card-custom p-4 h-100 shadow-sm">
-
                         <h4 class="text-white fw-bold mb-3">
                             🤝 Synergy
                         </h4>
@@ -451,20 +393,18 @@
                         <div id="synergyBuffList">
                             <!-- Generated by JavaScript -->
                         </div>
-
                     </div>
-
                 </div>
 
             </div>
 
 
-            <!-- OVERALL SECTION -->
-            <div class="row mt-4">
+            <!-- ==================== OVERALL SECTION ==================== -->
+            <div class="row g-4 align-items-start mt-2">
 
                 <!-- Card 1: Conditions & Buffs -->
-                <div class="col-12 mb-4">
-                    <div class="card card-custom p-4 shadow-sm"> <!-- Class h-100 dihapus -->
+                <div class="col-lg-6">
+                    <div class="card card-custom p-4 shadow-sm">
                         <h5 class="text-white mb-3 fw-bold">Conditions & Buffs</h5>
 
                         <div class="bg-card-inner p-3 rounded border border-secondary mb-3">
@@ -486,12 +426,12 @@
 
                                 <!-- Claire -->
                                 <label class="text-white small cursor-pointer mb-0 d-block">
-                                    <input type="checkbox" class="buff-checkbox me-2" data-character="claire"
+                                    <input type="checkbox" class="buff-checkbox me-2" data-character="claire" data-position="MB"
                                         data-has-slider="true" data-slider-min="0" data-slider-max="100"
-                                        data-slider-default="100" data-slider-label="Overdrive Gauge"
-                                        data-slider-unit="%" onchange="handleUniversalBuffChange(this)">
+                                        data-slider-default="0" data-slider-label="Overdrive Gauge" data-slider-unit="%"
+                                        onchange="handleUniversalBuffChange(this)">
                                     Claire (Overdrive) <br>
-                                    <span class="buff-result-text text-info small">Atk +0 | Jmp +0 | Dur 0s</span>
+                                    <span class="buff-result-text text-info small">Atk +0 | Jmp +0</span>
 
                                     <div class="buff-options-container bg-card-inner p-3 rounded border border-secondary mb-3 mt-2"
                                         style="display: none;">
@@ -510,12 +450,12 @@
                                         </div>
 
                                         <p class="text-white mt-2 small mb-1">
-                                            <span class="slider-label-text">Parameter</span>:
+                                            <span class="slider-label-text">Overdrive Gauge</span>:
                                             <span class="slider-val-text fw-bold text-warning">0</span><span
-                                                class="slider-unit-text"></span>
+                                                class="slider-unit-text">%</span>
                                         </p>
                                         <input type="range" class="buff-range-input form-range custom-green-range"
-                                            oninput="handleUniversalBuffChange(this)">
+                                            min="0" max="100" value="0" oninput="handleUniversalBuffChange(this)">
                                     </div>
                                 </label>
 
@@ -527,17 +467,16 @@
                                         data-slider-label="Abys Toss Angle" data-slider-unit="°"
                                         onchange="handleUniversalBuffChange(this)">
                                     Ellio (Abys Toss) <br>
-                                    <span id="ellioBuffText" class="text-info small">Ball Power 0%</span>
+                                    <span class="buff-result-text text-info small">Ball Power +0% (35°)</span>
 
-                                    <div id="universalBuffOptionsContainer"
-                                        class="bg-card-inner p-3 rounded border border-secondary mb-3"
+                                    <div class="buff-options-container bg-card-inner p-3 rounded border border-secondary mb-3 mt-2"
                                         style="display: none;">
                                         <div class="mb-2">
                                             <label class="small text-muted mb-1 d-block">Ellio Breakthrough
                                                 Level:</label>
-                                            <select id="ellioBuffBtSelect"
-                                                class="form-select form-select-sm bg-dark text-white border-secondary"
-                                                onchange="updateDetailView()">
+                                            <select
+                                                class="buff-bt-select form-select form-select-sm bg-dark text-white border-secondary"
+                                                onchange="handleUniversalBuffChange(this)">
                                                 <option value="0">BT 0 (Max 24%)</option>
                                                 <option value="1">BT 1 (Max 25.2%)</option>
                                                 <option value="2">BT 2 (Max 26.4%)</option>
@@ -548,22 +487,43 @@
                                         </div>
 
                                         <p class="text-white mt-2 small mb-1">
-                                            <span id="dynamicSliderTitle">Parameter</span>:
-                                            <span id="dynamicSliderVal" class="fw-bold text-warning">0</span><span
-                                                id="dynamicSliderUnit"></span>
+                                            <span class="slider-label-text">Abys Toss Angle</span>:
+                                            <span class="slider-val-text fw-bold text-warning">35</span><span
+                                                class="slider-unit-text">°</span>
                                         </p>
-                                        <input type="range" id="universalDynamicRange" min="0" max="100" value="0"
-                                            class="form-range custom-green-range"
-                                            oninput="updateUniversalSlider(this.value)">
+                                        <input type="range" class="buff-range-input form-range custom-green-range"
+                                            min="35" max="90" value="35" oninput="handleUniversalBuffChange(this)">
+                                    </div>
+                                </label>
+
+                                <!-- Jihoon -->
+                                <label class="text-white small cursor-pointer mb-0 d-block">
+                                    <input type="checkbox" class="buff-checkbox me-2" data-position="SE"
+                                        data-character="jihoon" data-has-slider="true" data-slider-min="0"
+                                        data-slider-max="7" data-slider-default="0" data-slider-label="Score Gap"
+                                        data-slider-unit=" Points" onchange="handleUniversalBuffChange(this)">
+                                    Jihoon (Miraculous Toss) <br>
+                                    <span class="buff-result-text text-info small">Power +0% | Ball Spin +0.0</span>
+
+                                    <div class="buff-options-container bg-card-inner p-3 rounded border border-secondary mb-3 mt-2"
+                                        style="display: none;">
+                                        <p class="text-white mt-2 small mb-1">
+                                            <span class="slider-label-text">Score Gap</span>:
+                                            <span class="slider-val-text fw-bold text-warning">0</span><span
+                                                class="slider-unit-text"> Points</span>
+                                        </p>
+                                        <input type="range" class="buff-range-input form-range custom-green-range"
+                                            min="0" max="7" step="1" value="0"
+                                            oninput="handleUniversalBuffChange(this)">
                                     </div>
                                 </label>
 
                                 <label class="text-white small cursor-pointer mb-0">
                                     <input type="checkbox" class="buff-checkbox me-2" data-position="MB" data-atk="90"
-                                        data-def="100" data-spd="35" data-jmp="9" data-power-pct="0" data-spin="1.0"
+                                        data-def="100" data-spd="35" data-jmp="9" data-power-pct="0" data-spin="0"
                                         onchange="handleBuffChange(this)">
                                     Sanghyeon (Highlight) <br>
-                                    <span class="text-info small">Attack +90, Defence +100, Speed +35, Jump +9</span>
+                                    <span class="text-info small">Attack +28, Defence +40, Speed +25, Jump +5</span>
                                 </label>
 
                                 <label class="text-white small cursor-pointer mb-0">
@@ -575,8 +535,8 @@
                                 </label>
 
                                 <label class="text-white small cursor-pointer mb-0">
-                                    <input type="checkbox" class="buff-checkbox me-2" data-position="MB" 
-                                        data-atk="28" data-def="40" data-spd="25" data-jmp="5" data-power-pct="0" data-spin="0"
+                                    <input type="checkbox" class="buff-checkbox me-2" data-position="MB" data-atk="28"
+                                        data-def="40" data-spd="25" data-jmp="5" data-power-pct="0" data-spin="0"
                                         onchange="handleBuffChange(this)">
                                     Saya (Fih🐟 Bun) <br>
                                     <span class="text-info small">Attack +28, Defence +40, Speed +25, Jump +5</span>
@@ -605,21 +565,19 @@
                 </div>
 
                 <!-- Card 2: Guides -->
-                <div class="col-12">
-                    <div class="guild-card card-custom p-4 shadow-sm"> <!-- Class h-100 dihapus -->
+                <div class="col-lg-6">
+                    <div class="guild-card card-custom p-4 shadow-sm">
                         <h5 class="text-white mb-3 fw-bold">Guides 📚</h5>
 
                         <div class="bg-card-inner p-3 rounded border border-secondary">
-                            <p class="mb-2 text-light-custom small fw-semibold"></p>
+                            <!-- Tempat script.js merender video dan credit -->
                             <div id="guideVideoContainer"></div>
                         </div>
-
-
                     </div>
                 </div>
 
                 <!-- Card 3: Skins & Official Gallery -->
-                <div class="col-12 mt-4">
+                <div class="col-12">
                     <div class="guild-card card-custom p-4 shadow-sm">
                         <h5 class="text-white mb-3 fw-bold">Skins & Gallery 🎨</h5>
 
@@ -643,13 +601,11 @@
 
     </div>
 
-
     <!-- Bootstrap JS -->
     <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom JS -->
     <script src="script.js"></script>
-
 
 </body>
 
