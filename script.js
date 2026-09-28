@@ -4225,27 +4225,27 @@ const charactersData = [
         ],
         gallery: [
             {
-                name: "Default Illustration",
+                title: "Default Illustration",
                 image: "img/Sohee.webp",
                 caption: "Default"
             },
             {
-                name: "Skin Illustration",
+                title: "Skin Illustration",
                 image: "img/skins/Vampire.webp",
                 caption: "Skin"
             },
             {
-                name: "Old Illustration",
+                title: "Old Illustration",
                 image: "img/oldillust/Sohee_1.webp",
                 caption: "Sohee 2018"
             },
             {
-                name: "Old Illustration",
+                title: "Old Illustration",
                 image: "img/oldillust/Sohee_2.webp",
                 caption: "Sohee The Spike PC 2023"
             },
             {
-                name: "Old Illustration",
+                title: "Old Illustration",
                 image: "img/oldillust/Sohee_3.webp",
                 caption: "Sohee The Spike Mobile 2023"
             },
@@ -4312,7 +4312,7 @@ const charactersData = [
         ],
         gallery: [
             {
-                name: "Default Illustration",
+                title: "Default Illustration",
                 image: "img/Tania.webp",
                 caption: "Default"
             }
@@ -4394,9 +4394,9 @@ const charactersData = [
                     caption: "Default"
                 },
                 {
-                    title: "Skin",
+                    title: "Skin Illustration",
                     image: "img/skins/Viola_Summer_Training.webp",
-                    caption: "Summer Training"
+                    caption: "Skin"
                 },
                 {
                     title: "Old illustration",
