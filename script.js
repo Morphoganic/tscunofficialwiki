@@ -1627,7 +1627,7 @@ const charactersData = [
             },
             {
                 name: "Straw Hat",
-                image: "img/skins/Strawhat_Max.webp",
+                image: "img/skins/Strawhat_max.webp",
                 obtain: "Skin / Summer Event"
             },
             {
@@ -1730,6 +1730,117 @@ const charactersData = [
                     title: "Default illustration",
                     image: "img/Jihoon.webp",
                     caption: "Default"
+                },
+            ]
+    },
+    {
+        id: "yongsup",
+        name: "Lee Youngseob",
+        role: "WS",
+        position: "Wing Spiker (WS)",
+        desc: "The ace of Jisan High. Though short in stature, he's earned his place as a top-tier ace with explosive jumps and crushing spikes. The true backbone of the team, he embodies the ideal leader who always looks after his teammates. " +
+            "His stiff, formal way of speaking can make him seem intimidating, but in truth, he's surprisingly kind to his juniors.",
+        image: "img/Yongsup.webp",
+        baseStats: {
+            attack: { base: 120, maxLimit: 185, growth: [0, 1, 3, 4, 5, 5] },
+            defense: { base: 100, maxLimit: 160, growth: [0, 0, 1, 3, 3, 5] },
+            speed: { base: 100, maxLimit: 180, growth: [0, 0, 1, 3, 3, 5] },
+            jump: { base: 125, maxLimit: 170, growth: [0, 1, 1, 3, 3, 5] }
+        },
+        recommended: {
+            attack: { base: 185, growthText: "+5 (Max BT)", total: 190 },
+            defense: { base: 100, growthText: "+5 (Max BT)", total: 105 },
+            speed: { base: 130, growthText: "+5 (Max BT)", total: 135 },
+            jump: { base: 170, growthText: "+5 (Max BT)", total: 175 }
+        },
+        skillStats: {
+        },
+        skills: [
+            { name: "Hidden Brilliance", desc: "Even without special abilities, he is a top high school Wing Spiker who dominates the court with overwhelming physical prowess." },
+            { name: "Power Back Attack", desc: "<span class='text-warning'>Increases Power by 5.5 when performing a Spike from behind the Attack Line.</span>" },
+            { name: "High 3rd Ball Play", desc: "On the third Touch, <span class='text-warning'>if the Ball is sent over without an Attack, it is sent high into the air.</span>" },
+            { name: "Steel Mentality", desc: "<span class='text-warning'>When a Lv. 1 Debuff is applied, it is immediately removed if this player's Defense is 10 higher than that of the Opponent Player who applied the Debuff.</span>" },
+        ],
+        synergies: [
+            {
+                name: "All-Star",
+                partners: [
+                    { name: "Yongsup", icon: "img/Yongsup.webp" },
+                    { name: "Heeseong", icon: "img/Heeseong.webp" },
+                    { name: "Seolhwa", icon: "img/Seolhwa.webp" },
+                ],
+                desc: "Attack +4, Jump +4"
+            },
+            {
+                name: "Stable Strength",
+                partners: [
+                    { name: "Yongsup", icon: "img/Yongsup.webp" },
+                    { name: "Sohee", icon: "img/Sohee.webp" },
+                ],
+                desc: "Attack +4, Jump +2"
+            },
+            {
+                name: "Small but Strong",
+                partners: [
+                    { name: "Yongsup", icon: "img/Yongsup.webp" },
+                    { name: "Lisia", icon: "img/Lisia.webp" },
+                ],
+                desc: "Attack +7, Jump +4"
+            },
+        ],
+        overall: [
+            "Worked Up: <span class='text-danger'>Very Low</span>",
+            "Careless: <span class='text-danger'>Very High</span>",
+            "Engaged: <span class='text-warning'>Low</span>",
+            "Discourage: <span class='text-success-custom'>Low</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/Ibmhj2XWgEY?si=dO4WC_dakvSAy-3J" title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            {
+                name: "Default",
+                image: "img/Yongsup.webp",
+                obtain: "Base Character / Story Appearance"
+            },
+        ],
+        gallery:
+            [
+                {
+                    title: "Default illustration",
+                    image: "img/Yongsup.webp",
+                    caption: "Default"
+                },
+                {
+                    title: "Signature",
+                    image: "img/oldillust/Yongsup_max.webp",
+                    caption: "Signature / Max"
+                },
+                {
+                    title: "Old illustration 1",
+                    image: "img/oldillust/Yongsup_1.webp",
+                    caption: "Yongsup / 2018"
+                },
+                {
+                    title: "Old illustration 2",
+                    image: "img/oldillust/Yongsup_2.webp",
+                    caption: "Yongsup / The Spike PC 2023"
+                },
+                {
+                    title: "Old illustration 3",
+                    image: "img/oldillust/Yongsup_3.webp",
+                    caption: "Yongsup / The Spike Mobile 2023"
+                },
+                {
+                    title: "Old illustration 4",
+                    image: "img/oldillust/Yongsup_4.webp",
+                    caption: "Yongsup / 2024"
                 },
             ]
     },
@@ -2113,6 +2224,76 @@ const charactersData = [
         ]
     },
     {
+        id: "yoonseok",
+        name: "Ma Yoonseok",
+        role: "WS",
+        position: "Wing Spiker (WS)",
+        desc: "I, one of the world's Big Five attackers, am temporarily hiding my identity while enjoying my youth in high school. However, I'm troubled by the constant confessions from female students lately. Especially the volleyball team manager, Dahee Jung. " +
+            "Recently, she's been openly showing her feelings for me. Why don't they understand that a cool guy like me lives only for volleyball? The path of a popular star is indeed rough. Source: Yoonseok Ma's diary",
+        image: "img/Yoonseok.webp",
+        baseStats: {
+            attack: { base: 110, maxLimit: 155, growth: [0, 3, 5, 7, 10, 10] },
+            defense: { base: 115, maxLimit: 155, growth: [0, 3, 5, 5, 5, 10] },
+            speed: { base: 100, maxLimit: 155, growth: [0, 0, 0, 0, 0, 5] },
+            jump: { base: 100, maxLimit: 155, growth: [0, 4, 7, 8, 9, 10] }
+        },
+        recommended: {
+            attack: { base: 155, growthText: "+10 (Max BT)", total: 165 },
+            defense: { base: 115, growthText: "+10 (Max BT)", total: 125 },
+            speed: { base: 155, growthText: "+5 (Max BT)", total: 160 },
+            jump: { base: 155, growthText: "+10 (Max BT)", total: 165 }
+        },
+        skillStats: {
+            sharpfeint: [175, 175, 202.5, 216.2, 230, 243.8],
+        },
+        skills: [
+            { name: "Yoonseok", icon: "img/skill/Yoonseok_Icon.webp", desc: "<span class='text-warning'>Increases the chance of Opponent Players becoming Careless by 50%</span>" },
+            {
+                name: "Sharp Feint", desc: "<span class='text-warning'>The Feint creates a faster-dropping Ball due to its spin.</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Ball's Spin : +sharpfeint_VAL%</span>"
+            },
+            { name: "Power Back Attack", desc: "<span class='text-warning'>Increases Power by 5.5 when performing a Spike from behind the Attack Line.</span>" },
+        ],
+        synergies: [
+            {
+                name: "None",
+                partners: [
+                ],
+                desc: "None"
+            },
+        ],
+        overall: [
+            "Worked Up: <span class='text-success-custom'>Very High</span>",
+            "Careless: <span class='text-warning'>Low</span>",
+            "Engaged: <span class='text-danger'>Very Low</span>",
+            "Discourage: <span class='text-success-custom'>Very Low</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/G1ly2pxNLWc?si=ty_jtnZVGghc01NV" title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            {
+                name: "Default",
+                image: "img/Yoonseok.webp",
+                obtain: "Base Character / Story Appearance"
+            }
+        ],
+        gallery:
+            [
+                {
+                    title: "Default illustration",
+                    image: "img/Yoonseok.webp",
+                    caption: "Default"
+                },
+            ]
+    },
+    {
         id: "mike",
         name: "Mike",
         role: "MB",
@@ -2385,7 +2566,7 @@ const charactersData = [
             },
             {
                 name: "Black Thunder",
-                image: "img/skins/Black_Thunder_Max.webp",
+                image: "img/skins/Black_Thunder_max.webp",
                 obtain: "Skin / The Tiger Eyes Event"
             }
         ],
@@ -2397,7 +2578,7 @@ const charactersData = [
             },
             {
                 title: "Signature illustration",
-                image: "img/oldillust/Nishikawa_Max.webp",
+                image: "img/oldillust/Nishikawa_max.webp",
                 caption: "Signature / Max"
             },
             {
@@ -2412,7 +2593,7 @@ const charactersData = [
             },
             {
                 title: "Signature illustration",
-                image: "img/skins/Black_Thunder_Max.webp",
+                image: "img/skins/Black_Thunder_max.webp",
                 caption: "Skin"
             },
             {
@@ -3467,7 +3648,7 @@ const charactersData = [
         position: "Setter (SE)",
         desc: "Sara Seo, the World's Big Five Spiker. A player renowned for her incredibly fast movement on the court. As an all-rounder, " +
             "she can perform at a pro starter level in any position. Currently filling in as a Setter for Siwoo, she is expected to return to her Spiker role in the future.",
-        image: "img/Sara_se.webp",
+        image: "img/Sara_Se.webp",
         baseStats: {
             attack: { base: 100, maxLimit: 180, growth: [0, 5, 6, 7, 8, 10] },
             defense: { base: 100, maxLimit: 150, growth: [0, 5, 10, 15, 20, 25] },
@@ -3536,7 +3717,7 @@ const charactersData = [
             },
             {
                 title: "Signature illustration",
-                image: "img/oldillust/Sara_Se_max.webp",
+                image: "img/oldillust/Sara_Se_Max.webp",
                 caption: "Signature / Max"
             },
             {
@@ -3553,73 +3734,6 @@ const charactersData = [
                 title: "Story illustration",
                 image: "img/oldillust/Young_Sara.webp",
                 caption: "Story"
-            },
-        ]
-    },
-    {
-        id: "saya",
-        name: "Yoo Saya",
-        role: "MB",
-        position: "Middle Blocker (MB)",
-        desc: "Starting middle blocker of Terra High’s volleyball club. At first glance, she seems cold and blunt, but she is a loyal girl who cares about her team and friends more than anyone else. " +
-            "Sometimes, she acts on quirky ideas without hesitation, leaving those around her flustered. Her favorite food is Fish Bun, and her favorite friend is Boss the cat.",
-        image: "img/Saya.webp",
-        baseStats: {
-            attack: { base: 110, maxLimit: 155, growth: [0, 3, 4, 6, 6, 10] },
-            defense: { base: 105, maxLimit: 155, growth: [0, 3, 7, 10, 12, 12] },
-            speed: { base: 95, maxLimit: 155, growth: [0, 3, 3, 5, 8, 12] },
-            jump: { base: 100, maxLimit: 155, growth: [0, 0, 2, 2, 3, 3] }
-        },
-        recommended: {
-            attack: { base: 110, growthText: "+10 (Max BT)", total: 120 },
-            defense: { base: 145, growthText: "+12 (Max BT)", total: 157 },
-            speed: { base: 155, growthText: "+12 (Max BT)", total: 167 },
-            jump: { base: 155, growthText: "+3 (Max BT)", total: 158 }
-        },
-        skillStats: {
-            fishbundur: [6, 6, 6, 7, 7, 7], //fih🥀🐟
-            fishbuncldwn: [16, 16, 15, 14, 14, 14],
-        },
-        skills: [
-            {
-                name: "Fish Bun", icon: "img/skill/Fish_Bun_Icon.webp", desc: "Upon Skill Activation, <span class='text-warning'>eats a Fish Bun. After eating the Fish Bun, Team Stamina is recovered by 30, and Status increases for the skill duration.</span>" +
-                    "<br><span class='text-success-custom fw-bold'>Duration : fishbundur_VALs <br>Wait Time : fishbuncldwn_VALs <br> Attack : +28, Defence : +40, Speed : +25, Jump : +5  </span>"
-            },
-            { name: "Out of Shape", desc: "<span class='small text-warning'>The amount of Speed reduction caused by Rally duration increases by 10%.</span>" },
-        ],
-        synergies: [
-            {
-                name: "None",
-                partners: [
-                ],
-                desc: "None"
-            },
-        ],
-        overall: [
-            "Worked Up: <span class='text-success-custom'>Very Low</span>",
-            "Careless: <span class='text-success-custom'>Very Low</span>",
-            "Engaged: <span class='text-success-custom'>Very Low</span>",
-            "Discourage: <span class='text-success-custom'>Very Low</span>",
-        ],
-        videos: [
-            {
-                embedCode: ``,
-                creatorName: "TheSpikeStation",
-                creatorUrl: "https://www.youtube.com/@thespikestation"
-            }
-        ],
-        skins: [
-            {
-                name: "Default",
-                image: "img/Saya.webp",
-                obtain: "Base Character / Story Appearance"
-            },
-        ],
-        gallery: [
-            {
-                title: "Default illustration",
-                image: "img/Saya.webp",
-                caption: "Default"
             },
         ]
     },
@@ -3764,7 +3878,7 @@ const charactersData = [
             },
             {
                 title: "Signature illustration",
-                image: "img/oldillust/Seolhwa_Max.webp",
+                image: "img/oldillust/Seolhwa_max.webp",
                 caption: "Signature / Max"
             },
             {
@@ -3957,7 +4071,7 @@ const charactersData = [
             },
             {
                 title: "Signature illustration",
-                image: "img/oldillust/Sif_Max.webp",
+                image: "img/oldillust/Sif_max.webp",
                 caption: "Signature / Max"
             },
         ]
@@ -4111,10 +4225,31 @@ const charactersData = [
         ],
         gallery: [
             {
+                name: "Default Illustration",
+                image: "img/Sohee.webp",
+                caption: "Default"
+            },
+            {
                 name: "Skin Illustration",
                 image: "img/skins/Vampire.webp",
                 caption: "Skin"
-            }
+            },
+            {
+                name: "Old Illustration",
+                image: "img/oldillust/Sohee_1.webp",
+                caption: "Sohee 2018"
+            },
+            {
+                name: "Old Illustration",
+                image: "img/oldillust/Sohee_2.webp",
+                caption: "Sohee The Spike PC 2023"
+            },
+            {
+                name: "Old Illustration",
+                image: "img/oldillust/Sohee_3.webp",
+                caption: "Sohee The Spike Mobile 2023"
+            },
+            
         ]
     },
     {
@@ -4259,14 +4394,14 @@ const charactersData = [
                     caption: "Default"
                 },
                 {
-                    title: "Old illustration",
-                    image: "img/oldillust/Viola_Illust_1.webp",
-                    caption: "Viola / The Spike Mobile 2024"
-                },
-                {
                     title: "Skin",
                     image: "img/skins/Viola_Summer_Training.webp",
                     caption: "Summer Training"
+                },
+                {
+                    title: "Old illustration",
+                    image: "img/oldillust/Viola_Illust_1.webp",
+                    caption: "Viola / The Spike Mobile 2024"
                 },
             ]
     },
@@ -4343,146 +4478,35 @@ const charactersData = [
             ]
     },
     {
-        id: "yongsup",
-        name: "Lee Youngseob",
-        role: "WS",
-        position: "Wing Spiker (WS)",
-        desc: "The ace of Jisan High. Though short in stature, he's earned his place as a top-tier ace with explosive jumps and crushing spikes. The true backbone of the team, he embodies the ideal leader who always looks after his teammates. " +
-            "His stiff, formal way of speaking can make him seem intimidating, but in truth, he's surprisingly kind to his juniors.",
-        image: "img/Yongsup.webp",
+        id: "saya",
+        name: "Yoo Saya",
+        role: "MB",
+        position: "Middle Blocker (MB)",
+        desc: "Starting middle blocker of Terra High’s volleyball club. At first glance, she seems cold and blunt, but she is a loyal girl who cares about her team and friends more than anyone else. " +
+            "Sometimes, she acts on quirky ideas without hesitation, leaving those around her flustered. Her favorite food is Fish Bun, and her favorite friend is Boss the cat.",
+        image: "img/Saya.webp",
         baseStats: {
-            attack: { base: 120, maxLimit: 185, growth: [0, 1, 3, 4, 5, 5] },
-            defense: { base: 100, maxLimit: 160, growth: [0, 0, 1, 3, 3, 5] },
-            speed: { base: 100, maxLimit: 180, growth: [0, 0, 1, 3, 3, 5] },
-            jump: { base: 125, maxLimit: 170, growth: [0, 1, 1, 3, 3, 5] }
+            attack: { base: 110, maxLimit: 155, growth: [0, 3, 4, 6, 6, 10] },
+            defense: { base: 105, maxLimit: 155, growth: [0, 3, 7, 10, 12, 12] },
+            speed: { base: 95, maxLimit: 155, growth: [0, 3, 3, 5, 8, 12] },
+            jump: { base: 100, maxLimit: 155, growth: [0, 0, 2, 2, 3, 3] }
         },
         recommended: {
-            attack: { base: 185, growthText: "+5 (Max BT)", total: 190 },
-            defense: { base: 100, growthText: "+5 (Max BT)", total: 105 },
-            speed: { base: 130, growthText: "+5 (Max BT)", total: 135 },
-            jump: { base: 170, growthText: "+5 (Max BT)", total: 175 }
+            attack: { base: 110, growthText: "+10 (Max BT)", total: 120 },
+            defense: { base: 145, growthText: "+12 (Max BT)", total: 157 },
+            speed: { base: 155, growthText: "+12 (Max BT)", total: 167 },
+            jump: { base: 155, growthText: "+3 (Max BT)", total: 158 }
         },
         skillStats: {
+            fishbundur: [6, 6, 6, 7, 7, 7], //fih🥀🐟
+            fishbuncldwn: [16, 16, 15, 14, 14, 14],
         },
         skills: [
-            { name: "Hidden Brilliance", desc: "Even without special abilities, he is a top high school Wing Spiker who dominates the court with overwhelming physical prowess." },
-            { name: "Power Back Attack", desc: "<span class='text-warning'>Increases Power by 5.5 when performing a Spike from behind the Attack Line.</span>" },
-            { name: "High 3rd Ball Play", desc: "On the third Touch, <span class='text-warning'>if the Ball is sent over without an Attack, it is sent high into the air.</span>" },
-            { name: "Steel Mentality", desc: "<span class='text-warning'>When a Lv. 1 Debuff is applied, it is immediately removed if this player's Defense is 10 higher than that of the Opponent Player who applied the Debuff.</span>" },
-        ],
-        synergies: [
             {
-                name: "All-Star",
-                partners: [
-                    { name: "Yongsup", icon: "img/Yongsup.webp" },
-                    { name: "Heeseong", icon: "img/Heeseong.webp" },
-                    { name: "Seolhwa", icon: "img/Seolhwa.webp" },
-                ],
-                desc: "Attack +4, Jump +4"
+                name: "Fish Bun", icon: "img/skill/Fish_Bun_Icon.webp", desc: "Upon Skill Activation, <span class='text-warning'>eats a Fish Bun. After eating the Fish Bun, Team Stamina is recovered by 30, and Status increases for the skill duration.</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Duration : fishbundur_VALs <br>Wait Time : fishbuncldwn_VALs <br> Attack : +28, Defence : +40, Speed : +25, Jump : +5  </span>"
             },
-            {
-                name: "Stable Strength",
-                partners: [
-                    { name: "Yongsup", icon: "img/Yongsup.webp" },
-                    { name: "Sohee", icon: "img/Sohee.webp" },
-                ],
-                desc: "Attack +4, Jump +2"
-            },
-            {
-                name: "Small but Strong",
-                partners: [
-                    { name: "Yongsup", icon: "img/Yongsup.webp" },
-                    { name: "Lisia", icon: "img/Lisia.webp" },
-                ],
-                desc: "Attack +7, Jump +4"
-            },
-        ],
-        overall: [
-            "Worked Up: <span class='text-danger'>Very Low</span>",
-            "Careless: <span class='text-danger'>Very High</span>",
-            "Engaged: <span class='text-warning'>Low</span>",
-            "Discourage: <span class='text-success-custom'>Low</span>",
-        ],
-        videos: [
-            {
-                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/Ibmhj2XWgEY?si=dO4WC_dakvSAy-3J" title="YouTube video player" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen></iframe>`,
-                creatorName: "TheSpikeStation",
-                creatorUrl: "https://www.youtube.com/@thespikestation"
-            }
-        ],
-        skins: [
-            {
-                name: "Default",
-                image: "img/Yongsup.webp",
-                obtain: "Base Character / Story Appearance"
-            },
-        ],
-        gallery:
-            [
-                {
-                    title: "Default illustration",
-                    image: "img/Yongsup.webp",
-                    caption: "Default"
-                },
-                {
-                    title: "Signature",
-                    image: "img/oldillust/Yongsup_max.webp",
-                    caption: "Signature / Max"
-                },
-                {
-                    title: "Old illustration 1",
-                    image: "img/oldillust/Yongsup_1.webp",
-                    caption: "Yongsup / 2018"
-                },
-                {
-                    title: "Old illustration 2",
-                    image: "img/oldillust/Yongsup_2.webp",
-                    caption: "Yongsup / The Spike PC 2023"
-                },
-                {
-                    title: "Old illustration 3",
-                    image: "img/oldillust/Yongsup_3.webp",
-                    caption: "Yongsup / The Spike Mobile 2023"
-                },
-                {
-                    title: "Old illustration 4",
-                    image: "img/oldillust/Yongsup_4.webp",
-                    caption: "Yongsup / 2024"
-                },
-            ]
-    },
-    {
-        id: "yoonseok",
-        name: "Ma Yoonseok",
-        role: "WS",
-        position: "Wing Spiker (WS)",
-        desc: "I, one of the world's Big Five attackers, am temporarily hiding my identity while enjoying my youth in high school. However, I'm troubled by the constant confessions from female students lately. Especially the volleyball team manager, Dahee Jung. " +
-            "Recently, she's been openly showing her feelings for me. Why don't they understand that a cool guy like me lives only for volleyball? The path of a popular star is indeed rough. Source: Yoonseok Ma's diary",
-        image: "img/Yoonseok.webp",
-        baseStats: {
-            attack: { base: 110, maxLimit: 155, growth: [0, 3, 5, 7, 10, 10] },
-            defense: { base: 115, maxLimit: 155, growth: [0, 3, 5, 5, 5, 10] },
-            speed: { base: 100, maxLimit: 155, growth: [0, 0, 0, 0, 0, 5] },
-            jump: { base: 100, maxLimit: 155, growth: [0, 4, 7, 8, 9, 10] }
-        },
-        recommended: {
-            attack: { base: 155, growthText: "+10 (Max BT)", total: 165 },
-            defense: { base: 115, growthText: "+10 (Max BT)", total: 125 },
-            speed: { base: 155, growthText: "+5 (Max BT)", total: 160 },
-            jump: { base: 155, growthText: "+10 (Max BT)", total: 165 }
-        },
-        skillStats: {
-            sharpfeint: [175, 175, 202.5, 216.2, 230, 243.8],
-        },
-        skills: [
-            { name: "Yoonseok", icon: "img/skill/Yoonseok_Icon.webp", desc: "<span class='text-warning'>Increases the chance of Opponent Players becoming Careless by 50%</span>" },
-            {
-                name: "Sharp Feint", desc: "<span class='text-warning'>The Feint creates a faster-dropping Ball due to its spin.</span>" +
-                    "<br><span class='text-success-custom fw-bold'>Ball's Spin : +sharpfeint_VAL%</span>"
-            },
-            { name: "Power Back Attack", desc: "<span class='text-warning'>Increases Power by 5.5 when performing a Spike from behind the Attack Line.</span>" },
+            { name: "Out of Shape", desc: "<span class='small text-warning'>The amount of Speed reduction caused by Rally duration increases by 10%.</span>" },
         ],
         synergies: [
             {
@@ -4493,16 +4517,14 @@ const charactersData = [
             },
         ],
         overall: [
-            "Worked Up: <span class='text-success-custom'>Very High</span>",
-            "Careless: <span class='text-warning'>Low</span>",
-            "Engaged: <span class='text-danger'>Very Low</span>",
+            "Worked Up: <span class='text-success-custom'>Very Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-success-custom'>Very Low</span>",
             "Discourage: <span class='text-success-custom'>Very Low</span>",
         ],
         videos: [
             {
-                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/G1ly2pxNLWc?si=ty_jtnZVGghc01NV" title="YouTube video player" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-                            allowfullscreen></iframe>`,
+                embedCode: `Has no guide video yet`,
                 creatorName: "TheSpikeStation",
                 creatorUrl: "https://www.youtube.com/@thespikestation"
             }
@@ -4510,18 +4532,17 @@ const charactersData = [
         skins: [
             {
                 name: "Default",
-                image: "img/Yoonseok.webp",
+                image: "img/Saya.webp",
                 obtain: "Base Character / Story Appearance"
-            }
+            },
         ],
-        gallery:
-            [
-                {
-                    title: "Default illustration",
-                    image: "img/Yoonseok.webp",
-                    caption: "Default"
-                },
-            ]
+        gallery: [
+            {
+                title: "Default illustration",
+                image: "img/Saya.webp",
+                caption: "Default"
+            },
+        ]
     },
     {
         id: "yuri",
