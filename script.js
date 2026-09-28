@@ -166,6 +166,69 @@ const charactersData = [
         ]
     },
     {
+        id: "minjun",
+        name: "Cho Minjun",
+        role: "WS",
+        position: "Wing Spiker (WS)",
+        desc: "The unlucky attacker. Misfortune strikes without fail before every important match, so he's never shown his full abilities. But for him, misfortune is just another seasoning to life." +
+            " He brushes off the past and quickly starts new challenges. Teams with Minjun Cho never lose their fighting spirit.",
+        image: "img/Minjun.webp",
+        baseStats: {
+            attack: { base: 115, maxLimit: 145, growth: [0, 5, 8, 13, 15, 15] },
+            defense: { base: 125, maxLimit: 155, growth: [0, 3, 5, 5, 5, 10] },
+            speed: { base: 100, maxLimit: 155, growth: [0, 0, 0, 0, 0, 5] },
+            jump: { base: 115, maxLimit: 160, growth: [0, 4, 7, 8, 9, 10] }
+        },
+        recommended: {
+            attack: { base: 145, growthText: "+15 (Max BT)", total: 160 },
+            defense: { base: 125, growthText: "+10 (Max BT)", total: 135 },
+            speed: { base: 145, growthText: "+5 (Max BT)", total: 150 },
+            jump: { base: 160, growthText: "+10 (Max BT)", total: 170 }
+        },
+        skillStats: {
+            blitzpwr: [20, 22, 24, 26, 28, 30],
+            blitzspin: [3, 3.3, 3.6, 3.9, 4.2, 4.5]
+        },
+        skills: [
+            {
+                name: "Blitz Spin", icon : "img/skill/Blitz_Spin_Icon.webp", desc: "<span class='text-warning'>Increases the Vertical Power and Spin of the Ball during a Spike, causing its Trajectory to curve.</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Power: +blitzpwr_VAL% , Spin: +blitzspin_VAL</span>"
+            },
+        ],
+        synergies: [
+            { name: "None", desc: "None" }
+        ],
+        overall: [
+            "Worked Up: <span class='text-danger'>Very Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-danger'>Very Low</span>",
+            "Discourage: <span class='text-danger'>Very High</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/6O-9ugQ8W0c?si=vKLf2eoMOu5dneR9" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            {
+                name: "Default",
+                image: "img/Minjun.webp",
+                obtain: "Base Character / Story Appearance"
+            },
+        ],
+        gallery:[
+            {
+                title: "Default illustration",
+                image: "img/Minjun.webp",
+                caption: "Default"
+            },
+        ]
+    },
+    {
         id: "claire",
         name: "Claire",
         role: "MB",
@@ -1572,7 +1635,7 @@ const charactersData = [
     },
     {
         id: "jihoon",
-        name: "Jihoon",
+        name: "Lee Jihoon",
         role: "SE",
         position: "Setter (SE)",
         isDave: true,
@@ -2042,69 +2105,6 @@ const charactersData = [
                 title: "Signature illustration",
                 image: "img/oldillust/Mike_max.webp",
                 caption: "Signature / Max"
-            },
-        ]
-    },
-    {
-        id: "minjun",
-        name: "Cho Minjun",
-        role: "WS",
-        position: "Wing Spiker (WS)",
-        desc: "The unlucky attacker. Misfortune strikes without fail before every important match, so he's never shown his full abilities. But for him, misfortune is just another seasoning to life." +
-            " He brushes off the past and quickly starts new challenges. Teams with Minjun Cho never lose their fighting spirit.",
-        image: "img/Minjun.webp",
-        baseStats: {
-            attack: { base: 115, maxLimit: 145, growth: [0, 5, 8, 13, 15, 15] },
-            defense: { base: 125, maxLimit: 155, growth: [0, 3, 5, 5, 5, 10] },
-            speed: { base: 100, maxLimit: 155, growth: [0, 0, 0, 0, 0, 5] },
-            jump: { base: 115, maxLimit: 160, growth: [0, 4, 7, 8, 9, 10] }
-        },
-        recommended: {
-            attack: { base: 145, growthText: "+15 (Max BT)", total: 160 },
-            defense: { base: 125, growthText: "+10 (Max BT)", total: 135 },
-            speed: { base: 145, growthText: "+5 (Max BT)", total: 150 },
-            jump: { base: 160, growthText: "+10 (Max BT)", total: 170 }
-        },
-        skillStats: {
-            blitzpwr: [20, 22, 24, 26, 28, 30],
-            blitzspin: [3, 3.3, 3.6, 3.9, 4.2, 4.5]
-        },
-        skills: [
-            {
-                name: "Blitz Spin", icon : "img/skill/Blitz_Spin_Icon.webp", desc: "<span class='text-warning'>Increases the Vertical Power and Spin of the Ball during a Spike, causing its Trajectory to curve.</span>" +
-                    "<br><span class='text-success-custom fw-bold'>Power: +blitzpwr_VAL% , Spin: +blitzspin_VAL</span>"
-            },
-        ],
-        synergies: [
-            { name: "None", desc: "None" }
-        ],
-        overall: [
-            "Worked Up: <span class='text-danger'>Very Low</span>",
-            "Careless: <span class='text-success-custom'>Very Low</span>",
-            "Engaged: <span class='text-danger'>Very Low</span>",
-            "Discourage: <span class='text-danger'>Very High</span>",
-        ],
-        videos: [
-            {
-                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/6O-9ugQ8W0c?si=vKLf2eoMOu5dneR9" title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
-                allowfullscreen></iframe>`,
-                creatorName: "TheSpikeStation",
-                creatorUrl: "https://www.youtube.com/@thespikestation"
-            }
-        ],
-        skins: [
-            {
-                name: "Default",
-                image: "img/Minjun.webp",
-                obtain: "Base Character / Story Appearance"
-            },
-        ],
-        gallery:[
-            {
-                title: "Default illustration",
-                image: "img/Minjun.webp",
-                caption: "Default"
             },
         ]
     },
