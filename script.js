@@ -169,7 +169,7 @@ const charactersData = [
     },
     {
         id: "minjun",
-        name: "ChoMinjun",
+        name: "Cho Minjun",
         role: "WS",
         position: "Wing Spiker (WS)",
         desc: "The unlucky attacker. Misfortune strikes without fail before every important match, so he's never shown his full abilities. But for him, misfortune is just another seasoning to life." +
