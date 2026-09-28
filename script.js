@@ -111,8 +111,10 @@ const charactersData = [
             jump: { base: 150, growthText: "+1 (Max BT)", total: 151 }
         },
         skills: [
-            { name: "Chemical Reaction", desc: "<span class='text-warning'>Triggers Chemical Reaction if a Ball Bumped by this Player is Set by your Team. When Attacked, the Ball's Power and Spin increase. Any opponent attempting to Defense it will fail and their Team loses 100 Stamina.</span> "+
-                    "<br><span class='text-success-custom fw-bold'>+CR_VAL% Power and +25% Spin</span>" },
+            {
+                name: "Chemical Reaction", desc: "<span class='text-warning'>Triggers Chemical Reaction if a Ball Bumped by this Player is Set by your Team. When Attacked, the Ball's Power and Spin increase. Any opponent attempting to Defense it will fail and their Team loses 100 Stamina.</span> " +
+                    "<br><span class='text-success-custom fw-bold'>+CR_VAL% Power and +25% Spin</span>"
+            },
         ],
         skillStats: {
             chemicalreact: [25, 26.2, 27.5, 28.7, 28.7, 30]
@@ -278,8 +280,10 @@ const charactersData = [
             jump: { base: 160, growthText: "+4 (Max BT)", total: 159 }
         },
         skills: [
-            { name: "Navi", desc: "Clyde's beloved cat appears alongside him. <span class='text-warning'>The cat roams the Court and changes any Teammate from Discouraged state to Engaged state.</span> "+
-                    "<br><span class='text-success-custom fw-bold'>Increases Ally Team Max Stamina by 15%.</span>" },
+            {
+                name: "Navi", desc: "Clyde's beloved cat appears alongside him. <span class='text-warning'>The cat roams the Court and changes any Teammate from Discouraged state to Engaged state.</span> " +
+                    "<br><span class='text-success-custom fw-bold'>Increases Ally Team Max Stamina by 15%.</span>"
+            },
         ],
         synergies: [
             {
@@ -343,8 +347,10 @@ const charactersData = [
             drkcrow: [40, 44.4, 49.5, 51.7, 53.7, 55.6]
         },
         skills: [
-            { name: "Dark Crow", desc: "<span class='text-warning'>Performs a Spike that temporarily decreases the Opponent Player's Defense.</span> "+
-                    "<br><span class='text-success-custom fw-bold'>darkcrow_VAL%.</span>" },
+            {
+                name: "Dark Crow", desc: "<span class='text-warning'>Performs a Spike that temporarily decreases the Opponent Player's Defense.</span> " +
+                    "<br><span class='text-success-custom fw-bold'>darkcrow_VAL%.</span>"
+            },
             { name: "Quick Recovery", desc: "<span class='text-warning'>Increases Stamina recovery from Scoring and Conceding by 25%.</span>" },
         ],
         synergies: [
@@ -514,8 +520,10 @@ const charactersData = [
             abysSet: [24, 25.2, 26.4, 27.6, 30, 30]
         },
         skills: [
-            { name: "Abyss Toss", icon : "img/skill/Abyss_Toss_Icon.webp", desc: "<span class='text-warning'>The steeper the Spike trajectory from the Player's Set, the more the Ball's Power increases.</span> "+
-                    "<br><span class='text-success-custom fw-bold'>abysSet_VAL%.</span>" },
+            {
+                name: "Abyss Toss", icon: "img/skill/Abyss_Toss_Icon.webp", desc: "<span class='text-warning'>The steeper the Spike trajectory from the Player's Set, the more the Ball's Power increases.</span> " +
+                    "<br><span class='text-success-custom fw-bold'>abysSet_VAL%.</span>"
+            },
             { name: "Hybrid Floater Serve", desc: "Fakes a Spike Serve to perform an unexpected Float Serve. <span class='text-warning'>If a Player with less than 150 Defense defends the Serve while Sliding, the Ball is deflected far out of bounds.</span>" },
         ],
         synergies: [
@@ -592,7 +600,7 @@ const charactersData = [
         skillStats: {
         },
         skills: [
-            { name: "Head To Head", icon : "img/skill/Head_to_Head_Icon.webp", desc: "Null" },
+            { name: "Head To Head", icon: "img/skill/Head_to_Head_Icon.webp", desc: "Null" },
         ],
         synergies: [
             {
@@ -754,7 +762,7 @@ const charactersData = [
         },
         skills: [
             {
-                name: "Death Bloom", icon : "img/skill/Death_Bloom_Icon.webp", desc: "When Bumping, leaves a mark on the Opponent Player who last Touched the Ball. <span class='text-warning'>Upon Skill Activation, the Status of all marked Opponent Players decreases for a certain period of time." +
+                name: "Death Bloom", icon: "img/skill/Death_Bloom_Icon.webp", desc: "When Bumping, leaves a mark on the Opponent Player who last Touched the Ball. <span class='text-warning'>Upon Skill Activation, the Status of all marked Opponent Players decreases for a certain period of time." +
                     " A Opponent Player with two or more marks has their movement sealed briefly immediately after Skill Activation.</span>" +
                     "<span class='text-success-custom fw-bold'><br>Attack: -bloomAtk_VAL | Defense: -bloomDef_VAL | Speed: -bloomSpd_VAL | Jump: -bloomJmp_VAL</span>"
             },
@@ -836,8 +844,8 @@ const charactersData = [
         role: "MB",
         isDave: true,
         position: "Middle Blocker (MB)",
-        desc: "A key middle blocker and the team’s mood-maker, with an unmatched presence both on and off the court. His confidence is well-founded, and he has plenty of nerve. The deeper his team falls into trouble, the more fired up he gets, sending everyone’s morale soaring. Straightforward and action-oriented, he dislikes beating around the bush and is clear about his likes and dislikes, "+
-                "but never holds a grudge. Despite his intimidating first impression, he is remarkably friendly and approaches even strangers without hesitation. He also has an unexpectedly caring side: he might quietly give a dejected junior a gentle tap on the head and casually say, 'Let’s grab something to eat.' His goal: to be the strongest in the world!",
+        desc: "A key middle blocker and the team’s mood-maker, with an unmatched presence both on and off the court. His confidence is well-founded, and he has plenty of nerve. The deeper his team falls into trouble, the more fired up he gets, sending everyone’s morale soaring. Straightforward and action-oriented, he dislikes beating around the bush and is clear about his likes and dislikes, " +
+            "but never holds a grudge. Despite his intimidating first impression, he is remarkably friendly and approaches even strangers without hesitation. He also has an unexpectedly caring side: he might quietly give a dejected junior a gentle tap on the head and casually say, 'Let’s grab something to eat.' His goal: to be the strongest in the world!",
         image: "img/Gitae.webp",
         baseStats: {
             attack: { base: 100, maxLimit: 190, growth: [0, 4, 7, 7, 8, 9] },
@@ -856,46 +864,46 @@ const charactersData = [
             metalbloodairbrn: [0, 0.07, 0.09, 0.13, 0.16, 0.2],
             metalbloodpwr: [
                 {
-                    0: { power : +0 },
-                    1: { power : +6.8 },
-                    2: { power : +13.6 },
-                    3: { power : +20.4 },
-                    4: { power : +27.2 },
+                    0: { power: +0 },
+                    1: { power: +6.8 },
+                    2: { power: +13.6 },
+                    3: { power: +20.4 },
+                    4: { power: +27.2 },
                 },
                 {
-                    0: { power : +0 },
-                    1: { power : +7.5 },
-                    2: { power : +15 },
-                    3: { power : +22.4 },
-                    4: { power : +29.9 },
+                    0: { power: +0 },
+                    1: { power: +7.5 },
+                    2: { power: +15 },
+                    3: { power: +22.4 },
+                    4: { power: +29.9 },
                 },
                 {
-                    0: { power : +0 },
-                    1: { power : +7.7 },
-                    2: { power : +15.4 },
-                    3: { power : +23.1 },
-                    4: { power : +30.7 },
+                    0: { power: +0 },
+                    1: { power: +7.7 },
+                    2: { power: +15.4 },
+                    3: { power: +23.1 },
+                    4: { power: +30.7 },
                 },
                 {
-                    0: { power : +0 },
-                    1: { power : +8 },
-                    2: { power : +16 },
-                    3: { power : +24.1 },
-                    4: { power : +32.1 },
+                    0: { power: +0 },
+                    1: { power: +8 },
+                    2: { power: +16 },
+                    3: { power: +24.1 },
+                    4: { power: +32.1 },
                 },
                 {
-                    0: { power : +0 },
-                    1: { power : +8.4 },
-                    2: { power : +16.7 },
-                    3: { power : +25.1 },
-                    4: { power : +33.5 },
+                    0: { power: +0 },
+                    1: { power: +8.4 },
+                    2: { power: +16.7 },
+                    3: { power: +25.1 },
+                    4: { power: +33.5 },
                 },
                 {
-                    0: { power : +0 },
-                    1: { power : +8.7 },
-                    2: { power : +17.4 },
-                    3: { power : +26.1 },
-                    4: { power : +34.8 },
+                    0: { power: +0 },
+                    1: { power: +8.7 },
+                    2: { power: +17.4 },
+                    3: { power: +26.1 },
+                    4: { power: +34.8 },
                 }
             ],
             ironclaw: [1, 1.1, 1.2, 1.3, 1.4], //[CurrentPushup]
@@ -908,14 +916,22 @@ const charactersData = [
             ]
         },
         skills: [
-            { name: "Intimidation", icon : "img/skill/Intimidation_Icon.webp", desc: "Each Touch of the Ball adds 1 Stack. At maximum Stack, the Skill triggers Activation automatically. <span class='text-warning'>During Skill Activation, Attack increases by 10 and Speed by 10. Additionally, performing Block against an Attack from a Opponent Player with lower Attack than your own always triggers Kill Block.</span>"+
-                    "<br><span class='text-success-custom fw-bold'>Duration : 12s , Required Stack : intimidationstck_VAL</span>"},
-            { name: "Metal Blood", desc: "Jumps with low Gravity and charges energy while airborne. When spiking, <span class='text-warning'>the Ball's Power increases based on Energy Charge Count. If the Ball is not hit with a Quick Attack, only 30% of the Power increase is applied.</span>"+
-                    "<br><span class='text-success-custom fw-bold'>Airborne Charge Time : metalbloodairbrn , Ball Power : metalbloodpwr_VAL</span>"},
-            { name: "Iron Claw", desc: "<span class='text-warning'>Can Spike over a wider area based on the Energy Charge Count of Metal Blood.</span>"+
-                    "<br><span class='text-success-custom fw-bold'>Spike Range: +ironclaw_VAL</span>"},
-            { name: "Hundred Forged Steel", desc: "<span class='text-warning'>Each Quick Attack during a Rally increases Jump and Attack (up to 4 times).</span> Resets when the Rally ends."+
-                    "<br><span class='text-success-custom fw-bold'>Jump : +forgesteeljmp_VAL , Attack : +forgesteelatk_VAL</span>"},
+            {
+                name: "Intimidation", icon: "img/skill/Intimidation_Icon.webp", desc: "Each Touch of the Ball adds 1 Stack. At maximum Stack, the Skill triggers Activation automatically. <span class='text-warning'>During Skill Activation, Attack increases by 10 and Speed by 10. Additionally, performing Block against an Attack from a Opponent Player with lower Attack than your own always triggers Kill Block.</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Duration : 12s , Required Stack : intimidationstck_VAL</span>"
+            },
+            {
+                name: "Metal Blood", desc: "Jumps with low Gravity and charges energy while airborne. When spiking, <span class='text-warning'>the Ball's Power increases based on Energy Charge Count. If the Ball is not hit with a Quick Attack, only 30% of the Power increase is applied.</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Airborne Charge Time : metalbloodairbrn , Ball Power : metalbloodpwr_VAL</span>"
+            },
+            {
+                name: "Iron Claw", desc: "<span class='text-warning'>Can Spike over a wider area based on the Energy Charge Count of Metal Blood.</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Spike Range: +ironclaw_VAL</span>"
+            },
+            {
+                name: "Hundred Forged Steel", desc: "<span class='text-warning'>Each Quick Attack during a Rally increases Jump and Attack (up to 4 times).</span> Resets when the Rally ends." +
+                    "<br><span class='text-success-custom fw-bold'>Jump : +forgesteeljmp_VAL , Attack : +forgesteelatk_VAL</span>"
+            },
             { name: "Solid Blocking", desc: "<span class='text-warning'>Improves the timing Accuracy of Block Jump s performed by Al-controlled Players.</span>" },
             { name: "Read Block", desc: "When an Al-controlled Player performs Block, <span class='text-warning'>they read the Setter's Set before jumping to Block.</span>" },
             { name: "Iron Halberd", desc: "For each S+ Player other than this player on Our Team, <span class='text-danger'>this player's Attack decreases by 10 and Jump decreases by 3.</span>" },
@@ -990,8 +1006,10 @@ const charactersData = [
             absltblckcldwn: [10, 10, 10, 10, 10, 10],
         },
         skills: [
-            { name: "Absolute Block", icon : "img/skill/Absolute_Block_Icon.webp", desc: "<span class='text-warning'>During Skill Activation, always triggers a Kill Block against any Attack that hits the Block.</span> "+
-                    "<br><span class='text-success-custom fw-bold'>Duration absltblckdur_VALs , Cooldown absltblckcldwn_VALs</span>" },
+            {
+                name: "Absolute Block", icon: "img/skill/Absolute_Block_Icon.webp", desc: "<span class='text-warning'>During Skill Activation, always triggers a Kill Block against any Attack that hits the Block.</span> " +
+                    "<br><span class='text-success-custom fw-bold'>Duration absltblckdur_VALs , Cooldown absltblckcldwn_VALs</span>"
+            },
             { name: "Power Back Attack", desc: "<span class='text-warning'>Increases Power by 5.5 when performing a Spike from behind the Attack Line.</span>" },
             { name: "Quick Preparation", desc: "<span class='text-warning'>Block preparation is performed 70% faster.</span>" },
             { name: "Quick Recovery", desc: "<span class='text-warning'>Increases Stamina recovery from Scoring and Cowarning</span>" },
@@ -1008,7 +1026,7 @@ const charactersData = [
                 desc: "Attack +4, Jump +4"
             },
         ],
-        
+
         overall: [
             "Worked Up: <span class='text-warning'>Low</span>",
             "Careless: <span class='text-success-custom'>Very Low</span>",
@@ -1085,8 +1103,10 @@ const charactersData = [
             firtigerjmp: [1, 2, 2, 4, 4, 4]
         },
         skills: [
-            { name: "Fierce Tiger", icon : "img/skill/Fierce_Tiger_Icon.webp", desc: "When the Opponent Player with the lowest defense in the Back Court, <span class='text-warning'>is marked with Tiger Claw, Attack and Jump increase.</span>"+
-                    "<br><span class='text-success-custom fw-bold'>Attack +tigeratk_VAL , Jump +tigerjmp_VAL</span>" },
+            {
+                name: "Fierce Tiger", icon: "img/skill/Fierce_Tiger_Icon.webp", desc: "When the Opponent Player with the lowest defense in the Back Court, <span class='text-warning'>is marked with Tiger Claw, Attack and Jump increase.</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Attack +tigeratk_VAL , Jump +tigerjmp_VAL</span>"
+            },
             { name: "RAWR!", desc: "<span class='text-warning'>One the first Serve of the Match, there is a very high chance to inflict Discouraged on all Opponent Players.</span>" },
             {
                 name: "Tiger Claw", desc: "Applies a mark to any Opponent Player who Defenses the Attack. <span class='text-warning'>Marked Players lose 9 Jump. When the mark stacks, they automatically fail Defense and the mark is removed." +
@@ -1178,11 +1198,15 @@ const charactersData = [
             imprlordrcldwn: [14, 11, 10, 9, 8, 8]
         },
         skills: [
-            { name: "Imperial Order", icon : "img/skill/Imperial_Order_Icon.webp", desc: "During the Skill Activation, <span class='text-warning'>three Compasses on the Court are generated. The compasses rotate at different speeds, but there is always a moment when they overlap toward the Opponent Team Court. The Power increase of each compass is applied independently.</span>"+
-                    "<br><span class='text-success-custom fw-bold'>Duration: imperialdur_VALs , Cooldown: imperialcldwn_VALs</span>" },
+            {
+                name: "Imperial Order", icon: "img/skill/Imperial_Order_Icon.webp", desc: "During the Skill Activation, <span class='text-warning'>three Compasses on the Court are generated. The compasses rotate at different speeds, but there is always a moment when they overlap toward the Opponent Team Court. The Power increase of each compass is applied independently.</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Duration: imperialdur_VALs , Cooldown: imperialcldwn_VALs</span>"
+            },
             { name: "Kind Tyrant", desc: "During a High Set, <span? class='text-warning'>delivers a Set that falls rapidly. The Ball falls 0.7 seconds slower at the Wing Spiker's peak contact point.</span?" },
-            { name: "Compass on the Court", desc: "Upon Set, a rotating compass is generated on the Ball. The compass points toward the Opponent Team Court at the Wing Spiker's peak Contact Point. <span class='text-warning'>The closer the angle of the Spike matches the compass's direction, the more Accuracy increases. Depending on Accuracy, the Ball's Power and Spin will increase or decrease. Performing a Spike with PERFECT Accuracy increases the compass's rotation speed for the duration of the Match.</span>" +
-                    "<br><span class='text-success-custom fw-bold'>Current Accuracy: compass_VAL</span>" }
+            {
+                name: "Compass on the Court", desc: "Upon Set, a rotating compass is generated on the Ball. The compass points toward the Opponent Team Court at the Wing Spiker's peak Contact Point. <span class='text-warning'>The closer the angle of the Spike matches the compass's direction, the more Accuracy increases. Depending on Accuracy, the Ball's Power and Spin will increase or decrease. Performing a Spike with PERFECT Accuracy increases the compass's rotation speed for the duration of the Match.</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Current Accuracy: compass_VAL</span>"
+            }
         ],
         synergies: [
             {
@@ -1264,7 +1288,7 @@ const charactersData = [
         },
         btBonusGauge: [0, 1, 2, 3, 3, 3],
         skills: [
-            { name: "Parry", icon : "img/skill/Parry_Icon.webp", desc: "When an Opponent Player's Spike in Bumped, <span class='text-warning'>Charge the Gauge based on the Ball's Power. A higher Gauge provides a greater boost to Attack and Jump. The Gauge resets after you perform a Spike.</span>" },
+            { name: "Parry", icon: "img/skill/Parry_Icon.webp", desc: "When an Opponent Player's Spike in Bumped, <span class='text-warning'>Charge the Gauge based on the Ball's Power. A higher Gauge provides a greater boost to Attack and Jump. The Gauge resets after you perform a Spike.</span>" },
             { name: "Serve Routine A", desc: "<span class='text-warning'>Performs a unique pre-Serve animation.</span>" },
             { name: "Blessing", desc: "<span class='text-warning'>When you first Bump the Ball coming from the Opponent Team Court, recover 20 Stamina for your Team.</span>" }
         ],
@@ -1277,13 +1301,15 @@ const charactersData = [
                 ],
                 desc: "Increase allies' max HP by 10"
             },
-            { name: "Spartan Soul", 
+            {
+                name: "Spartan Soul",
                 partners: [
                     { name: "Isabel", icon: "img/Isabel.webp" },
                     { name: "Roberto", icon: "img/Roberto.webp" },
                     { name: "NN", icon: "img/NN.webp" }
                 ],
-                desc: "Attack +6, Defense +10, Speed +2, Jump +4" }
+                desc: "Attack +6, Defense +10, Speed +2, Jump +4"
+            }
         ],
         overall: [
             "Worked Up: <span class='text-warning'>Low</span>",
@@ -1352,15 +1378,19 @@ const charactersData = [
             determineJmp: [7.5, 10.2, 15.3, 15.3, 15.3, 20.7]
         },
         skills: [
-            { name: "Determination", icon : "img/skill/Determination_Icon.webp", desc: "When Team Stamina falls to 30% or below, <span class='text-warning'>Attack and Jump increase.</span> "+
-                    "<br><span class='text-success-custom fw-bold'> Attack: rageatk_VAL% , Jump: ragejmp_VAL%</span>" },
+            {
+                name: "Determination", icon: "img/skill/Determination_Icon.webp", desc: "When Team Stamina falls to 30% or below, <span class='text-warning'>Attack and Jump increase.</span> " +
+                    "<br><span class='text-success-custom fw-bold'> Attack: rageatk_VAL% , Jump: ragejmp_VAL%</span>"
+            },
             { name: "Power Back Attack", desc: "<span class='text-warning'>Increases Power by 5.5 when performing a Spike from behind the Attack Line.</span>" }
         ],
         synergies: [
-            { name: "None",
+            {
+                name: "None",
                 partners: [
                 ],
-            desc: "None" }
+                desc: "None"
+            }
         ],
         overall: [
             "Worked Up: <span class='text-warning'>Very Low</span>",
@@ -1483,10 +1513,12 @@ const charactersData = [
             ]
         },
         skills: [
-            { name: "Wings of Icarus", icon : "img/skill/Icarus_Icon.webp", desc: "When performing a Spike, <span class='text-warning'>setting a new personal best Contact Point temporarily increases the Ball's Power. Attack and Jump increase based on your highest Contact Point.</span>"+
-                    "<br><span class='text-success-custom fw-bold'>Power: +20%, Spin: +50%</span>"+
-                    "<br><span class='text-success-custom fw-bold'>Icarus Contact Point : ICARUS_HGT m, "+
-                    "<br><span class='text-success-custom fw-bold'>Increases Attack by ICARUS_ATK and Jump by ICARUS_JMP</span>" },
+            {
+                name: "Wings of Icarus", icon: "img/skill/Icarus_Icon.webp", desc: "When performing a Spike, <span class='text-warning'>setting a new personal best Contact Point temporarily increases the Ball's Power. Attack and Jump increase based on your highest Contact Point.</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Power: +20%, Spin: +50%</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Icarus Contact Point : ICARUS_HGT m, " +
+                    "<br><span class='text-success-custom fw-bold'>Increases Attack by ICARUS_ATK and Jump by ICARUS_JMP</span>"
+            },
             { name: "Burn the Ship", desc: "<span class='text-warning'>Transitions into a vertical Spike from a feint motion while Mid-air.</span>" },
             { name: "Energize", desc: "<span class='text-warning'>Press Spike Button to approach and charge the Gauge. Press Spike Button again to jump, and Jump changes depending on the Gauge.</span>" },
         ],
@@ -1598,7 +1630,7 @@ const charactersData = [
         },
         skills: [
             {
-                name: "Miraculous Toss", icon : "img/skill/Miraculous_Toss_Icon.webp", desc: "Upon Skill Activation, performs a Miraculous Toss. The skill lasts until a teammate spikes that Set. <span class='text-warning'>When spiking this Set, the greater the score difference in favor of the opposing team, the more the Ball's Power increases proportionally, stacking up to a 7-point difference.</span>" +
+                name: "Miraculous Toss", icon: "img/skill/Miraculous_Toss_Icon.webp", desc: "Upon Skill Activation, performs a Miraculous Toss. The skill lasts until a teammate spikes that Set. <span class='text-warning'>When spiking this Set, the greater the score difference in favor of the opposing team, the more the Ball's Power increases proportionally, stacking up to a 7-point difference.</span>" +
                     "<br><span class='text-success-custom fw-bold'>Cooldown miracleset_VALs , Power Spike miracleatk_VAL% , Ball Spin miracleball_VAL% </span>"
             },
             { name: "Problem Solver", desc: "Attempts Attack Two when a teammate fails to spike the Ball received from Toss twice in a row. During Attack Two, <span class='text-warning'>the Ball's Power increases by 20% and ignores Blocking.</span>" },
@@ -1636,7 +1668,7 @@ const charactersData = [
                     image: "img/Jihoon.webp",
                     caption: "Default"
                 },
-        ]
+            ]
     },
     {
         id: "leon",
@@ -1664,7 +1696,7 @@ const charactersData = [
         },
         skills: [
             {
-                name: "Pride", desc: "If the Ball is Spiked from 6m or more away from the net, <span class='text-warning'>its Horizontal Power increases based on the distance. A Spike 7.5 or farther away from the Net triggers the Sliding Pierce Effect. However, if the Spike occurs within 3m of the Net, its Horizontal Power is reduced. "+
+                name: "Pride", desc: "If the Ball is Spiked from 6m or more away from the net, <span class='text-warning'>its Horizontal Power increases based on the distance. A Spike 7.5 or farther away from the Net triggers the Sliding Pierce Effect. However, if the Spike occurs within 3m of the Net, its Horizontal Power is reduced. " +
                     "<br><span class='text-success-custom fw-bold'>Spike Power: prideatk_VAL%</span>"
             },
         ],
@@ -1700,12 +1732,81 @@ const charactersData = [
                 obtain: "Base Character / Story Appearance"
             },
         ],
-        gallery:[
-                {
-                    title: "Default illustration",
-                    image: "img/Leon.webp",
-                    caption: "Default"
-                },
+        gallery: [
+            {
+                title: "Default illustration",
+                image: "img/Leon.webp",
+                caption: "Default"
+            },
+        ]
+    },
+    {
+        id: "sejin",
+        name: "Kang Sejin",
+        role: "SE",
+        position: "Setter (SE)",
+        desc: "A setter who strives for a flawless, cool image, but whose poker face crumbles and ears turn red at sincere praise or kindness. Eager to impress, he puts effort into looking cool in everything from fashion to gaming nicknames. " +
+            "In reality, he is a bit of a goof who can’t even watch horror movies or eat bell peppers. " +
+            "He may seem distant at first, but once he opens up to someone, he approaches them freely. When the team is in trouble, he handles the match more calmly than anyone.",
+        image: "img/Sejin.webp",
+        baseStats: {
+            attack: { base: 100, maxLimit: 165, growth: [0, 3, 3, 4, 4, 4] },
+            defense: { base: 100, maxLimit: 175, growth: [0, 3, 8, 8, 8, 13] },
+            speed: { base: 100, maxLimit: 175, growth: [0, 10, 10, 15, 15, 20] },
+            jump: { base: 100, maxLimit: 160, growth: [0, 0, 2, 2, 2, 3] }
+        },
+        recommended: {
+            attack: { base: 100, growthText: "+4 (Max BT)", total: 104 },
+            defense: { base: 150, growthText: "+13 (Max BT)", total: 163 },
+            speed: { base: 175, growthText: "+20 (Max BT)", total: 195 },
+            jump: { base: 165, growthText: "+3 (Max BT)", total: 168 }
+        },
+        skillStats: {
+            fortuneturn: [60, 55, 45, 45, 40, 40]
+        },
+        skills: [
+            {
+                name: "Fortune's Turn", icon: "img/skill/Fortune's_Turn_Icon.webp", desc: "Upon Skill Activation, <span class='text-warning'>lowers a Teammate's Debuff by 1 levels. <span class='text-success-custom'>(Removes the Debuff if it is at level 1.)</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Wait Time : fortuneturn_VALs</span>"
+            },
+            { name: "Core Hit", desc: "<span class='text-warning'>Prioritizes setting the ball to the controlled player. When a Wing Spiker performs an Back-row Attack from the set, the Ball's Power increases by 5% and Slide Pierce increases by 30. When a Middle Blocker performs a Spike from a Quick Attack set, Block Pierce increases by 20.</span>" },
+        ],
+        synergies: [
+            {
+                name: "None",
+                partners: [
+                ],
+                desc: "None"
+            },
+        ],
+        overall: [
+            "Worked Up: <span class='text-danger'>Very Low</span>",
+            "Careless: <span class='text-success-custom'>Very Low</span>",
+            "Engaged: <span class='text-danger'>Very Low</span>",
+            "Discourage: <span class='text-success-custom'>Very Low</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/hIzz_3qk5yQ?si=SzrSnj7ednfjZOZ_" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            {
+                name: "Default",
+                image: "img/Sejin.webp",
+                obtain: "Base Character / Story Appearance"
+            }
+        ],
+        gallery: [
+            {
+                title: "Default illustration",
+                image: "img/Sejin.webp",
+                caption: "Default"
+            },
         ]
     },
     {
@@ -1743,7 +1844,7 @@ const charactersData = [
         skills: [
             {
                 name: "Skyball Serve", desc: "<span class='text-warning'>Has a chance to launch a powerful Skyball Serve high into the air. Any Opponent Player who Bumps it is inflicted with Discouraged for the remainder of the Rally.</span>" +
-                    " Success probability decreases with each consecutive successful Skyball Serve. "+
+                    " Success probability decreases with each consecutive successful Skyball Serve. " +
                     "<br><span class='text-success-custom fw-bold'>Sky Serve chance: skyserve_VAL%</span>"
             },
             { name: "Sunshine", desc: "Upon the first Player Substitution of the Match, <span class='text-warning'>All Team Players enter the Engaged state.</span>" },
@@ -1795,7 +1896,7 @@ const charactersData = [
                 obtain: "Skin / Christmas Event"
             },
         ],
-        gallery:[
+        gallery: [
             {
                 title: "Default illustration",
                 image: "img/Lisia.webp",
@@ -1811,7 +1912,7 @@ const charactersData = [
                 image: "img/oldillust/Lisia_1.webp",
                 caption: "Lisia The Spike Mobile 2023"
             },
-            
+
         ]
     },
     {
@@ -1869,12 +1970,14 @@ const charactersData = [
         },
         skills: [
             {
-                name: "Flare", icon : "img/skill/Flare_Icon.webp", desc: "During the Skill's Activation, all Status increases. However, Status during skill Deactivation decreases according to the Skill's Activation counts." +
+                name: "Flare", icon: "img/skill/Flare_Icon.webp", desc: "During the Skill's Activation, all Status increases. However, Status during skill Deactivation decreases according to the Skill's Activation counts." +
                     " (Status reduction stacks up to 12 times) Timeouts and Player Substitutions resets this Status penalty. <br><span class='small text-warning'>Duration : flaredur_VALs , Cooldown : flarecldwn_VALs</span>" +
                     " <br><span class='text-success-custom fw-bold'>Attack : +flareatk_VAL , Def : +flaredef_VAL , Speed : +flarespd_VAL , Jump : +flarejmp_VAL</span><br><span class='small text-danger-custom2'>flaredebuff_VAL</span>"
             },
-            { name: "Helios", desc: "Dives toward the ground Mid-air during the Spike to accelerate the fall. <span class='text-warning'>The faster the descent, the more the Ball's Power increases.</span> "+
-                    "<span class='text-success-custom fw-bold'>Power: +heliospwr_VAL%</span>" },
+            {
+                name: "Helios", desc: "Dives toward the ground Mid-air during the Spike to accelerate the fall. <span class='text-warning'>The faster the descent, the more the Ball's Power increases.</span> " +
+                    "<span class='text-success-custom fw-bold'>Power: +heliospwr_VAL%</span>"
+            },
             { name: "Brave Heart", desc: "<span class='text-warning'> Changes the Discouraged state into the Engaged state.</span>" },
             { name: "Long Serve Toss", desc: "Can perform a very high Serve Toss with a boosted minimum Set speed." },
             { name: "Sunspot Burst", desc: "Spike has a chance to trigger Sunspot Burst. When active, <span class='text-warning'>Power is increased by 13% and Spin by 1. <span class='text-success-custom fw-bold'>Activation Chance: sunburst_VAL%</span>" },
@@ -1923,7 +2026,7 @@ const charactersData = [
                 obtain: "Skin / Summer Training"
             },
         ],
-        gallery:[
+        gallery: [
             {
                 title: "Default illustration",
                 image: "img/Lucas.webp",
@@ -1996,8 +2099,10 @@ const charactersData = [
             ]
         },
         skills: [
-            { name: "Tire", icon : "img/skill/tire_Icon.webp", icon: "img/skill/Tire_icon.webp", desc: "Speed and Jump are reduced while wearing the Tire. <span class='text-warning'>Each Bump Charges the Gauge; once full, the Tire breaks, greatly increasing your Attack, Jump, and Speed.</span> "+
-                    "<br><span class='text-success-custom fw-bold'>tire_VAL</span>"},
+            {
+                name: "Tire", icon: "img/skill/tire_Icon.webp", icon: "img/skill/Tire_icon.webp", desc: "Speed and Jump are reduced while wearing the Tire. <span class='text-warning'>Each Bump Charges the Gauge; once full, the Tire breaks, greatly increasing your Attack, Jump, and Speed.</span> " +
+                    "<br><span class='text-success-custom fw-bold'>tire_VAL</span>"
+            },
             { name: "Power Back Attack", desc: "<span class='text-warning'>Increases Power by 5.5 when performing a Spike from behind the Attack Line.</span>" },
         ],
         synergies: [
@@ -2032,7 +2137,7 @@ const charactersData = [
                 obtain: "Base Character / Story Appearance"
             },
         ],
-        gallery:[
+        gallery: [
             {
                 title: "Default illustration",
                 image: "img/Mike.webp",
@@ -2071,7 +2176,7 @@ const charactersData = [
         },
         skills: [
             {
-                name: "Blitz Spin", icon : "img/skill/Blitz_Spin_Icon.webp", desc: "<span class='text-warning'>Increases the Vertical Power and Spin of the Ball during a Spike, causing its Trajectory to curve.</span>" +
+                name: "Blitz Spin", icon: "img/skill/Blitz_Spin_Icon.webp", desc: "<span class='text-warning'>Increases the Vertical Power and Spin of the Ball during a Spike, causing its Trajectory to curve.</span>" +
                     "<br><span class='text-success-custom fw-bold'>Power: +blitzpwr_VAL% , Spin: +blitzspin_VAL</span>"
             },
         ],
@@ -2100,7 +2205,7 @@ const charactersData = [
                 obtain: "Base Character / Story Appearance"
             },
         ],
-        gallery:[
+        gallery: [
             {
                 title: "Default illustration",
                 image: "img/Minjun.webp",
@@ -2140,7 +2245,7 @@ const charactersData = [
         },
         skills: [
             {
-                name: "Aegis", icon : "img/skill/Aegis_Icon.webp", desc: "Upon Skill Activation, the player with the lowest Defense among Teammate enters the Aegis state. <span class='text-warning'>While in the Aegis state," +
+                name: "Aegis", icon: "img/skill/Aegis_Icon.webp", desc: "Upon Skill Activation, the player with the lowest Defense among Teammate enters the Aegis state. <span class='text-warning'>While in the Aegis state," +
                     " Defense and Defense Range increase</span>, and the Aegis state is removed upon defending a Spike. <br><span class='text-warning'>Duration: aegisdur_VALs , Cooldown: aegiscldwn_VALs</span>" +
                     "<br><span class='text-success-custom fw-bold'>Defense: +aegisdef_VAL , Range Def: +aegisrange_VAL%</span>"
             },
@@ -2191,7 +2296,7 @@ const charactersData = [
                 obtain: "Base Character / Story Appearance"
             },
         ],
-        gallery:[
+        gallery: [
             {
                 title: "Default illustration",
                 image: "img/Muyeong.webp",
@@ -2231,14 +2336,18 @@ const charactersData = [
         },
         skills: [
             { name: "Energize", icon: "img/skill/Energize_Characteristic_Icon.webp", desc: "<span class='text-warning'>Press Spike Button to approach and charge the Gauge. Press Spike Button again to jump, and Jump changes depending on the Gauge.</span>" },
-            { name: "Thunder Spike", desc: "If Contact Point exceeds 4m, <span class='text-warning'>performs a thunderous Spike with increased Power and Spin. The Spike gains the Sliding Pierce Effect</span>"+
-                    "<br><span class='text-success-custom fw-bold'>Ball's Power : +TS_VAL% , Spin : +86% , Sliding Pierce : +90</span>." },
+            {
+                name: "Thunder Spike", desc: "If Contact Point exceeds 4m, <span class='text-warning'>performs a thunderous Spike with increased Power and Spin. The Spike gains the Sliding Pierce Effect</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Ball's Power : +TS_VAL% , Spin : +86% , Sliding Pierce : +90</span>."
+            },
             { name: "Double Spike", desc: "Can Swing twice while in Mid-air. <span class='text-warning'>When performing a Spike on the second Swing, if the Contact Point is below 4m, the Ball's Power increases by 15%</span>" },
             { name: "High 3rd Ball Play", desc: "On the third Touch, <span class='text-warning'>if the Ball is sent over without an Attack, it is sent high into the air.</span>" },
             { name: "Zap Zap Trail", desc: "Changes the color of the Ball's Trail during the Serve Toss." },
             { name: "Topspin Feint", desc: "The Feint has added spin,<span class='text-warning'> causing the Ball to drop faster.</span> <span class='text-warning'>Ball's spin : +260%</span>" },
-            { name: "Spark", desc: "When performing a Spike, <span class='text-warning'>Power increases if the Contact Point is below 4m "+
-                    "<br><span class='text-success-custom fw-bold'>Attack Power : +HT_VAL%</span>." }
+            {
+                name: "Spark", desc: "When performing a Spike, <span class='text-warning'>Power increases if the Contact Point is below 4m " +
+                    "<br><span class='text-success-custom fw-bold'>Attack Power : +HT_VAL%</span>."
+            }
         ],
         synergies: [
             {
@@ -2280,7 +2389,7 @@ const charactersData = [
                 obtain: "Skin / The Tiger Eyes Event"
             }
         ],
-        gallery:[
+        gallery: [
             {
                 title: "Default illustration",
                 image: "img/Nishikawa.webp",
@@ -2376,7 +2485,7 @@ const charactersData = [
         skillStats: {
         },
         skills: [
-            { name: "Snipe", icon : "img/skill/Snipe_Icon.webp", desc: "Attempts Snipe just before Set. <span class='text-warning'>If a Player is at the targeted location, performs a very fast Set.</span> If no Player is near the targeted location, performs a different Set." },
+            { name: "Snipe", icon: "img/skill/Snipe_Icon.webp", desc: "Attempts Snipe just before Set. <span class='text-warning'>If a Player is at the targeted location, performs a very fast Set.</span> If no Player is near the targeted location, performs a different Set." },
             { name: "Long-Distance Set", desc: "When the distance to the Net exceeds 9.8m, performs a Set with reduced Spin and high Contact Point." },
         ],
         synergies: [
@@ -2388,13 +2497,14 @@ const charactersData = [
                 ],
                 desc: "Jump +5"
             },
-            { name: "Spartan Soul", 
+            {
+                name: "Spartan Soul",
                 partners: [
                     { name: "Isabel", icon: "img/Isabel.webp" },
                     { name: "Roberto", icon: "img/Roberto.webp" },
                     { name: "NN", icon: "img/NN.webp" }
                 ],
-                desc: "Attack +6, Defense +10, Speed +2, Jump +4" 
+                desc: "Attack +6, Defense +10, Speed +2, Jump +4"
             }
         ],
         overall: [
@@ -2424,7 +2534,7 @@ const charactersData = [
                 obtain: "Skin / Summer Event"
             },
         ],
-        gallery:[
+        gallery: [
             {
                 title: "Default illustration",
                 image: "img/NN.webp",
@@ -2518,8 +2628,8 @@ const charactersData = [
         },
         skills: [
             {
-                name: "Sunrise", icon : "img/skill/Sunrise_Icon.webp", desc: "Until 'Noon,' <span class='text-warning'>for every 3 points gained by Opponent Team, Attack, Speed, and Jump increase.</span>" +
-                    " Status increases only until reaching 15 points. "+
+                name: "Sunrise", icon: "img/skill/Sunrise_Icon.webp", desc: "Until 'Noon,' <span class='text-warning'>for every 3 points gained by Opponent Team, Attack, Speed, and Jump increase.</span>" +
+                    " Status increases only until reaching 15 points. " +
                     "<br><span class='text-success-custom fw-bold'>sunrise_VAL</span>"
             },
             { name: "High Noon", desc: "From High Noon (15 points) until Sunset, <span class='text-warning'>Attack is fixed at 262.5, Speed at 175, and Jump at 198.18 .</span>" },
@@ -2567,7 +2677,7 @@ const charactersData = [
                 obtain: "Base Character / Story Appearance"
             },
         ],
-        gallery:[
+        gallery: [
             {
                 title: "Default illustration",
                 image: "img/Oasis.webp",
@@ -2694,11 +2804,15 @@ const charactersData = [
             ]
         },
         skills: [
-            { name: "Beast Spike", icon : "img/skill/Beast_Spike_Icon.webp", desc: "Power and Spin of the Ball scale with the Wild Pounce's Charged Gauge. <span class='text-warning'>A max-Gauge Spike aimed toward the Net breaks through other Player's Block. However, penetration is only possible if it exceeds the Attack of the blocking Player." +
-                    " A max-Gauge Spike while jumping away from the Net will trigger the Sliding Pierce Effect. However, that Spike cannot penetrate a Block.</span> <span class='text-danger-custom2'>Automatic Mode reduces all Attack speed bonuses by 25%.</span>"},
+            {
+                name: "Beast Spike", icon: "img/skill/Beast_Spike_Icon.webp", desc: "Power and Spin of the Ball scale with the Wild Pounce's Charged Gauge. <span class='text-warning'>A max-Gauge Spike aimed toward the Net breaks through other Player's Block. However, penetration is only possible if it exceeds the Attack of the blocking Player." +
+                    " A max-Gauge Spike while jumping away from the Net will trigger the Sliding Pierce Effect. However, that Spike cannot penetrate a Block.</span> <span class='text-danger-custom2'>Automatic Mode reduces all Attack speed bonuses by 25%.</span>"
+            },
             { name: "First Impact", desc: "Upon performing a Spike with maximum Gauge for the first time during a Match, <span class='text-warning'>the Power of the Ball increases by 40% and the Spin increases by 60%.</span>" },
-            { name: "Dark Night", desc: "<span class='text-warning'>The larger the Opponent Team's Score lead, the more Status increases.</span> (Scales up to a 10 point difference.)" +
-                    "<br><span class='text-success-custom fw-bold'>darknight_VAL</span>"},
+            {
+                name: "Dark Night", desc: "<span class='text-warning'>The larger the Opponent Team's Score lead, the more Status increases.</span> (Scales up to a 10 point difference.)" +
+                    "<br><span class='text-success-custom fw-bold'>darknight_VAL</span>"
+            },
             { name: "Royal Quality", desc: "If not controlled manually, <span class='text-danger-custom2'>the Player's Attack decreases by 15%. Automatic Mode is also affected.</span>" },
             { name: "Wild Pounce", desc: "<span class='text-warning'>Moving toward the Net Charges the Gauge, providing a speed boost that scales with the amount charged.</span> Automatic Mode automatically Charges the Gauge while Mid-air." },
             { name: "Beast Fang", desc: "<span class='text-warning'>Has a wider Spike range of 1.2m.</span>" },
@@ -2736,7 +2850,7 @@ const charactersData = [
                 obtain: "Base Character / Story Appearance"
             },
         ],
-        gallery:[
+        gallery: [
             {
                 title: "Default illustration",
                 image: "img/Raul.webp",
@@ -2855,8 +2969,8 @@ const charactersData = [
         },
         skills: [
             {
-                name: "Armor", icon : "img/skill/Armor_Icon.webp", desc: "Charges the Gauge based on Block Accuracy. <span class='text-warning'>The Charged Gauge increases Attack, Speed, and Jump. Guarantees Soft Block even with low Block Accuracy.</span>" +
-                    "<br><span class='text-success-custom fw-bold'>Charge Gauge per Block: gaugeblock_VAL%</span>" + 
+                name: "Armor", icon: "img/skill/Armor_Icon.webp", desc: "Charges the Gauge based on Block Accuracy. <span class='text-warning'>The Charged Gauge increases Attack, Speed, and Jump. Guarantees Soft Block even with low Block Accuracy.</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Charge Gauge per Block: gaugeblock_VAL%</span>" +
                     "<br><span class='text-success-custom fw-bold'>armorgauge_VAL</span>"
             },
             { name: "Quick Preparation", desc: "<span class='text-warning'>Block preparation is performed 70% faster.</span>" },
@@ -2866,13 +2980,14 @@ const charactersData = [
             { name: "Light Movement", desc: "Performs a Quick Attack after a light Approach." },
         ],
         synergies: [
-            { name: "Spartan Soul", 
+            {
+                name: "Spartan Soul",
                 partners: [
                     { name: "Roberto", icon: "img/Roberto.webp" },
                     { name: "Isabel", icon: "img/Isabel.webp" },
                     { name: "NN", icon: "img/NN.webp" }
                 ],
-                desc: "Attack +6, Defense +10, Speed +2, Jump +4" 
+                desc: "Attack +6, Defense +10, Speed +2, Jump +4"
             },
         ],
         overall: [
@@ -2897,7 +3012,7 @@ const charactersData = [
                 obtain: "Base Character / Story Appearance"
             },
         ],
-        gallery:[
+        gallery: [
             {
                 title: "Default illustration",
                 image: "img/Roberto.webp",
@@ -2970,21 +3085,24 @@ const charactersData = [
             soaringair: [100, 110, 110, 125, 140, 160]
         },
         skills: [
-            { name: "Azure Dragon", icon : "img/skill/Azure_Dragon_Icon.webp", desc: "While On Ground, Charges the Gauge. While in Mid-air, holding Spike Button consumes Gauge to gather Energy. <span class='text-warning'>The more Energy gathered, the greater the Ball's Power and Spin." +
+            {
+                name: "Azure Dragon", icon: "img/skill/Azure_Dragon_Icon.webp", desc: "While On Ground, Charges the Gauge. While in Mid-air, holding Spike Button consumes Gauge to gather Energy. <span class='text-warning'>The more Energy gathered, the greater the Ball's Power and Spin." +
                     " At maximum Energy, the Spike gains the Sliding Pierce Effect. If Energy exceeds the limit, the Ball will be hit out of bounds.<span>" +
-                    "<br><span class='text-success-custom fw-bold'>Gauge Charge Speed: +rechargedragon_VAL%"+
-                    "<br><span class='text-success-custom fw-bold'>Base Charge Amount: basecharge_VAL%</span>"+
-                    "<br><span class='text-success-custom fw-bold'>azuredragon_VAL</span>"},
+                    "<br><span class='text-success-custom fw-bold'>Gauge Charge Speed: +rechargedragon_VAL%" +
+                    "<br><span class='text-success-custom fw-bold'>Base Charge Amount: basecharge_VAL%</span>" +
+                    "<br><span class='text-success-custom fw-bold'>azuredragon_VAL</span>"
+            },
             { name: "Soaring", desc: "Air movement speed increases during a spike jump. <br><span class='text-warning'>Air Movement Speed: soaringair_VAL%</span>" },
             { name: "Topspin Feint", desc: "The Feint has added spin, causing the Ball to drop faster. <span class='text-warning'>Ball's spin : +260%</span>" },
         ],
         synergies: [
-            { name: "Seonrim Partner", 
+            {
+                name: "Seonrim Partner",
                 partners: [
                     { name: "Ryuhyeon", icon: "img/Ryuhyeon.webp" },
                     { name: "Muyeong", icon: "img/Muyeong.webp" },
                 ],
-                desc: "Ryuhyeon's charging speed increases by 20%" 
+                desc: "Ryuhyeon's charging speed increases by 20%"
             },
             {
                 name: "Dragon Flower",
@@ -3035,7 +3153,7 @@ const charactersData = [
                 obtain: "Skin / Western Event"
             },
         ],
-        gallery:[
+        gallery: [
             {
                 title: "Default illustration",
                 image: "img/Ryuhyeon.webp",
@@ -3085,19 +3203,57 @@ const charactersData = [
         },
         skills: [
             {
-                name: "Highlight", icon : "img/skill/Highlight_Icon.webp", desc: "While Skill is active, <span class='text-warning'>all stats for Team Player's are increased. Attack +90, Speed +35, Defense +100, Jump +9</span>" +
+                name: "Highlight", icon: "img/skill/Highlight_Icon.webp", desc: "While Skill is active, <span class='text-warning'>all stats for Team Player's are increased. Attack +90, Speed +35, Defense +100, Jump +9</span>" +
                     "<br><span class='text-success-custom fw-bold'>Duration : highlightdur_VALs, Wait Time : highlightcldwn_VALs</span>"
             },
             { name: "Rainbow Trail", desc: "Changes the color of the Ball's Trail during the Serve Toss." },
         ],
         synergies: [
-            { name: "None", desc: "None" }
+            {
+                name: "None",
+                partners: [
+                ],
+                desc: "None"
+            },
         ],
         overall: [
             "Worked Up: <span class='text-success-custom'>Low</span>",
             "Careless: <span class='text-success-custom'>Very Low</span>",
             "Engaged: <span class='text-success-custom'>Very High</span>",
             "Discourage: <span class='text-success-custom'>Very Low</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/vK4hIZlW-Wg?si=SK5L5xQcL-HfG5Pw" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            {
+                name: "Default",
+                image: "img/Sanghyeon.webp",
+                obtain: "Base Character / Story Appearance"
+            },
+        ],
+        gallery: [
+            {
+                title: "Default illustration",
+                image: "img/Sanghyeon.webp",
+                caption: "Default"
+            },
+            {
+                title: "Old illustration",
+                image: "img/oldillust/Sanghyeon_1.webp",
+                caption: "Sanghyeon The Spike 2018"
+            },
+            {
+                title: "Old illustration",
+                image: "img/oldillust/Sanghyeon_2.webp",
+                caption: "Sanghyeon The Spike 2018"
+            },
         ]
     },
     {
@@ -3237,29 +3393,71 @@ const charactersData = [
             ]
         },
         skills: [
-            { name: "Typhoon", icon : "img/skill/Typhoon_Icon.webp", desc: "During the Skill Activation, <span class='text-warning'>Attack and Jump increase. The higher the Speed, the more Attack increases.</span>" +
+            {
+                name: "Typhoon", icon: "img/skill/Typhoon_Icon.webp", desc: "During the Skill Activation, <span class='text-warning'>Attack and Jump increase. The higher the Speed, the more Attack increases.</span>" +
                     "<br><span class='text-success-custom fw-bold'>typhoon_VAL</span>"
             },
-            { name: "Calm Before the Storm", desc: "Immediately after a Gust jump, <span class='text-warning'>the opponent moves slower temporarily.</span>" +
+            {
+                name: "Calm Before the Storm", desc: "Immediately after a Gust jump, <span class='text-warning'>the opponent moves slower temporarily.</span>" +
                     "<br><span class='text-success-custom fw-bold'>Opponent team speed: calmstorm_VAL% , Skill Duration: calmstormdur_VALs"
             },
-            { name: "Gust", desc: "Press Spike Button to move quickly to the Ball's impact point. <span class='text-warning'>The moment you release Spike Button, you quickly jump to the highest point.</span>" +
+            {
+                name: "Gust", desc: "Press Spike Button to move quickly to the Ball's impact point. <span class='text-warning'>The moment you release Spike Button, you quickly jump to the highest point.</span>" +
                     "<br><span class='text-success-custom fw-bold'>Run prep time: gustprep_VALs, Run movement speed: gustmovement_VALs"
             },
-            { name: "Razor Wind", desc: "Press Spike Button while Mid-air to hover briefly. The moment you release Spike Button, you perform a Swing. <span class='text-warning'>Performing a Spike while in Typhoon state displays a target point on the opponent's court." +
+            {
+                name: "Razor Wind", desc: "Press Spike Button while Mid-air to hover briefly. The moment you release Spike Button, you perform a Swing. <span class='text-warning'>Performing a Spike while in Typhoon state displays a target point on the opponent's court." +
                     " You Spike toward the last point that appeared at the moment you released Spike Button.</span>" +
                     "<br><span class='text-success-custom fw-bold'>razorwind_VAL</span>"
             },
             { name: "Tempest Lash", desc: "<span class='text-warning'>Allows for Spike in a wider range than usual.</span>" },
         ],
         synergies: [
-            { name: "None", desc: "None" }
+            {
+                name: "None",
+                partners: [
+                ],
+                desc: "None"
+            },
         ],
         overall: [
             "Worked Up: <span class='text-success-custom'>Low</span>",
             "Careless: <span class='text-success-custom'>Very Low</span>",
             "Engaged: <span class='text-success-custom'>Very High</span>",
             "Discourage: <span class='text-success-custom'>Low</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/XJ1_wZaKk18?si=Vd75egN-gzBQMJQJ" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            {
+                name: "Default",
+                image: "img/Sara.webp",
+                obtain: "Base Character / Story Appearance"
+            },
+        ],
+        gallery: [
+            {
+                title: "Default illustration",
+                image: "img/Sara.webp",
+                caption: "Default"
+            },
+            {
+                title: "Signature illustration",
+                image: "img/oldillust/Sara_max.webp",
+                caption: "Signature / Max"
+            },
+            {
+                title: "Story illustration",
+                image: "img/oldillust/Young_Sara.webp",
+                caption: "Story"
+            },
         ]
     },
     {
@@ -3287,25 +3485,80 @@ const charactersData = [
         },
         skills: [
             {
-                name: "Critical Set", icon : "img/skill/Critical_Set_Icon.webp", desc: "When performing a Set, a circle appears around the Ball to indicate timing. <span class='text-warning'>If a Spike is used at the moment the Ball touches the circle, the Ball's Power increases.</span>" +
+                name: "Critical Set", icon: "img/skill/Critical_Set_Icon.webp", desc: "When performing a Set, a circle appears around the Ball to indicate timing. <span class='text-warning'>If a Spike is used at the moment the Ball touches the circle, the Ball's Power increases.</span>" +
                     "<br><span class='text-success-custom fw-bold'>Power : criticaltoss_VAL%</span>"
             },
             { name: "Snowflake Two-Attack", desc: "Performs a Spike with a snowflake effect, <span class='text-warning'>increasing the Ball's Spin by 35% and Power by 100%.</span>" },
             { name: "Speed Setter", desc: "<span class='text-warning'>Reduces the Speed penalty caused by Rally duration by 30%.</span>" },
         ],
         synergies: [
-            { name: "Beauty & the Beast", desc: "<span class='text-info'>[SE]Sara + Dave</span> : Dave's push-up speed increases by 20%" }
+            {
+                name: "Beauty & the Beast",
+                partners: [
+                    { name: "Sara[SE]", icon: "img/Sara_SE.webp" },
+                    { name: "Dave", icon: "img/Dave.webp" },
+                ],
+                desc: "Dave's push-up speed increases by 20%"
+            },
         ],
         overall: [
             "Worked Up: <span class='text-success-custom'>Low</span>",
             "Careless: <span class='text-success-custom'>Very Low</span>",
             "Engaged: <span class='text-success-custom'>Very High</span>",
             "Discourage: <span class='text-success-custom'>Low</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/lYpPOJa2taU?si=-PwgE3YfCb8Yv2G_" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            {
+                name: "Default",
+                image: "img/Sara_Se.webp",
+                obtain: "Base Character / Story Appearance"
+            },
+            {
+                name: "Watersplash",
+                image: "img/skins/Watersplash_max.webp",
+                obtain: "Skin / Summer Event"
+            },
+        ],
+        gallery: [
+            {
+                title: "Default illustration",
+                image: "img/Sara_Se.webp",
+                caption: "Default"
+            },
+            {
+                title: "Signature illustration",
+                image: "img/oldillust/Sara_Se_max.webp",
+                caption: "Signature / Max"
+            },
+            {
+                title: "Skin illustration",
+                image: "img/skins/Watersplash.webp",
+                caption: "Skin"
+            },
+            {
+                title: "Signature illustration",
+                image: "img/skins/Watersplash_max.webp",
+                caption: "Skin"
+            },
+            {
+                title: "Story illustration",
+                image: "img/oldillust/Young_Sara.webp",
+                caption: "Story"
+            },
         ]
     },
     {
         id: "saya",
-        name: "Saya",
+        name: "Yoo Saya",
         role: "MB",
         position: "Middle Blocker (MB)",
         desc: "Starting middle blocker of Terra High’s volleyball club. At first glance, she seems cold and blunt, but she is a loyal girl who cares about her team and friends more than anyone else. " +
@@ -3329,19 +3582,115 @@ const charactersData = [
         },
         skills: [
             {
-                name: "Fish Bun", icon : "img/skill/Fish_Bun_Icon.webp", desc: "Upon Skill Activation, <span class='text-warning'>eats a Fish Bun. After eating the Fish Bun, Team Stamina is recovered by 30, and Status increases for the skill duration.</span>" +
+                name: "Fish Bun", icon: "img/skill/Fish_Bun_Icon.webp", desc: "Upon Skill Activation, <span class='text-warning'>eats a Fish Bun. After eating the Fish Bun, Team Stamina is recovered by 30, and Status increases for the skill duration.</span>" +
                     "<br><span class='text-success-custom fw-bold'>Duration : fishbundur_VALs <br>Wait Time : fishbuncldwn_VALs <br> Attack : +28, Defence : +40, Speed : +25, Jump : +5  </span>"
             },
             { name: "Out of Shape", desc: "<span class='small text-warning'>The amount of Speed reduction caused by Rally duration increases by 10%.</span>" },
         ],
         synergies: [
-            { name: "None", desc: "None" }
+            {
+                name: "None",
+                partners: [
+                ],
+                desc: "None"
+            },
         ],
         overall: [
             "Worked Up: <span class='text-success-custom'>Very Low</span>",
             "Careless: <span class='text-success-custom'>Very Low</span>",
             "Engaged: <span class='text-success-custom'>Very Low</span>",
             "Discourage: <span class='text-success-custom'>Very Low</span>",
+        ],
+        videos: [
+            {
+                embedCode: ``,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            {
+                name: "Default",
+                image: "img/Saya.webp",
+                obtain: "Base Character / Story Appearance"
+            },
+        ],
+        gallery: [
+            {
+                title: "Default illustration",
+                image: "img/Saya.webp",
+                caption: "Default"
+            },
+        ]
+    },
+    {
+        id: "yuna",
+        name: "Seo Yuna",
+        role: "WS",
+        position: "Wing Spiker (WS)",
+        desc: "A hardworking wing spiker who earned a place on the national team through relentless effort despite difficult circumstances. Bright, cheerful, and easy to get along with, she is loved wherever she goes, like the team’s mascot. She always carries a training notebook to help her overcome the limits of her natural physique. " +
+            "On the court, she is fiercely competitive and determined, using her exceptional flexibility to strike the ball from any angle. Even after a loss, she stays upbeat and says, 'It’s okay!' Yet she is tenacious and stubborn enough to train alone in secret at night. Despite her cute appearance, she seems eager to be seen as a dependable senior by her juniors.",
+        image: "img/Seo_Yuna.webp",
+        baseStats: {
+            attack: { base: 95, maxLimit: 175, growth: [0, 5, 7, 7, 9, 11] },
+            defense: { base: 95, maxLimit: 165, growth: [0, 3, 5, 5, 5, 10] },
+            speed: { base: 95, maxLimit: 165, growth: [0, 2, 4, 6, 8, 10] },
+            jump: { base: 95, maxLimit: 160, growth: [0, 4, 5, 6, 7, 8] }
+        },
+        recommended: {
+            attack: { base: 175, growthText: "+11 (Max BT)", total: 186 },
+            defense: { base: 100, growthText: "+10 (Max BT)", total: 110 },
+            speed: { base: 150, growthText: "+10 (Max BT)", total: 160 },
+            jump: { base: 160, growthText: "+8 (Max BT)", total: 168 }
+        },
+        skillStats: {
+            outsyset: [13, 14, 16, 17, 17, 18]
+        },
+        skills: [
+            { name: "Full-Body Spike", icon: "img/skill/Full-Body_Icon.webp", desc: "<span class='text-warning'>Depending on the position of the Ball, you can perform a Spike using different body positions, changing the trajectory of the Spike accordingly.</span>" },
+            { name: "Block evasion", desc: "<span class='text-warning'>For Al-controlled players, if the landing point of the opponent's Spike is out, Block is canceled.</span>" },
+            { name: "Solid Blocking", desc: "Improves the timing Accuracy of Block Jump s performed by Al-controlled Players." },
+            {
+                name: "Soft Out-of-System Set", desc: "Sets an Out-of-System Set toward the attack line. <span class='text-warning'>When that Set is Spiked, the Ball's Power increases.</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Ball Power : +outsyset_VAL%</span>"
+            },
+        ],
+        synergies: [
+            {
+                name: "None",
+                partners: [
+                ],
+                desc: "None"
+            },
+        ],
+        overall: [
+            "Worked Up: <span class='text-danger'>Very Low</span>",
+            "Careless: <span class='text-danger'>Very High</span>",
+            "Engaged: <span class='text-warning'>Low</span>",
+            "Discourage: <span class='text-success-custom'>Low</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/05xrWE6iPZ0?si=0JNzS-3xfOSiK_PA" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            {
+                name: "Default",
+                image: "img/Seo_Yuna.webp",
+                obtain: "Base Character / Story Appearance"
+            }
+        ],
+        gallery: [
+            {
+                title: "Default illustration",
+                image: "img/Seo_Yuna.webp",
+                caption: "Default"
+            },
         ]
     },
     {
@@ -3369,19 +3718,81 @@ const charactersData = [
         },
         skills: [
             {
-                name: "Surprise Attack", icon : "img/skill/Surprise_Attack_Icon.webp", desc: "During the Skill's Activation, attempt Two-Attack instead of Set. <span class='text-warning'>During this time, Spike gains 30% Power and cannot be blocked by Block.</span>" +
+                name: "Surprise Attack", icon: "img/skill/Surprise_Attack_Icon.webp", desc: "During the Skill's Activation, attempt Two-Attack instead of Set. <span class='text-warning'>During this time, Spike gains 30% Power and cannot be blocked by Block.</span>" +
                     "<br><span class='text-success-custom fw-bold'>Duration : 10s , Wait Time : suprisecldwn_VALs</span>"
             },
             { name: "Serve Routine A", desc: "Performs a unique pre-Serve animation." },
         ],
         synergies: [
-            { name: "All-Star", desc: "<span class='text-info'>Seolhwa + Heeseong + Yongsup</span> : Attack +4, Jump +4" }
+            {
+                name: "All-Star",
+                partners: [
+                    { name: "Seolhwa", icon: "img/Seolhwa.webp" },
+                    { name: "Yongsup", icon: "img/Yongsup.webp" },
+                    { name: "Heeseong", icon: "img/Heeseong.webp" },
+                ],
+                desc: "Attack +4, Jump +4"
+            },
         ],
         overall: [
             "Worked Up: <span class='text-success-custom'>Very Low</span>",
             "Careless: <span class='text-success-custom'>Very Low</span>",
             "Engaged: <span class='text-success-custom'>Low</span>",
             "Discourage: <span class='text-success-custom'>Low</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/WMEpwtk8yic?si=QAk3DXBml8GhXgxh" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            {
+                name: "Default",
+                image: "img/Seolhwa.webp",
+                obtain: "Base Character / Story Appearance"
+            }
+        ],
+        gallery: [
+            {
+                title: "Default illustration",
+                image: "img/Seolhwa.webp",
+                caption: "Default"
+            },
+            {
+                title: "Signature illustration",
+                image: "img/oldillust/Seolhwa_Max.webp",
+                caption: "Signature / Max"
+            },
+            {
+                title: "Old illustration",
+                image: "img/oldillust/Seolhwa_1.webp",
+                caption: "Seolhwa 2018"
+            },
+            {
+                title: "Old illustration",
+                image: "img/oldillust/Seolhwa_2.webp",
+                caption: "Seolhwa 2018"
+            },
+            {
+                title: "Old illustration",
+                image: "img/oldillust/Seolhwa_3.webp",
+                caption: "Seolhwa The Spike PC 2023"
+            },
+            {
+                title: "Old illustration",
+                image: "img/oldillust/Seolhwa_4.webp",
+                caption: "Seolhwa The Spike Mobile 2023"
+            },
+            {
+                title: "Old illustration",
+                image: "img/oldillust/Seolhwa_5.webp",
+                caption: "Seolhwa The Spike Mobile 2023"
+            },
+
         ]
     },
     {
@@ -3492,21 +3903,63 @@ const charactersData = [
         },
         skills: [
             {
-                name: "Gladius Wall", icon : "img/skill/Gladius_Wall_Icon.webp", desc: "Upon Skill Activation, <span class='text-warning'>restores 30 Stamina of the Team. While active, Team Player Defense increases, scaling with their individual Attack.</span>" +
+                name: "Gladius Wall", icon: "img/skill/Gladius_Wall_Icon.webp", desc: "Upon Skill Activation, <span class='text-warning'>restores 30 Stamina of the Team. While active, Team Player Defense increases, scaling with their individual Attack.</span>" +
                     "<br><span class='text-success-custom fw-bold'>Duration : gladiusdur_VALs , Wait Time : gladiuscldwn_VALs</span>" +
                     "<br><span class='text-success-custom fw-bold'>Defence : gladius_VAL</span>"
             },
             { name: "Crown Pass", desc: "Prioritize the Player with the highest Attack in the Team for the Set. <span class='text-warning'>If no other Player has the highest Attack, the chance of Two-Attack is increased by 95%.</span>" },
         ],
         synergies: [
-            { name: "Unified Offense & Defense", desc: "<span class='text-info'>Sif + Raul</span> : Raul's charging speed increases by 10%" },
-            { name: "Center Ace", desc: "<span class='text-info'>Sif + Yuri</span> : Attack +10" }
+            {
+                name: "Unified Offense & Defense",
+                partners: [
+                    { name: "Sif", icon: "img/Sif.webp" },
+                    { name: "Raul", icon: "img/Raul.webp" },
+                ],
+                desc: "Raul's charging speed increases by 10%"
+            },
+            {
+                name: "Center Ace",
+                partners: [
+                    { name: "Sif", icon: "img/Sif.webp" },
+                    { name: "Yuri", icon: "img/Yuri.webp" },
+                ],
+                desc: "Attack +10"
+            },
         ],
         overall: [
             "Worked Up: <span class='text-success-custom'>Very Low</span>",
             "Careless: <span class='text-success-custom'>Very Low</span>",
             "Engaged: <span class='text-success-custom'>Very Low</span>",
             "Discourage: <span class='text-success-custom'>Very Low</span>",
+        ],
+        videos: [
+            {
+                embedCode: `<iframe width="560" height="315" src="https://www.youtube.com/embed/l5jgOStxUQc?si=ZycVXTqGwZXlFIbM" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+                creatorName: "TheSpikeStation",
+                creatorUrl: "https://www.youtube.com/@thespikestation"
+            }
+        ],
+        skins: [
+            {
+                name: "Default",
+                image: "img/Sif.webp",
+                obtain: "Base Character / Story Appearance"
+            }
+        ],
+        gallery: [
+            {
+                title: "Default illustration",
+                image: "img/Sif.webp",
+                caption: "Default"
+            },
+            {
+                title: "Signature illustration",
+                image: "img/oldillust/Sif_Max.webp",
+                caption: "Signature / Max"
+            },
         ]
     },
     {
@@ -3564,6 +4017,13 @@ const charactersData = [
                 image: "img/Sodam.webp",
                 obtain: "Base Character / Story Appearance"
             }
+        ],
+        gallery: [
+            {
+                title: "Default illustration",
+                image: "img/Sodam.webp",
+                caption: "Default"
+            },
         ]
     },
     {
@@ -3590,9 +4050,11 @@ const charactersData = [
             stableset: [5, 4, 4, 4, 4, 3],
         },
         skills: [
-            { name: "Stable Set", icon: "img/skill/Stable_Set_Characteristic_Icon.webp", desc: "During Skill Activation, performs a stable Set with reduced Power and Spin of the Ball. <span class='text-warning'>When performing Set during Skill Activation, immediately restores 15 Stamina to the Team, [Elite Rule] " +
-                    "Restores the Stamina of the Teammate with the lowest Individual Stamina.</span>"+
-                    "<br><span class='text-success-custom fw-bold'>Duration : 2s , Wait Time : stableset_VALs</span>"},
+            {
+                name: "Stable Set", icon: "img/skill/Stable_Set_Characteristic_Icon.webp", desc: "During Skill Activation, performs a stable Set with reduced Power and Spin of the Ball. <span class='text-warning'>When performing Set during Skill Activation, immediately restores 15 Stamina to the Team, [Elite Rule] " +
+                    "Restores the Stamina of the Teammate with the lowest Individual Stamina.</span>" +
+                    "<br><span class='text-success-custom fw-bold'>Duration : 2s , Wait Time : stableset_VALs</span>"
+            },
             { name: "Pass Feint to Exploit Gaps", desc: "If the Opponent Players are gathered within 4m of the Net, <span class='text-warning'>performs a deep Setter's Dump to the back court.</span>" }
         ],
         synergies: [
@@ -4249,7 +4711,7 @@ function getMaxManualPoint(charId) {
         return 195;
     } else if (charId === 'sif') {
         return 190;
-    } else if (charId === 'hongshi' || charId === 'ahyeon' || charId === 'claire' || charId === 'nishikawa' || charId === 'jenny' || charId === 'lisia' || charId === 'sara_se' || charId === 'sohee') {
+    } else if (charId === 'hongshi' || charId === 'ahyeon' || charId === 'claire' || charId === 'nishikawa' || charId === 'jenny' || charId === 'lisia' || charId === 'sara_se' || charId === 'sohee' || charId === 'sejin') {
         return 185;
     } else if (charId === 'sara' || charId === 'seolhwa' || charId === 'yamadera') {
         return 180;
@@ -4283,7 +4745,7 @@ function getMaxManualPoint(charId) {
         return 105;
     } else if (charId === 'jaehyun') {
         return 265;
-    } else if (charId === 'yuri') {
+    } else if (charId === 'yuri' || charId === 'yuna') {
         return 205;
     } else {
         return 120;
@@ -4587,7 +5049,7 @@ function selectCharacter(id) {
             slider2Container.style.display = 'none';
         }
 
-        
+
     }
 
     const pushupValEl = document.getElementById('pushupVal');
@@ -4670,14 +5132,17 @@ function resetAllTeamBuffs() {
                 optionsContainer.style.display = 'none';
             }
 
-            // Reset value slider
+            // PERBAIKAN: Deklarasikan valText di sini bersama rangeInput 
+            // agar bisa diakses oleh blok kode di bawahnya
             const rangeInput = parentLabel.querySelector('.buff-range-input');
+            const valText = parentLabel.querySelector('.slider-val-text');
+
+            // Reset value slider
             if (rangeInput) {
                 const defaultVal = cb.dataset.sliderDefault || 0;
                 rangeInput.value = defaultVal;
                 delete rangeInput.dataset.initialized;
 
-                const valText = parentLabel.querySelector('.slider-val-text');
                 if (valText) valText.textContent = defaultVal;
             }
 
@@ -4687,16 +5152,26 @@ function resetAllTeamBuffs() {
                 btSelect.value = "0";
             }
 
-            // PERBAIKAN: Kembalikan string result stat ke teks awal (bukan dikosongkan)
+            // PERBAIKAN: Kembalikan string result stat ke teks awal
             const resultText = parentLabel.querySelector('.buff-result-text');
             if (resultText) {
                 const charId = cb.dataset.character;
                 if (charId === 'claire') {
-                    resultText.textContent = 'Atk +0 | Jmp +0 | Dur 0.00s';
+                    resultText.textContent = 'Atk +0 | Jmp +0';
                 } else if (charId === 'ellio') {
                     resultText.textContent = 'Ball Power +0% (35°)';
                 } else if (charId === 'jihoon') {
                     resultText.textContent = 'Power +0% | Ball Spin +0.0';
+                } else if (charId === 'iris') {
+                    resultText.textContent = 'Power +0% | Spin 0%';
+                    // Karena valText sudah dideklarasikan di atas, sekarang kodenya tidak akan error
+                    if (valText) valText.textContent = 'Fair';
+                } else if (charId === 'sif') {
+                    resultText.textContent = 'Defense +0';
+                } else if (charId === 'yuna') {
+                    resultText.textContent = 'Power +13%';
+                } else if (charId === 'sejin') {
+                    resultText.textContent = 'Power +5% (WS Only)';
                 }
             }
         }
@@ -4772,7 +5247,7 @@ function handleSliderChange(value) {
                 pushupValEl.innerText = actualEnergy + "%";
             }
         } else if (activeCharacter && activeCharacter.id === 'gitae') {
-            pushupValEl.innerText = val + " Count"; 
+            pushupValEl.innerText = val + " Count";
         } else {
             pushupValEl.innerText = val;
         }
@@ -4798,18 +5273,39 @@ const BUFF_CALCULATORS = {
     claire: (bt, sliderVal) => {
         const atk = [188, 197, 206, 216, 225, 225][bt] * (sliderVal / 100);
         const jmp = [13, 14, 15, 15, 16, 16][bt] * (sliderVal / 100);
-        const dur = [13, 13.65, 14.3, 14.95, 15.6, 15.6][bt] * (sliderVal / 100);
-        return `Atk +${Math.round(atk)} | Jmp +${Math.round(jmp)} | Dur ${dur.toFixed(2)}s`;
+        return `Atk +${Math.round(atk)} | Jmp +${Math.round(jmp)}`;
     },
     ellio: (bt, sliderVal) => {
         const maxPower = [24, 25.2, 26.4, 27.6, 30, 30][bt];
-        const power = (sliderVal / 90) * maxPower; // Contoh kalkulasi sudut Ellio
+        const power = (sliderVal / 90) * maxPower;
         return `Ball Power +${power.toFixed(1)}% (${sliderVal}°)`;
     },
     jihoon: (bt, sliderVal) => {
         const power = sliderVal * 13;
         const spin = (sliderVal * 0.2).toFixed(1);
         return `Power +${power}% | Ball Spin +${spin}`;
+    },
+    iris: (bt, sliderVal) => {
+        const power = [-10, 0, 8, 20][sliderVal] || 0;
+        const spin = [0, 0, 6, 30][sliderVal] || 0;
+        const pwrText = power > 0 ? `+${power}` : power;
+        const spinText = spin > 0 ? `+${spin}` : spin;
+        return `Power ${pwrText}% | Spin ${spinText}%`;
+    },
+    sif: (bt, sliderVal) => {
+        // Rumus Defense: Base 38 + (Kelipatan step * 14.4)
+        const step = (sliderVal - 100) / 20;
+        const def = 38 + (step * 14.4);
+
+        // .toFixed(1).replace('.0', '') supaya 110.0 jadi 110, tapi 52.4 tetap 52.4
+        return `Defense +${def.toFixed(1).replace('.0', '')}`;
+    },
+    yuna: (bt, sliderVal) => {
+        const power = [13, 14, 16, 17, 17, 18][bt] || 13;
+        return `Power +${power}%`;
+    },
+    sejin: (bt, sliderVal) => {
+        return `Power +5% (WS Only)`;
     }
 };
 
@@ -4893,7 +5389,14 @@ function handleUniversalBuffChange(element) {
     const currentBt = parseInt(btSelect ? btSelect.value : 0);
     const currentSlider = parseFloat(rangeInput ? rangeInput.value : 0);
 
-    if (valText) valText.textContent = currentSlider;
+    if (valText) {
+        if (charId === 'iris') {
+            const irisStatusName = ["Bad", "Fair", "Good", "Perfect"];
+            valText.textContent = irisStatusName[currentSlider] || currentSlider;
+        } else {
+            valText.textContent = currentSlider;
+        }
+    }
 
     if (BUFF_CALCULATORS[charId] && resultText) {
         resultText.textContent = BUFF_CALCULATORS[charId](currentBt, currentSlider);
@@ -4958,7 +5461,7 @@ function modifyManualStat(statKey, amount) {
         let jmpAdd = activeCharacter.skillStats.icarusJmp[currentBt][currentPushup] || 0;
         if (statKey === 'attack') growthBonus += atkAdd;
         if (statKey === 'jump') growthBonus += jmpAdd;
-    } 
+    }
 
     let currentManualVal = currentData[statKey];
     let targetManualVal = currentManualVal + amount;
@@ -5010,7 +5513,7 @@ function handleBuffChange(changedCheckbox) {
             if (cb !== changedCheckbox && cb.getAttribute('data-position') === position) {
                 // Uncheck karakter dengan role yang sama
                 cb.checked = false;
-                
+
                 // PERBAIKAN: Pastikan slider containernya juga ikut disembunyikan
                 const parentLabel = cb.closest('label');
                 if (parentLabel) {
@@ -5139,6 +5642,68 @@ function updateDetailView() {
             }
 
             activeBuffNames.push(`Jihoon (Miraculous Toss +${pwr}%, Spin +${spin.toFixed(1)})`);
+
+        } else if (charId === 'iris') {
+
+            // --- BUFF IRIS SUPPORT ---
+            const wrapper = cb.closest('label');
+            const rangeInput = wrapper ? wrapper.querySelector('.buff-range-input') : null;
+            const sliderVal = rangeInput ? (parseInt(rangeInput.value) || 1) : 1; // Default 1 (Fair)
+
+            const irisSettings = [
+                { power: -10, spin: 1.0 },
+                { power: 0, spin: 1.0 },
+                { power: 8, spin: 1.06 },
+                { power: 20, spin: 1.30 }
+            ];
+            const currentSetting = irisSettings[sliderVal] || irisSettings[1];
+
+            totalPowerPct += currentSetting.power;
+            if (currentSetting.spin > finalSpinRate) {
+                finalSpinRate = currentSetting.spin;
+            }
+
+            const irisStatusName = ["Bad", "Fair", "Good", "Perfect"];
+            activeBuffNames.push(`Iris (Compass Accuracy: ${irisStatusName[sliderVal]})`);
+
+        } else if (charId === 'sif') {
+
+            // --- BUFF SIF SUPPORT ---
+            const wrapper = cb.closest('label');
+            const rangeInput = wrapper ? wrapper.querySelector('.buff-range-input') : null;
+            const sliderVal = rangeInput ? (parseInt(rangeInput.value) || 100) : 100;
+
+            // Rumus matematika langsung agar hemat memori
+            const step = (sliderVal - 100) / 20;
+            const defBonus = 38 + (step * 14.4);
+
+            buffBonusDef += defBonus;
+
+            const formattedDef = defBonus.toFixed(1).replace('.0', '');
+            activeBuffNames.push(`Sif (Gladius Defense +${formattedDef})`);
+
+        } else if (charId === 'yuna') {
+
+            // --- BUFF SEO YUNA SUPPORT ---
+            const wrapper = cb.closest('label');
+            const btSelect = wrapper ? wrapper.querySelector('.buff-bt-select') : null;
+            
+            const yunaBt = btSelect ? parseInt(btSelect.value) : 0;
+            const powerBonus = [13, 14, 16, 17, 17, 18][yunaBt] || 13;
+            
+            totalPowerPct += powerBonus;
+            activeBuffNames.push(`Seo Yuna (Power +${powerBonus}%)`);
+
+        } else if (charId === 'sejin') {
+
+            // --- BUFF KANG SEJIN SUPPORT ---
+            // Hanya aktifkan penambahan stat power jika karakter yang sedang dibuka adalah WS
+            if (activeCharacter.role === 'WS') {
+                totalPowerPct += 5;
+                activeBuffNames.push(`Kang Sejin (Power +5%)`);
+            } else {
+                activeBuffNames.push(`Kang Sejin (Not Active - WS only)`);
+            }
 
         } else {
 
@@ -5608,10 +6173,10 @@ function parseSkillDescription(s, char) {
                 const currentForge = char.skillStats.forgesteel[currentSlider2Value];
                 const atkVal = currentForge ? currentForge.attack : 0;
                 const jmpVal = currentForge ? currentForge.jump : 0;
-    
+
                 desc = desc.replace('forgesteelatk_VAL', atkVal)
-                        .replace('forgesteeljmp_VAL', jmpVal);
-                }
+                    .replace('forgesteeljmp_VAL', jmpVal);
+            }
         }
         if (char.skillStats.absltblckdur && char.skillStats.absltblckcldwn) {
             desc = desc.replace('absltblckdur_VAL', char.skillStats.absltblckdur[currentBt])
@@ -5630,7 +6195,7 @@ function parseSkillDescription(s, char) {
                 "Good (Power: 8%, Spin: 6%)",
                 "Perfect (Power: 20%, Spin: 30%)"
             ];
-        desc = desc.replace('compass_VAL', irisStatus[currentPushup] || "Fair (Power: 0%, Spin: 0%)");
+            desc = desc.replace('compass_VAL', irisStatus[currentPushup] || "Fair (Power: 0%, Spin: 0%)");
         }
 
         if (char.skillStats.determineAtk && char.skillStats.determineJmp) {
@@ -5644,6 +6209,9 @@ function parseSkillDescription(s, char) {
         }
         if (char.skillStats.pridepwr) {
             desc = desc.replace('prideatk_VAL', char.skillStats.pridepwr[currentPushup]);
+        }
+        if (char.skillStats.fortuneturn) {
+            desc = desc.replace('fortuneturn_VAL', char.skillStats.fortuneturn[currentPushup]);
         }
         if (char.skillStats.skyball) {
             desc = desc.replace('skyserve_VAL', char.skillStats.skyball[currentBt][currentPushup]);
@@ -5764,6 +6332,9 @@ function parseSkillDescription(s, char) {
             desc = desc.replace('fishbundur_VAL', char.skillStats.fishbundur[currentBt])
                 .replace('fishbuncldwn_VAL', char.skillStats.fishbuncldwn[currentBt]);
         }
+        if (char.skillStats.outsyset) {
+            desc = desc.replace('outsyset_VAL', char.skillStats.outsyset[currentBt]);
+        }
         if (char.skillStats.suprisecldwn) {
             desc = desc.replace('suprisecldwn_VAL', char.skillStats.suprisecldwn[currentBt]);
         }
@@ -5803,7 +6374,7 @@ function parseSkillDescription(s, char) {
         }
         if (char.skillStats.spotdur && char.skillStats.spotwait) {
             desc = desc.replace('spotdur_VAL', char.skillStats.spotdur[currentBt])
-                    .replace('spotwait_VAL', char.skillStats.spotwait[currentBt]);
+                .replace('spotwait_VAL', char.skillStats.spotwait[currentBt]);
         }
     }
 
