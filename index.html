@@ -426,9 +426,10 @@
 
                                 <!-- Claire -->
                                 <label class="text-white small cursor-pointer mb-0 d-block">
-                                    <input type="checkbox" class="buff-checkbox me-2" data-character="claire" data-position="MB"
-                                        data-has-slider="true" data-slider-min="0" data-slider-max="100"
-                                        data-slider-default="0" data-slider-label="Overdrive Gauge" data-slider-unit="%"
+                                    <input type="checkbox" class="buff-checkbox me-2" data-character="claire"
+                                        data-position="MB" data-has-slider="true" data-slider-min="0"
+                                        data-slider-max="100" data-slider-default="0"
+                                        data-slider-label="Overdrive Gauge" data-slider-unit="%"
                                         onchange="handleUniversalBuffChange(this)">
                                     Claire (Overdrive) <br>
                                     <span class="buff-result-text text-info small">Atk +0 | Jmp +0</span>
@@ -440,12 +441,12 @@
                                             <select
                                                 class="buff-bt-select form-select form-select-sm bg-dark text-white border-secondary"
                                                 onchange="handleUniversalBuffChange(this)">
-                                                <option value="0">BT 0</option>
-                                                <option value="1">BT 1</option>
-                                                <option value="2">BT 2</option>
-                                                <option value="3">BT 3</option>
-                                                <option value="4">BT 4</option>
-                                                <option value="5">BT 5</option>
+                                                <option value="0">BT 0 (Atk +188 | Jmp +13)</option>
+                                                <option value="1">BT 1 (Atk +197 | Jmp +14)</option>
+                                                <option value="2">BT 2 (Atk +206 | Jmp +15)</option>
+                                                <option value="3">BT 3 (Atk +216 | Jmp +15)</option>
+                                                <option value="4">BT 4 (Atk +225 | Jmp +16)</option>
+                                                <option value="5">BT 5 (Atk +225 | Jmp +16)</option>
                                             </select>
                                         </div>
 
@@ -496,6 +497,36 @@
                                     </div>
                                 </label>
 
+                                <!-- Iris (Team Buff) -->
+                                <label class="text-white small cursor-pointer mb-0 d-block mt-2">
+                                    <input type="checkbox" class="buff-checkbox me-2" data-character="iris"
+                                        data-position="SE" data-has-slider="true" data-slider-min="0"
+                                        data-slider-max="3" data-slider-default="1" data-slider-label="Compass Accuracy"
+                                        data-slider-unit="" onchange="handleUniversalBuffChange(this)">
+                                    Iris (Compass) <br>
+                                    <span class="buff-result-text text-info small">Power +0% | Spin 0%</span>
+
+                                    <div class="buff-options-container bg-card-inner p-3 rounded border border-secondary mb-3 mt-2"
+                                        style="display: none;">
+                                        <!-- BT Disembunyikan untuk Iris -->
+                                        <div class="mb-2 bt-container" style="display: none;">
+                                            <label class="small text-muted mb-1 d-block">Breakthrough Level:</label>
+                                            <select
+                                                class="buff-bt-select form-select form-select-sm bg-dark text-white border-secondary"
+                                                onchange="handleUniversalBuffChange(this)">
+                                                <option value="0">Static / No Effect</option>
+                                            </select>
+                                        </div>
+                                        <p class="text-white mt-2 small mb-1">
+                                            <span class="slider-label-text">Compass Accuracy</span>:
+                                            <span class="slider-val-text fw-bold text-warning">Fair</span>
+                                        </p>
+                                        <input type="range" class="buff-range-input form-range custom-green-range"
+                                            min="0" max="3" step="1" value="1"
+                                            oninput="handleUniversalBuffChange(this)">
+                                    </div>
+                                </label>
+
                                 <!-- Jihoon -->
                                 <label class="text-white small cursor-pointer mb-0 d-block">
                                     <input type="checkbox" class="buff-checkbox me-2" data-position="SE"
@@ -516,6 +547,14 @@
                                             min="0" max="7" step="1" value="0"
                                             oninput="handleUniversalBuffChange(this)">
                                     </div>
+                                </label>
+
+                                <!-- Kang Sejin -->
+                                <label class="text-white small cursor-pointer mb-0 mt-2 sejin-label">
+                                    <input type="checkbox" class="buff-checkbox me-2" data-character="sejin"
+                                        data-position="SE" onchange="handleUniversalBuffChange(this)">
+                                    Kang Sejin (Core Hit) <br>
+                                    <span class="buff-result-text text-info small">Power +5% (Khusus SE/MB)</span>
                                 </label>
 
                                 <label class="text-white small cursor-pointer mb-0">
@@ -540,6 +579,52 @@
                                         onchange="handleBuffChange(this)">
                                     Saya (Fih🐟 Bun) <br>
                                     <span class="text-info small">Attack +28, Defence +40, Speed +25, Jump +5</span>
+                                </label>
+
+                                <!-- Seo Yuna -->
+                                <label class="text-white small cursor-pointer mb-0 d-block mt-2">
+                                    <input type="checkbox" class="buff-checkbox me-2" data-character="yuna"
+                                        data-position="WS" onchange="handleUniversalBuffChange(this)">
+                                    Seo Yuna (Soft Out-of-System Set) <br>
+                                    <span class="buff-result-text text-info small">Power +13%</span>
+
+                                    <div class="buff-options-container bg-card-inner p-3 rounded border border-secondary mb-3 mt-2"
+                                        style="display: none;">
+                                        <div class="mb-2">
+                                            <label class="small text-muted mb-1 d-block">Breakthrough Level:</label>
+                                            <select
+                                                class="buff-bt-select form-select form-select-sm bg-dark text-white border-secondary"
+                                                onchange="handleUniversalBuffChange(this)">
+                                                <option value="0">BT 0 (Power +13%)</option>
+                                                <option value="1">BT 1 (Power +14%)</option>
+                                                <option value="2">BT 2 (Power +16%)</option>
+                                                <option value="3">BT 3 (Power +17%)</option>
+                                                <option value="4">BT 4 (Power +17%)</option>
+                                                <option value="5">BT 5 (Power +18%)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <!-- Sif (Team Buff) -->
+                                <label class="text-white small cursor-pointer mb-0 d-block mt-2">
+                                    <input type="checkbox" class="buff-checkbox me-2" data-character="sif"
+                                        data-position="SE" data-has-slider="true" data-slider-min="100"
+                                        data-slider-max="300" data-slider-default="100" data-slider-label="Sif's Attack"
+                                        data-slider-unit="" onchange="handleUniversalBuffChange(this)">
+                                    Sif (Gladius) <br>
+                                    <span class="buff-result-text text-info small">Defense +0</span>
+
+                                    <div class="buff-options-container bg-card-inner p-3 rounded border border-secondary mb-3 mt-2"
+                                        style="display: none;">
+                                        <p class="text-white mt-2 small mb-1">
+                                            <span class="slider-label-text">Sif's Attack</span>:
+                                            <span class="slider-val-text fw-bold text-warning">100</span>
+                                        </p>
+                                        <input type="range" class="buff-range-input form-range custom-green-range"
+                                            min="100" max="300" step="20" value="100"
+                                            oninput="handleUniversalBuffChange(this)">
+                                    </div>
                                 </label>
 
                                 <label class="text-white small cursor-pointer mb-0">
