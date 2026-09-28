@@ -2628,7 +2628,7 @@ const charactersData = [
         },
         skills: [
             {
-                name: "Sunrise", icon: "img/skill/Sunrise_Icon.webp", desc: "Until 'Noon,' <span class='text-warning'>for every 3 points gained by Opponent Team, Attack, Speed, and Jump increase.</span>" +
+                name: "Sunrise", icon: "img/skill/Sunrise_Icon.webp", desc: "Until 'Noon', <span class='text-warning'>for every 3 points gained by Opponent Team, Attack, Speed, and Jump increase.</span>" +
                     " Status increases only until reaching 15 points. " +
                     "<br><span class='text-success-custom fw-bold'>sunrise_VAL</span>"
             },
